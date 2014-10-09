@@ -1,0 +1,512 @@
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.11.24)  14 AUG 2013 15:06
+entering extended mode
+ %&-line parsing enabled.
+**my_paper.tex
+(/home/pranav/Desktop/Conf_work/ICHCI_13/Paper source/my_paper.tex
+LaTeX2e <2009/09/24>
+Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
+yphenation, loaded.
+(/home/pranav/Desktop/Conf_work/ICHCI_13/Paper source/IEEEtran.cls
+Document Class: IEEEtran 2012/11/21 V1.8c by Harald Hanche-Olsen and Anders Chr
+istensen
+-- Based on V1.7a by Michael Shell
+-- See the "IEEEtran_HOWTO" manual for usage information.
+-- http://www.michaelshell.org/tex/ieeetran/
+\@IEEEtrantmpdimenA=\dimen102
+\@IEEEtrantmpdimenB=\dimen103
+\@IEEEtrantmpcountA=\count79
+\@IEEEtrantmpcountB=\count80
+\@IEEEtrantmptoksA=\toks14
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 373.
+
+(/usr/share/texmf-texlive/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+-- Using 8.5in x 11in (letter) paper.
+-- Using PDF output.
+\@IEEEnormalsizeunitybaselineskip=\dimen104
+-- This is a 10 point document.
+\CLASSINFOnormalsizebaselineskip=\dimen105
+\CLASSINFOnormalsizeunitybaselineskip=\dimen106
+\IEEEnormaljot=\dimen107
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 731.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 731.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 731.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 731.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 731.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 731.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 731.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 731.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 731.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 731.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <11> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 731.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <11> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 731.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 731.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 731.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 731.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <17> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 731.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 731.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <20> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 731.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 731.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 731.
+\IEEEilabelindentA=\dimen108
+\IEEEilabelindentB=\dimen109
+\IEEEilabelindent=\dimen110
+\IEEEelabelindent=\dimen111
+\IEEEdlabelindent=\dimen112
+\IEEElabelindent=\dimen113
+\IEEEiednormlabelsep=\dimen114
+\IEEEiedmathlabelsep=\dimen115
+\IEEEiedtopsep=\skip41
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@IEEEsubequation=\count85
+\abovecaptionskip=\skip42
+\belowcaptionskip=\skip43
+\c@figure=\count86
+\c@table=\count87
+\@IEEEeqnnumcols=\count88
+\@IEEEeqncolcnt=\count89
+\@IEEEtmpitemindent=\dimen116
+\c@IEEEbiography=\count90
+\@IEEEtranrubishbin=\box26
+) (/usr/share/texmf-texlive/tex/latex/cite/cite.sty
+LaTeX Info: Redefining \cite on input line 285.
+LaTeX Info: Redefining \nocite on input line 356.
+Package: cite 2009/08/29  v 5.2
+)
+(/usr/share/texmf-texlive/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-texlive/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks15
+)
+(/usr/share/texmf-texlive/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-texlive/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/etc/texmf/tex/latex/config/graphics.cfg
+File: graphics.cfg 2009/08/28 v1.8 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+(/usr/share/texmf-texlive/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2010/03/12 v0.04p Graphics/color for pdfTeX
+\Gread@gobject=\count91
+))
+\Gin@req@height=\dimen117
+\Gin@req@width=\dimen118
+)
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2000/07/18 v2.13 AMS math features
+\@mathmargin=\skip44
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texmf-texlive/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks16
+\ex@=\dimen119
+))
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen120
+)
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count92
+LaTeX Info: Redefining \frac on input line 211.
+\uproot@=\count93
+\leftroot@=\count94
+LaTeX Info: Redefining \overline on input line 307.
+\classnum@=\count95
+\DOTSCASE@=\count96
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
+\Mathstrutbox@=\box27
+\strutbox@=\box28
+\big@size=\dimen121
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\macc@depth=\count97
+\c@MaxMatrixCols=\count98
+\dotsspace@=\muskip10
+\c@parentequation=\count99
+\dspbrk@lvl=\count100
+\tag@help=\toks17
+\row@=\count101
+\column@=\count102
+\maxfields@=\count103
+\andhelp@=\toks18
+\eqnshift@=\dimen122
+\alignsep@=\dimen123
+\tagshift@=\dimen124
+\tagwidth@=\dimen125
+\totwidth@=\dimen126
+\lineht@=\dimen127
+\@envbody=\toks19
+\multlinegap=\skip45
+\multlinetaggap=\skip46
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
+)
+(/usr/share/texmf-texlive/tex/latex/subfig/subfig.sty
+Package: subfig 2005/06/28 ver: 1.3 subfig package
+
+(/usr/share/texmf-texlive/tex/latex/caption/caption.sty
+Package: caption 2009/10/09 v3.1k Customizing captions (AR)
+
+(/usr/share/texmf-texlive/tex/latex/caption/caption3.sty
+Package: caption3 2009/10/09 v3.1k caption3 kernel (AR)
+\captionmargin=\dimen128
+\captionmargin@=\dimen129
+\captionwidth=\dimen130
+\caption@indent=\dimen131
+\caption@parindent=\dimen132
+\caption@hangindent=\dimen133
+Package caption Info: Unknown document class (or package),
+(caption)             standard defaults will be used on input line 1068.
+)
+
+Package caption Warning: Unsupported document class (or package) detected,
+(caption)                usage of the caption package is not recommended.
+See the caption package documentation for explanation.
+
+Package caption Info: \@makecaption = \long macro:#1#2->\ifx \@captype \@IEEEta
+blestring \footnotesize {\centering \normalfont \footnotesize #1.\qquad \scshap
+e #2\par }\@IEEEtablecaptionsepspace \else \@IEEEfigurecaptionsepspace \setbox 
+\@tempboxa \hbox {\normalfont \footnotesize {#1.}~~ #2}\ifdim \wd \@tempboxa >\
+hsize \setbox \@tempboxa \hbox {\normalfont \footnotesize {#1.}~~ }\parbox [t]{
+\hsize }{\normalfont \footnotesize \noindent \unhbox \@tempboxa #2}\else \ifCLA
+SSOPTIONconference \hbox to\hsize {\normalfont \footnotesize \box \@tempboxa \h
+fil }\else \hbox to\hsize {\normalfont \footnotesize \box \@tempboxa \hfil }\fi
+ \fi \fi .
+\c@ContinuedFloat=\count104
+)
+\c@KVtest=\count105
+\sf@farskip=\skip47
+\sf@captopadj=\dimen134
+\sf@capskip=\skip48
+\sf@nearskip=\skip49
+\c@subfigure=\count106
+\c@subfigure@save=\count107
+\c@lofdepth=\count108
+\c@subtable=\count109
+\c@subtable@save=\count110
+\c@lotdepth=\count111
+\sf@top=\skip50
+\sf@bottom=\skip51
+) (/usr/share/texmf-texlive/tex/latex/tools/tabularx.sty
+Package: tabularx 1999/01/07 v2.07 `tabularx' package (DPC)
+
+(/usr/share/texmf-texlive/tex/latex/tools/array.sty
+Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen135
+\extrarowheight=\dimen136
+\NC@list=\toks21
+\extratabsurround=\skip52
+\backup@length=\skip53
+)
+\TX@col@width=\dimen137
+\TX@old@table=\dimen138
+\TX@old@col=\dimen139
+\TX@target=\dimen140
+\TX@delta=\dimen141
+\TX@cols=\count112
+\TX@ftn=\toks22
+)
+(/usr/share/texmf-texlive/tex/latex/base/fixltx2e.sty
+Package: fixltx2e 2006/09/13 v1.1m fixes to LaTeX
+LaTeX Info: Redefining \em on input line 420.
+LaTeX Info: The control sequence `\[' is already robust on input line 471.
+LaTeX Info: The control sequence `\]' is already robust on input line 472.
+)
+(/home/pranav/Desktop/Conf_work/ICHCI_13/Paper source/my_paper.aux)
+\openout1 = `my_paper.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+
+(/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count113
+\scratchdimen=\dimen142
+\scratchbox=\box29
+\nofMPsegments=\count114
+\nofMParguments=\count115
+\everyMPshowfont=\toks23
+\MPscratchCnt=\count116
+\MPscratchDim=\dimen143
+\MPnumerator=\count117
+\everyMPtoPDFconversion=\toks24
+)
+Package caption Info: Begin \AtBeginDocument code.
+Package caption3 Info: subfig package 1.2 or 1.3 is loaded.
+LaTeX Info: Redefining \subref on input line 29.
+Package caption Info: End \AtBeginDocument code.
+
+** WARNING: \IEEEPARstart is locked out when in conference mode (line 62).
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 72.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 72.
+
+Underfull \hbox (badness 10000) in paragraph at lines 191--209
+[]\OT1/ptm/m/n/10 A structured-light 3D scan-ner based on op-tical
+ []
+
+
+Underfull \hbox (badness 7759) in paragraph at lines 191--209
+[]\OT1/ptm/m/n/10 Given stereo-correspondence and sys-tem cal-i-bra-tion
+ []
+
+
+Underfull \hbox (badness 4181) in paragraph at lines 191--209
+\OT1/ptm/m/n/10 in-for-ma-tion, op-tical tri-an-gu-la-tion can be per-formed to
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 191--209
+
+ []
+
+<triangulation.jpg, id=1, 501.875pt x 354.32375pt>
+File: triangulation.jpg Graphic file (type jpg)
+ <use triangulation.jpg>
+<measurement_image.JPG, id=2, 3661.68pt x 2746.26pt>
+File: measurement_image.JPG Graphic file (type jpg)
+
+<use measurement_image.JPG> [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.ma
+p}
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 259--277
+ []\OT1/ptm/m/it/10 Extrinsic camera-projector cal-i-bra-tion: [][] \OT1/ptm/m/
+n/10 To bring
+ []
+
+
+Underfull \hbox (badness 1502) in paragraph at lines 259--277
+\OT1/ptm/m/n/10 sys-tem, rel-a-tive ro-ta-tion and trans-la-tion be-tween cam-e
+ra
+ []
+
+
+Underfull \hbox (badness 7796) in paragraph at lines 259--277
+[]\OT1/ptm/m/n/10 Since in-trin-sic pa-ram-e-ters are al-ready known for
+ []
+
+<cap_binary_1.jpg, id=14, 985.6825pt x 560.0925pt> <use cap_binary_1.jpg>
+<cap_binary_4.jpg, id=15, 967.615pt x 539.01375pt> <use cap_binary_4.jpg>
+<cap_fringe_1.jpg, id=16, 992.70876pt x 576.1525pt> <use cap_fringe_1.jpg>
+<cap_fringe_4.jpg, id=17, 989.6975pt x 563.10374pt> <use cap_fringe_4.jpg>
+<use cap_binary_1.jpg> <use cap_binary_4.jpg> <use cap_fringe_1.jpg>
+<use cap_fringe_4.jpg>
+File: cap_binary_1.jpg Graphic file (type jpg)
+ <use cap_binary_1.jpg>
+File: cap_binary_4.jpg Graphic file (type jpg)
+ <use cap_binary_4.jpg>
+File: cap_fringe_1.jpg Graphic file (type jpg)
+
+<use cap_fringe_1.jpg>
+File: cap_fringe_4.jpg Graphic file (type jpg)
+ <use cap_fringe_4.jpg>
+Overfull \hbox (4.56548pt too wide) in alignment at lines 343--343
+[][][]
+ []
+
+[2 </home/pranav/Desktop/Conf_work/ICHCI_13/Paper source/figures/triangulation.
+jpg> </home/pranav/Desktop/Conf_work/ICHCI_13/Paper source/figures/measurement_
+image.JPG>] <wrapped_ver.jpg, id=25, 725.71124pt x 511.9125pt>
+<use wrapped_ver.jpg> <wrapped_hor.jpg, id=26, 886.31125pt x 553.06625pt>
+<use wrapped_hor.jpg> <use wrapped_ver.jpg> <use wrapped_hor.jpg>
+File: wrapped_ver.jpg Graphic file (type jpg)
+
+<use wrapped_ver.jpg>
+File: wrapped_hor.jpg Graphic file (type jpg)
+ <use wrapped_hor.jpg>
+Overfull \hbox (4.55643pt too wide) in alignment at lines 368--368
+[][][]
+ []
+
+<unwrapped_ver.jpg, id=27, 977.6525pt x 557.08125pt> <use unwrapped_ver.jpg>
+<unwrapped_hor.jpg, id=28, 959.585pt x 567.11874pt> <use unwrapped_hor.jpg>
+<use unwrapped_ver.jpg> <use unwrapped_hor.jpg>
+File: unwrapped_ver.jpg Graphic file (type jpg)
+ <use unwrapped_ver.jpg>
+File: unwrapped_hor.jpg Graphic file (type jpg)
+
+<use unwrapped_hor.jpg>
+Overfull \hbox (4.55588pt too wide) in alignment at lines 393--393
+[][][]
+ []
+
+
+Underfull \hbox (badness 3989) in paragraph at lines 404--408
+\OT1/ptm/m/n/10 i-zon-tal un-wrapped phase $\OML/cmm/m/it/10 ^^N[]\OT1/cmr/m/n/
+10 (\OML/cmm/m/it/10 x[]; y[]\OT1/cmr/m/n/10 )$ \OT1/ptm/m/n/10 gives pro-jec-t
+or Y-
+ []
+
+<camera_image.jpg, id=29, 941.5175pt x 869.2475pt> <use camera_image.jpg>
+<projector_image.jpg, id=30, 1016.79875pt x 703.62875pt>
+<use projector_image.jpg> <use camera_image.jpg> <use projector_image.jpg>
+File: camera_image.jpg Graphic file (type jpg)
+
+<use camera_image.jpg>
+File: projector_image.jpg Graphic file (type jpg)
+ <use projector_image.jpg>
+Overfull \hbox (4.5637pt too wide) in alignment at lines 421--421
+[][][]
+ []
+
+<face_2d.jpg, id=31, 576.1525pt x 449.68pt> <use face_2d.jpg>
+<face_3d.jpg, id=32, 1201.48875pt x 925.4575pt> <use face_3d.jpg>
+<use face_2d.jpg> <use face_3d.jpg>
+File: face_2d.jpg Graphic file (type jpg)
+ <use face_2d.jpg>
+File: face_3d.jpg Graphic file (type jpg)
+ <use face_3d.jpg>
+Overfull \hbox (4.54866pt too wide) in alignment at lines 442--442
+[][][]
+ []
+
+<measurement_setup.jpg, id=33, 1054.94125pt x 694.595pt>
+File: measurement_setup.jpg Graphic file (type jpg)
+
+<use measurement_setup.jpg>
+Overfull \hbox (31.46614pt too wide) in paragraph at lines 454--455
+ [][] 
+ []
+
+[3 </home/pranav/Desktop/Conf_work/ICHCI_13/Paper source/figures/cap_binary_1.j
+pg> </home/pranav/Desktop/Conf_work/ICHCI_13/Paper source/figures/cap_binary_4.
+jpg> </home/pranav/Desktop/Conf_work/ICHCI_13/Paper source/figures/cap_fringe_1
+.jpg> </home/pranav/Desktop/Conf_work/ICHCI_13/Paper source/figures/cap_fringe_
+4.jpg> </home/pranav/Desktop/Conf_work/ICHCI_13/Paper source/figures/wrapped_ve
+r.jpg> </home/pranav/Desktop/Conf_work/ICHCI_13/Paper source/figures/wrapped_ho
+r.jpg> </home/pranav/Desktop/Conf_work/ICHCI_13/Paper source/figures/unwrapped_
+ver.jpg> </home/pranav/Desktop/Conf_work/ICHCI_13/Paper source/figures/unwrappe
+d_hor.jpg>] <measurement_object.jpg, id=39, 518.93875pt x 587.19376pt>
+File: measurement_object.jpg Graphic file (type jpg)
+
+<use measurement_object.jpg> [4 </home/pranav/Desktop/Conf_work/ICHCI_13/Paper 
+source/figures/camera_image.jpg> </home/pranav/Desktop/Conf_work/ICHCI_13/Paper
+ source/figures/projector_image.jpg> </home/pranav/Desktop/Conf_work/ICHCI_13/P
+aper source/figures/face_2d.jpg> </home/pranav/Desktop/Conf_work/ICHCI_13/Paper
+ source/figures/face_3d.jpg> </home/pranav/Desktop/Conf_work/ICHCI_13/Paper sou
+rce/figures/measurement_setup.jpg> </home/pranav/Desktop/Conf_work/ICHCI_13/Pap
+er source/figures/measurement_object.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 564--567
+[]\OT1/ptm/m/n/8 `Structured-light'-Google code. http://code.google.com/p/struc
+tured-
+ []
+
+
+Underfull \hbox (badness 1728) in paragraph at lines 591--598
+\OT1/ptm/m/n/8 MAN BODY MEA-SURE-MENT, Int. Arch. Pho-togramm. Re-mote
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 626--633
+[]\OT1/ptm/m/n/8 Camera Cal-i-bra-tion Tool-box For Mat-lab
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 626--633
+\OT1/ptm/m/n/8 http://www.vision.caltech.edu/bouguetj/calib[]doc/index.h tml.
+ []
+
+Missing character: There is no Ã in font ptmr7t!
+Missing character: There is no © in font ptmr7t!
+<cam_calib.png, id=44, 503.8825pt x 691.58376pt>
+File: cam_calib.png Graphic file (type png)
+ <use cam_calib.png>
+<proj_calib.png, id=45, 383.4325pt x 697.60625pt>
+File: proj_calib.png Graphic file (type png)
+ <use proj_calib.png>
+
+** Conference Paper **
+Before submitting the final camera ready copy, remember to:
+
+ 1. Manually equalize the lengths of two columns on the last page
+ of your paper;
+
+ 2. Ensure that any PostScript and/or PDF output post-processing
+ uses only Type 1 fonts and that every step in the generation
+ process uses the appropriate paper size.
+
+[5] [6 </home/pranav/Desktop/Conf_work/ICHCI_13/Paper source/figures/cam_calib.
+png (PNG copy)> </home/pranav/Desktop/Conf_work/ICHCI_13/Paper source/figures/p
+roj_calib.png (PNG copy)>]
+(/home/pranav/Desktop/Conf_work/ICHCI_13/Paper source/my_paper.aux) ) 
+Here is how much of TeX's memory you used:
+ 3577 strings out of 495061
+ 55107 string characters out of 1182620
+ 127690 words of memory out of 3000000
+ 6738 multiletter control sequences out of 15000+50000
+ 34085 words of font info for 63 fonts, out of 3000000 for 9000
+ 31 hyphenation exceptions out of 8191
+ 44i,22n,47p,712b,495s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/shar
+e/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texlive/fonts/typ
+e1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-texlive/fonts/type1/public/a
+msfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/
+cmmi5.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi7.pfb></
+usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/te
+xmf-texlive/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-texlive/f
+onts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-texlive/fonts/type1/pu
+blic/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfon
+ts/cm/cmsy5.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy7.
+pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmb8a.pfb></usr/share/texm
+f-texlive/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texmf-texlive/fonts/typ
+e1/urw/times/utmr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmri8a
+.pfb>
+Output written on my_paper.pdf (6 pages, 2042906 bytes).
+PDF statistics:
+ 96 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 91 words of extra memory for PDF output out of 10000 (max. 10000000)
+

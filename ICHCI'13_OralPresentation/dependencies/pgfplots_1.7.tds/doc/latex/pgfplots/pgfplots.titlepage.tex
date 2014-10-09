@@ -1,0 +1,78 @@
+\documentclass[a4paper]{article}
+
+\usepackage{pgfplots}
+
+\pgfplotsset{compat=newest}
+
+\begin{document}
+
+\begin{tikzpicture}
+	\begin{axis}[
+		point meta rel=per plot,
+		filter discard warning=false,
+	]
+	\addplot3[surf,domain=0:1] {
+		x+y 
+		+ 0.8*sin(x*360)*x*(1-y) 
+		+ 0.4*(-sin(x*360)-sin(y*300))*(x+0.1)^2*(y+0.4)^2
+		+ exp(-((x-0.2)^2 + (y-0.7)^2)*10)*0.8
+	};	
+	\addplot3[red,
+		%--------------------------------------------------
+		% quiver={
+		% 	u=0,
+		% 	v=1,
+		% 	w=1-0.8*sin(1*360) ,
+		% },
+		%-------------------------------------------------- 
+		variable=\t,
+		domain=0:1,samples y=0] 
+	(1.03,t,{
+		1+t 
+		+ 0.8*sin(1*360)*1*(1-t) 
+		+ 0.4*(-sin(1*360)-sin(t*300))*(1+0.1)^2*(t+0.4)^2
+		+ exp(-((1-0.2)^2 + (t-0.7)^2)*10)*0.8
+	});	
+	%\tracingmacros=2 \tracingcommands=2
+	\addplot3[contour gnuplot={
+			number=9,
+			labels=false,
+			output point meta=rawz, % override the z filter
+		},
+		z filter/.code={%
+			\ifdim##1pt<0.15pt %
+				\def\pgfmathresult{}% skip incomplete contour
+			\else
+				\def\pgfmathresult{3}% fix complete contour plot at a specific level
+			\fi
+		},
+		domain=-0.3:0.6, domain y=-0.2:1.1,
+		colormap/hot,
+		] 
+	{
+		+ exp(-((x-0.2)^2 + (y-0.7)^2)*10)*0.8
+	};
+
+	\addplot3[->,blue,domain=4:5*pi,variable=\t,samples=60,samples y=0]
+    ({sin(deg(t))*(1-t/5/pi)*0.3 + 0.2},
+     {cos(deg(t))*(1-t/5/pi)*0.15 + 0.7},
+     {3*t/(5*pi)});
+
+	\addplot3[quiver={
+			% deg'(t) !?
+			u= cos(deg(t)) * (1-t/5/pi)*0.3 - sin(deg(t)) *0.3 /5/pi,
+			v=-sin(deg(t)) * (1-t/5/pi)*0.15- cos(deg(t)) *0.15/5/pi,
+			w=3/5/pi,
+			scale arrows=1.5,
+		},
+		red,
+		-stealth,
+		variable=\t,
+		domain=4:5*pi,samples=5,samples y=0]
+    ({sin(deg(t))*(1-t/5/pi)*0.3 + 0.2},
+     {cos(deg(t))*(1-t/5/pi)*0.15 + 0.7},
+     {3*t/(5*pi)});
+	\end{axis}
+\end{tikzpicture}
+\end{document}
+

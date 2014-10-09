@@ -1,0 +1,26 @@
+; Copyright (c) 2001, Stanford University
+; All rights reserved.
+;
+; See the file LICENSE.txt for information on redistributing this software.
+EXPORTS
+crutReceiveEventType
+crutMouseFunc
+crutKeyboardFunc
+crutReshapeFunc
+crutVisibilityFunc
+crutMotionFunc
+crutPassiveMotionFunc
+crutPostRedisplay
+crutIdleFunc
+crutDisplayFunc
+crutCreateContext
+crutCreateMenu
+crutAddMenuEntry
+crutAddSubMenu
+crutAttachMenu
+crutCheckEvent
+crutPeekNextEvent
+crutReceiveEvent
+crutInitClient
+crutMainLoop
+crutCreateWindow

@@ -1,0 +1,2918 @@
+2012-10-24 Christian Feuersaenger <cfeuersaenger@users.sourceforge.net>
+	- RELEASED 1.7
+
+2012-10-24 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- added patch type=bicubic
+	- added support for global paths (fillable) for patch plots lib
+	- added patch type sampling feature
+
+2012-10-11 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- fixed search path issue in context: moved pgfplots.lua to tex/generic
+	
+2012-10-03 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- fixed bug: pgfplots accidentally \let\directlua=\relax if not loaded with lualatex (and a couple of similar incidents).
+	Thanks to Heiko Oberdiek for the fix.
+	- worked on size compensation for 'enlarge x limits={abs=1cm}', i.e. for 
+	enlarge-by-dimension. It will now respect width/height for standard axes.
+	- added contour external/output point meta  key.
+
+2012-10-01 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- fixed bug: \ref{legendimage} inside of legend text was wrong.
+
+2012-09-30 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- fixed(?) bug: log basis and stacked plots
+
+2012-09-21 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- added debug output feature: \addplot3 graphics[debug=visual]
+
+2012-09-10 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- fixed incompatibility regression pgfplots 1.6.1 pgf 2.10: layers
+
+2012-09-02 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- fixed sanity checking for logarithmic samples of undefined domains
+
+2012-09-01 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- added early draft for 'enlarge x limits={abs=1cm}', i.e. for 
+	enlarge-by-dimension.
+
+2012-08-27 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- added switch 'compat/bar width by units' which interpretes 'bar width=1'
+	in terms of axis units (width = 1 unit)
+
+2012-08-23 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- RELEASED 1.6.1
+
+2012-08-23 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- fixed incompatibility lualatex, shader=interp, and german package
+
+2012-08-22 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- RELEASED 1.6 on sourceforge (only)
+
+2012-08-16 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- fixed support for scopes inside of axes
+
+2012-07-15 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- fixed (re)scaling of view normal
+
+2012-07-03 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- fixed bug: 'nan' values in error bar values caused compilation errors.
+	Now, error bars for unbounded coordinates are skipped.
+
+2012-06-24 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- spent a considerably amount of attention to 'axis equal' in 3d:
+	it works correctly now and the underlying scaling algorithm is much more powerful.
+	This is backwards compatible with 2d axis equal (but not 3d as this was
+	plain wrong)
+
+2012-06-16 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- provided a suitable legend for quiver plots
+
+2012-06-10 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- added docs for tikz/mark phase
+
+2012-06-09 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- fixed bug: restrict y to domain did not work for log axes
+
+2012-05-18 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- fixed bug: extreme differences between point meta and point meta min/max
+	caused number range problems. The point meta data is now clipped to [0,1000]
+
+2012-05-06 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- fixed bug: create on use for error bar columns did not work
+	- fixed bug: view dir was rescaled incorrectly 
+	this is a regression; it was not in 1.5.1
+	- added feature 'hist/density' (thanks to Juernjakob Dugge for this contribution!)
+
+2012-05-01 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- fixed 'scale mode=scale uniformly': intermediate results needed to be computed by FPU
+	- fixed bug: 'colorbar style={ymode=log}' was not processed properly
+
+2012-04-27 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- 'scale mode=scale uniformly' now also respects user-provided data
+	limits (including \addplot3 graphics).
+	- fixed bug: reversed axes + explicitly provided x,y,z vectors did not
+	work properly in 3d (also affected \addplot3 graphics)
+
+--- the following lines are from a feature branch.
+2011-10-02 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- the 'clip=plots individually' has been renamed to 'clip mode=global|individual'
+	and 'clip mode=global' is the new default. It is, however, not
+	completely implemented for custom drawing commands
+	
+2011-10-01 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- fixed bug in recent version: the 'cell picture' was always active
+	- added support for 'set layers' inside of a pgfplots axis
+	- 'axis on top', together with 'activate layers', will now implicitly call 'set layers=axis on top'
+
+2011-09-18 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- rewrote layer support to be more compatible with pgf and added
+	systematic support for layers, including a useful default configuration
+
+2011-09-14 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- added feature 'cell picture=true|false|if necessary'
+
+2011-09-04 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- added feature 'clip=plots individually'
+
+2012-04-21 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- fixed bug: explicitly provided unit vectors + '* dir=reverse' did not work
+	- improved smith charts docs + provided more styles
+
+2012-04-04 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- fixed bug: lualatex and shader=interp have been incompatible.
+	I implemented proper binary encoding in lua.
+
+2012-04-02 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- fixed bug: 'linear regression/variance' key did only work if 'linear
+	regression/variance src' was active as well. Now, it works also without.
+
+2012-04-01 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- added 'contour/levels' key.
+
+2012-03-04 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- table package: improved and documented ways to suppress head rows
+
+2012-02-04 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- fixed bug: compatibility to PGF 2.00 was broken
+
+2012-01-22 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- fixed bug: fixed combination of transparency + shading in shader=interp
+
+2012-01-01 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- added support for 'mesh/interior colormap name,shader=interp'
+	it uses shader=faceted interp
+
+2011-10-03 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- fixed bug in 'mesh/interior colormap name': the data scaling trafo
+	was not respected correctly
+	- fixed bug in 'mesh/interior colormap name': z buffer reversals have not
+	been respected.
+
+2011-10-02 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- added 'mesh/interior colormap thresh'
+
+2011-09-28 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- renamed 'mesh/background colormap name' to 'mesh/interior colormap name'
+
+2011-09-28 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- fixed bug: there was a case were 'shader=faceted interp' was
+	unnecessarily converted to triangles 
+
+2011-09-27 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- fixed bug: the view direction was not scaled properly.
+
+2011-09-26 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- worked on 'mesh/background colormap name'. It works partially for
+	'disabledatascaling', although it reveals that the view direction is
+	imprecise.
+
+2011-09-26 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- fixed bug: 'patch to triangle' for rectangles produced inconsistently
+	oriented triangles
+
+2011-09-25 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- implemented draft for 'mesh/background colormap name'. 
+	I think it works, but it might be useless because the sampling methods do
+	not produce proper normal vectors.
+
+--- the following lines are from a feature branch.
+
+2011-12-29 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- RELEASED VERSION 1.5.1
+
+2011-12-29 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- Added the 'fixed relative' number formatting style.
+
+2011-12-28 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- Added 'const plot mark mid' and 'jump mark mid' plot handlers.
+	- Added 'log ticks with fixed point' style
+
+2011-12-22 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- Patched tikz ellipses and circles such that they automatically use
+	pgfplots transformations
+
+2011-12-19 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- patchplots lib: added 'patch type=polygon'
+
+2011-12-17 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- fixed bug: now, 'minor xtick=data' will also work as documented.
+	- improved docs for \addplot {<data>} node[pos=<fraction>]
+	- finished feature: \addplot {<data>} node[pos=<fraction>] now outputs the
+	inverse coord trafo (if any) when using \pgfplotspointplotattime.
+
+2011-12-16 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- fixed bug: \addplot[decorate,...] did not work.
+	- fixed bug: \addplot[postactions={...},...] did not work.
+	- fixed bug: \addplot[preactions={...},...] did not work.
+
+2011-12-10 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- fixed bug: axis background path for 2d axes was not filled
+
+2011-11-03 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- PGF bugfix: added FPU support for ==, !=, <=, >=, ?
+
+2011-10-29 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- fixed problem with pgf number printer: it introduced spurious spaces
+	I updated the pgf backw. compatibility layer accordingly
+	
+2011-10-23 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- fixed bug: view={0}{90},axis equal  failed.
+	- fixed bug: \pgfplotstabletranspose with 'colnames from=<first col>' failed
+	- fixed bug: stacked plots and logs did use the wrong math format (the bug
+	was introduced two weeks ago)
+
+2011-10-22 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- fixed bug: contour prepared format=matlab did not properly if one
+	contour level has multiple segments.
+	- contour filled: introduced sanity checking to detect if the input
+	sequence is sorted as assumed
+
+2011-10-15 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- provided implementations of \addplot ... node[pos=<p>] {}  for scatter and bar plots.
+
+2011-10-13 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- fixed bug: 'stack plots=y,xmode=log' did not work
+	- added feature 'trim axis group left' and 'trim axis group right'
+	- fixed bug: markers in polar plots did disappear unless their angle was 0
+
+2011-10-08 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- improved plot loaded table: added sanity checking for the unsupported \thisrow feature 
+
+2011-09-24 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- improved 'node[pos=<fraction>]' feature: now, \pgfplotspointattime
+	allows to access the logical coordinates of that point.
+
+2011-09-21 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- added 'scatter rgb', 'scatter cmyk', and 'scatter explicit color' styles
+
+2011-09-03 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- new nodes at time in pgfplots feature: used backwards gradient for last point
+	- new nodes at time: added feature 'pos segment=<plot segment>'
+	
+2011-09-02 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- implemented support for nodes at time in plots, i.e.
+	\addplot... {.....} node[pos=<fraction>]
+	missing are specifics for plot types and documentation
+
+2011-08-31 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- documented 'execute at begin axis' 
+
+2011-08-22 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- fixed bug: 'raw gnuplot' surface input did not work well because
+	pgfplots used 'samples' and 'samples y' to assign the input matrix
+	dimensions
+
+2011-08-10 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- fixed bug: Markers in legends have not (always?) been filled properly
+	because the every axis legend style sets 'fill=white'.
+
+2011-08-10 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- fixed bug: "log origin=0" was wrong (it placed it at 1 = log(e) ). 
+
+2011-08-02 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- fixed bug: 'ytick=\empty' in semilogyaxis failed with compilation error
+
+2011-07-29 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- RELEASED VERSION 1.5
+
+2011-07-25 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- added \pgfplotsplotfromname{<label>} macro which does the work for \ref{<label>}
+
+2011-07-25 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- fixed \axisdefaultticklabel: it should not contain math mode switches.
+	- fixed bug: 'scaled . labels=manual' did not allow \pgfmathparse.
+	- fixed bug: "origin" of logarithmic axes with -infty, not 0. 
+
+2011-06-26 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- fixed a lot of typos in manual and removed warnings
+	- removed "Missing-character"-Warnings
+	- polar lib: implemented marker clipping 
+	- fixed incompatibility between insdljs and babel with 'spanish' option
+	I also contacted the author of the acrotex-bundle
+	- fixed bug with 'log basis 10' and loglog plots
+
+2011-05-14 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- fixed bug introduces last week: hist plots tried to transform empty axis limits
+	- wrote docs for Tikz interoperability
+	- fixed bug: now, one can use macros inside of the paranthesis of plot coordinates
+
+2011-05-09 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- added '/pgfplots/scale' style which should only scale the axis
+
+2011-05-08 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- improved coordinate filters and -transformations such that they can be
+	applied to hist/data and quiver/u and the-like as well
+
+2011-05-07 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- fixed bug in symbolic coords: it was not possible to provide different
+	sets for x and y
+	- added support for hist and quiver such that they can use coord filtering
+	as well
+	- fixed bug: histogram computation now uses an internal threshold to
+	reduce rounding effects during "getbinfor" 
+
+2011-05-01 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- improved contour external such that it works also if no end-of-scanline
+	markers have been found in the input.
+
+2011-04-30 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- fixed bug: using \begin{scope}[no markers] or similar constructs will now work
+	- number printing: added '1000 sep in fractionals' switch
+	- fixed bug: hist now advances the coordinate index (for hist/data filter)
+
+2011-04-29 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- fixed bug: axis line paths are now closed for boxed axes
+
+2011-04-28 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- fixed bug: the 'anchorborder' of the axis shape was wrong such that 
+	the connection -- (anAxis) failed.
+	
+
+2011-04-28 Bastian Sauert <sauert@users.sourceforge.net>
+	- fixed bug: 'legend to name' and 'every legend image post' did not work
+	together
+
+2011-04-25 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- fixed bug: axis line paths are now closed (using --cycle for boxed axes)
+		-> causes regressions with axis line decorations
+
+2011-04-20 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- table package: added 'every row <index> column <index>' styles and their
+	variants.
+	- table package: added 'string replace*' preprocessor style.
+	- table package: improved style evaluation of cell formatting styles
+	preproc cell content, assign cell content, and postproc cell content
+
+2011-04-18 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- fixed incompatibility with memoir class: now, 'legend to name' works
+	also in memoir subfigures.
+	- improved error message of table package when encountered encoding problems
+
+2011-04-17 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- implemented /pgf/number format/relative formatting style
+	- adjusted every contour label style to use the new relative number
+	formatting style.
+
+2011-04-16 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- fixed bug: new CMYK interpolation in colormaps inserted a comma at the wrong position
+	- worked on docs
+
+2011-03-16 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- experimented with 'smithchart mirrored' feature
+
+2011-03-13 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- improved 'scale uniformly' such that it also works for 2d axes.
+	- wrote first draft for docs on 'scale mode'.
+
+2011-03-11 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- dateplot lib: fixed rounding inaccuracy which allowed 0:60 instead of 1:00
+
+2011-03-09 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- Improved manual (version numbers, mail address)
+	- Improved default styles for polar lib (title style and legend style)
+	- Improved default styles for smithchart lib (title style and legend style)
+
+2011-02-27 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- finished a lot of refactoring applied to the test framework.
+	- introduced further compatibility option which allows to restore old
+	scaling features (/pgfplots/compat/scaling)
+	- added 'execute at [begin|end] plot visualization' keys and documented
+	example how to combine that with \usepackage{ocg}
+
+2011-01-20 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- fixed 'x expr=\coordindex' bug when used in \addplot table \structure
+
+2010-10-29 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- improved TeX-programming-notes.tex (thanks to Frederik Heber!)
+
+2010-10-20 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- fixed bug: log basis x and plot expression (the sample logarithmically
+	feature) did not work together.
+
+2010-10-15 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- added new predefined cycle list 'mark list*'
+	- improved 'mark list': the otimes* marker now has a better visible
+	distinction between fill and stroke
+	- improved 'mark list': the fill color can now be specified manually with
+	'mark list fill'
+
+2010-10-14 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- documented CMYK colormaps and shadings.
+	- provided automatic changes to the colorbar styles such that colorbars
+	also support CMYK without user input.
+
+2010-10-13 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- documented new pgf markers.
+	- provided access to the final axis limits using
+	\pgfkeysvalueof{/pgfplots/xmin}.
+	- patch plot handler: improved display of sharp triangle corners by
+	added the 'every patch' style with initial value 'miter limit=1'
+	- added support for CMYK colormaps, and CMYK shadings.
+	- added 'colormap default colorspace' feature
+
+2010-10-11 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- improved the \addplot3 graphics manual section (and fixed a small bug in
+	it)
+	- improved docs for contour plots
+	- improved access of contour external to internal variables.
+
+2010-10-06 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- \addplot3 graphics: added support for reversed axis (untested)
+	- fixed bug: 'scale mode=scale uniformly' did not work if z=(0,0).
+
+2010-09-30 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- polar lib: improved default tick positions
+
+2010-09-29 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- fixed bug: there was a comma missing in the line style keys (inner axis
+	line style and outer axis line style)
+
+2010-09-26 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- fixed bug: explicitly provided unit vectors are now processed with the
+	floating point unit, thereby allowing also extended data ranges
+
+2010-09-25 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- polar axis: improved limit updating routines
+	- polar axis: enlarge x limits (degrees) is now disabled, enlarge y limits (radius) only for
+	upper range 
+	- polar axis: improved default tick pos
+	- polar lib: added support for radians with the 'data cs=polarrad' key
+	- polar lib: wrote documentation
+
+2010-09-24 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- added 'data cs' feature (and removed the temporary 'output cs' key)
+	now, automatic conversions between coordinate systems are possible
+	- polar axes: allowed \addplot3 (third coordinate is ignored).
+
+2010-09-22 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- fixed bug: the clickable library now checks whether it is loaded before
+	pgfplots and complaints if so
+	- fixed bug: '\addplot[only marks]' had no default plot mark. It uses
+	'mark=*' now.
+	- fixed bug: removed "bashishm" in matlab2pgfplots.sh
+
+2010-09-21 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- fixed bug with unit vector ratio: there have been expansion problems in
+	certain cases which lead to wrongly scaled graphics or compilation failure
+	- fixed bug in polar lib
+
+2010-09-16 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- improved plot graphics 3D: improved examples and added 'snap z' feature.
+
+2010-09-15 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- improved automatic normal vector detection 
+	- improved plot graphics 3D
+
+2010-09-11 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- improved bugtracker
+
+2010-09-09 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- fixed bug: legend to name and colorbar to name have been broken
+	- improved handling of 'empty line=auto': for mesh/surf, it will
+	automatically be set to scanline, otherwise it is 'jump'. It now also has a
+	backwards compatibility switch activated by 'compat' which uses 'none' for
+	2d plots
+	- improved consistency between 'plot box ratio' and 'unit vector ratio':
+	both now accept space--separated arguments (plot box ratio also brace
+	constructions for backw. compat)
+
+2010-09-08 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- added 'table/every nth row' key
+	- fixed bug: now, extra tick labels can have a different 'ticklabel pos'
+	than the original axes (it was broken since 1.2.2)
+	- fixed bug: it is now allowed to provide '#' (hash sign) in \addplot
+	option arguments (for example to define 'x filter/.code={...#1...}')
+	- added support for \pgfplotsforeachungrouped \a/\b in {...} syntax
+
+2010-09-07 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- added 'table/comment chars' key.
+	- added 'table/skip first n' key.
+
+2010-09-01 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- added 'scale mode=stretch to fill|scale uniformly' and a preliminary implementation.
+
+2010-08-31 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- patch plots: added 'patch table with individual point meta' to allow
+	per-patch cdata for every vertex
+	- patch plots: improved handling of unbounded input coords.
+	Now, 'mesh input=patches' automatically sets 'empty line=none'.
+	Other 'empty line' values could have interfered with jump processing.
+	- documented '\addplot3 graphics' (still produces compilation bugs :-( )
+
+2010-08-29 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- patchplots lib: added 'quadratic spline' and 'cubic spline' patch types.
+	- patch plots: added 'patch table with point meta' to allow per-patch cdata.
+	
+2010-08-27 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- now, \addplot+ [...] is possible -- the space gobbling did not work.
+
+2010-08-26 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- provided support for \label<slidespec> to allow beamer's \label
+	modifications with PGFPlots.
+
+2010-08-22 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- improved new coordmath framework
+
+2010-08-20 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- improved legend for xbar stacked and ybar stacked
+	- improved bugtracker
+
+2010-08-18 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	-  fixed bug in processing of \addplot[ybar] and \addplot[xbar]
+		There was a problem in conjunction with 'nodes near coords'
+
+2010-08-12 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- Fixed processing of (x,y) coordinates in 3D axes: they invoked the 2D
+	point command now (to allow distinctions in other axes classes)
+
+2010-08-10 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- improved the 'sloped like x axis' key: it now accepts optional arguments
+	to control the transformation.
+
+2010-08-06 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- added 'minor xtick' key which allows to provide non-uniform minor tick
+	positions
+
+2010-08-10 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- ternary lib: added 'tielines' plot handler
+
+2010-08-05 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- RELEASED VERSION 1.4.1 Changes since 1.4:
+		- Improved compatibility with windows gnuplot and logarithmic scaling
+
+2010-07-28 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- implemented first draft of smith charts
+	- implemented support for \pgfplots@ticknum during tick typesetting
+
+2010-07-27 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- activated math parser for 'view' arguments and improved docs on 'view'
+
+2010-07-22 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- mesh plot handler: fixed broken support for interrupted mesh plots
+	- Fixed bug: the windows version had problems with gnuplot when used with
+	logarithmic scales:
+		- gnuplot 4.2 does not identify itsself, causing the new check to bail
+		out with error
+		- gnuplot 4.4 worked, but not if the temporary gnuplot fails contains
+		a directory.
+		Both is fixed now.
+	
+2010-07-20 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- Added 'hist/data min' / 'hist/data max' keys.
+
+2010-07-14 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- RELEASED VERSION 1.4 Release notes:
+	    - Added support for detached legends and detached colorbars
+		- ybar (and similar plots) can now be mixed with other plot types
+		like line plots.
+		- improved legend formatting
+		- added 'restrict x to domain*' which cups coordinates outside of a specified domain (same for y and z)
+		- Added support for linear regression
+		- Inline tables,
+		- Lots of bug fixes
+
+
+2010-07-14 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- added sanity checking for empty colorbars.
+	- using colorbar source now implies 'point meta rel=per plot' to get
+	consistency between the plot's colors and the colorbar.
+
+2010-07-12 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- wrote prototype for 3d plot graphics. It's already partially functional.
+	- Added 'x post scale', 'y post scale' and 'z post scale' features to
+	increase the unit vectors after all scaling things have been applied.
+
+2010-07-10 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- fixed bug: 'xlabels at=edge top' and 'ylabels at=edge right' did not
+	adjust the ticklabel pos.
+	- improved error messages when \usepackage{pgfplotstable} is required
+	- documented (briefly) how '\addplot table[x={create col/.....}] works in the reference
+	for \addplot table
+	- documented and improved 'trim left' / 'trim right' feature (EXPERIMENTAL
+	PGF CVS VERSION REQUIRED)
+	- improved docs for alignment section.
+	- improved docs for 'legend image post style'
+
+2010-07-09 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- fixed bug: the check whether lists are terminated by '\\' failed if '\\'
+	occured within the list. This affected mainly legends and tick label
+	lists.
+	- improved and documented customized legends, including optional
+	appearance keys for specific legend texts
+	|\addlegendentry[<options>]{<text>}| and documentation for multiline
+	legend entries.
+
+2010-07-06 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- the 'colorbar to name' and 'legend to name' features are now implemented
+	using \label. Thus, the common way to insert the resulting pictures is to
+	use \ref -- it works in the same way as any other latex label.
+	- fixed bug: 'clip=false' did not apply to markers.
+
+2010-07-04 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- groupplots: added support for 'xlabels at=edge top',
+	'ylabel at=edge right' and adjusted the 'xdescriptions at=edge top' and 
+	'ydescriptions at=edge right' accordingly.
+
+
+2010-07-01 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- documented linear regression feature in pgfplots.pdf
+
+
+2010-06-29 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- ybar now also supports line plots.
+	- added 'update limits' boolean as shortcut for \pgfplotsinterruptdatabb
+	- wrote \numplotsofactualtype and \plotnumofactualtype (allows to combined
+	bar plots with other plot types (like line plots) --> tests to check
+	combination of bar plots with other plot types would be good)
+	- implemented ybar with these macros
+	- reimplemented key filter such that it allows plot handlers. (might break
+	compatibility with existing images; recompile many old documents to check
+	it)
+
+2010-06-28 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- patchplots lib: added 'tensor bezier' patch.
+
+2010-06-27 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- documented patch plots.
+	- Bugfix for point meta=f(x): it is now evaluated inside of the survey
+	phase
+
+2010-06-25 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- patch plots: implemented refine for biquadratic.
+	- fixed bug: 'each nth point' worked only for #1<10
+
+2010-06-24 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- patch plots: implemented 'refine' feature (refines to same element)
+	- patch plots: implemented 'refine,patch to triangles' (results in triangles)
+	- patch plots: implemented 'refine' for triangles (longest edge bisection)
+	- high order patch plots are now a separate library.
+	- patch plots: implemented 'refine' for bilinear
+	
+2010-06-23 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- patch plots: implemented internal z buffering for bilinear and
+	biquadratic patches.
+	- patch plots: added support for 'patch to triangles,patch type=bilinear'.
+	- patch plots: added support for 'patch to triangles,patch type=triangle quadr'.
+
+2010-06-22 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- quadratic triangle: changed node sequence.
+
+2010-06-21 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- nodes near coords align now accepts some standard anchor names and
+	appends 'anchor=<value>' automatically.
+
+2010-06-20 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- rewrote surf/mesh/patch plot API.
+	- added support for 'patch type=line|triangle|rectangle|bilinear|triangle quadratic|biquadratic'
+	and coons type shadings
+	
+2010-06-17 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- legend to name: now supports \numplots
+	- added support for \scope/\endscope inside of an axis.
+	- added preliminary support for 'ycomb' and 'ybar'
+
+2010-06-16 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- fixed bug: plot graphics and legends did not work.
+	- fixed bug: providing a colormap inside of \addplot resulted in problems
+	with dimen parsing.
+	- fixed bug: 'every extra [xyz] tick' did not allow all tikz options (I
+	introduced a scope to fix it)
+	- \ref, \pgfplotslegendfromname, \pgfplotscolorbarfromname etc now support
+	separate file names when used with the external library.
+	- fixed bug: colorbars and french babel have been incompatible.
+
+2010-06-14 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- fixed bug: log basis X was broken in the meantime
+
+2010-06-11 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- optimized runtime of colormap serialized from O(N^2) to O(N) 
+
+2010-06-09 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- fixed bug: the 'every table' style now has higher precedence than
+	options provided in square brackets (the old variant yielded either problems with
+	row sep,col sep keys or with '/.add={}{}' inside of options)
+	- fixed bug: stacked plots for logarithmic scales now produces correct
+	output
+	- improved compatibility of detached legends/colorbar/\ref legends with
+	external lib
+	- fixed bug: the new plot handler framework activated the FPU too early,
+	causing changes in line width to use the FPU 
+	- fixed sanity checking for 'table/unique' style and provided meaningful error messages
+
+2010-06-08 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- fixed bug: 'ybar,every node near coord/.append style={scale=0.7}'
+	did not work properly.
+	To do so, I eliminated unnecessary key family assignments
+	- fixed bug: 'nodes near coords' and stacked plots did not work
+	- fixed bug: 'point meta' and stacked plots did not work
+
+2010-06-07 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- patch plots: added 'patch table={<connectivity file>}' feature
+
+2010-06-06 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- polar library: tick label positioning and empty axis handling
+	- polar library: introduced check to avoid double tick label at lower and upper end 
+
+2010-06-02 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- documented patch plots
+	- improved z buffer=sort
+
+2010-06-01 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- added support for patch plots
+	- added 'shader=faceted interp' (experimental; its really inefficient)
+
+2010-05-28 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- reduced save stack usage
+	- linear regression: x value is now determined from context
+	- \addplot table: allowed simple in-line create-on-use specifications 
+	like \addplot table[y=create col/linear regression]
+
+2010-05-26 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- added key aliases 'legend reversed' = 'reverse legend' and 'legend
+	transposed' = 'transpose legend'
+	- generation of .dep files is now postponed until it is clear that the
+	file exists.
+	- fixed bug: shader=interp and mesh/ordering=y varies produced corrupted
+	results.
+	- fixed bug: shader=interp consumed too much stack save space.
+
+2010-05-24 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- added 'contour/labels over line' style
+	- clickable: fixed clickable coords with unbounded or empty coordinates 
+	- ternary: improved docs and fixed ternary limits relative.
+
+2010-05-22 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- improved docs
+	- bar cycle list: added two more entries
+	- plot graphics: added the 'points=' feature which allows to provide more
+	than 2 points. Now, the graphics is placed into the bounding box of all
+	provided coordinates.
+
+2010-05-21 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- worked on ternary stuff
+
+2010-05-19 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- fixed problem with `empty lines=nan' outside of an axis (for example in
+	table typesetting)
+	- table package: during lazy column creation, the macro \pgfplotstablename
+	expands to the currently processed table. This is now used as default for
+	linear regression.
+	- \addplot table:  read completely now has the default value `auto' which
+	checks for 'create on use'. Thus, you can provide 'create on use' columns
+	in plot sources.
+	- linear regression: the scaling (linear/log) is now taken automatically
+	from an embedding axis.
+	- added 'transpose legend' style
+
+2010-05-15 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- contour plots: added support to read the output of matlab's contour plot
+	algorithms (contour prepared format=matlab)
+	- contour plots: added support for 'contour gnuplot' which invokes gnuplot
+	to compute contours and invokes 'contour prepared' afterwards.
+	- contour plots: also added generic 'contour external' interface. It can
+	even support matlab (although that's probably too slow).
+	- added hist/cumulative flag
+
+2010-05-13 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	
+	- added polar axes library
+	- wrote utility functions \pgfplotsmathpoltocart and
+	\pgfplotsmathcarttopol to work with polar/cartesian coordinate conversion.
+
+2010-05-10 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- clickable lib: added support for multi-line fields + richtext formatted
+	clickable coords
+	- added 'legend cell align=left|right|center' styles to reduce the amount
+	of typing for this task.
+
+2010-05-08 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Added ternary library for three-phase diagrams (triangular axes).
+	- added support for ternary lib in clickable lib
+
+
+2010-05-06 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- table package: improved accuracy during gradient loglog.
+	- added possibility to exchange \includegraphics in plot graphics.
+
+2010-05-03 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	
+	- fixed bug: \addplot table (without '[]') sets 'x index=0,y index=1'
+	instead of using their actual value.	
+
+2010-04-27 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- clickable lib: now supports reversed axis (and other non-standard
+	directions for x and y axes)
+	- clickable lib: has now support for 3D axes as well (snap--to--nearest feature)
+
+2010-05-05 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- fixed handling of colormap mesh width + reinterpolation. It seems it was
+	broken or at least not fully functional. 
+	Now it appears to work, is more robust and provides more information on error.
+
+2010-05-03 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- fixed bug: \addplot table (without '[]') sets 'x index=0,y index=1'
+	instead of using their actual value.	
+
+2010-04-25 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- implemented missing \thisrowno (and \nextrowno and \prevrowno) macros
+	inside of \pgfplotstablecreatecol.
+
+2010-04-26 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- clickable lib: `clickable coords' now cycles through points on the same
+	position.
+	- fixed bug: named nodes inside of groupplots produced infinite loop
+
+2010-04-22 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- fixed bug: 'enlargelimits' did not properly update axis fields; leading
+	to wrong automatically generated ticks.
+
+2010-04-21 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- table package: Fixed bug in 'unique' style. It worked only for the first
+	column.
+	- renamed 'contour filled' to 'contour prepared filled'
+	- fixed bug: named nodes did not function properly in conjunction with pgf 2.00
+
+2010-04-20 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- clickable lib: added square marker to highlight the clicked position
+	- clickable lib: Added 'clickable coords' and 'clickable coords code'
+	features which allow a snap-to-nearest feature *and* user-defined,
+	additional information when clicking onto data points.
+
+2010-04-18 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Added plot handler 'contour prepared' which relies on already
+	precomputed contour line coordinates (has preliminary support for filled
+	contours)
+
+2010-04-14 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Added 'empty line=auto,scanline,jump,nan' key which allows interrupted
+	plots at input empty lines
+
+2010-04-12 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- added 'restrict x to domain*' which truncates to domain boundaries
+	instead of assigning -inf or +inf.
+
+2010-04-10 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- legend to name and colorbar to name: Improved compatibility with context by introducing proper \protect ion
+
+2010-04-08 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Fixed bug: setting ticklabel pos and axis lines to an incompatible
+	choice discarded tick lines.
+	- colorbar data ranges (point meta min/max) is now provided in scientific
+	notation, not as low level float.
+	- Fixed bug: |colorbar sampled line| and |colorbar left| where
+	incompatible. 
+
+2010-04-07 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Added extensible layer for coordinate arithmetics. 
+	Now, there is a unified math operation interface which uses the correct
+	math engine transparently (pgf basic math for log axes, float for linear
+	axes currently).
+
+2010-04-06 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Added 'colorbar source' feature
+
+2010-04-01 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	
+	- Fixed 3D axis scaling inaccuracies (by using float arithmetics)
+
+2010-03-31 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Released version 1.3.1
+
+2010-03-30 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Added 'colorbar sampled' and 'colorbar sampled line'
+
+2010-03-25 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Imported all patches to PGF written by Christian Feuersaenger.
+	- Fixed bug: axis descriptions for |small| and |footnotesize| styles were
+	too large
+	- added |tiny| style
+
+2010-03-24 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Fixed bug: overlay did not work properly
+	- Fixed bug: grids worked only for boxed axes
+	- Now, anchor can also be the value of a named node inside of the axis.
+
+2010-03-23 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Fixed bug: \pgfplotstablesave did not reset 'postproc cell content'
+
+2010-03-12 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- removed spurious spaces in table package
+
+2010-03-09 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Added |sort| key for tabletypeset.
+
+2010-02-24 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Fixed bug: the auto-generation of .dep files could fail.
+	Now, it will only be generated (automatically) if we are currently
+	externalizing.
+	- improved (wrote) docs for histogram plots and quiver
+	plots.
+
+2010-02-23 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- added \pgfplotsutilstrcmp
+	- rewrote API for 'iflessthan' of the array sort. It is now a general
+	utility function.
+	- added a lot if styles for comparison functions, among them
+	'fixed <', 'float <', 'int <', 'string <', 'date <' and corresponding '>'
+	variations.
+	- Fixed bug: the 'date type' was broken due to a missing comma
+
+2010-02-22 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Fixed bug: providing a point meta expression twice as in 'point meta=<expr>, point meta=<expr>' yielded an infinite recursion 
+	- Provided first rudimentary version for \pgfplotstablesort
+	- Added first version of a histogram plot handler.
+
+2010-02-20 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Fixed docs for \addlegendimage which was documented using the wrong name |\legendimage|
+	- Allowed paragraphs in legend texts (was broken before)
+	- the updatelimits and parsecoordinates are now available throughout the
+	complete axis.
+	They can also detect 3d coords automatically and enable 3d axes if so.
+	\addplot will use a specialized variant which respects \addplot vs
+	\addplot3
+
+2010-02-18 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- number printing: added 'sci generic' style to customize the appearance
+	of scientific format and a 'verbatim' style which doesn't use TeX macros
+	for the formatted numbers.
+
+2010-02-16 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	
+	- added 'variance list' to regression feature
+	- added |trim cells| to table input.
+	- the table typesetting routines are now in a separate file.
+	It is now necessary to use \usepackage{pgfplotstable} to use them (as
+	documented).
+
+2010-02-12 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- fixed problem with table prepare catcodes and argument parsing
+	- finished user interface and continued implementation for 'linear
+	regression'
+
+2010-02-10 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- implemented col sep=& (or col sep=ampersand)
+	- added support for 'linear regression'
+
+2010-02-09 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Added support for inline data as argument to 
+	\pgfplotstableread{
+		row 
+		row2
+	}{\macro}
+	- inline tables are now accepted directly for \addplot table and
+	\pgfplotstabletypeset
+
+2010-02-08 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Added choice 'point meta={TeX Code={\def\pgfplotspointmeta{42}}}' and
+	'TeX code symbolic'.
+
+2010-02-04 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Fixed problem with spurious white space occuring during table input command
+
+2010-02-02 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Added 'numeric type' to table package to switch back from string type or
+	data type.
+	- added 'numeric as string type' to table package.
+	- tuned quiver plot handler
+
+
+2010-01-31 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Added user interface and tests to quiver plot handler
+	- fixed some bugs in the new internal structure. There will be more
+	changes to prepare for Till Tantau's new Data Visualization Engine
+
+2010-01-30 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- First draft of a quiver plot handler (undocumented).
+
+2010-01-29 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Rewrote internal structure to allow better extensability of the plot
+	handlers, particularly the number of accepted input data fields.
+
+2010-01-26 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Fixed problem with spurious white space occuring during table input command
+	- added 'visualization depends on'.
+
+2010-01-26 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Introduced 'compat=1.3' . The name 'compat=newest' was not not such a
+	good idea since it might introduce a problem for following releases.
+	- Emphasized key names in references to show that /pgfplots/, /tikz/ and
+	similar prefixes are unnecessary.
+	- Added character lists |table/ignore chars| and |table/white space chars|
+	to handle special characters in input files.
+	- Fixed the 'xticklabels' key such that it also accepts '\\' terminated
+	lists. This fixes strange bugs with dots '.' as last characters in
+	entries.
+
+2010-01-21 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- added sanity checks such that 'xmin/max' and friends can't be invoked
+	within an \addplot.
+	- plot gnuplot: added user customizable styles to change the dummy
+	variables. The initial config will now use 'x' for 1d, 'x,y' for 2d, 't'
+	for 1d parametric and 'u,v' for 2d parametric plots.
+	- fixed bug: one couldn't use different log/normal scalings in a group
+	plot. Relaxed sanity checking here.
+	- added docs for |variable| and |variable y| which appeared to be missing.
+
+2010-01-14 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	
+	- fixed that '\addlegendimage' did not respect the every plot styles.
+	- added 'every legend image post' style.
+
+2010-01-15 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- added support to generate makefile dependencies for pgfplots input files
+	automatically
+
+2010-03-23 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Fixed bug: \pgfplotstablesave did not reset 'postproc cell content'
+
+2010-03-22 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Fixed bug: \pgfplotstablesave did not reset 'include outfiles'
+	- Added 'colorbar to name' feature: no, colorbars can be placed
+	independently of an axis, even into the document's main text.
+
+2010-03-19 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- changed 'legend to macro' to 'legend to name'.
+
+2010-03-18 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Fixed bug: axis descriptions for |small| and |footnotesize| styles were
+	too large
+	- added |tiny| style
+	- added |legend to macro|, a method to export the legend to a macro which
+	can be used *outside* of the axis where it belongs to.
+
+2010-03-16 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Fixed bug: 'draw=none' wasn't handled correctly. 
+
+2010-03-12 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Fixed bug: the table package had spurious spaces
+
+2010-02-23 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Fixed bug: the 'date type' was broken due to a missing comma
+
+2010-02-22 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Fixed bug: providing a point meta expression twice as in 'point meta=<expr>, point meta=<expr>' yielded an infinite recursion 
+
+2010-02-20 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Fixed docs for \addlegendimage which was documented using the wrong name |\legendimage|
+	- Allowed paragraphs in legend texts (was broken before)
+
+2010-02-18 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- number printing: added 'sci generic' style to customize the appearance
+	of scientific format and a 'verbatim' style which doesn't use TeX macros
+	for the formatted numbers.
+
+
+2010-02-09 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Fixed bug in auto cross referenced of table package manual
+
+
+2010-02-08 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Fixed problem with spurious white space occuring during table input command
+
+2010-02-04 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Fixed problem with spurious white space occuring during table input command
+
+2010-01-27 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- fixed bug: \coordindex for plot table from already loaded structure was
+	wrong.
+
+2010-01-21 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- added sanity checks such that 'xmin/max' and friends can't be invoked
+	within an \addplot.
+	- plot gnuplot: added user customizable styles to change the dummy
+	variables. The initial config will now use 'x' for 1d, 'x,y' for 2d, 't'
+	for 1d parametric and 'u,v' for 2d parametric plots.
+	- fixed bug: one couldn't use different log/normal scalings in a group
+	plot. Relaxed sanity checking here.
+	- added docs for |variable| and |variable y| which appeared to be missing.
+
+2010-01-14 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	
+	- fixed that '\addlegendimage' did not respect the every plot styles.
+	- added 'every legend image post' style.
+
+
+2010-01-08 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- fixed bug which occurs if 'legend style' is set *after* \begin{axis}.
+	- plot gnuplot: restored support for the '/tikz/parametric' option: it did only work if
+	one provided the prefix '/tikz/' explicitly
+	- plot gnuplot: parametric plots now use the SAME dummy variables as plot
+	expression. If you write variable=\x, 'x' will be the gnuplot variable. If
+	you write variable y=\y, 'y' will be the second gnuplot variable.
+
+2010-01-02 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Released version 1.3
+
+2009-12-30 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- ticklabel cs did not respect the shift of 'tick align=outside'. Fixed
+	that.
+
+2009-12-29 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- fixed a bug with line plots and plot expression.
+	- fixed a rarely occuring bug in auto-tick positioning: the case "if just
+	one tick position available" assumed log axes.
+	- changed 'try min ticks' for 3D plots from 4 to 3 
+	- implemented support for a "too few tick labels" check for linear axes
+	- changed activation of 'every 3d description' such that it is processed
+	earlier. It should now be possible to overwrite more keys for 3D plots.
+	- updated docs for clickable lib.
+
+2009-12-23 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- the color bar modification of yesterday was not completely correct,
+	fixed that
+	- width/height are now processed with \pgfmathparse
+	- fixed bug in 'colorbar horizontal' style
+
+2009-12-22 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- improved extensibility of the point meta input methods
+	- fixed buggy treatment of some automatic cross references in manual
+	- fixed bug: log basis x changed the formatting of logarithmic y and z
+	axes as well. 
+	- color bars can now be positioned using the axis description cs of the
+	PARENT axis.
+
+2009-12-18 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- fixed buggy treatment of extra ticks in 3D axes
+
+2009-12-12 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- fixed a reverse axis special case which lead to improper placing of tick
+	labels (they incorporated the tick width with wrong sign)
+
+2009-12-11 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- added and documented |[xy]bar legend| styles and |[xy]bar interval
+	legend| styles
+	- renamed 'every mesh legend' to 'mesh legend' for consistency
+	- improved 'mesh legend' (rescaled and reshiftet it a bit)
+
+2009-12-10 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- fixed expansion bug in 'scatter/classes'
+	- added the \addlegendimage extension which simply provides options for a
+	further legend image.
+
+2009-12-09 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- added variant |xticklabels from table|
+
+2009-12-08 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- added \pgfplotstabletranspose command.
+
+2009-12-07 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- the 'log basis *' implementation didn't handle unbounded coords
+	correctly; fixed that
+
+2009-12-05 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	
+	- fixed bug in processing of axis lines.
+	The new version should also allow 3D axis line variations and reversed axes
+	- fixed bug occuring for reversed axes and the 'above origin' (and
+	friends) anchors.
+
+
+2009-12-04 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- fixed plot graphics and reversed axes
+	- allowed reversed color bars
+	- fixed axis line variations and reversed axes
+
+2009-12-03 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- added '3d box=complete' feature
+
+2009-12-02 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- found and fixed bug: tick labels could penetrate the axis. This should
+	no longer happen.
+
+2009-11-26 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- added \pgfplotsinvokeforeach
+	- worked on docs
+
+2009-11-24 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	
+	- fixed a (rarely occuring) bug in plot table where the detection if the
+	arg is a file- or structure failed.
+
+2009-11-23 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Added the 'color list' cycle list which contains only colors (now
+	markers). This might be handy in conjunction with |cycle multi list|.
+	- updated docs.
+	- a copy of the automatic image externalization 'external' lib is now
+	available when using
+		\usepgfplotslibrary{external}
+	even without Tikz CVS installed.
+	- 'width' and 'height' can now be queried with
+	\pgfkeysvalueof{/pgfplots/width} while axis descriptions are processed.
+	- extended the |function graph cut y| by a |foreach| feature to provide
+	the input tables.
+
+2009-11-19 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- fixed bug with cycle multi list: it couldn't be overridden with cycle
+	list or cycle list name.
+	- added \addlegendentryexpanded
+
+2009-11-18 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- wrote primitive exception handling for better error messages (in
+	pgfplotscore.code.tex)
+	- fixed \thisrow in create on use statements: it did not respect aliases.
+
+2009-11-18 Nick Papior Andersen <zerothi@users.sourceforge.net>
+
+	- Added a key |line legend| which sets the |legend image code| back
+	to its original value. This makes it easy to use area legends 
+	together with line legends
+	- The docs have been updated accordingly. See the example under
+	|area legend|
+
+2009-11-15 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- auto xrefs now support point coordinate systems.
+	- auto xrefs now provide an interface to deal with tricky active
+	characters (for |-)
+
+2009-11-13 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- improved sanity checking for plot file by introducing trailing 0 0 0 to each line
+
+2009-11-11 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- improved docs for 3D coordinate ordering.
+	- fixed bug with |samples y|.
+
+2009-11-10 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- improved plot gnuplot and 3D interface
+	- fixed some 3D plot expressions things (samples y, y domain where not
+	completely correct)
+
+2009-11-06 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- tuned the |footnotesize| style.
+
+2009-11-03 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	
+	- added |rawx|, |rawy| and |rawz| math constants to access unprocessed
+	input coordinates.
+
+2009-10-30 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- improved loop macros
+
+2009-10-27 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- improved the interface for |nodes near coords|
+	- added starred key versions for |use mapped color*|, |nodes near
+	coords*|, |scatter/classes*|. These starred versions APPEND code to |@pre
+	marker code| insteaf of overwriting it.
+	- documented |nodes near coords| and the starred variants for scatter
+	plots.
+
+2009-10-26 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Added col sep=tab
+
+2009-10-23 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Fixed buggy xshift and yshift keys: they shifted axis descriptions too
+	much
+	- fixed buggy 'hide x axis': it lead to removal of *y*tick marks and grid
+	lines.
+	- during plot table: renamed \x, \y, \z etc to \columnx, \columny. They
+	posed naming conflicts (and are perhaps useless anyway).
+
+2009-10-20 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	
+	- It is now possible to access all table columns as long as |\addplot
+	table| is working. Possible occurences are coordinate filters or point
+	meta expressions.
+	- |point meta={<expression>}| won't yield error messages any longer if the
+	expression contains temporary control sequences like \thisrow.
+	- rel axis cs now invokes the math parser.
+	- added 'restrict expr to domain'
+
+2009-10-14 Nick Papior Andersen <zerothi@users.sourceforge.net>
+
+	- Added a MakeFile for the test folder. One can use
+	this for compiling sections individually. I.e.:
+		* make pgfplotstest.libs.groupplots.tex
+	would yield only typesetting of the groupplots 
+	test section.
+	- Currently it cannot handle more than one section at a time
+	although it can process the whole by calling:
+		* make all
+		* make test
+		* make pgfplotstest.pdf
+	which are all equivalent!
+
+2009-10-13 Nick Papior Andersen <zerothi@users.sourceforge.net>
+
+	- Changed documentation for units and groupplots library
+	- Updated code of groupplots with filtering keys
+
+2009-10-13 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Improved placing of axis labels: the |near ticklabel| anchor was not
+	completely correct.
+
+2009-10-12 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- added |cycle multi list|.
+
+2009-10-08 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Added |axis background|
+
+2009-10-08 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- fixed buggy scanline detection for plot table.
+	- fixed support for special anchors when non-rectangular shapes are used.
+	- added support for legend in scatter/classes.
+
+2009-10-06 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- revised manual and worked on cross referencing
+	- fixed buggy tick show tests for non-boxed axis lines
+
+2009-10-05 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- |plot coordinates| now supports mathematical expressions.
+
+2009-10-03 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	
+	- Manual: added (auto-generated) document-internal pdf links and 
+	implemented syntax analyser for codeexamples to 
+	generate cross-references automatically.
+
+2009-09-29 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- fixed reversed axes for 3D axes
+	- added new, experimental feature 'allow reversal of rel axis cs'. It
+	affects 'rel axis cs' and 'ticklabel cs' in case of reversed axes.
+
+2009-09-26 Nick Papior Andersen <zerothi@users.sourceforge.net>
+
+	- added a new library which can group plots.
+		* \usepgfplotslibrary{groupplots}
+	- a new environment \begin{groupplot} has been created
+	- within the environment a command \nextgroupplot[<option>]
+	can be used.
+	- groupplots can easily typeset several plots in a matrix
+	style so that they are aligned
+	- it is possible to limit the tick labels to one side of
+	the matrix, be it x tick labels at only the top row or 
+	the bottom row. Or the y tick labels only at the first or 
+	last column, on the left or the right, respectively
+	- a quick documentation for the new library has been
+	introduced
+	- \usepgfplotslibrary has been modified such that it 
+	detects loaded files from \usetikzlibrary
+
+2009-09-25 Nick Papior Andersen <zerothi@users.sourceforge.net>
+
+	- restructured the reference manual file. All files:
+		* pgfplots.reference.<name>.tex
+	was in the old pgfplots.reference.tex file
+
+2009-09-25 Nick Papior Andersen <zerothi@users.sourceforge.net>
+
+	- changed the surfshading library name to be consistent with the
+	new names. In conjunction the drivers of the surfshading library
+	has been changed accordingly.
+	- the unit library has a more customizable usage of typesetting units
+	- the unit library automatically sets units on when loaded
+	- updated the documentation according to changes done in unit library
+	- the command \usepgfplotslibrary now loads both:
+		* "tikzlibrarypgfplot.<lib>.code.tex"
+		* "pgflibrarypgfplot.<lib>.code.tex"
+	- added the environment \begin{pgfplotslibrary}...\end{pgfplotslibrary}
+	to the manual which shows how the user can import a library. 
+	Displaying the following:
+		* \usepgfplotslibrary{<lib>}
+		* \usetikzlibrary{pgfplots.<lib>}
+	- updated the doc to use the above command where needed
+
+2009-09-24 Nick Papior Andersen <zerothi@users.sourceforge.net>
+
+	- added backwards compatibility for the libraries, i.e. recreated
+	old files with only contents '\use...library{<package>}'
+	- added the command \usepgfplotslibrary which should be used
+	if users wants a clearer vision of where libraries are loaded from
+	- moved the unit test into proper location
+	
+2009-09-24 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- fixed bug: the \pgfplotspointaxisorigin was not clipped properly,
+	resulting in number too large bugs.
+
+2009-09-23 Nick Papior Andersen <zerothi@users.sourceforge.net>
+
+	- changed the names of some of the files in the package. Namely:
+		* doc/latex/pgfplots/pgfplots.reference.units.tex -> doc/latex/pgfplots/pgfplots.libs.units.tex
+		* tex/generic/pgfplots/libs/tikzlibrarydateplot.code.tex -> tex/generic/pgfplots/libs/tikzlibrarypgfplots.dateplot.code.tex
+		* tex/generic/pgfplots/pgfplots.units.tex -> tex/generic/pgfplots/libs/tikzlibrarypgfplots.units.code.tex
+		* tex/generic/pgfplots/pgfplots.stackedplots.code.tex -> tex/generic/pgfplots/pgfplotsstackedplots.code.tex
+		* tex/latex/pgfplots/libs/tikzlibrarypgfplotsclickable.code.tex -> tex/latex/pgfplots/libs/tikzlibrarypgfplots.clickable.code.tex
+	This is done to be more consistent in naming convention. As old "pgfplotsclickable" and "dateplot"
+	libraries has changed names former versions are not compatible. This should in some way be fixed.
+	- updated the doc according to the new name convention
+	- updated the "pgfplots.core.code.tex" to use the new names
+	- changed the unit to a library and moved it to "libs" in manual
+	- added a "mkdir" command in the MakeFile such that the user who has
+	just downloaded the package doesn't need to make the "gnuplot" directory by hand
+
+
+2009-09-22 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- fixed table loading: the NL character was present as a space after each
+	read line, which made col sep!=space buggy
+	- fixed manual bugs
+
+2009-09-20 Nick Papior Andersen <zerothi@users.sourceforge.net>
+
+	- added the label units. It is now possible to add units in the labels such
+	such that it can easily be maintained and edited. 
+	- a documentation of the implementation is added.
+
+2009-09-10 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- added the 'plot box ratio' feature.
+
+2009-09-09 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Added the 'nodes near coords' feature (especially useful for bar
+	plots). It draws nodes besides/above the coordinates and shows the
+	coordinate value.
+	- Added the 'variable y' feature.
+	- Implemented support for non uniform color map specifications.
+
+2009-09-07 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Added |each nth point| filter
+	- Added |restrict [xyz] to domain| filter
+	- Improved docs
+
+2009-09-04 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- fixed 'unbounded coords=jump' for the log case
+
+2009-09-03 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	
+	- Added first version of 'unbounded coords=jump' method.
+	Appears to work for line plots as it ought to.
+	- added support for mesh plots as well
+
+2009-09-02 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	
+	- Implemented 'z buffer=auto' and 'z buffer=reverse x seq' and 'z
+	buffer=reverse y seq' modes. The default z buffer for surface plots is now
+	'auto'
+	- changed drawing sequence of minor and major tick/grid lines.
+	- Fixed bug related to 'forget plot' (legends didn't work as they should)
+	- Fixed bug: /tikz/ybar and /pgfplots/ybar did not work as documented
+
+2009-09-01 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Fixed y tick scale label for the new label placement stuff.
+	- Introduced sanity checking for point meta data.
+
+
+2009-08-31 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Added sanity check to avoid usage of \thisrow in point meta arguments.
+
+2009-08-12 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- the '[xyz]tick=data' feature now suppresses multiple occurances of the
+	same tick (a very simple method, it checks for *exact* matches only).
+	- removed the cause of a missing character warning
+
+2009-08-11 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Fixed processing of 'z buffer=sort' for log axes.
+	- Fixed buggy \ticknum handling: the '[xyz]ticklabels' lists did not work
+	properly.
+
+2009-07-30 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	
+	- added check for 'every 3d view {<h>}{<v>}' styles which may prepare
+	specific options.
+
+2009-07-29 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- fixed |log basis [xyz]| processing in clickable lib.
+	- clickable lib: there was a bug in the drag'n'drop gradient computation
+	of semi log plots - gradients were computed base e although they should
+	be base 10.
+	- implemented 'mesh/ordering=colwise' for 'shader=interp'.
+
+
+2009-07-27 Stefan Tibus <sjti@gmx.net>
+	
+	- Added the 'plot shell' and 'plot table shell' feature to plot output of
+	arbirtrary system calls.
+
+2009-07-27 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	
+	- added auto translation pgf => gnuplot for 'plot gnuplot'. It works for
+	'^' => '**'.
+
+2009-07-24 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- added the 'tick scale binop' feature to allow simple change from '\cdot' to '\times'
+	- added the 'log basis [xyz]' key. 
+
+2009-07-23 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- fixed positioning of tick scale labels for 3D case.
+
+2009-07-21 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- replaced '\definecolor' by '\pgfutil@definecolor' for ConTeXt
+	compatibility.
+	- renamed 'ticklabel dist' to 'ticklabel shift' to provide a more
+	consistent naming convention.
+
+2009-07-08 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- added sanity checking for non-existing colormaps
+
+2009-07-07 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- fixed bug with 'mesh/ordering=colwise'
+
+2009-07-04 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- added 'sloped like [xyz] axis' key for label alignment,
+	- added '[xyz]ticklabel cs' coordinate system,
+	- added 'near [xyz]ticklabel' anchor for every node
+
+2009-07-02 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- fixed a bug related to the 'sqrt(num points)' thing for mesh plots (the
+	check for rounding errors did not work as expected).
+	- fixed bug in auto-scan line computation for plot table: it counted also
+	the header line with column names.
+
+2009-06-29 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- fixed a bug in the 'meta min/meta max' handling: the arguments have not
+	been parsed correctly (the bug is not that old)
+
+2009-06-25 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- added style 'every 3d description' and changed option processing such
+	that description style changes are applied as soon as the axis' dimension
+	is known (2d or 3d).
+
+2009-06-24 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- fixed treatment of 'scan line length' for some plot table special
+	issues.
+
+2009-06-22 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- using '/tikz/variable=\t' now also defines the shorthand function 't'
+	ATTENTION: this requires the most recent PGF CVS version!
+	- added temporary family for /tikz/variable to fix its usage in pgfplots'
+	axes
+
+2009-06-17 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	
+	- added draft for 'sloped' feature for axis labels
+	- improved the special anchor label alignment: it does not respect the
+	current transformation matrix (I renamed it to 'near ticklabel')
+
+2009-06-16 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- improved sanity checking for short-hand styles for legend placement
+	- improved sanity checking for surfshading lib
+	- started to write code for label placement + backwards compatibility
+	switches. It is not complete yet.
+
+2009-06-15 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	
+	- improved interface for mesh/surface plots.
+
+2009-06-11 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- added |no marks| key and updated docs.
+	- added short-hand styles for legend placement.
+
+2009-06-10 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- fixed shift transformations provided to an axis - these did not work
+	previously [requires recent pgf version].
+	- improved colorbar implementation
+	- added 'ticklabel style' alias to 'tick label style'
+	- improved support for pgf 2.00 backwards compatibility
+
+2009-06-09 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- besides a lot of manual improvements, I have also fixed the |point meta min|/max 
+	processing such that they work properly for the general case and for
+	special cases.
+	- implemented a user interface to draw arbitrary boxes in 'plot graphics'.
+	- added small optimizations to key setting procedures.
+	
+
+2009-05-30 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- documented and improved the expression+table input method
+
+2009-05-29 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- fixed the 'ticklabel cs' for 2D plots - it queried 3D stuff which wasn't
+	initialised.
+
+2009-05-28 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- fixed correct implementation of |overlay| for tick labels - my recent
+	changes required bounding box modifications and disabled that.
+	- Provided a (sophisticated) fix for the problem with legend styles:
+	now, it is possible to set 'legend image code' in \addplot AND the legend
+	remembers the draw modes correctly.
+	- to do this, I used 'current plot style' here - which handles key paths,
+	draw modes and all that stuff correctly.
+	- added legend image for mesh/surface plots
+
+2009-05-27 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- fixed a (stupid) bug in the processing of skewed/rotated axis unit
+	vectors (|x| or |y| keys). It is now processed correctly.
+	- added sanity checking for stacked plots: now, an error message is raised
+	if the number of points of successive stacked plots does not match.
+
+2009-05-26 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- fixed the implementation of 'current axis' for unfinished axes - it did
+	not work since the rewrite of alignment features.
+	- moved the declaration of the 'current axis' leight weight node before
+	the processing of stored plots. This means it is possible to reference it
+	in path/plot commands.
+	- fixed the '\addplot+[  black]' bug - the white space doesn't hurt any
+	longer.
+	- \ref now works properly inside of moving arguments (as \caption) without
+	the need of explicit \protect ion.
+
+2009-05-25 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- added 'reverse legend' feature, thanks to Tom Cashman for the
+	implementation!
+
+2009-05-22 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- now I remembered why `legend image code' did process its arguments in a
+	separate scope -- and I restored it (and documented the change).
+	Now: the plot style is activated before `legend image code' is evaluated.
+	This allows to redefine `legend image code' inside of plot styles.
+	- fixed bug: the re-using of outer normal vector did not work properly
+
+2009-05-20 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- fixed the default 'legend image code' things - they also needed to be
+	changed.
+	- added tolerances to tick placement code: now, tick labels are placed if
+	they are no more than 0.05pt beyond the axis limits. The threshold can be
+	configured.
+	- improved manual section for tick docs: introduced subsections and moved
+	special stuff into a "fine tuning" section.
+
+2009-05-14 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- fixed 'legend image code' - it did not provide the argument as
+	documented.
+
+2009-05-08 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Restructured the manual. Now, the "command reference" and "option
+	reference" has been merged into one large "reference". 
+	The new stuff should be easier to navigate.
+
+2009-05-02 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- changed 'ticklabel pos' initial value to 'default'.
+	- added '[xyz] dir={normal,reverse}' keys (work correctly for 2d, 
+	not yet for 3d)
+
+2009-04-27 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- fixed several bugs which have been introduced in the latest changes
+
+2009-04-24 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	
+	- added |preproc/expr| style to table package.
+	- added |fonts by sign| style to table package.
+
+2009-04-21 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- fixed broken '[xyz] tick scale label style' keys
+
+2009-04-20 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Added the |value|, |abs value|, |upper| and |lower| options to enlarge limits.
+
+2009-04-17 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- added public API commands \pgfplotspointouternormalvectorofaxis,
+	\pgfplotspointoutsideofaxis and the same for the ticklabelaxis.
+
+2009-04-17 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- added 'rel axis' coordinate system.
+
+2009-04-14 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Moved sanity checking for end-of-scanline autocompletion out of standard
+	plots.
+
+2009-04-13 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- updated error bar implementation: it works now also for 3D plots and it
+	is a more efficient.
+	ATTENTION:
+		*********this requires the PGF CVS version of 2009-04-13 or newer!*****
+	- added support for end-of-scan-line markers for 'plot coordinates' and
+	'plot file': empty lines end a scan line.
+	This allows mesh input without explicitly providing 'rows' or 'cols'.
+
+2009-04-09 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- added a style for string symbols as input coordinates.
+
+2009-04-08 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- `legend image code' now also evaluates pgfplots options. furthermore, it
+	can be changed inside of options for \addplot.
+
+2009-04-07 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- added /pgfplots/colormap access=map|direct key.
+	- simplified input format of colormaps
+	- changed the anchors. Now, all anchors use the BOUNDING BOX of the axis
+	instead of local coordinates. This does also work for 3D and for skewed or
+	reversed axes.
+
+2009-04-06 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- table package: improved handling for empty cells in create column
+	statements. An empty cell will be considered as 'zero'.
+	- fixed axis cs for 3D case
+	- incorporated tick dimensions into 3D axis scaling (approximately as
+	before for 2D axes)
+
+2009-04-04 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- fixed surface shading problem: both, pdftex and dvips now produce useful
+	results and the resulting pdf/ps documents can be processed by
+	ghostscript and standard viewers.
+	Switching to BitsPerCoordinate=24 fixed the problem.
+	
+
+2009-04-03 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- added public interface \pgfplotsmathviewdepthxyz and
+	\pgfplotsmathfloatviewdepthxyz inside of an axes.
+	- added 'point meta=<expr>' feature: \addplot[point meta={x+y+z},scatter] ...
+	- removed the optimizations for the binary output sub-package - they did
+	not work at all.
+	- updated the manual examples for the new view parameters
+	- finished the clip-path implementation so far. It appears to work
+	correctly.
+	- implemented first semi-correct first of surfshading and dvips driver.
+	However, it works only after converting the ps to pdf :-( 
+	The backwards conversion pdf->ps fails with limitcheck as before.
+
+2009-04-02 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- re-enabled error bars and fixed bug
+	- fixed newly introduced optimization of the binary output sub-package: it
+	lead to an infinite loop :-(
+
+2009-04-01 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- disabled error bars temporarily - one of my latest changes caused
+	problems.
+	- added 'cube/size [xyz]' for the cube markers
+	- fixed bug in cube and cube*
+	- Changed semantics of 'view'. It is now 'view={<azimuth>}{<elevation>}' 
+	as in matlab.
+
+2009-03-31 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- improved 3D plot tick label alignment issue
+
+2009-03-30 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- found bug in error bar implementation - but I don't know where it comes
+	from yet.
+
+2009-03-27 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- implemented expression plotting features inside of 'plot table' for the
+	plot from structure method as well.
+
+2009-03-26 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- added (first draft with) support for expressions in 'plot table', for example
+	\addplot table[x expr={\coordindex},y expr={\thisrow{std-L2} * \thisrow{maxlevel}}] {regtable};
+
+2009-03-25 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- added support for \coordindex inside of marker streams (interesting for
+	scatter plots).
+
+2009-03-23 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- fixed the new placement of ticks such that is also works for 2D plots.
+	It will also work for reversed axes. alignment is still not functional.
+
+2009-03-22 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- implemented proper placement for 3D axis tick positions.
+	Alignment is prepared, but not functional yet.
+
+2009-03-21 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- added some internal methods to distinguish foreground and background in
+	3D axes - required for a better placement of ticks and for the axis labels
+	anyway.
+	- Added image externalization for some expensive examples to improve manual 
+	compilation speed. 
+
+2009-03-20 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- renamed the 'z buffer=sort coordinates' choice introduced yesterday to
+	'z buffer=sort'. I'll take care that it yields useful results.
+	- fixed bug in the new option processing - some /tikz options were
+	important during \addplot, but since the new strategie silently ignores
+	/tikz options, I needed to add exceptions.
+	- added implementation for z buffer=sort and mesh plots
+	- allowed 3D line plots + mesh handler
+	- optimized new option processing
+	- changed default shader to faceted
+
+2009-03-19 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- added \pgfplotsarraysort
+	- added |z buffer=sort coordinates| for use with scatter plots (not very useful for
+	any other plot type yet)
+
+2009-03-17 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- the point meta now always uses floating point routines internally; the
+	case distinctions have been eliminated.
+	- added keys 'point meta rel=axis wide|per plot' and 'point meta min' and
+	'point meta max'.
+	- added 'create col/' search path to table package.
+
+2009-03-16 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- added "cube" and "cube*" markers for 3D axes.
+	- added 'unique' row predicate which suppresses multiple occurances of the
+	same key in one designated column.
+
+2009-03-13 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- introduced to use rows=cols=sqrt(N) if neither rows nor cols is provided
+	in a mesh plot.
+
+2009-03-10 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- improved 'view' processing for 3D axes.
+
+2009-03-06 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- fixed decoding bug of interp shader: now, acroread is able to read it!
+
+2009-03-05 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- provided several 3D examples in the manual and fixed corresponding bugs
+	in parameterized 3D plots.
+
+2009-03-04 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- found and fixed encoding bugs in binary conversion. The surface lib now
+	produces visually correct results - although acroread is still complaining
+	and doesn't show anything :-(
+
+2009-03-03 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	
+	- wrote further basic level table access commands.
+	- surf shading now understands the colormap. Fixed bugs in mapping of
+	dimen registers
+	- startet primitive heuristics for z buffering of mesh/surf plots in the
+	|mesh/z buffer| key.
+	- added fast prepend list
+
+2009-02-27 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- first semi functional version with bilinear interpolation shading (gouraud)
+
+2009-02-26 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- added public methods for access to table elements [untested and undocumented
+	so far].
+	- added pgfplotslistset [untested]
+	- worked on binary encoding for signed integers
+
+2009-02-24 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- fixed enlarge z limits functionality (was broken)
+	- provided 3D examples in reference manual.
+	- improved alignment of 3D tick labels slightly
+	- changed semantics of enlarge limits=auto for 3D plots
+
+2009-02-23 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- The draw,fill bug introduced in the latest changes of 2009-02-20 appears
+	to be fixed now. Nevertheless, I'll need to revise those changes.
+	- the \label bug which also occured in this change is now fixed as well
+	- fixed manual typo
+
+	- implemented functionality 'mesh/ordering' and 'mesh/flat mode={corner,mean}|.
+	- plot[mesh] works now also for 1D case.
+
+2009-02-22 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- The processing of draw options and behavior options still causes a lot
+	of overhead- and even bugs. At least the manual compiles now.
+	Maybe that wasn't my best idea...
+
+2009-02-20 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- changed complete processing of 'draw options' and 'behavior options'.
+	They are now the same, no special treatment is necessary.
+
+2009-02-19 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- implemented first functional mesh - and surface plots (the latter with
+	flag shading). 
+	The user interface is lacking, however. And, of course, there will never
+	be a real renderer - but it looks really good (up to the bugs)!
+
+2009-02-17 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- provided some more code documentation
+	- improved axis vector initialization for 3D plots
+	- provided low-level interface commands and a corresponding section in the
+	manual.
+	- implemented tick label positioning for 3D axes. It works up to orthogonal special
+	cases.
+
+2009-02-16 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Released version 1.2.2 (bugfix release for CTAN)
+
+2009-02-16 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	
+	- fixed overlay bug in conjunction with pgf 2.00 and legends
+
+2009-02-14 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- improved compatibility with french babel settings: the manual compiles
+	now even with special chars activated. Added section in FAQ
+
+2009-02-13 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- fixed bug in color map key.
+	- introduced scaling section in manual
+	- documented 'only marks'
+	- colormap now accepts 'rgb255'
+	- added more colormap styles.
+	- added 'mark=text' which draws arbitrary TeX content as plot marks 
+
+2009-02-12 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Released version 1.2.1 (bugfix release for samples key)
+
+2009-02-12 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- fixed nasty bug: the 'samples' key did not work! One needed to provide a
+	domain as well...
+
+2009-02-11 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- fixed bug with axis [xy] line*=none
+
+2009-02-10 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- improved sanity checking for 'scatter src'.
+
+2009-02-08 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- improved low level lists: \pgfplotslistforeachungrouped can now be
+	nested.
+	- fixed bug in \pgfplotstablecopy
+	- added \pgfplotstablevertcat
+
+2009-02-07 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- added algorithm for automatic scaling of 3D plots (when used with the
+	view option). 
+
+2009-02-05 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- added 'plot graphics' feature.
+
+2009-02-04 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Released version 1.2
+
+2009-02-04 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- improved sanity checking in table package.
+	- fixed max/min implementation for fpu
+
+2009-02-03 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	
+	- patched key paths for plot file and plot table. One could not provide
+	options with key path /pgfplots. This will need a little bit more
+	attention later-on, see todo.txt.
+
+2009-02-01 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- removed missing character warnings
+	- fixed bug with domain processing for plot gnuplot.
+	- fixed bug in FPU : fpu+pgf 2.00 is problematic with unary minus signs
+
+2009-01-29 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- provided backwards compatibility for the domain and |samples at| key:
+	the tikz variants are used by default now.
+
+2009-01-27 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- manual improvements: fixed several typos in the manual; improved section
+	about alignment and section about upgrade remarks.
+	- manual improvements: replace a lot of gnuplot examples with 'plot
+	expression' commands.
+	- fixed the broken |axis equal| feature - it collided with the tickmin/max
+	processing. The tickmin/max is now processed somewhat different
+	- removed (some of the) 'no pt in nullfont' log warnings
+	- now, every input file will be protocolled to the log file (only).
+
+2009-01-24 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	
+	- re-implemented |domain|, |samples| and |samples at| keys. They are now
+	independ of the |/tikz/| variants - and provide the complete data range of
+	pgfplots.
+	- fixed missing \endgroup in plot gnuplot (in the case that -shell-escape
+	was not available)
+	- fixed small bug with empty-plot-special case and tickmin/max resetting
+
+2009-01-21 Pascal Wolkotte <wolkottept@users.sourceforge.net>
+
+	- implemented '[x|y]tick[min|max]' option
+
+2009-01-20 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- fixed bug: 'scatter/classes' couldn't be provided as behavior option.
+
+2009-01-16 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- improved fault tolerance of |scatter/classes|.
+	- fixed scoping bug with plot markers
+
+2009-01-12 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- implemented \pgfplotstablesave
+	- \pgfplotstabletypeset and \pgfplotstabletypesetfile are now the same;
+	the input format is autodetected.
+
+
+2009-01-07 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- implemented simple test for 'samples at' vs. 'domain' 
+	- implemented 'table/create col/set list' style
+	- implemented a method to create new tables from scratch
+	- implemented some more postprocessing routines for table package
+
+2009-01-06 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- fixed bug in clickable lib: logarithmic scales in x axes have not been
+	processed properly.
+	- now, the logarithmic sampling won't be applied for parametric plot
+	expressions. Furthermore, it has been optimized.
+	- improved compatibility between FPU and fixed point library inside of
+	pgfplots
+
+2009-01-05 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- both, plot gnuplot and plot expression now sample their points
+	logarithmically if the x (y) axis is logarithmic.
+
+2009-01-03 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- the fpu is now used automatically for plot expression and for the table
+	create col/expr feature. However, it will be disabled during the low-level
+	drawing commands of pgfplots. I rewrote some of the internals to avoid
+	problems with the low data range of tikz (for example during domain
+	processing).
+
+2008-12-31 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	
+	- improved FPU support
+
+2008-12-30 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- added backwards compatibility switches for my new PGF library FPU.
+
+2008-12-27 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- fixed some issues with stacked plots and skewed axes
+	- fixed a lot of manual typos and mistakes, thanks to Jeremie Knuesel!
+	- Greatly simplified notation for |plot expression|.
+	- introduced |\addplot gnuplot| as alias for |\addplot function|.
+
+2008-12-17 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- added |create col/expr accum| style: a variant of |expr| which now
+	allows simple accumulation of columns
+	- added a |date type| style based on the pgf calendar package
+
+2008-12-14 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- provided a further improvement for empty plot handling: the normal
+	processing is now applied for empty plots, with special handling for the
+	named start/end coordinates.
+	- improved future compatibility with FPU: just in case it moves to a
+	separate library, I will check for such a thing.
+
+2008-12-07 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- there was a bug with minorgrids auto-deactivation which has been fixed.
+	- fixed a 'plot function[domain=..]' bug introduced yesterday
+	- floating point methods now don't use 'fp' for mantisse computations if
+	the fixed point lib is used
+
+2008-12-06 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- scatter will now assign a mark if none is set.
+	- empty plot bug has been fixed.
+	- using xmode in wrong context leads to error message.
+	- xticklabel pos now accepts 'top' and 'bottom'
+	- manual has more compact index: I removed the '/pgfplots/' and '/tikz/'
+	collections. 
+	- improved index formatting.
+	- re-implemented plot expression's sampling method. The PGF \foreach
+	statement does not allow sampling domains beyond PGF's native math parser,
+	the new implementation does also support the 'fp' package (combinded with
+	the associated PGF library).
+	Efficiency is expected to be higher than the previous \foreach
+	implementation.
+	- Provided a specialized processing of the |domain| argument for plot
+	function which avoids the pgf math parser. Now, plot function provides the
+	full data range of gnuplot.
+
+
+2008-12-05 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- improved sanity checking for plot coordinate syntax; empty lines in plot
+	coordinates are now processed correctly.
+	- added alias for 'sample' key. It can now be provided as argument to axis
+	environments.
+	- added |no markers| shortcut style.
+	- Added documentation for interrupted plots (for example for
+	discontinuities in plots)
+
+2008-12-03 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- updated docs. 
+	- Fixed bug when there are less legend entries than plots.
+	- added 'forget plot' option (and 'every forget plot' style)
+	- made '/pgfplots/domain' option a public key alias to '/tikz/domain'
+
+2008-12-01 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- fixed a remaining bug with 'axis equal'
+	- fixed bug in pgfplots/tikz search path code
+
+2008-11-30 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- added keys 'axis equal' and 'axis equal image' to get the same length
+	for each unit vector.
+
+2008-11-28 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- optimiziation of \pgfmathfloattofixed yields 7% time savings for
+	pgfplotstest. For plots with many points it will be even more.
+
+2008-11-27 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- added '/pgfplots/refstyle={label}' key.
+	- added 'read completely' key.
+	- fixed bug with error bars: some of the latest changes must have been
+	during sleep.
+	- eliminated 6 dimen registers.
+
+2008-11-24 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- document bounding box modifications with 'overlay' option of pgf.
+	The examples require the latest CVS version of pgf, because pgf 2.00 has a
+	bug here (overlay and matrizes).
+
+2008-11-23 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- added 'scaled ticks=manual' feature. It allows complete control
+	over the scaled tick algorithm and scaled tick label placement.
+	- improved support for french language, i.e. for active ';' and ':'
+	characters. The manual does not compile completely if switched to french,
+	but it is not much.
+	- updated pgfplotstable such that it can be adopted to more general tasks.
+	As example, html file output has been added to the manual.
+
+2008-11-22 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	
+	- the clickable lib can now be used independently of pgfplots.
+
+2008-11-21 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- improved compatibility between pgfplotstable and colortbl: \rowcolor
+	and dec sep align (sci sep align) now works properly.
+	- Added 'every col no <index>' style as alias for 'display columns/<index>'.
+	- provided error message if \pgfplotstablerow is used in the wrong
+	context.
+	- improved pgfplots documentation.
+	- improved pgfplotstable documentation
+	- 'sci sep align' and 'dec sep align' now only enable math mode for their
+	numbers, not for empty columns.
+
+2008-11-18 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- added error bar adjustments for 'ybar' style
+	- fixed bug: error bars are now drawn after the main path
+
+2008-11-11 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- fixed missing code portion for scatter and log plots
+	- added 'view' option which allows to specify pitch and yaw for definition
+	  of a 3D viewport (definition of x,y and z unit vectors of PGF).
+
+2008-11-10 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- documented default values of cycle lists.
+
+2008-11-04 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- prepared more code for 3D-axis drawing. It is growing now and won't take 
+	long for good-looking 3D figures.
+
+2008-10-30 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- used 'y domain='<empty> as feature for \addplot3 (\x,\x,\x):
+	this will sample from a line, not from a surface.
+
+2008-10-29 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- implemented user interface to manually place 2D/3D tick LABELS (docs
+	missing).
+	  The next step is to predefine them automatically for 3D plots.
+
+2008-10-28 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- renamed 'scatter plot' keys to 'scatter'
+	- improved scatter plot user interface (not yet documented in parts)
+	- implemented input methods for scatter coordinates (not yet documented)
+	- worked on 3D axis generation.
+
+2008-10-27 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Implemented colormaps.
+	- Implemented scatter plots.
+
+2008-10-25 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Fixed a bug introduced in latest changes: 'tick align' produced wrongly
+	positioned tick labels.
+
+
+2008-10-23 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Fixed a bug related to auto-tick placement and special cases of the
+	scaling transformation.
+	- Documented the new freedom in axis unit vector placement, reversed and
+	skewed axes.
+	- Introduced optimization for orthogonal axes.
+
+2008-10-21 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- added 'copy' and 'sqrt' features to table package.
+
+
+2008-10-20 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Revised all new routines such that the 2D framework is running again.
+	  All 2D tests appear to be ok.
+	  The 3D stuff is neither documented nor ready, although early things
+	  work. In the moment, it is only slowing things down, see todo.
+	- Updated clickable lib to work with the new framework.
+	- Removed remaining plain TeX '\loop' commands
+
+2008-10-14 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Restored state of 2008-09-25 because something did not work and I don't
+	have a stable version yet.
+	- Updated compatiblity for pgf 2.0: inserted 'min exponent for 1000 sep'
+	into compatibility files
+
+2008-10-12 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- implemented input routines for 3D plots using \addplot3:
+		- coordinates,
+		- gnuplot,
+		- file,
+		- table,
+		- expression.
+	- updated coordinate streaming methods to work with 3D data.
+	  I also cleaned and optimized the 2D code.
+	  -> stacked plots and error bars do not reflect this yet!
+	- added 'plot function[<further behavior options>]' which are merged
+	together with those after 'plot[<behavior options>]'
+
+2008-10-04 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- implemented first running 3D axis with orthogonal projection.
+	  Most features work, especially tick placement, grid lines, tick label
+	  placement. Some detail decisions of how to things look pretty have to
+	  be done and realized. Scaling does not work yet and there are still
+	  plenty of open problems. The user interface for setting views is crual.
+
+2008-10-03 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- fixed bug related to 'current axis' and origin anchors which occured
+	  if axis limits have been restricted manually and axis descriptions
+	  employed origin anchors.
+	- continued the change to logical coordinates.
+
+2008-10-01 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- changed internals to use logical coordinates consistently.
+	- Added feature 'x={(10pt,-3pt)}, y=-1pt'; allowing
+		- skewed axes,
+		- reversed axes,
+		- rotated axes,
+	  as preparation for 3d plots.
+
+2008-09-27 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- optimized number processing and log computations. Logs are now a factor
+	of 3.8 faster.
+
+2008-09-25 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Provided options to manually configure the tick scaling algorithm:
+	either 1/10^<exponent> or 1/<real>  can be configured.
+	- Added check for PGF 2.00 availability
+
+2008-09-23 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Placed all drawing commands for plots and markers into separate scopes
+	to end the effect of 'fill opacity' and 'dotted' styles.
+	FIXME: check whether this affects any named nodes and such!
+
+2008-09-21 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Improved compatibility with figure-environments. I had to turn
+	"hidden=false" to fix this incompatiblity. I hope this does not produce
+	visible artefacts... needs to be checked.
+
+2008-09-17 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- added 'include outfiles' option to table package, together with 
+	'force remake'
+
+2008-09-16 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- fixed spacing bug in table package.
+	- outfile and debug feature of table package now produce proper newlines.
+
+2008-09-11 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- added error messages if the table typeset features rely on LaTeX
+	packages (array,booktabs) which have not yet been loaded.
+
+2008-09-03 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- added 'clear infinite' postprocessor to table package.
+
+2008-09-02 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- re-implemented minimum and maximum computation because the PGF math
+	parser interface has been changed. The changes are backwards compatible
+	now.
+	- fixed a bug in logarithm computation.
+	- fixed some bugs related to the pgfplotsclickable library
+
+2008-09-01 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Provided sanity checking for gradient computation in table package:
+	division by zero now leads to empty cells.
+
+2008-08-22 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Added pgfplotsclickable library which displays point coordinates when
+	clicking into the plot region (acrobat reader only; relies on acrotex
+	bundle)
+
+2008-08-04 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Release 1.1
+
+2008-08-03 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Added a library for abstract types of input coordinates (for example
+	dates).
+
+2008-08-02 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- change 'every axis grid' default style to 'thin,black!25'. This is less
+	intrusive than 'help lines'.
+	- fixed small bug in tick routines: they did not account for tikz drawing
+	modes so 'draw=none' was ignored.
+	- fixed context test cases
+	- Improved manual
+
+2008-08-01 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- added several aliases for style keys. Something like 'x tick label
+	style' always requires manual lookups while 'xticklabel style' is at least
+	consistent with the 'xticklabel' key.
+
+2008-07-30 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- added environment 'pgfplotsinterruptdatabb'
+	- fixed bug in |minor tick num|
+	- fixed bug in alias feature of table package.
+
+2008-07-29 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- added |xtick pos| and |ytick pos| keys and |[xy]ticklabel pos|
+
+
+2008-07-28 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- fixed bug in 'plot table' optimization: did not allow for 'alias'ed
+	columns.
+
+2008-07-26 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- improved manual
+	- provided better default key-paths such that '/pgfplots' can be omitted
+	in many places.
+	- Added \label / \ref support. Now, single plots can be referenced and
+	\ref{label} inserts the associated legend image.
+
+2008-07-25 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- markers are now drawn separately, after the clipped range. Instead of
+	clipping their *paths*, their positions are clipped: a marker is either
+	drawn completely or not at all.
+	- The option 'clip marker paths' can be used for backwards compatibility
+	- added |axis on top| key for area plots: in this case, axis descriptions
+	are drawn on top of plot graphics.
+
+2008-07-24 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Now, plot table{<file>} has linear runtime.
+	- implemented fast low-level lists also for errorbars.
+
+2008-07-18 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- I worked on the coordinate lists and finally got linear runtime.
+	In fact, the idea of Till turned out to be the most effective one (although 
+	it is only preasymtotically linear).
+	- This makes the aftergroup-stack variable unnecessary. 
+	- Some aspects are missing,	but I hope I can fix them soon.
+
+2008-07-16 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- replaced tikz-drawing commands for plots with basic layer commands.
+	Gain: about 12% faster than before!
+	- added |use aftergroup stack as fast list| to allow O(N) time for large scale plot
+	commands, given appropriate safe stack parameters of TeX.
+	 
+
+2008-07-15 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- implemented support for axis limits of order up to 1.0e+-2147483644
+
+2008-07-14 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Added support to simplify access the previous row during create table column
+	statements. Added one more numeric column creation style.
+	- added 'exp sep align' and improved 'dec sep align'.
+
+2008-07-12 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- modified axis label placement for 'axis [xy] line' variations.
+	  I think it's ok now...
+	- documented how to get multiple y axis
+	- modified log plot tick generation algorithm, I forget something
+	yesterday.
+
+2008-07-11 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- fixed log plot tick generation if the axis range is extremely small.
+
+2008-07-09 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- moved a lot of directories and files around to better match the TeX
+	directory structure (TDS)
+	- used 'every mark' style for mark options - allows to append style
+	options.
+
+2008-07-08 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- added 'postproc cell content' feature to table package
+	- added 'preproc cell content' feature to table package
+	- fixed plot limit bugs arising in special situations
+
+2008-07-07 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- improved several things in table package
+	- partial limits are now supported, for example 'xmin=4' or 'ymax=15'
+	- improved empty axis range handling
+	- modified transformations to avoid 'number too large/small' errors
+	- enlargelimits respects partial limits
+	- evaluated 'every axis plot' and 'every axis plot no <number>' in
+	\addplot commands, allowing not only style options but also behavior
+	options.
+
+
+2008-07-04 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- implemented title, xlabel and ylabel as direct keys in pgf, allowing to
+	add suffixes or prefixes to already assigned values.
+
+2008-07-03 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- added default styles for non-boxed axis lines. This is more or less
+	experimental up to now and may still change.
+
+2008-07-02 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- fixed small issues in pgfplotstable manual
+	- eliminated one dimen register and one count register
+
+2008-07-01 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Added semicolon to gnuplot invocation to fix the strange behavior of
+	windows gnuplot.
+
+2008-06-30 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- solved the problem of arrow heads and different styles for axis *lines*.
+	Not quite satisfactory, because one needs to choose between closed paths
+	and clean edges on the one hand and separate arrow heads or styles on the
+	other hand. See the documentation for details.
+
+2008-06-29 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- wrote some styles for the 'create col' framework, namely to compute
+	piecewise gradients and quotients from one row to the next.
+
+2008-06-28 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Wrote a \pgfplotstablecreatecol command to generate new columns in a
+	quite general fashion.
+
+2008-06-27 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- renamed the last change from 'column/{[index]5}/.style' to
+	'display columns/5/.style' because it was not consistent.
+	- implemented code to balance rows in typeset table routines.
+	The first column is the measure, all other ones will be forced to
+	match its row count.
+	- documented new features.
+	- added |hide x axis| and |hide y axis|.
+	- added |enlarge x limits| and |enlarge y limits|.
+	- Added key |legend entries|.
+
+2008-06-26 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- added column/{[index]5}/.style and 'column indizes/5/.style'
+	- added 'select equal part entry of' style
+
+2008-06-25 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- added warning when loading tables '#1.tex' instead of '#1'.
+
+2008-06-24 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- improved error recovery: empty plots are now discarded silently
+	- added column 'alias' feature for tables
+	- optimized code for grid line, tick line and tick label generation and
+	replaced tikz commands by basic layer commands. 
+	pgfplots is now 36% faster!
+	- changed drawing sequence of axis lines and tick/grid lines. Now, tick
+	lines are no longer drawn on top of axis lines.
+	- introduced aliases 'axis y line=middle' and 'axis x line=center'
+	- added named node 'current axis' which provides anchors 'origin', 
+	'above origin', 'left of origin', 'right of origin' and 'below origin'
+	-> this allows improvements of the non-boxed axis variants
+	- added those anchors also to the normal anchors.
+	- added styles 'every inner [xy] axis line'
+	- added styles 'every outer [xy] axis line' [untested]
+	- added command keys 'inner axis line style', 'outer axis line style' and
+	'axis line style'
+
+2008-06-18 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- improved ConTeXt compatibility
+
+2008-06-17 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- fixed incompatibility between 'plot function' and german active "
+	character
+
+2008-06-11 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Released version 1.0
+
+2008-06-11 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- added boolean |row predicate| to select table entries.
+	- added macro |\coordindex| inside of \addplot to allow index based
+	  coordinate filters.
+	- added style keys |/pgfplots/skip coords between index| and
+	  |/pgfplots/table/skip rows between index|
+	- added style |dec sep align| for table typesetting.
+
+2008-06-10 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Fixed several warnings in manual
+	- reimplemented |minor tick num| as style which sets the [xy] variants
+
+2008-06-09 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Replaced |xfilter| and |yfilter| by code keys |x filter/.code={...}| and
+	|y filter|. Backwards compatibility is checked. Added docs.
+
+2008-06-09 Pascal Wolkotte <wolkottept@users.sourceforge.net>
+
+	- Added |minor x tick num| and |minor y tick num| option
+	- Adjusted section title format in documentation
+	- Filtered x and y tick's if axis x/y line is middle or center
+
+2008-06-07 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Wrote more documentation, added |every axis plot post| style.
+	- Added |col sep=<space|comma|colon|semicolon|braces>| option for table
+	input.
+
+2008-06-06 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Added |minor tick num| option
+
+2008-06-05 Pascal Wolkotte <wolkottept@users.sourceforge.net>
+
+	- Added options to choose the drawing of the axis lines
+	- Added options to include a discontinuity decoration on the axis lines
+	- Added options to align ticks with the axis lines
+
+2008-06-03 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- Added options |before end axis/.code| and |after end axis/.code| and
+	|extra description/.code|.
+
+2008-06-02 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- I have replaced all /tikz/ options with /pgfplots/ ones. The
+	documentation is updated to reflect this change. 
+	Backwardscompatibility with \tikzstyle and the old /tikz/every... styles
+	is provided. 
+
+2008-05-31 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- added \pgfnumtabletypeset feature. It is quite sophisticated by now and
+	allows to typeset (selected parts of) numeric tables; rounds each number
+	to desired accuracy and provides number format styles.
+
+2008-05-26 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- added special values 'xtick=data' and 'ytick=data' to collect the first plot's
+	coordinates as tick data.
+
+2008-05-24 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- First version of manual with pgfmanual styles is ready. It is not quite
+	final, but should be enough to communicate with Pascal.
+	- fixed plot expression to work properly.
+
+2008-05-21 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- added useful styles for all bar options.
+
+2008-05-20 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- fixed some issues with stacked plots
+	- added public macros \plotnum and \numplots inside of an axis
+	- added options '[xy] tick label as interval=true|false'
+	- added support for 'ybar interval' plot handler (which I added to PGF
+	recently).
+
+2008-05-19 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- added \closedcycle command for use after \addplot. It connects the
+	current plot with the x-axis to provide fillable plots easily.
+	- added named coordinates 'current plot begin' and 'current plot end'
+
+2008-05-18 Christian Feuersaenger <ludewich@users.sourceforge.net>
+
+	- added support for stacked plots:
+		- stack plots=x|y|false
+		- reverse stacked plots=true|false
+		- stack dir=plus|minus
+	- rewrote some internals
+
+2008-05-12 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	- added 'current plot style' key to \addplot
+	- Added error bar support with fixed absolute/relative errors or explicit
+	  absolute/relative errors for each coordinate.
+	- added plot types for piecewise constant plots
+	- added plot types 'ybar' and 'xbar' with option '/pgf/bar width'
+	- added option 'legend image code'
+	- fixed data scaling trafo: contained possiblity for cancellation of significant
+	  digits
+	- added limited support for \addlegendentry[]{}
+	- removed clipping region for tick line placement
+	- added options
+	  'every axis plot no 1,2,3,4,...'
+	  'every [xy] tick'
+	  'every minor [xy] tick'
+	  'every major [xy] tick'
+	  and the same for s/tick/grid/
+	  and the corresponding '[xy] tick style', 'minor [xy] tick style' ...
+
+2008-04-23 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	Released version 0.98 beta
+	Changes since version 0.92.4:
+	- enlargelimits now works properly for logarithmic axes
+	- added support for plot function (gnuplot interface)
+	- added extra ticks which are drawn on top of the normal ticks
+	- providing x limits will now automatically clip y and vice-versa
+	- added option 'log identify minor tick positions'
+	- added option 'log plot exponent style'
+	- added option 'log number format code' and 'log base 10 number format code'
+	- improved automatic tick placement for log plots
+	   they are now scale dependend as for linear plots.
+	- added 'at' option
+	- cycle list and \legend now accept comma separated lists
+	- added support for plot expression
+	- re-implemented the internal plot representation as pgf node. This improves
+	  the PGF integration:
+		- you can access various axis anchor from outside,
+		- you can easily clip parts of the axis out of the bounding box (useful for
+		  alignment),
+		- you can access named axis descriptions (legends, titles, labels,...)
+
+	- the complete floating point number support has been integrated into PGF 2.0.
+	  That means: there are options 
+	   /pgf/number format/sci
+	   /pgf/number format/fixed
+	   /pgf/number format/....
+	   BUT
+	   numbers are now printed with
+	   \pgfmathprintnumber
+	   NOT 
+	   \prettyprintnumber   [ INCOMPATIBLE ]
+
+	- added option 'scaled ticks'
+	  and associated styles 
+		'every x tick scale label'
+		'every y tick scale label'
+	  and options
+		'x tick scale label style'
+		'y tick scale label style'
+	  and parameters
+		'scale ticks [below,above] exponent'
+
+	- legends have been improved (was \edef, is now better)
+
+	- Any styles can now contain axis options, for example
+		\tikzstyle{every axis legend}+=[legend columns=2]
+	- added option "cycle list"
+	- added option "cycle list name"
+	- added '\addplot plot file {filename}'
+	- added '\addplot plot table[x=colnameA,y=colnameB] {filename}'
+	  and   '\addplot plot table[xindex=numberA,yindex=numberB] {filename}'
+	  and   '\addplot plot table[...] from {\macroname}' in conjunction with
+	  '\numtableread{FILE} to \macroname'
+
+	- eliminated several scopes such that node names for labels, titles and legends
+	  will be known outside of an axis,
+	- added
+		\tikzstyle{every semilogx axis}=[]
+		\tikzstyle{every semilogy axis}=[]
+		\tikzstyle{every loglog axis}=[]
+		\tikzstyle{every linear axis}=[]
+	- added option 'legend style'
+	- added option 'label style'
+	  added option 'x label style'
+	  added option 'y label style'
+	  added option 'grid style'
+	  added option 'tick style'
+	  and the same for all 'every ...' styles.
+	  added option 'style=' option
+
+
+2008-02-01 Christian Feuersaenger <ludewich@users.sourceforge.net>
+	Released version 0.92.4
+	Changes since version 0.92:
+	** UPGRADE INCOMPATIBILITIES **
+	- Warning: I have greatly improved the legend placement.
+	  If you have overwritten 
+		\tikzstyle{every axis legend}
+	  you will need to update the legend!
+	- renamed 'manual.pdf' to 'pgfplots.pdf' to allow 
+		'texdoc pgfplots'
+	- any \axispath commands need to use the 'axis cs' coordinate system.
+
+	Improvements:
+	- introduced a data scale transformation:
+	  know, pgfplots is no longer restricted to numbers within 
+	  TeX's limited precision.
+	  It can produce plots with numbers of order O(10^10) or O(10^-10) (now even for non-logarithmic plots)
+	- fixed a bug which did not allow scientific notation for normal plots,
+	- improved default tick placement for normal plots,
+	- enlargelimits option is now relative and has a better user interface,
+	- legends are now TikZ matrizes, which fixes some bugs and improves their
+	  flexibility.
+	- Added the 'legend columns' option.
+	- Added the 'legend plot pos' option.
+	- Added the 'hide axis' option
+	- Added the 'scale only axis' option
+	- Added the 'xticklabels=LIST' and 'yticklabels=LIST' options
+	- Added anchors to axes to allow horizontal/vertical alignment
+	- rounded tick labels to \prettyprintnumberprecision digits
+	- Added 'grid=major|minor|both|none' option for grid lines
+	- Added '[xy]minorgrids',  '[xy]majorgrids' options and corresponding styles
+	- Added '[xy]majorticks', 'ticks=major|minor|both|none' options ticks

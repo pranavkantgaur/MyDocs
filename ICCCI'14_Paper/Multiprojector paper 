@@ -1,0 +1,10 @@
+#TARGET: Multiprojector geoemtetric & radiomatric seamlessness with issues
+
+Geometric alignment:
+#1. Demostration of effect number of points in grid on multiprojector geometric registration accuracy. 
+#2. Demostration of issue related to limitation due to feature size.
+#3. Explanation of Geometric alignment approach involving regularization through line fitting+ approach involving extension to include
+boundaries of projection region as well.
+
+
+

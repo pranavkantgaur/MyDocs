@@ -1,0 +1,61 @@
+
+                   How to make a Chromium release
+                 (on Linux, using 1.9 as an example)
+
+
+
+Coding
+======
+
+Update include/cr_version.h with new version numbers.
+
+Update mothership/server/mothership.py and update "Version".
+
+Bump version in mothership/tools/graph.py if the graphical config tool
+has been updated since last release.
+
+Bump version in doc/banner.html.
+
+Update doc/versions.html with info about the new version
+
+
+Make the tarballs
+=================
+
+Update cr.mk so that CRNAME is "cr-1.9"
+run 'make tarballs'
+
+Now, copy the cr-1.9.tar.gz to a temporary directory, unpack, build and test.
+
+
+
+SourceForge update
+==================
+
+Upload tarballs to sourceforge:
+   ftp upload.sf.net
+   user: anonymous
+   passwd: email address
+   cd incoming
+   bin
+   put cr-1.9.tar.gz
+   put cr-1.9.zip
+   bye
+
+Via "Admin" interface on SF, create a new source release named "Chromium 1.9".
+Add the .tar.gz and .zip files to the release.
+
+Send an email to chromium-dev, chromium-users, and chromium-announce.
+
+
+
+Finally, tag the cvs tree
+=========================
+
+   cd cr
+   cvs tag release-A-B-C-YYYYMMDD
+
+   where:
+      A-B-C is the version, like 1-4-0
+      YYYYMMDD is the year, month, day
+

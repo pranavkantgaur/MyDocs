@@ -1,0 +1,1509 @@
+
+\subsection{Markers, Linestyles, (Background-) Colors and Colormaps}
+\label{sec:markers}%
+The following options of \Tikz\ are available to plots.
+
+\subsubsection{Markers}
+This list is copied from~\cite[section~29]{tikz}:
+\pgfmanualpdflabel{/tikz/mark}{}%
+\begingroup
+\newenvironment{longdescription}[0]{%
+	\begin{list}{}{%
+		\leftmargin=4.7cm
+		\setlength{\labelwidth}{4.7cm}%
+		\renewcommand{\makelabel}[1]{\hfill\textbf{\texttt{##1}}}%
+	}%
+}{%
+	\end{list}%
+}%
+\def\showit#1{%
+	\tikz\draw[%
+		gray,
+		thin,
+		mark options={fill=yellow!80!black,draw=black,scale=2},
+		x=0.8cm,y=0.3cm,
+		#1]
+	plot coordinates {(0,0) (1,1) (2,0) (3,1)};%
+}%
+\def\showitpgfplots#1{%
+\begin{tikzpicture}[baseline]
+	\begin{axis}[anchor=north,xticklabels=,yticklabels=,zticklabels=,width=5cm]
+	\addplot3[gray, thin, mark options={scale=2,fill=yellow!80!black,draw=black},#1]
+		plot coordinates {(0,0,0) (0.3,0.6,0.3) (2,0,0.1) (2.3,1,0.2)};
+	\end{axis}
+\end{tikzpicture}%
+}%
+\begin{longdescription}
+	\item[mark=*] \showit{mark=*}
+	\item[mark=x] \showit{mark=x}
+	\item[mark=+] \showit{mark=+}
+%	\item[mark=ball] \showit{mark=ball}
+\end{longdescription}
+And with |\usetikzlibrary{plotmarks}|:
+\begin{longdescription}
+	\item[mark=$-$] \showit{mark=-}
+	\item[mark=$\vert$] \showit{mark=|}
+	\item[mark=o] \showit{mark=o}
+	\item[mark=asterisk] \showit{mark=asterisk}
+	\item[mark=star] \showit{mark=star}
+	\item[mark=10-pointed star] \showit{mark=10-pointed star}
+	\item[mark=oplus] \showit{mark=oplus}
+	\item[mark=oplus*] \showit{mark=oplus*}
+	\item[mark=otimes] \showit{mark=otimes}
+	\item[mark=otimes*] \showit{mark=otimes*}
+	\item[mark=square] \showit{mark=square}
+	\item[mark=square*] \showit{mark=square*}
+	\item[mark=triangle] \showit{mark=triangle}
+	\item[mark=triangle*] \showit{mark=triangle*}
+	\item[mark=diamond] \showit{mark=diamond}
+	\item[mark=diamond*] \showit{mark=diamond*}
+	\item[mark=halfdiamond*] \showit{mark=halfdiamond*}
+	\item[mark=halfsquare*] \showit{mark=halfsquare*}
+	\item[mark=halfsquare right*] \showit{mark=halfsquare right*}
+	\item[mark=halfsquare left*] \showit{mark=halfsquare left*}
+	\item[mark=Mercedes star] \showit{mark=Mercedes star}
+	\item[mark=Mercedes star flipped] \showit{mark=Mercedes star flipped}
+	\item[mark=halfcircle] \showit{mark=halfcircle} 
+
+	One half is filled with white (more precisely, with |mark color|).
+	\item[mark=halfcircle*] \showit{mark=halfcircle*}
+
+	One half is filled with white (more precisely, with |mark color|) and the other half is filled with the actual |fill| color.
+	\item[mark=pentagon] \showit{mark=pentagon}
+	\item[mark=pentagon*] \showit{mark=pentagon*}
+	\item[mark=text] \showit{mark=text,every mark/.append style={scale=0.5}} 
+
+	This marker is special as it can be configured freely. The character (or even text) used is configured by a set of variables, see below.
+	\item[mark=cube] \showitpgfplots{mark=cube}
+	
+	This marker is only available inside of a \PGFPlots\ axis, it draws a cube with axis parallel faces. Its dimensions can be configured separately, see below.
+	\item[mark=cube*] \showitpgfplots{mark=cube*}
+
+	\item[User defined] It is possible to define new markers with |\pgfdeclareplotmark|, see below.
+\end{longdescription}
+All these options have been drawn with the additional options
+\begin{codeexample}[code only]
+\draw[
+	gray,
+	thin,
+	mark options={%
+		scale=2,fill=yellow!80!black,draw=black
+	}
+]
+\end{codeexample}
+Please see Section~\ref{sec:colors} for how to change |draw| and |fill| colors.
+Note that each of the provided marks can be rotated freely by means of |mark options={rotate=90}| or |every mark/.append style={rotate=90}|.
+
+\begin{key}{/tikz/mark size=\marg{dimension}}
+	This \Tikz\ option allows to set marker sizes to \meta{dimension}. For circular markers, \meta{dimension} is the radius, for other plot marks it is about half the width and height.
+\end{key}
+
+\begin{pgfplotsxykey}{cube/size \x=\marg{dimension} (initially |\textbackslash pgfplotmarksize|)}
+	Sets the size for |mark=cube| separately for every axis.
+\end{pgfplotsxykey}
+\begin{key}{/tikz/every mark}
+	This \Tikz\ style can be reconfigured to set marker appearance options like colors or transformations like scaling or rotation. \PGFPlots\ appends its |cycle list| options to this style.
+\begin{codeexample}[]
+\begin{tikzpicture}
+\begin{axis}[y=2cm]
+	\addplot coordinates 
+		{(-2,0) (-1,1) (0,0) (1,1) (2,0)};
+\end{axis}
+\end{tikzpicture}
+\end{codeexample}
+
+\begin{codeexample}[]
+\tikzset{every mark/.append style={scale=2}}
+\begin{tikzpicture}
+\begin{axis}[y=2cm]
+	\addplot coordinates 
+		{(-2,0) (-1,1) (0,0) (1,1) (2,0)};
+\end{axis}
+\end{tikzpicture}
+\end{codeexample}
+
+\begin{codeexample}[]
+\begin{tikzpicture}
+\begin{axis}[y=2cm]
+  \addplot+[
+	mark=halfcircle*,
+	every mark/.append style={rotate=90}]
+  coordinates 
+	{(-2,0) (-1,1) (0,0) (1,1) (2,0)};
+
+  \addplot+[
+	mark=halfcircle*,
+	every mark/.append style={rotate=180}]
+  coordinates 
+	{(-2,-0.1) (-1,0.9) (0,-0.1) (1,0.9) (2,-0.1)};
+\end{axis}
+\end{tikzpicture}
+\end{codeexample}
+\end{key}
+
+\begin{stylekey}{/pgfplots/no markers}
+	Disables plot marks.
+
+	If this style is provided as argument to a complete axis, it is appended to |every axis plot post| such that it disables markers even for |cycle list|s which contain markers.
+\end{stylekey}
+
+\begin{key}{/tikz/mark repeat=\marg{integer} (initially empty)}
+	Allows to draw only each $n$th |mark| where $n$ is provided as \meta{integer}.
+\end{key}
+
+\begin{key}{/tikz/mark phase=\marg{integer $p$} (initially 1)}
+	This option allows to control which markers are drawn. It is primarily used together with the \Tikz\ option |mark repeat=|$r$: it tells \tikzname\ that the first mark to be draw should be the $p$th, followed by the $(p + r)$th, then
+	the $(p + 2r)$th, and so on.
+\begin{codeexample}[]
+\begin{tikzpicture}
+	\begin{axis}[tiny]
+	\addplot+[scatter] {sin(deg(x))};	
+	\end{axis}
+\end{tikzpicture}
+\begin{tikzpicture}
+	\begin{axis}[tiny]
+	\addplot+[scatter,
+	  mark repeat=3,mark phase=2]
+	  {sin(deg(x))};	
+	\end{axis}
+\end{tikzpicture}
+\end{codeexample}
+	Here, $p=1$ is the first point (the one with |\coordindex|$=0$).
+\end{key}
+
+\begin{key}{/tikz/mark indices=\marg{index list} (initially empty)}
+	Allows to draw only the marker whose index numbers are in the argument list.
+\end{key}
+
+\begin{key}{/pgf/mark color=\marg{color} (initially empty)}
+	Defines the \emph{additional} fill color for the |halfcircle|, |halfcircle*|, |halfdiamond*| and |halfsquare*| markers. An empty value uses |white| (which is the initial configuration). The value |none| disables filling for this part.
+
+	These markers have two distinct fill colors, one is determined by |fill| as for any other marker and the other one is |mark color|.
+\begin{codeexample}[]
+\begin{tikzpicture}
+\begin{axis}[y=2cm]
+  \addplot[
+	blue,mark color=blue!50!white,
+	mark=halfcircle*]
+  coordinates 
+	{(-2,0) (-1,1) (0,0) (1,1) (2,0)};
+
+  \addplot[
+	red,mark color=red!50!white,
+	mark=halfsquare*]
+  coordinates 
+	{(-2,-0.1) (-1,0.9) (0,-0.1) (1,0.9) (2,-0.1)};
+\end{axis}
+\end{tikzpicture}
+\end{codeexample}
+
+	Note that this key requires \PGF\ 2.10 or later.
+\end{key}
+
+
+\begin{key}{/tikz/mark options=\marg{options}}
+	Resets |every mark| to \marg{options}.
+\end{key}
+
+
+\begin{key}{/pgf/text mark=\marg{text} (initially p)}
+	Changes the text shown by |mark=text|.
+
+	With |/pgf/text mark=m|: \pgfkeys{/pgf/text mark=m}\showit{mark=text,every mark/.append style={scale=0.5}}
+
+	With |/pgf/text mark=A|: \pgfkeys{/pgf/text mark=A}\showit{mark=text,every mark/.append style={scale=0.5}}
+
+	There is no limitation about the number of characters or whatever. In fact, any \TeX\ material can be inserted as \meta{text}, including images.
+\end{key}
+\begin{key}{/pgf/text mark style=\marg{options for \texttt{mark=text}}}
+	Defines a set of options which control the appearance of |mark=text|.
+
+	If |/pgf/text mark as node=false| (the default), \meta{options} is provided as argument to |\pgftext| -- which provides only some basic keys like |left|, |right|, |top|, |bottom|, |base| and |rotate|.
+
+	If |/pgf/text mark as node=true|, \meta{options} is provided as argument to |\node|. This means you can provide a very powerful set of options including |anchor|, |scale|, |fill|, |draw|, |rounded corners| etc. 
+\end{key}
+\begin{key}{/pgf/text mark as node=\mchoice{true,false} (initially false)}
+	Configures how |mark=text| will be drawn: either as |\node| or as |\pgftext|.
+
+	The first choice is highly flexible and possibly slow, the second is very fast and usually enough.
+\end{key}
+
+\begin{command}{\pgfdeclareplotmark\marg{plot mark name}\marg{code}}
+	Defines a new marker named \meta{plot mark name}. Whenever it is used, \meta{code} will be invoked. It is supposed to contain (preferrable \PGF\ basic level) drawing commands. During \meta{code}, the coordinate system's origin denotes the coordinate where the marker shall be placed.
+
+	Please refer to~\cite{tikz} section ``Mark Plot Handler'' for more detailed information.
+\end{command}
+
+
+
+\begin{stylekey}{/pgfplots/every axis plot post (initially {})}
+The |every axis plot post| style can be used to overwrite parts (or all) of the drawing styles which are assigned for plots.
+\begin{codeexample}[]
+% Overwrite any cycle list:
+\pgfplotsset{
+  every axis plot post/.append style={
+   mark=triangle,
+   every mark/.append style={rotate=90}}}
+\begin{tikzpicture}
+\begin{axis}[y=2cm]
+	\addplot coordinates 
+		{(-2,0) (-1,1) (0,0) (1,1) (2,0)};
+\end{axis}
+\end{tikzpicture}
+\end{codeexample}
+\end{stylekey}
+
+Markers paths are not subjected to clipping as other parts of the figure. Markers are either drawn completely or not at all.
+
+\Tikz\ offers more options for marker fine tuning, please refer to~\cite{tikz} for details.
+
+\subsubsection{Line Styles}
+\def\showit#1{%
+	\tikz\draw[%
+		black,
+		x=0.8cm,y=0.3cm,
+		#1]
+	plot coordinates {(0,0) (1,1) (2,0) (3,1)};%
+}%
+The following line styles are predefined in \Tikz.
+\begin{stylekey}{/tikz/solid}
+	 \showit{style=solid}
+\end{stylekey}
+
+\begin{stylekey}{/tikz/dotted}
+	 \showit{style=dotted}
+\end{stylekey}
+
+\begin{stylekey}{/tikz/densely dotted}
+	 \showit{style=densely dotted}
+\end{stylekey}
+
+\begin{stylekey}{/tikz/loosely dotted}
+	 \showit{style=loosely dotted}
+\end{stylekey}
+
+\begin{stylekey}{/tikz/dashed}
+	 \showit{style=dashed}
+\end{stylekey}
+
+\begin{stylekey}{/tikz/densely dashed}
+	 \showit{style=densely dashed}
+\end{stylekey}
+
+\begin{stylekey}{/tikz/loosely dashed}
+	 \showit{style=loosely dashed}
+\end{stylekey}
+
+
+\begin{stylekey}{/tikz/dashdotted}
+	 \showit{style=dashdotted}
+\end{stylekey}
+
+\begin{stylekey}{/tikz/densely dashdotted}
+	 \showit{style=densely dashdotted}
+\end{stylekey}
+
+\begin{stylekey}{/tikz/loosely dashdotted}
+	 \showit{style=loosely dashdotted}
+\end{stylekey}
+
+
+\begin{stylekey}{/tikz/dashdotdotted}
+	 \showit{style=dashdotdotted}
+\end{stylekey}
+
+\begin{stylekey}{/tikz/densely dashdotdotted}
+	 \showit{style=densely dashdotdotted}
+\end{stylekey}
+
+\begin{stylekey}{/tikz/loosely dashdotdotted}
+	 \showit{style=loosely dashdotdotted}
+\end{stylekey}
+\noindent since these styles apply to markers as well, you may want to consider using 
+\begin{codeexample}[code only]
+\pgfplotsset{
+	every mark/.append style={solid}
+}
+\end{codeexample}
+\noindent in marker styles.
+
+Besides linestyles, \PGF\ also offers (a lot of) arrow heads. Please refer to~\cite{tikz} for details.
+\endgroup
+
+\subsubsection{Edges and Their Parameters}
+When \PGFPlots\ connects points, it relies on \PGF\ drawing parameters to create proper edges (and it only changes them in the |every patch| style).
+
+It might occasionally be necessary to change these parameters:
+
+\begin{keylist}{%
+	/tikz/line cap=\mchoice{round,rect,butt} (initially butt),%
+	/tikz/line join=\mchoice{round,bevel,miter} (initially miter),%
+	/tikz/miter limit=\meta{factor} (initially 10)}%
+	
+	These keys control how lines are joined at edges. Their description is beyond the scope of this manual, so interested readers should consult~\cite{tikz}.
+
+	Here is just an example illustrating why it might be of interest to study these parameters:
+% \usetikzlibrary{spy}
+\begin{codeexample}[]
+% requires \usetikzlibrary{spy}
+\begin{tikzpicture}[spy using outlines=
+	{circle, magnification=6, connect spies}]
+\begin{axis}[no markers,grid=major,
+	every axis plot post/.append style={thick}]
+\addplot  coordinates
+ {(0, 0.0) (0, 0.9) (1, 0.9) (2, 1) (3, 0.9) (80, 0)};
+\addplot +[line join=round] coordinates
+ {(0, 0.0) (0, 0.9) (2, 0.9) (3, 1) (4, 0.9) (80, 0)};
+\addplot +[line join=bevel] coordinates
+ {(0, 0.0) (0, 0.9) (3, 0.9) (4, 1) (5, 0.9) (80, 0)};
+\addplot +[miter limit=5] coordinates
+ {(0, 0.0) (0, 0.9) (4, 0.9) (5, 1) (6, 0.9) (80, 0)};
+
+  \coordinate (spypoint) at (axis cs:3,1);
+  \coordinate (magnifyglass) at (axis cs:60,0.7);
+\end{axis}
+
+\spy [blue, size=2.5cm] on (spypoint)
+   in node[fill=white] at (magnifyglass);
+\end{tikzpicture}
+\end{codeexample}
+\end{keylist}
+
+
+\subsubsection{Font Size and Line Width}
+Often, one wants to change line width and font sizes for plots. This can be done using the following options of \Tikz.
+
+\begin{key}{/tikz/font=\marg{font name} (initially \textbackslash normalfont)}
+	Sets the font which is to be used for text in nodes (like tick labels, legends or descriptions).
+
+	A font can be any \LaTeX\ argument like |\footnotesize| or |\small\bfseries|\footnote{Con\TeX t and plain \TeX\ users need to provide other statements, of course.}.
+
+	It may be useful to change fonts only for specific axis descriptions, for example using
+\begin{codeexample}[code only]
+\pgfplotsset{
+	tick label style={font=\small},
+	label style={font=\small},
+	legend style={font=\footnotesize}
+}
+\end{codeexample}
+
+	See also the predefined styles |normalsize|, |small| and |footnotesize| in Section~\ref{sec:scaling:styles}.
+\end{key}
+
+\begin{key}{/tikz/line width=\marg{dimension} (initially 0.4pt)}
+	Sets the line width. Please note that line widths for tick lines and grid lines are predefined, so it may be necessary to override the styles |every tick| and |every axis grid|.
+
+	The |line width| key is changed quite often in \Tikz. You should use
+\begin{codeexample}[code only]
+\pgfplotsset{every axis/.append style={line width=1pt}}
+\end{codeexample}
+	or
+\begin{codeexample}[code only]
+\pgfplotsset{every axis/.append style={thick}}
+\end{codeexample}
+	to change the overall line width. To also adjust ticks and grid lines, one can use
+\begin{codeexample}[code only]
+\pgfplotsset{every axis/.append style={
+	line width=1pt,
+	tick style={line width=0.6pt}}}
+\end{codeexample}
+	or styles like
+\begin{codeexample}[code only]
+\pgfplotsset{every axis/.append style={
+	thick,
+	tick style={semithick}}}
+\end{codeexample}
+	The `|every axis plot|' style can be used to change line widths for plots only.
+\end{key}
+
+\begin{keylist}[/tikz]{thin,ultra thin,very thin,semithick,thick,very thick,ultra thick}
+	These \Tikz\ styles provide different predefined line widths.
+\end{keylist}
+
+This example shows the same plots as on page~\pageref{page:plotcoords:src} (using |\plotcoords| as place holder for the commands on page~\pageref{page:plotcoords:src}), with different line widths and font sizes.
+\begin{codeexample}[]
+\pgfplotsset{every axis/.append style={
+	font=\large,
+	line width=1pt,
+	tick style={line width=0.8pt}}}
+\begin{tikzpicture}
+	\begin{loglogaxis}[
+		legend style={at={(0.03,0.03)},
+			anchor=south west},
+		xlabel=\textsc{Dof},
+		ylabel=$L_2$ Error
+	]
+	% see above for this macro:
+	\plotcoords
+	\legend{$d=2$,$d=3$,$d=4$,$d=5$,$d=6$}
+	\end{loglogaxis}
+\end{tikzpicture}
+\end{codeexample}
+
+\begin{codeexample}[]
+\pgfplotsset{every axis/.append style={
+	font=\footnotesize,
+	thin,
+	tick style={ultra thin}}}
+\begin{tikzpicture}
+	\begin{loglogaxis}[
+		xlabel=\textsc{Dof},
+		ylabel=$L_2$ Error
+	]
+	% see above for this macro:
+	\plotcoords
+	\legend{$d=2$,$d=3$,$d=4$,$d=5$,$d=6$}
+	\end{loglogaxis}
+\end{tikzpicture}
+\end{codeexample}
+
+
+\subsubsection{Colors}
+\label{sec:colors}
+{%
+\def\showcolorandname#1{%
+	\showcolor{#1}~\texttt{\pgfmanualpdflabel{#1}{#1}}%
+}%
+\def\showcolor#1{%
+	\tikz \draw[black,fill={#1}] (0,0) rectangle (1em,0.6em);%
+}%
+\PGF\ uses the color support of |xcolor|. Therefore, the main reference for how to specify colors is the |xcolor| manual~\cite{xcolor}. The \PGF\ manual~\cite{tikz} is the reference for how to select colors for specific purposes like drawing, filling, shading, patterns etc.\ This section contains a short overview over the specification of colors in~\cite{xcolor} (which is not limited to \PGFPlots).
+
+The package |xcolor| defines a set of predefined colors, namely 
+\showcolorandname{red},
+\showcolorandname{green},
+\showcolorandname{blue},
+\showcolorandname{cyan},
+\showcolorandname{magenta},
+\showcolorandname{yellow},
+\showcolorandname{black},
+\showcolorandname{gray},
+\showcolorandname{white},
+\showcolorandname{darkgray},
+\showcolorandname{lightgray},
+\showcolorandname{brown},
+\showcolorandname{lime},
+\showcolorandname{olive},
+\showcolorandname{orange},
+\showcolorandname{pink},
+\showcolorandname{purple},
+\showcolorandname{teal},
+\showcolorandname{violet}.
+
+\begin{codeexample}[]
+\begin{tikzpicture}
+	\begin{axis}[enlarge x limits=false]
+	\addplot[red,samples=500] {sin(deg(x))};
+
+	\addplot[orange,samples=7] {sin(deg(x))};
+
+	\addplot[teal,const plot,
+		samples=14] {sin(deg(x))};
+	\end{axis}
+\end{tikzpicture}
+\end{codeexample}
+
+Besides predefined colors, it is possible to \emph{mix} two (or more) colors. For example, \showcolorandname{red!30!white} contains $30\%$ of \showcolorandname{red} and $70\%$ of \showcolorandname{white}. Consequently, one can build \showcolorandname{red!70!white} to get $70\%$ red and $30\%$ white or \showcolorandname{red!10!white} for $10\%$ red and $90\%$ white. This mixing can be done with any color, for example \showcolorandname{red!50!green}, \showcolorandname{blue!50!yellow} or \showcolorandname{green!60!black}.
+
+A different type of color mixing is supported, which allows to take $100\%$ of \emph{each} component. For example, \showcolorandname{rgb,2:red,1;green,1} will add $1/2$ part \showcolorandname{red} and $1/2$ part \showcolorandname{green} and we reproduced the example from above. Using the denominator~$1$ instead of~$2$ leads to \showcolorandname{rgb,1:red,1;green,1} which uses $1$ part \showcolorandname{red} and $1$ part \showcolorandname{green}. Many programs allow to select pieces between $0,\dotsc,255$, so a denominator of $255$ is useful. Consequently, \showcolorandname{rgb,255:red,231;green,84;blue,121} uses $231/255$ red, $84/255$ green and $121/255$. This corresponds to the standard RGB color $(231,84,121)$. Other examples are \showcolorandname{rgb,255:red,32;green,127;blue,43}, \showcolorandname{rgb,255:red,178;green,127;blue,43}, \showcolorandname{rgb,255:red,169;green,178;blue,43}.
+
+It is also possible to use RGB values, the HSV color model, the CMY (or CMYK) models, or the HTML color syntax directly. However, this requires some more programming. I suppose this is the fastest (and probably the most uncomfortable) method to use colors. For example, 
+\begin{codeexample}[]
+\definecolor{color1}{rgb}{1,1,0}
+\tikz \fill[color1] 
+	(0,0) rectangle (1em,0.6em);
+\end{codeexample}
+\noindent creates the color with $100\%$ \showcolorandname{red}, $100\%$ \showcolorandname{green} and $0\%$ \showcolorandname{blue};
+\begin{codeexample}[]
+\definecolor{color1}{cmyk}{0.6,0.9,0.5,0.1}
+\tikz \fill[color1] 
+	(0,0) rectangle (1em,0.6em);
+\end{codeexample}
+\noindent creates the color with $60\%$ \showcolorandname{cyan}, $90\%$ \showcolorandname{magenta}, $50\%$ \showcolorandname{yellow} and $10\%$ \showcolorandname{black};
+
+\begin{codeexample}[]
+\definecolor{color1}{HTML}{D0B22B}
+\tikz \fill[color1] 
+	(0,0) rectangle (1em,0.6em);
+\end{codeexample}
+\noindent creates the color with $208/255$ pieces red, $178/255$ pieces green and $43$ pieces blue, specified in standard HTML notation. Please refer to the |xcolor| manual~\cite{xcolor} for more details and color models.
+
+The |xcolor| package provides even more methods to combine colors, among them the prefix `|-|' (minus) which changes the color into its complementary color (\showcolorandname{-black}, \showcolorandname{-white}, \showcolorandname{-red}) or color wheel calculations. Please refer to the |xcolor| manual~\cite{xcolor}.
+}%
+
+\begin{keylist}{
+	/tikz/color=\marg{a color},
+	/tikz/draw=\marg{stroke color},
+	/tikz/fill=\marg{fill color}}
+	These keys are (generally) used to set colors. Use |color| to set the color for both drawing and filling. Instead of |color=|\marg{color name} you can simply write \meta{color name}. The |draw| and |fill| keys only set colors for stroking and filling, respectively.
+
+	Use |draw=none| to disable drawing and |fill=none| to disable filling\footnote{Up to now, plot marks always have a stroke color (some also have a fill color). This restriction may be lifted in upcoming versions.}.% This does also work for markers.
+%--------------------------------------------------
+% \ begin{codeexample}[]
+% \begin{tikzpicture}
+% 	\begin{axis}
+% 	\addplot+[only marks,mark=square*,
+% 		mark options={fill=red!50!white,draw=none}]
+% 		{4*x^2 - 2*x +4 };
+% 	\end{axis}
+% \end{tikzpicture}
+% \end{codeexample}
+%-------------------------------------------------- 
+
+	Since these keys belong to \Tikz, the complete documentation can be found in the \Tikz\ manual~\cite[Section ``Specifying a Color'']{tikz}.
+\end{keylist}
+
+\subsubsection{Color Maps}
+\label{pgfplots:colormap}
+\begin{pgfplotskey}{colormap name=\marg{color map name} (initially hot)}
+	Changes the current color map to the already defined map named \meta{color map name}. The predefined color map is
+
+	\begin{tabular}{>{\ttfamily}ll}
+	hot & \pgfplotsshowcolormap{hot}\\
+	\end{tabular}
+
+	The definition can be found in the documentation for |colormap/hot|. This, and further color maps, are described below.
+
+	Colormaps can be used, for example, in scatter plots (see Section~\ref{pgfplots:scatter}).
+
+	You can use |colormap| to create new color maps (see below).
+\end{pgfplotskey}
+
+\begin{pgfplotskey}{colormap=\marg{name}\marg{color specification}}
+	Defines a new colormap named \meta{name} according to \meta{color specification} and activates it using |colormap name=|\marg{name}.
+	
+	The \meta{color specification} is a sequence of positions and associated colors where linear interpolation is applied in-between. The syntax is very similar as the one used for \PGF\ shadings described in~\cite[VIII -- Shadings]{tikz}: it is a semicolon--separated series of 
+	
+	\meta{color type}|(|\meta{offset}|)=(|\meta{color value}|); |:
+	
+\begin{codeexample}[code only]
+% possibility 1: like PGF shadings:
+rgb(0cm)=(1,0,0); rgb(1cm)=(0,1,0); rgb255(2cm)=(0,0,255); gray(3cm)=(0.3);  color(4cm)=(green)
+\end{codeexample}
+\pgfplotsshowcolormapexample{rgb(0cm)=(1,0,0); rgb(1cm)=(0,1,0); rgb255(2cm)=(0,0,255); gray(3cm)=(0.3);  color(4cm)=(green)}
+
+	If the distance between successive colors is the same, the  \meta{offset} can be omitted. The `|;|' separators are not necessary either:
+
+\begin{codeexample}[code only]
+% (simplified) possibility 2: skip `;' and length arguments:
+rgb=(1,0,0) rgb=(0,1,0) rgb255=(0,0,255) gray=(0.3) color=(green)
+\end{codeexample}
+\pgfplotsshowcolormapexample{rgb=(1,0,0) rgb=(0,1,0) rgb255=(0,0,255) gray=(0.3) color=(green)}
+
+	It is also possible to provide non-uniform distances between the different colors -- if all single positions can be projected onto a uniform grid. \PGFPlots\ will perform this interpolation automatically:
+
+\begin{codeexample}[code only]
+% non uniform spacing example: the mesh width is provided as first
+% part of the specification.
+\pgfplotsset{colormap={violetnew}
+	{[1cm] rgb255(0cm)=(25,25,122) color(1cm)=(white) rgb255(5cm)=(238,140,238)}}
+\end{codeexample}
+\pgfplotsshowcolormapexample{[1cm] rgb255(0cm)=(25,25,122) color(1cm)=(white) rgb255(5cm)=(238,140,238)}
+
+\noindent In this last example, the mesh width has been provided explicitly and \PGFPlots\ interpolates the missing grid points on its own. It is an error if the provided positions are no multiple of the mesh width. The |\pgfplotsset| employs the public user interface to create a new color map named `|violetnew|'.
+
+\noindent The single colors can be separated by semicolons `|;|'. The (optional) length describes how much of the bar is occupied by the interval, it is interpreted relative to the complete length. If the length argument is missing, it is taken to be the last specified length plus the last length difference (the first color defaults to |1cm| in this case). 
+
+\paragraph{Summary of the expected input format:}
+Each entry in \meta{color specification} has the form \meta{color model}|(|\meta{length}|)=(|\meta{arguments}|)|. Here, the \meta{length} argument is optional as discussed above. The entries can be separated by semicolons `|;|' or by white spaces. The leftmost entry \emph{must} have \meta{length}|=0pt|. As discussed, all entries will be placed on a uniform grid, i.e.\ the distance between adjacent \meta{length} arguments has to be the same (see the previous paragraph for automatic generation of intermediate points). 
+The complete length of a color map is irrelevant: it will be mapped linearly to an internal range anyway (for efficient interpolation). The only requirement is that the left end must be at |0|.
+
+Available choices for \meta{color model} are
+\begin{description}
+\item[rgb] which expects \meta{arguments} of the form |(|\meta{red}|,|\meta{green}|,|\meta{blue}|)| where each component is in the interval $[0,1]$,
+\item[rgb255] which is similar to |rgb| except that each component is expected in the interval |[0,255]|,
+\item[gray] in which case \meta{arguments} is a single number in the interval $[0,1]$,
+\item[color] in which case \meta{arguments} contains a predefined (named) color like `|red|' or a color expression like `|red!50|',
+\item[cmyk] which expects \meta{arguments} of the form |(|\meta{cyan}|,|\meta{magenta}|,|\meta{yellow}|,|\meta{black}|)| where each component is in the interval $[0,1]$, and
+\item[cmyk255] which is the same as |cmyk| but expects components in the interval $[0,255]$.
+\end{description}
+
+\begin{codeexample}[]
+\begin{tikzpicture}
+	\begin{axis}[
+		colormap={bw}{gray(0cm)=(0); gray(1cm)=(1)}]
+	\addplot+[scatter,only marks,
+		 domain=0:8,samples=100]
+		{exp(x)};
+	\end{axis}
+\end{tikzpicture}
+\end{codeexample}
+
+\paragraph{The color space of a colormap.} There are two supported color spaces for a |colormap|: the RGB color space and the CMYK color space. Each access into a |colormap| requires linear interpolation which is performed in its color space. Color spaces make a difference: colors in different color spaces may be represented differently, depending on the output device. Many printers use CMYK for color printing, so providing CMYK colors might improve the printing quality on a color printer. The RGB color space is often used for display devices. The predefined |colormap|s in \PGFPlots\ all use RGB.
+
+Whenever a new |colormap| is created, \PGFPlots\ determines an associated color space. Then, each color in this specific |colormap| will be represented in its associated color space (converting colors automatically if necessary). Furthermore, every access into the |colormap| will be performed in its associated color space and every returned |mapped color| will be represented with respect to this color space. Furthermore, every shading generated by |shader=interp| will be represented with respect to the |colormap|'s associated color space. 
+
+The color space is chosen as follows: in case |colormap default colorspace=auto| (the initial configuration), the color space depends on the \emph{first} encountered color in \meta{color specification}. For |rgb| or |gray| or |color|, the associated color space will be RGB (as it was in all earlier versions of \PGFPlots). For |cmyk|, the associated color space will be CMYK. If |colormap default colorspace| is either |rgb| or |cmyk|, this specific color space is used and every color is converted automatically.
+\begin{pgfplotskey}{colormap default colorspace=\mchoice{auto,rgb,cmyk} (initially auto)}
+	Allows to set the color space of every \emph{newly created} |colormap|. The choices are explained in the previous paragraph.
+
+	It is (not yet) possible to change the color space of an existing |colormap|; re-create it if conversion is required.
+
+	The macro \declareandlabel{\pgfplotscolormapgetcolorspace}\marg{name} defines |\pgfplotsretval| to contain the color space of an existing |colormap name|, if you are in doubt.
+\end{pgfplotskey}
+
+Available color maps are shown below.
+
+\end{pgfplotskey}
+
+\begin{stylekey}{/pgfplots/colormap/hot}
+	A style which installs the colormap
+\begin{codeexample}[code only]
+\pgfplotsset{
+	colormap={hot}{color(0cm)=(blue); color(1cm)=(yellow); color(2cm)=(orange); color(3cm)=(red)}
+}
+\end{codeexample}
+
+	\pgfplotsshowcolormap{hot}
+
+	This is the preconfigured color map.
+\end{stylekey}
+
+\begin{stylekey}{/pgfplots/colormap/hot2}
+	A style which is equivalent to 
+\begin{codeexample}[code only]
+\pgfplotsset{
+	/pgfplots/colormap={hot2}{[1cm]rgb255(0cm)=(0,0,0) rgb255(3cm)=(255,0,0) 
+		rgb255(6cm)=(255,255,0) rgb255(8cm)=(255,255,255)}
+}
+\end{codeexample}
+
+	\pgfplotsshowcolormap{hot2}
+
+	Note that this particular choice ships directly with \PGFPlots, you do not need to load the |colormaps| library for this value.
+
+	\matlabcolormaptext
+\end{stylekey}
+
+\begin{stylekey}{/pgfplots/colormap/jet}
+	A style which is equivalent to 
+\begin{codeexample}[code only]
+\pgfplotsset{
+    /pgfplots/colormap={jet}{rgb255(0cm)=(0,0,128) rgb255(1cm)=(0,0,255) 
+		rgb255(3cm)=(0,255,255) rgb255(5cm)=(255,255,0) rgb255(7cm)=(255,0,0) rgb255(8cm)=(128,0,0)}
+}
+\end{codeexample}
+
+	\pgfplotsshowcolormap{jet}
+
+	\matlabcolormaptext
+\end{stylekey}
+
+\begin{stylekey}{/pgfplots/colormap/blackwhite}
+	A style which is equivalent to
+\begin{codeexample}[code only]
+\pgfplotsset{
+	colormap={blackwhite}{gray(0cm)=(0); gray(1cm)=(1)}
+}
+\end{codeexample}
+
+	\pgfplotsshowcolormap{blackwhite}
+\end{stylekey}
+
+
+\begin{stylekey}{/pgfplots/colormap/bluered}
+	A style which is equivalent to
+\begin{codeexample}[code only]
+\pgfplotsset{
+	colormap={bluered}{
+		rgb255(0cm)=(0,0,180); rgb255(1cm)=(0,255,255); rgb255(2cm)=(100,255,0); 
+		rgb255(3cm)=(255,255,0); rgb255(4cm)=(255,0,0); rgb255(5cm)=(128,0,0)}
+}
+\end{codeexample}
+
+	\pgfplotsshowcolormap{bluered}
+
+\begin{codeexample}[]
+\begin{tikzpicture}
+	\begin{axis}[colormap/bluered]
+	\addplot+[scatter,
+		 scatter src=x,samples=50]
+		{sin(deg(x))};
+	\end{axis}
+\end{tikzpicture}
+\end{codeexample}
+
+	\paragraph{Remark:} 
+	The style |bluered| (re-)defines the color map and activates it. \TeX\ will be slightly faster if you call |\pgfplotsset{colormap/bluered}| in the preamble (to create the color map once) and use |colormap name=bluered| whenever you need it. This remark holds for every color map style which follows. But you can simply ignore this remark.
+\end{stylekey}
+
+\begin{stylekey}{/pgfplots/colormap/cool}
+	A style which is equivalent to
+\begin{codeexample}[code only]
+\pgfplotsset{
+	colormap={cool}{rgb255(0cm)=(255,255,255); rgb255(1cm)=(0,128,255); rgb255(2cm)=(255,0,255)}
+}
+\end{codeexample}
+
+	\pgfplotsshowcolormap{cool}
+\end{stylekey}
+
+\begin{stylekey}{/pgfplots/colormap/greenyellow}
+	A style which is equivalent to
+\begin{codeexample}[code only]
+\pgfplotsset{
+	colormap={greenyellow}{rgb255(0cm)=(0,128,0); rgb255(1cm)=(255,255,0)}
+}
+\end{codeexample}
+
+	\pgfplotsshowcolormap{greenyellow}
+\end{stylekey}
+
+\begin{stylekey}{/pgfplots/colormap/redyellow}
+	A style which is equivalent to
+\begin{codeexample}[code only]
+\pgfplotsset{
+	colormap={redyellow}{rgb255(0cm)=(255,0,0); rgb255(1cm)=(255,255,0)}
+}
+\end{codeexample}
+
+	\pgfplotsshowcolormap{redyellow}
+\end{stylekey}
+
+\begin{stylekey}{/pgfplots/colormap/violet}
+	A style which is equivalent to
+\begin{codeexample}[code only]
+\pgfplotsset{
+	colormap={violet}{rgb255=(25,25,122) color=(white) rgb255=(238,140,238)}
+}
+\end{codeexample}
+
+	\pgfplotsshowcolormap{violet}
+\end{stylekey}
+
+\begin{command}{\pgfplotscolormaptoshadingspec\marg{colormap name}\marg{right end size}\marg{\textbackslash macro}}
+	A command which converts a colormap into a \PGF\ shading's color specification. It can be used in commands like |\pgfdeclare*shading| (see the \PGF\ manual~\cite{tikz} for details).
+
+	The first argument is the name of a (defined) colormap, the second the rightmost dimension of the specification. The result will be stored in \meta{\textbackslash macro}.
+\begin{codeexample}[]
+	% convert `hot' -> \result
+	\pgfplotscolormaptoshadingspec{hot}{8cm}\result
+	% define and use a shading in pgf:
+	\def\tempb{\pgfdeclarehorizontalshading{tempshading}{1cm}}%
+	% where `\result' is inserted as last argument:
+	\expandafter\tempb\expandafter{\result}%
+	\pgfuseshading{tempshading}%
+\end{codeexample}
+The usage of the result \meta{\textbackslash macro} is a little bit low--level.
+
+	\paragraph{Attention:} \PGF\ shadings are always represented with respect to the RGB color space. Consequently, even CMYK \meta{colormap name}s will result in an RGB shading specification when using this method\footnote{In case \PGF\ should someday support CMYK shadings and you still see this remark, you can add the macro definition \texttt{\textbackslash def\textbackslash pgfplotscolormaptoshadingspectorgb\{0\}} to your preamble.}.
+\end{command}
+
+
+Note that there \emph{more available choices} in the |colormaps| library which needs to be loaded by means of |\usepgfplotslibrary{colormaps}|.
+
+\subsubsection{Cycle Lists -- Options Controlling Line Styles}
+
+\label{sec:cycle:list}%
+\begin{pgfplotskeylist}{cycle list=\marg{list},cycle list name=\marg{\textbackslash macro}}
+Allows to specify a list of plot specifications which will be used for each \hbox{|\addplot|} command without explicit plot specification. Thus, the currently active |cycle list| will be used if you write either |\addplot+|\oarg{keys}| ...;| or if you \emph{don't} use square brackets as in |\addplot|\oarg{explicit plot specification}| ...;|. 
+
+The list element with index~$i$ will be chosen where~$i$ is the index of the current |\addplot| command (see also the |cycle list shift| key which allows to use $i+n$ instead). This indexing does also include plot commands which don't use the |cycle list|.
+
+There are several possibilities to change the currently active |cycle list|:
+\begin{enumerate}
+	\item Use one of the predefined lists\footnote{In an early version, these lists were called \texttt{\textbackslash coloredplotspeclist} and \texttt{\textbackslash blackwhiteplotspeclist} which appeared to be unnecessarily long, so they have been renamed. The old names are still accepted, however.},
+		\begin{itemize}
+			\item \declareandlabel{color} (from top to bottom)
+\begin{codeexample}[]
+\begin{tikzpicture}
+\begin{axis}[
+	stack plots=y,stack dir=minus,
+	cycle list name=color]
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\end{axis}
+\end{tikzpicture}
+\end{codeexample}
+
+			\item \declareandlabel{exotic} (from top to bottom)
+\begin{codeexample}[]
+\begin{tikzpicture}
+\begin{axis}[
+	stack plots=y,stack dir=minus,
+	cycle list name=exotic]
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\end{axis}
+\end{tikzpicture}
+\end{codeexample}
+
+	\item \declareandlabel{black white} (from top to bottom)
+\begin{codeexample}[]
+\begin{tikzpicture}
+\begin{axis}[
+	stack plots=y,stack dir=minus,
+	cycle list name=black white]
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\end{axis}
+\end{tikzpicture}
+\end{codeexample}
+
+	\item \declareandlabel{mark list} (from top to bottom)
+\begin{codeexample}[]
+\begin{tikzpicture}
+\begin{axis}[
+	stack plots=y,stack dir=minus,
+	cycle list name=mark list]
+\addplot+[blue] coordinates {(0,1) (0.5,1) (1,1)};
+\addplot+[blue] coordinates {(0,1) (0.5,1) (1,1)};
+\addplot+[blue] coordinates {(0,1) (0.5,1) (1,1)};
+\addplot+[blue] coordinates {(0,1) (0.5,1) (1,1)};
+\addplot+[blue] coordinates {(0,1) (0.5,1) (1,1)};
+\addplot+[blue] coordinates {(0,1) (0.5,1) (1,1)};
+\addplot+[blue] coordinates {(0,1) (0.5,1) (1,1)};
+\addplot+[blue] coordinates {(0,1) (0.5,1) (1,1)};
+\addplot+[blue] coordinates {(0,1) (0.5,1) (1,1)};
+\addplot+[blue] coordinates {(0,1) (0.5,1) (1,1)};
+\addplot+[blue] coordinates {(0,1) (0.5,1) (1,1)};
+\addplot+[blue] coordinates {(0,1) (0.5,1) (1,1)};
+\addplot+[blue] coordinates {(0,1) (0.5,1) (1,1)};
+\end{axis}
+\end{tikzpicture}
+\end{codeexample}
+
+	The |mark list| always employs the current color, but it doesn't define one (the \verbpdfref{\addplot+} statement explicitly sets the current color to |blue|).
+
+	The |mark list| is especially useful in conjunction with |cycle multi list| which allows to combine it with other lists (for example |linestyles| or a list of colors).
+	\item \declareandlabel{mark list*} A list containing only markers. In contrast to |mark list|, all these markers are filled. They are defined as (from top to bottom)
+\begin{codeexample}[]
+\begin{tikzpicture}
+\begin{axis}[
+	stack plots=y,stack dir=minus,
+	cycle list name=mark list*]
+\addplot+[blue] coordinates {(0,1) (0.5,1) (1,1)};
+\addplot+[blue] coordinates {(0,1) (0.5,1) (1,1)};
+\addplot+[blue] coordinates {(0,1) (0.5,1) (1,1)};
+\addplot+[blue] coordinates {(0,1) (0.5,1) (1,1)};
+\addplot+[blue] coordinates {(0,1) (0.5,1) (1,1)};
+\addplot+[blue] coordinates {(0,1) (0.5,1) (1,1)};
+\addplot+[blue] coordinates {(0,1) (0.5,1) (1,1)};
+\addplot+[blue] coordinates {(0,1) (0.5,1) (1,1)};
+\addplot+[blue] coordinates {(0,1) (0.5,1) (1,1)};
+\addplot+[blue] coordinates {(0,1) (0.5,1) (1,1)};
+\addplot+[blue] coordinates {(0,1) (0.5,1) (1,1)};
+\addplot+[blue] coordinates {(0,1) (0.5,1) (1,1)};
+\addplot+[blue] coordinates {(0,1) (0.5,1) (1,1)};
+\end{axis}
+\end{tikzpicture}
+\end{codeexample}
+	Similar to |mark list|, the |mark list*| always employs the current color, but it doesn't define one (see above for the \verbpdfref{\addplot+}).
+
+	\item \declareandlabel{color list} (from top to bottom)
+\begin{codeexample}[]
+\begin{tikzpicture}
+\begin{axis}[
+	stack plots=y,stack dir=minus,
+	cycle list name=color list]
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\end{axis}
+\end{tikzpicture}
+\end{codeexample}
+
+	The |cycle list name=color| choice also employs markers whereas |color list| uses \emph{only} colors.
+
+	\item \declareandlabel{linestyles} (from top to bottom)
+\begin{codeexample}[]
+\begin{tikzpicture}
+\begin{axis}[
+	stack plots=y,stack dir=minus,
+	cycle list name=linestyles]
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\end{axis}
+\end{tikzpicture}
+\end{codeexample}
+	\item \declareandlabel{linestyles*} contains more dotted line styles than |linestyles| (from top to bottom)
+\begin{codeexample}[]
+\begin{tikzpicture}
+\begin{axis}[
+	stack plots=y,stack dir=minus,
+	cycle list name=linestyles*]
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\addplot coordinates {(0,1) (0.5,1) (1,1)};
+\end{axis}
+\end{tikzpicture}
+\end{codeexample}
+	\item \declareandlabel{auto} The |cycle list name=auto| always denotes the most recently used cycle list activated by |cycle list| or |cycle list name|.
+		\end{itemize}
+
+The definitions of all predefined cycle lists follow (see the end of this paragraph for a syntax description).
+\begin{codeexample}[code only]
+\pgfplotscreateplotcyclelist{color}{%
+	blue,every mark/.append style={fill=blue!80!black},mark=*\\%
+	red,every mark/.append style={fill=red!80!black},mark=square*\\%
+	brown!60!black,every mark/.append style={fill=brown!80!black},mark=otimes*\\%
+	black,mark=star\\%
+	blue,every mark/.append style={fill=blue!80!black},mark=diamond*\\%
+	red,densely dashed,every mark/.append style={solid,fill=red!80!black},mark=*\\%
+	brown!60!black,densely dashed,every mark/.append style={
+		solid,fill=brown!80!black},mark=square*\\%
+	black,densely dashed,every mark/.append style={solid,fill=gray},mark=otimes*\\%
+	blue,densely dashed,mark=star,every mark/.append style=solid\\%
+	red,densely dashed,every mark/.append style={solid,fill=red!80!black},mark=diamond*\\%
+}
+\end{codeexample}
+\begin{codeexample}[code only]
+\pgfplotscreateplotcyclelist{black white}{%
+	every mark/.append style={fill=gray},mark=*\\%
+	every mark/.append style={fill=gray},mark=square*\\%
+	every mark/.append style={fill=gray},mark=otimes*\\%
+	mark=star\\%
+	every mark/.append style={fill=gray},mark=diamond*\\%
+	densely dashed,every mark/.append style={solid,fill=gray},mark=*\\%
+	densely dashed,every mark/.append style={solid,fill=gray},mark=square*\\%
+	densely dashed,every mark/.append style={solid,fill=gray},mark=otimes*\\%
+	densely dashed,every mark/.append style={solid},mark=star\\%
+	densely dashed,every mark/.append style={solid,fill=gray},mark=diamond*\\%
+}
+\end{codeexample}
+\begin{codeexample}[code only]
+\pgfplotscreateplotcyclelist{exotic}{%
+	teal,every mark/.append style={fill=teal!80!black},mark=*\\%
+	orange,every mark/.append style={fill=orange!80!black},mark=square*\\%
+	cyan!60!black,every mark/.append style={fill=cyan!80!black},mark=otimes*\\%
+	red!70!white,mark=star\\%
+	lime!80!black,every mark/.append style={fill=lime},mark=diamond*\\%
+	red,densely dashed,every mark/.append style={solid,fill=red!80!black},mark=*\\%
+	yellow!60!black,densely dashed,
+		every mark/.append style={solid,fill=yellow!80!black},mark=square*\\%
+	black,every mark/.append style={solid,fill=gray},mark=otimes*\\%
+	blue,densely dashed,mark=star,every mark/.append style=solid\\%
+	red,densely dashed,every mark/.append style={solid,fill=red!80!black},mark=diamond*\\%
+}
+\end{codeexample}
+\begin{codeexample}[code only]
+% note that "." is the currently defined Tikz color.
+\pgfplotscreateplotcyclelist{mark list}{%
+	every mark/.append style={solid,fill=.!80!black},mark=*\\%
+	every mark/.append style={solid,fill=.!80!black},mark=square*\\%
+	every mark/.append style={solid,fill=.!80!black},mark=triangle*\\%
+	every mark/.append style={solid},mark=star\\%
+	every mark/.append style={solid,fill=.!80!black},mark=diamond*\\%
+	every mark/.append style={solid,fill=.!80!black!40},mark=otimes*\\%
+	every mark/.append style={solid},mark=|\\%
+	every mark/.append style={solid,fill=.!80!black},mark=pentagon*\\%
+	every mark/.append style={solid},mark=text,text mark=p\\%
+	every mark/.append style={solid},mark=text,text mark=a\\%
+}
+\end{codeexample}
+\noindent This is not the complete truth: the actual implementation of |mark list| allows to customize the |fill| value:
+\begin{pgfplotskey}{mark list fill=\marg{color} (initially .!80!black)}
+	Allows to customize the fill color for the |mark list| and |mark list*|. 
+	
+	For example, if you have |black| as color, the alternative choice |mark list fill=.!50!white| will produce much better results.
+\end{pgfplotskey}
+\begin{codeexample}[code only]
+% note that "." is the currently defined Tikz color.
+\pgfplotscreateplotcyclelist{mark list*}{%
+	every mark/.append style={solid,fill=.!80!black},mark=*\\%
+	every mark/.append style={solid,fill=.!80!black},mark=square*\\%
+	every mark/.append style={solid,fill=.!80!black},mark=triangle*\\%
+	every mark/.append style={solid,fill=.!80!black},mark=halfsquare*\\%
+	every mark/.append style={solid,fill=.!80!black},mark=pentagon*\\%
+	every mark/.append style={solid,fill=.!80!black},mark=halfcircle*\\%
+	every mark/.append style={solid,fill=.!80!black,rotate=180},mark=halfdiamond*\\%
+	every mark/.append style={solid,fill=.!80!black!40},mark=otimes*\\%
+	every mark/.append style={solid,fill=.!80!black},mark=diamond*\\%
+	every mark/.append style={solid,fill=.!80!black},mark=halfsquare right*\\%
+	every mark/.append style={solid,fill=.!80!black},mark=halfsquare left*\\%
+}
+\end{codeexample}
+\begin{codeexample}[code only]
+\pgfplotscreateplotcyclelist{color list}{%
+	red,blue,black,yellow,brown,teal,orange,violet,cyan,green!70!black,magenta,gray}
+\end{codeexample}
+\begin{codeexample}[code only]
+\pgfplotscreateplotcyclelist{linestyles}{solid,dashed,dotted}
+\pgfplotscreateplotcyclelist{linestyles*}{solid,dashed,dotted,dashdotted,dashdotdotted}
+\end{codeexample}
+
+	\item The second choice for cycle lists is to provide each entry directly as argument to |cycle list|,
+\begin{codeexample}[]
+\begin{tikzpicture}
+\begin{loglogaxis}[cycle list={%
+	{blue,mark=*},
+	{red,mark=square},
+	{dashed,mark=o},
+	{loosely dotted,mark=+},
+	{brown!60!black,
+		mark options={fill=brown!40},
+		mark=otimes*}}
+]
+\plotcoords
+\legend{$d=2$,$d=3$,$d=4$,$d=5$,$d=6$}
+\end{loglogaxis}
+\end{tikzpicture}
+\end{codeexample}
+	(This example list requires |\usetikzlibrary{plotmarks}|).
+
+	The input format is described below in more detail.
+
+	\item The last method is to combine 1. and 2.:  Define named cycle lists in the preamble and use them with `|cycle list name|':
+\begin{command}{\pgfplotscreateplotcyclelist\marg{name}\marg{list}}%
+\end{command}
+\begin{codeexample}[code only]
+\pgfplotscreateplotcyclelist{mylist}{%
+	{blue,mark=*},
+	{red,mark=square},
+	{dashed,mark=o},
+	{loosely dotted,mark=+},
+	{brown!60!black,mark options={fill=brown!40},mark=otimes*}}
+...
+\begin{axis}[cycle list name=mylist]
+	...
+\end{axis}
+\end{codeexample}
+\end{enumerate}
+
+\paragraph{The format of \meta{list}:} The argument \meta{list} is usually a comma separated list of lists of style keys like colors, line styles, marker types and marker styles. This ``comma list of comma lists'' structure requires to encapsulate the inner list using curly braces:
+\begin{codeexample}[code only]
+\pgfplotscreateplotcyclelist{mylist}{%
+	{blue,mark=*},
+	{red,mark=square},
+	{dashed,mark=o},
+	{loosely dotted,mark=+},
+	{brown!60!black,mark options={fill=brown!40},mark=otimes*}}
+\end{codeexample}
+Alternatively, one can terminate the inner lists (i.e.\ those for one single plot) with `|\\|':
+\begin{codeexample}[code only]
+\begin{axis}[cycle list={%
+	blue,mark=*\\%
+	red,mark=square\\%
+	dashed,mark=o\\%
+	loosely dotted,mark=+\\%
+	brown!60!black,mark options={fill=brown!40},mark=otimes*\\%
+}
+]
+...
+\end{axis}
+\end{codeexample}
+In this case, the \emph{last} entry also needs a terminating `|\\|', but one can omit braces around the single entries.
+
+\paragraph{Remark:} It is possible to call |\pgfplotsset{cycle list=|\marg{a list}|}| or |cycle list name| \emph{between} plots. Such a setting remains effective until the end of the current \TeX\ group (that means curly braces). Every |\addplot| command queries the |cycle list| using the plot index; it doesn't hurt if |cycle list|s have changed in the meantime.
+\end{pgfplotskeylist}
+
+\begin{pgfplotskey}{cycle multi list=\meta{list 1}\texttt{\textbackslash nextlist}\meta{list 2}\texttt{\textbackslash nextlist}$\dotsb$}
+	Allows to supply more than one |cycle list| in a way such that each one contributes to the plot style. This is probably best explained using an example:
+\begin{codeexample}[]
+\begin{tikzpicture}
+\begin{axis}[
+	cycle multi list={
+	  red,blue\nextlist
+	  solid,{dotted,mark options={solid}}\nextlist
+	  mark=*,mark=x,mark=o
+	},
+	samples=3,
+	legend entries={0,...,20},
+	legend pos=outer north east
+]
+	\addplot {x};
+	\addplot {x-1};
+	\addplot {x-2};
+	\addplot {x-3};
+	\addplot {x-4};
+	\addplot {x-5};
+	\addplot {x-6};
+	\addplot {x-7};
+	\addplot {x-8};
+	\addplot {x-9};
+	\addplot {x-10};
+	\addplot {x-11};
+\end{axis}
+\end{tikzpicture}
+\end{codeexample}
+	\noindent The provided |cycle multi list| consists of three lists. The style for a single plot is made up using elements of each of the three lists: the first plot has style |red,solid,mark=*|, the second has |red,solid,mark=x|, the third has |red,solid,mark=o|. The fourth plot restarts the third list and uses the next one of list $2$: it has |red,dotted,mark options={solid},mark=*| and so on.
+
+	The last list will always be advanced for a new plot. The list before the last (in our case the second list) will be advanced after the last one has been reset. In other words: |cycle multi list| allows a composition of different |cycle list| in a lexicographical way\footnote{For those who prefer formulas: The plot with index $0 \le i < N$ will use cycle list offsets $i_0,i_1,\dotsc,i_k$, $0 \le i_m < N_m$ where $k$ is the number of arguments provided to \texttt{cycle multi list} and $N_m$ is the number of elements in the $m$th cycle list. The offsets $i_m$ are computed in a loop {\ttfamily \{ int tmp=i;  for( int m=k-1; m>=0; m=m-1 ) \{ i\_m = tmp\%N\_m; tmp = tmp/N\_m; \}\}}.}.
+
+	The argument for |cycle multi list| is a sequence of arguments as they would have been provided for |cycle list|, separated by \declareandlabel{\nextlist}. In addition to providing a new cycle list, the \meta{list $i$} elements can also denote |cycle list name| values (including the special |auto| cycle list which is the most recently assigned |cycle list| or |cycle list name|). The final |\nextlist| is optional.
+
+	The list in our example above could have been written as
+\begin{codeexample}[code only]
+\begin{axis}[
+	cycle multi list={
+		red\\blue\\\nextlist
+		solid\\dotted,mark options={solid}\\\nextlist
+		mark=*\\mark=x\\mark=o\\
+	}]
+\end{codeexample}
+\noindent as well (note the terminating |\\| commands!).
+
+\begin{codeexample}[]
+\begin{tikzpicture}
+\begin{axis}[
+	title={Cycle color between successive plots, then marks},
+	cycle multi list={
+		mark list\nextlist
+		blue,red%
+	},
+	samples=3,
+	legend entries={0,...,20},
+	legend pos=outer north east
+]
+	\addplot {x};
+	\addplot {x-1};
+	\addplot {x-2};
+	\addplot {x-3};
+	\addplot {x-4};
+	\addplot {x-5};
+	\addplot {x-6};
+	\addplot {x-7};
+	\addplot {x-8};
+	\addplot {x-9};
+	\addplot {x-10};
+	\addplot {x-11};
+\end{axis}
+\end{tikzpicture}
+\end{codeexample}
+
+
+	\paragraph{Using Sub--Lists} The \meta{list $i$} entry can also contain just the first $n$ elements of an already known cycle list name using the syntax |[|\meta{number}| of]|\meta{cycle list name}. For example |[2 of]mark list| will use the first $2$ elements of |mark list|:
+\begin{codeexample}[]
+\begin{tikzpicture}
+\begin{axis}[
+	title={Cycle 2 marks between successive plots, then colors},
+	cycle multi list={%
+		color list\nextlist
+		[2 of]mark list
+	},
+	samples=3,
+	legend entries={0,...,20},
+	legend pos=outer north east
+]
+	\addplot {x};
+	\addplot {x-1};
+	\addplot {x-2};
+	\addplot {x-3};
+	\addplot {x-4};
+	\addplot {x-5};
+	\addplot {x-6};
+	\addplot {x-7};
+	\addplot {x-8};
+	\addplot {x-9};
+	\addplot {x-10};
+	\addplot {x-11};
+\end{axis}
+\end{tikzpicture}
+\end{codeexample}
+\end{pgfplotskey}
+
+\begin{pgfplotskey}{cycle list shift=\marg{integer} (initially empty)}
+	Allows to \emph{shift} the index into the |cycle list|. If \meta{integer} is $n$, the list element $i+n$ will be taken instead of the $i$th one. Remember that $i$ is the index of the current |\addplot| command (starting with~$0$).
+
+	Since a |cycle list| is queried \emph{immediately} when |\addplot| (or |\addplot+|) is called, you can adjust the |cycle list shift| for selected plots:
+\begin{codeexample}[code only]
+\pgfplotsset{cycle list shift=3}
+\addplot ....
+
+\pgfplotsset{cycle list shift=-1}
+\addplot ....
+\end{codeexample}
+	\paragraph{Special case:} If the result is negative, $i+n <0$, the list index $-(i+n)$ will be taken. For example, |cycle list shift=-10| and $i<10$ will result in list index $10-i$. Note that you can use |reverse legend| to reverse legends, so this feature is probably never needed.
+\end{pgfplotskey}
+
+\subsubsection{Axis Background}
+\begin{pgfplotskey}{axis background (initially empty)}
+	This is a style to configure the appearance of the axis as such. It can be defined and/or changed using the |axis background/.style=|\marg{options} method. A background path will be generated with \meta{options}, which may contain fill colors or shadings.
+
+\pgfplotsexpensiveexample
+\begin{codeexample}[]
+\begin{tikzpicture}
+	\begin{axis}[
+		axis background/.style={fill=blue!10}]
+
+	\addplot3[surf,y domain=0:1] 
+		{sin(deg(x)) * y*(1-y)};
+		
+	\end{axis}
+\end{tikzpicture}
+\end{codeexample}
+
+	Please note that legends are filled with white in the default configuration.
+\begin{codeexample}[]
+\begin{tikzpicture}
+	\begin{semilogyaxis}[
+		axis background/.style={
+			shade,top color=gray,bottom color=white},
+		legend style={fill=white}]
+
+	\addplot {exp(-x)};
+	\addplot {exp(-4*x)};
+	\legend{$e^{-x}$,$e^{-4x}$}
+	\end{semilogyaxis}
+\end{tikzpicture}
+\end{codeexample}
+	Details about |fill| and |shade| can be found in the \Tikz\ manual, \cite{tikz}.
+\end{pgfplotskey}
+
+
+\subsection{Providing Color Data - Point Meta}
+\label{pgfplots:point:meta}
+\PGFPlots\ provides features which modify plots depending on a special coordinate, the ``point meta data''. For example, scatter plots may vary marker colors, size or appearance depending on this special data. Surface and mesh plots are another example: here, the color of a surface patch (or mesh part) depends on ``point meta''. The ``meta data'' of a node is not the position (which is given as $(x,y)$ or $(x,y,z)$). It is ``some information'' about that node; you could say: it is a specific property of the node. This is commonly called ``meta data''. 
+
+In \PGFPlots, every node has its coordinate \emph{and} its meta data. Thus, two--dimensional plots have three values: $x$, $y$, and the |point meta| data. Three--dimensional plots have four values for each coordinate: $x$, $y$, $z$, and the |point meta|. 
+
+In many cases, |point meta| is interpreted to be color data. To be more precise: it is interpreted to be \emph{scalar} color data which is mapped into the |colormap| (more about this approach in the next paragraphs). However, |point meta| can be anything. Often, it is a single number as in the case of color data. That number is mapped linearly to the interval $[0,1000]$ such that $0$ corresponds to the smallest encountered value and $1000$ corresponds to the largest encountered scalar value. The mapped value is available as |\pgfplotspointmetatransformed|. This special value allows to define some property of the plot: it can be the color (together with |colormap|). It can also be the |line width| in a |mesh| plot (more precisely: the |line width| could be defined to depend on the transformed meta data). The value can also be used to define |mark size|. However, |point meta| data does not necessarily need to be a number. It can be a text label (any text that you like). This is used by |nodes near coords|, for example. It could also contain a tuple like RGB color information (which is not commonly used, however). Thus, |point meta| is really some abstract information about individual coordinates.
+
+Note that there is only \emph{one} |point meta| per point. See the key |visualization depends on| if you need more than one meta data value per coordinate. 
+
+The common idea idea is to tell \PGFPlots\ how to get the meta data. It is not necessary to provide data explicitly -- in many cases, the data which is used to color surface patches or marker colors is the plot's $y$ or $z$ coordinate. The method used to tell \PGFPlots\ where to find ``point meta data'' is the |point meta| key. 
+
+The most common use-case of |point meta| is color information: if the point meta data is in the interval $[m_{\text{min}},m_{\text{max}}]$, the point meta coordinate $m = m_{\text{min}}$ will get the lowest color provided by the color map while $m=m_{\text{max}}$ will get the highest color provided by the color map. As already mentioned, this is accomplished using |\pgfplotspointmetatransformed| $\in [0,1000]$ (per convention). Any coordinate between the smallest and largest values will be mapped linearly: for example, the mean $m = 1/2 (m_{\text{max}} + m_{\text{min}})$ will get the middle color of the color map (it will have |\pgfplotspointmetatransformed| $=500$). This is why ``point meta'' is sometimes called ``color data'' in this manual.
+
+\begin{codeexample}[]
+\begin{tikzpicture}
+	\begin{axis}[colorbar]
+		\addplot[mesh,point meta=y,thick] {x^2};
+	\end{axis}
+\end{tikzpicture}
+\end{codeexample}
+
+\begin{pgfplotskey}{point meta=\mchoice{none,\meta{expression},x,y,z,f(x),explicit,explicit symbolic} (initially none)}
+	\label{pgfplots:pointmeta}
+	The |point meta| key tells \PGFPlots\ where to get the special point meta data. Please note that |point meta| and |scatter src| is actually the same -- |scatter src| is an alias for |point meta|. Thus, the summary provided for |scatter src| on page~\pageref{pgfplots:scatter:src} covers the same topics. However, the main reference for |point meta| is here.
+	
+	\begin{description}
+		\item[\declaretext{none}] The initial choice |none| disables point meta data, resulting in no computational work. Any other choice will activate the computation of upper and lower ranges for point meta data, i.e.\ the computation of $[m_{\text{min}},m_{\text{max}}]$. 
+
+		\item[\declaretext{x}] The choice |x| uses the already available $x$ coordinates as point meta data. This does always refer to the \emph{final} $x$ coordinates after any user transformations, logarithms, stacked plot computations etc.\ have been applied. Consider using |rawx| if you need the unprocessed coordinate value here.
+
+		\item[\declaretext{y}]
+		\item[\declaretext{z}]
+			 The choices |y| and |z| are similar: they use the $y$ or $z$ coordinates respectively as point meta data. Consequently, these three choices do \emph{not} need any extra data. As for |x|, there are math constants |rawy| and |rawz| which yield the unprocessed $y$ and $z$ value, respectively.
+
+		\item[\declaretext{f(x)}] This will use the last available coordinate, in other words: it is the same as |y| for two dimensional plots and |z| for three dimensional ones.
+
+		\item[\declaretext{explicit}] This choice tells \PGFPlots\ to expect \emph{numerical} point meta data which is provided explicitly in the coordinate input streams. This data will be transformed linearly into the current color map as it has been motivated above.
+		
+		How point meta data is provided for |plot coordinates|, |plot table| and the other input methods is described in all detail in Section~\ref{pgfplots:providing:input} -- but we provide small examples here to summarize the possibilities:
+\begin{codeexample}[code only]
+% for 'coordinates':
+% provide color data explicitly using [<data>]
+% behind coordinates:
+\addplot+[point meta=explicit]
+	coordinates {
+		(0,0) [1.0e10]
+		(1,2) [1.1e10]
+		(2,3) [1.2e10]
+		(3,4) [1.3e10]
+		% ...
+	};
+\end{codeexample}
+
+\begin{codeexample}[code only]
+% for 'table':
+% Assumes a datafile.dat like
+% xcolname  ycolname    colordata
+% 0         0           0.001
+% 1         2           0.3
+% 2         2.1         0.4
+% 3         3           0.5
+% ...
+% the file may have more columns.
+\addplot+[point meta=explicit]
+	table[x=xcolname,y=ycolname,meta=colordata] 
+		{datafile.dat};
+% or, equivalently (perhaps a little bit slower):
+\addplot+[point meta=\thisrow{colordata}]
+	table[x=xcolname,y=ycolname] 
+		{datafile.dat};
+\end{codeexample}
+
+\begin{codeexample}[code only]
+% for 'file':
+% Assumes a datafile.dat like
+% 0         0           0.001
+% 1         2           0.3
+% 2         2.1         0.4
+% 3         3           0.5
+% ...
+% the first three columns will be used here as x,y and meta,
+% resp.
+\addplot+[point meta=explicit]
+	file {datafile.dat};
+\end{codeexample}
+
+\begin{codeexample}[code only]
+% 'table' using expressions which may depend on all
+% columns:
+% Assumes a datafile.dat like
+% xcolname  ycolname    anything    othercol
+% 0         0           4           15
+% 1         2           5           20
+% 2         2.1         8           30
+% 3         3           42          40
+% ...
+% the file may have more columns.
+\addplot+[point meta={0.5*(\thisrow{anything} + sqrt(\thisrow{othercol}))}]
+	table[x=xcolname,y=ycolname]
+		{datafile.dat};
+\end{codeexample}
+		Thus, there are several methods to provide point meta (color data). The key for the choice |explicit| is that some data is provided explicitly -- although |point meta| doesn't know how. The data is expected to be of numerical type and is mapped linearly into the range $[0,1000]$ (maybe for use in the current color map).
+
+		\item[\declaretext{explicit symbolic}] The choice |explicit symbolic| is very similar to |explicit| in that it expects extra data by the coordinate input routines. However, |explicit symbolic| does not necessarily expect numerical data: you can provide any sort of symbols. One might provide a set of styles, one for each class in a scatter plot. This is realised using |scatter/classes|, see page~\pageref{pgfplots:scatterclasses}. Input data is provided in the same fashion as mentioned above for the choice |explicit|. 
+		
+		Currently, this choice can only be used for scatter plots.
+
+		\item[\normalfont\declare{\meta{expression}}] This choice allows to compute point meta data using a mathematical expression. The \meta{expression} may depend on |x|, |y|, |z| which yield the current $x$, $y$ or $z$ coordinate, respectively. The coordinates are completely processed (transformations, logs) as mentioned above for the choice |x|. Furthermore, the \meta{expression} may depend on commands which are valid during |\addplot| like |\plotnum| or |\coordindex| (see Section~\ref{pgfplots:misc} for details). Computations are performed using the floating point unit of \PGF, and all supported arithmetical operations can be used. 
+		
+		In essence, the \meta{expression} may depend on everything which is known to all |\addplot| commands: the $x$, $y$ and (if any) $z$ coordinates. In addition, it may depend upon |rawx|, |rawy| or |rawz|. These three expressions yield the unprocessed $x$, $y$ or $z$ value as it has been found in the input stream (no logs, no user transformations)%
+		\footnote{%
+		 In rare circumstances, it might be interesting to apply a math expression to another source of point meta (one of the other choices. To this end, the \meta{expression} is checked after the other possible choices have already been evaluated. In other words, the statement \texttt{point meta=explicit, point meta=meta*meta+3} will evaluate the expression with |meta| set to whatever data has been provided explicitly.}.
+		If used together with |plot table|, you may also access other table columns (for example with |\thisrow|\marg{colname}).
+
+		\item[\normalfont\declaretext{TeX code}\texttt{=}\meta{code}] A rather low level choice which allows to provide \TeX\ \meta{code} to compute a numerical value. The \meta{code} should define the macro |\pgfplotspointmeta|. It is evaluated in a locally scoped environment (it's local variables are freed afterwards). It may depend on the same values as described for \meta{expression} above, especially on |\thisrow|\marg{colname} for table input.
+
+		Note that the math parser will be configured to use the |fpu| at this time, so |\pgfmathparse| yields floats. 
+
+		\item[\normalfont\declaretext{TeX code symbolic}\texttt{=}\meta{code}] Just as |TeX code|, you can provide \meta{code} which defines the macro |\pgfplotspointmeta|, but the result is not interpreted as a number. It is like the |explicit symbolic| choice.
+		
+	\end{description}
+
+	As already mentioned, a main application of point meta data is to determine (marker/face/edge) colors using a linear map into the range $[0,1000]$ (maybe for use in the current color map). This map works as follows: it is a function
+	\[ \phi\colon [m_{\text{min}},m_{\text{max}}] \to [0,1000] \]
+	with
+	\[ \phi(m) = \frac{m - m_{\text{min}}} {1000} \]
+	such that $\phi(m_{\text{min}}) = 0$ and $\phi(m_{\text{max}})=1000$. The value $1000$ is -- per convention -- the upper limit of all color maps. Now, if a coordinate (or edge/face) has the point meta data $m$, its color will be determined using $\phi(m)$: it is the color at $\phi(m)$\textperthousand\ of the current color map.
+
+	This transformation depends on the interval $[m_{\text{min}},m_{\text{max}}]$ which, in turn, can be modified using the keys |point meta rel|, |point meta min| and |point meta max| described below.
+
+	The untransformed point meta data is available in the macro \declareandlabel{\pgfplotspointmeta} (only in the correct context, for example the scatter plot styles or the |scatter/@pre marker code| interface). This macro contains a low level floating point number (unless it is non-parsed string data). The transformed data will be available in the macro \declareandlabel{\pgfplotspointmetatransformed} and is in fixed point representation. It is expected to be in the range $[0,1000]$.
+
+\end{pgfplotskey}
+
+\begin{pgfplotskey}{set point meta if empty=\marg{point meta source}}
+	Sets |point meta=|\meta{point meta source}, but only if |point meta=none| currently. This is used for |scatter|, |mesh| and |surf| with |set point meta if empty=f(x)|.
+\end{pgfplotskey}
+
+\begin{pgfplotskey}{point meta rel=\mchoice{axis wide,per plot} (initially axis wide)}
+	As already explained in the documentation for |point meta|, one application for point meta data is to determine colors using the current color map and a linear map from point meta data into the current color map. The question is how this linear map is computed. 
+
+	The key |point meta rel| configures whether the interval of all point meta coordinates, $[m_{\text{min}},m_{\text{max}}]$ is computed as maximum over all plots in the complete axis (the choice \declaretext{axis wide}) or only for one particular plot (the choice \declaretext{per plot}).
+
+\message{Overfull hbox is ok.}%
+\begin{codeexample}[]
+\begin{tikzpicture}
+   \begin{axis}[
+      title=Axis wide color mapping,
+      colorbar,
+      samples=50,point meta rel=axis wide,
+	  point meta=y]
+
+      \addplot[mesh,thick] {sin(deg(x))};
+      \addplot[mesh,thick] {3*tanh(x)};
+   \end{axis}
+\end{tikzpicture}
+~
+\begin{tikzpicture}
+   \begin{axis}[
+      title=Per Plot color mapping,
+      colorbar,
+      samples=50,
+	  point meta rel=per plot,
+	  point meta=y]
+
+      \addplot[mesh,thick] {sin(deg(x))};
+      \addplot[mesh,thick] {3*tanh(x)};
+   \end{axis}
+\end{tikzpicture}
+\end{codeexample}
+
+	Note that a |colorbar| will still use the |axis wide| point meta limits. Consider the |colorbar source| key if you want the color data limits of a \emph{particular} plot for your color bar. The |point meta rel| key configures how point meta maps to colors in the |colormap|.
+\end{pgfplotskey}
+
+\begin{pgfplotskeylist}{point meta min=\marg{number},point meta max=\marg{number}}
+	These keys allow to define the range required for the linear map of point meta data into the range $[0,1000]$ (for example, for current maps) explicitly. This is necessary if the same mapping shall be used for more than one axis.
+
+	\paragraph{Remarks about special cases:}
+	\begin{itemize}
+		\item It is possible to provide limits partially; in this case, only the missing limit will be computed.
+		\item If point meta data falls outside of these limits, the linear transformation is still well defined which is acceptable (unless the interval is of zero length). However, color data can't be outside of these limits, so color bars perform a truncation.
+		\item This key can be provided for single plots as well as for the complete axis (or for both).
+		\item If meta limits are provided for a single plot, these limits may also contribute to the axis wide meta interval.
+	\end{itemize}
+\end{pgfplotskeylist}
+
+\begin{pgfplotskey}{colormap access=\mchoice{map,direct} (initially map)}
+	This key configures how point meta data is used to determine colors from a color map. The initial configuration |map| performs the linear mapping operation explained above. The choice |direct| does not perform any transformation; it takes the point meta as integer indices into the current color map. 
+
+	Consequently, there is no interpolation between colors in the color map, there will only be as many colors as the color map contains explicitly.
+
+	\paragraph{Some more details:}
+	\begin{itemize}
+		\item If there are $m$ colors in the color map and the color data falls outside of $[0,m-1]$, it will be pruned to either the first or the last color.
+		\item If color data is a real number, it will be truncated to the next smaller integer.
+		\item 
+	This key does not work for |shader=interp| (note that this shader will always interpolate in the color map).
+	\end{itemize}
+	\paragraph{Attention:} This feature is experimental, I did not have time to test it. 
+\end{pgfplotskey}
+

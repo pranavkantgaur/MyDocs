@@ -1,0 +1,354 @@
+# Copyright (c) 2001, Stanford University
+# All rights reserved.
+#
+# See the file LICENSE.txt for information on redistributing this software.
+#
+# Authors:
+#   Brian Paul
+
+"""Chromium config tool utility functions"""
+
+import re, os, string, sys
+sys.path.append("../server")
+import crconfig
+import crtypes
+
+#----------------------------------------------------------------------
+
+def MakeHostname(format, number):
+	"""Return a hostname generated from a format string and number."""
+	# find the hash characters first
+	p = re.search("#+", format)
+	if not p:
+		return format
+	numHashes = p.end() - p.start()
+	numDigits = len(str(number))
+	# start building result string
+	result = format[0:p.start()]
+	# insert padding zeros as needed
+	while numHashes > numDigits:
+		result += "0"
+		numHashes -= 1
+	# append the number
+	result += str(number)
+	# append rest of format string
+	result += format[p.end():]
+	return result
+
+def MakeHostnames(format, start, count):
+	"""Return a list of hostname generated from format string, start and
+	count."""
+	names = []
+	for i in range(count):
+		names.append(MakeHostname(format, start + i))
+	return names
+
+
+#----------------------------------------------------------------------
+
+def FindSPUNamesInDir(spuDirectory):
+	"""Return list of SPUs in the given directory."""
+	# filenames to match:
+	if os.name == "posix":
+		if sys.platform[:6] == 'darwin':
+			matchPattern = "([a-zA-Z0-9\_]+)spu\.bundle"
+		else:
+			matchPattern = "lib([a-zA-Z0-9\_]+)spu\.so"
+	elif os.name == "nt":
+		matchPattern = "([a-zA-Z0-9\_]+)spu\.dll"
+	else:
+		print "fix me:  unexpected os.name result!"
+		abort
+	# SPU names to ignore:
+	ignorePattern = "error|nop|template|COPY[a-zA-Z0-9]+|passthrough|hlpassthrough|sqpassthrough"
+	# scan directory
+	files = os.listdir(spuDirectory)
+	# build the list of SPUs
+	spus = []
+	for name in files:
+		m = re.match(matchPattern, name)
+		if m:
+			spuName = m.group(0)
+			if not re.match(ignorePattern, spuName):
+				spus.append(spuName)
+
+	# sort the list
+	spus.sort()
+	return spus
+
+
+__SPUNames = []
+
+def FindSPUNames():
+	"""Return turn list of SPUs found in the "default" directory"""
+	global __SPUNames
+	if __SPUNames == []:
+		__SPUNames = FindSPUNamesInDir(crconfig.crlibdir)
+	return __SPUNames
+
+
+#----------------------------------------------------------------------
+
+__InfoCache = {}
+
+def GetSPUOptions(spuName):
+	"""Use the spuoptions program to get the params/options for the SPU.
+	The return value is a tuple (params, options) where params is a
+	dictionary of parameter values and options is an OptionList object.
+	Run 'spuoptions --pythonmode tilesort' to see an example.
+	NOTE: if this isn't working for you on Linux, make sure that your
+	LD_LIBRARY_PATH is set to the location of your SPUs.
+	"""
+	global __InfoCache
+	# first check if we've cached this SPU's options
+	if spuName in __InfoCache:
+		return __InfoCache[spuName]
+	# use the spuoptions program to get the options
+	program = os.path.join(crconfig.crbindir, 'spuoptions')
+	command = '%s --pythonmode %s' % (program, spuName)
+	f = os.popen(command, 'r')
+	if f:
+		s = f.read()
+		if not s:
+			print "Error: unable to get SPU options for %s" % spuName
+			return 0
+		result = eval(s)
+		f.close()
+		__InfoCache[spuName] = result  # save in cache
+		return result
+	else:
+		print "Error running spuoptions program (where is it?)"
+		return 0
+
+def SPUMaxServers(spuName):
+	"""Return the max number of servers this SPU can have."""
+	(params, optionlist) = GetSPUOptions(spuName)
+	if params["packer"] == "yes":
+		m = params["maxservers"]
+		if m == "zero":
+			return 0
+		elif m == "one":
+			return 1
+		else:
+			return 100000
+	else:
+		return 0
+
+def SPUIsTerminal(spuName):
+	"""Return 1 if spuname is a terminal, else return 0."""
+	(params, optionlist) = GetSPUOptions(spuName)
+	if params["terminal"] == "yes":
+		return 1
+	else:
+		return 0
+
+def NewSPU(spuName):
+	"""Return a new instance of the named SPU.  this function creates an
+	SPU object and then attaches the list of SPU parameters and options."""
+	spu = crtypes.SpuObject(spuName, SPUIsTerminal(spuName),
+							SPUMaxServers(spuName))
+	# Set the SPU's option list
+	(params, optionlist) = GetSPUOptions(spuName)
+	assert isinstance(optionlist, crtypes.OptionList)
+	# NOTE: Clone the option list since GetSPUOptions() basically returns
+	# a template.  Cloning it effectively instantiates it.
+	spu.SetOptions(optionlist.Clone())
+	return spu
+
+#----------------------------------------------------------------------
+
+__DefaultSiteFile = "chromium.crsite"
+__SiteCache = 0
+
+def SetDefaultSiteFile(filename):
+	"""Set the name of the file to read to get the site defaults."""
+	global __DefaultSiteFile
+	__DefaultSiteFile = filename
+
+def GetSiteDefault(var):
+	"""Get the value of a Chomium site default.  For example, var may
+	be 'mural_size' and that might return (4, 3)"""
+	# try cache first
+	global __DefaultSiteFile
+	global __SiteCache
+	if not __SiteCache:
+		# read site file
+		f = open(__DefaultSiteFile, "r")
+		if f:
+			contents = f.read(-1)
+			# XXX probably want an exception handler here
+			__SiteCache = eval(contents)
+			f.close()
+		else:
+			# no site file
+			__SiteCache = {}
+	if var in __SiteCache.keys():
+		return __SiteCache[var]
+	else:
+		return 0
+
+
+#----------------------------------------------------------------------
+
+def NewNetworkNode(count = 1):
+	"""Return a new NetworkNode, initialized using the site-defaults"""
+	hosts = GetSiteDefault("cluster_hosts")
+	if not hosts:
+		hosts = ["localhost"]
+	node = crtypes.NetworkNode(hosts, count)
+	pattern = GetSiteDefault("cluster_pattern")
+	if pattern:
+		node.SetHostNamePattern(pattern)
+	return node
+
+def NewApplicationNode(count = 1):
+	"""Return a new ApplicationNode, initialized using the site-defaults"""
+	hosts = GetSiteDefault("frontend_hosts")
+	if not hosts:
+		hosts = ["localhost"]
+	return crtypes.ApplicationNode(hosts, count)
+
+
+#----------------------------------------------------------------------
+
+def SplitNode(node, mothership):
+	"""Split an N-instance node into N separate 1-instance nodes."""
+	clients = mothership.FindClients(node)
+	(x, y) = node.GetPosition()
+	names = node.GetHosts()[:]
+	# build list of all tile lists in the node
+	if node.IsServer():
+		tileList = []
+		for i in range(node.GetCount()):
+			tileList.append( node.GetTiles(i) )
+	# make count-1 new nodes
+	for i in range(node.GetCount() - 1):
+		newNode = node.Clone()
+		newNode.SetCount(1)
+		y += 70
+		newNode.SetPosition(x, y)
+		if i + 1 < len(names):
+			newNode.SetHosts( names[i+1 : i+2] )  # name[i+1]
+		else:
+			newNode.SetHosts( names[-1] )
+		if newNode.IsServer():
+			newNode.DeleteTiles()
+			if i + 1 < len(tileList):
+				newNode.SetTiles(tileList[i+1], 0)
+		mothership.AddNode(newNode)
+		# connect clients to the new node
+		for c in clients:
+			if c.LastSPU().CanAddServer():
+				c.LastSPU().AddServer(newNode)
+	# fix up the original node
+	node.SetCount(1)
+	node.SetHosts( names[0:1] )
+	if node.IsServer():
+		node.DeleteTiles()
+		node.SetTiles(tileList[0], 0)
+
+
+def MergeNodes(nodes, mothership):
+	"""Merge a list of nodes into a single node.
+	Return 1 for success, 0 for failure."""
+	# XXX Problem:  what about the downstream servers???
+	# make sure all the nodes are identical (or pretty similar)
+	# Also, compute totalCount
+	# Also, build list of all hostnames
+	# Also, build list of server tiles
+	assert len(nodes) > 1
+	totalCount = 0
+	first = nodes[0]
+	names = []
+	tiles = []
+	for n in nodes:
+		totalCount += n.GetCount()
+		names += n.GetHosts()
+		if n.IsServer():
+			for i in range(n.GetCount()):
+				tiles.append( n.GetTiles(i) )
+		if n != first and not first.IsSimilarTo(n):
+			return 0
+		
+	# we'll keep the first node and just change its count
+	# disconnect the extra nodes from their clients
+	for n in nodes:
+		if n != first:
+			clients = mothership.FindClients(n)
+			for c in clients:
+				c.LastSPU().RemoveServer(n)
+			mothership.RemoveNode(n)
+
+	# Set total count on first node
+	first.SetCount(totalCount)
+	first.SetHosts(names)
+	if first.IsServer():
+		for i in range(totalCount):
+			first.SetTiles(tiles[i], i)
+	return 1
+
+
+#----------------------------------------------------------------------
+
+def CloneNodeList(nodeList):
+	"""Return a clone of the given nodeList."""
+	# This is tricky because we want to maintain client/server links
+
+	# make a list of cloned nodes, map maps original nodes to new nodes
+	cloneList = []
+	map = {}
+	for node in nodeList:
+		newNode = node.Clone()
+		newNode.RemoveAllServers()
+		cloneList.append(newNode)
+		map[node] = newNode
+	
+	# fixup client/server links
+	for node in nodeList:
+		for s in node.GetServers():
+			if s in nodeList:
+				# connect the corresponding new server to
+				# corresponding new client
+				assert s in map.keys()
+				newServer = map[s]
+				assert newServer in cloneList
+				newNode = map[node]
+				newNode.LastSPU().AddServer(newServer)
+	return cloneList
+
+
+def RemoveNodesFromList(nodeList, removeList):
+	"""Remove the nodes in removeList from nodeList."""
+	# This is tricky because of client/server connections
+
+	# First, remove nodes from the nodeList
+	for node in removeList:
+		nodeList.remove(node)
+
+	# Second, if any preserved clients have servers in the removal list,
+	# disconnect the client from those servers.
+	for node in nodeList:
+		servers = node.GetServers()[:]  # make temp copy of list
+		for server in servers:
+			if server in removeList:
+				node.LastSPU().RemoveServer(server)
+
+	# Third, loop over removed nodes, disconnect any servers in the
+	# preserved list.
+	for node in removeList:
+		servers = node.GetServers()[:]  # make temp copy of list
+		for server in servers:
+			if not server in removeList:
+				node.LastSPU().RemoveServer(server)
+
+	# Validate the resulting lists
+	for node in nodeList:
+		for server in node.GetServers():
+			assert server in nodeList
+			assert not server in removeList
+	for node in removeList:
+		for server in node.GetServers():
+			assert server in removeList
+			assert not server in nodeList
+
+

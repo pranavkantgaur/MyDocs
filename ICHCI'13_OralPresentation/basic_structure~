@@ -1,0 +1,73 @@
+Agenda:
+=> Introduction
+=> 3D scanner architecture
+=> Developement
+=> Accuracy evaluation
+=> Current work
+=> Summary
+
+
+
+#1. Introduction
+What?
+=>3D scanner
+  => Digital reconstruction of real world scene.
+
+Why?
+=> Applications
+   => Medical:Dental model reconstruction for teeth implantation
+   => Scientific analysis:Study of dynamics for example, C.F.D, machine component dynamics etc. instead of synthetic models
+   => Security: Biometric securtiy-3D face authentication, thumb print authentication
+   => Entertainment : XBOX Kinect etc.
+
+How?
+=> Key problems
+   => At least 2 views required. Stereo correspondence(Add figure triangulation)
+   => Mapping measurement units of optical elements to physical units(mm,feets etc.).-> System calibration
+   => Triangulation
+
+#2. 3D scanner architecture
+    => Figure
+
+#3. System calibration
+    => Projector,camera calibration figures
+
+#4. Pattern generation
+    => Figure
+    => Equations
+
+#5. Pattern projection & capture
+    => Figures
+
+#6. Phase wrapping
+    => Figures
+    => Equation
+
+#7. Phase unwrapping
+    => Figures
+    => Equations
+
+#8. Absolute phase computation
+    => Figures
+    => Equations
+
+#9. Triangulation
+    => Figures
+    => Equations
+
+#10. Accuracy evaluation
+     => Procedure
+        => Accuracy & precision
+     => Results
+
+#11. Current work
+     => Issues observed
+        => Images of pattern projection wih effect on wrapped phase.
+
+#12. Summary/Conclusion
+     => Experimental system with measurement accuracy & precision within 1%.
+     => System performance depends on radiometric & geometric state of the scene. 
+     => Current work on complete automation.
+
+
+Questions?

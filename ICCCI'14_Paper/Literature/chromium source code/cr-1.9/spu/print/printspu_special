@@ -1,0 +1,24 @@
+# Copyright (c) 2001, Stanford University
+# All rights reserved.
+#
+# See the file LICENSE.txt for information on redistributing this software.
+LoadMatrixd
+LoadMatrixf
+MultMatrixd
+MultMatrixf
+GetBooleanv
+GetDoublev
+GetFloatv
+GetIntegerv
+Materialfv
+Materialiv
+Lightfv
+Lightiv
+ChromiumParameteriCR
+ChromiumParametervCR
+GenTextures
+TexEnvf
+TexEnvi
+TexEnvfv
+TexEnviv
+CallLists

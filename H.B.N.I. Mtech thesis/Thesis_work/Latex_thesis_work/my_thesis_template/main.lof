@@ -1,0 +1,184 @@
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1-1}{\ignorespaces Stereo correspondence and triangulation\relax }}{18}{figure.caption.7}
+\contentsline {figure}{\numberline {1-2}{\ignorespaces Architecture of the developed system\relax }}{19}{figure.caption.8}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2-1}{\ignorespaces Transformation of a real world 3D point from world coordinate system to computer-buffer coordinate system\relax }}{23}{figure.caption.13}
+\contentsline {figure}{\numberline {2-2}{\ignorespaces Camera model pipeline\relax }}{26}{figure.caption.18}
+\contentsline {figure}{\numberline {2-3}{\ignorespaces Radial alignment constraint used in Tsai's algorithm\relax }}{28}{figure.caption.22}
+\contentsline {figure}{\numberline {2-4}{\ignorespaces System setup\relax }}{34}{figure.caption.28}
+\contentsline {figure}{\numberline {2-5}{\ignorespaces Some views used for camera calibration\relax }}{35}{figure.caption.30}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{35}{subfigure.5.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{35}{subfigure.5.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{35}{subfigure.5.3}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{35}{subfigure.5.4}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{35}{subfigure.5.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{35}{subfigure.5.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{35}{subfigure.5.3}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{35}{subfigure.5.4}
+\contentsline {figure}{\numberline {2-6}{\ignorespaces Visualization of camera calibration results:View along X-axis\relax }}{36}{figure.caption.32}
+\contentsline {figure}{\numberline {2-7}{\ignorespaces Visualization of camera calibration results:View along Y-axis\relax }}{37}{figure.caption.33}
+\contentsline {figure}{\numberline {2-8}{\ignorespaces Some view used for projector calibration\relax }}{39}{figure.caption.36}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{39}{subfigure.8.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{39}{subfigure.8.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{39}{subfigure.8.3}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{39}{subfigure.8.4}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{39}{subfigure.8.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{39}{subfigure.8.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{39}{subfigure.8.3}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{39}{subfigure.8.4}
+\contentsline {figure}{\numberline {2-9}{\ignorespaces Visualization of projector calibration views along Y-axis\relax }}{39}{figure.caption.39}
+\contentsline {figure}{\numberline {2-10}{\ignorespaces Visualization of projector calibration views along X-axis\relax }}{40}{figure.caption.40}
+\contentsline {figure}{\numberline {2-11}{\ignorespaces Actual setup for extrinsic calibration\relax }}{43}{figure.caption.44}
+\contentsline {figure}{\numberline {2-12}{\ignorespaces Estimated system extrinsic geometry\relax }}{43}{figure.caption.45}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3-1}{\ignorespaces A typical structured light system\relax }}{47}{figure.caption.46}
+\contentsline {figure}{\numberline {3-2}{\ignorespaces Binary coded pattern:Design\relax }}{49}{figure.caption.51}
+\contentsline {figure}{\numberline {3-3}{\ignorespaces Binary coded pattern:Projection\relax }}{49}{figure.caption.52}
+\contentsline {figure}{\numberline {3-4}{\ignorespaces Gray coded patterns\relax }}{50}{figure.caption.53}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{50}{subfigure.4.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{50}{subfigure.4.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{50}{subfigure.4.3}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{50}{subfigure.4.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{50}{subfigure.4.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{50}{subfigure.4.3}
+\contentsline {figure}{\numberline {3-5}{\ignorespaces Combination of Phase-shift and gray code techniques\relax }}{52}{figure.caption.54}
+\contentsline {figure}{\numberline {3-6}{\ignorespaces De-bruijn sequence patterns\relax }}{53}{figure.caption.55}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {alphabet:4,order:3}}}{53}{subfigure.6.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {alphabet:4,order:3}}}{53}{subfigure.6.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {alphabet:3,order:4}}}{53}{subfigure.6.3}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {alphabet:4,order:4}}}{53}{subfigure.6.4}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {alphabet:4,order:3}}}{53}{subfigure.6.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {alphabet:4,order:3}}}{53}{subfigure.6.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {alphabet:3,order:4}}}{53}{subfigure.6.3}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {alphabet:4,order:4}}}{53}{subfigure.6.4}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {alphabet:4,order:3}}}{53}{subfigure.6.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {alphabet:4,order:3}}}{53}{subfigure.6.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {alphabet:3,order:4}}}{53}{subfigure.6.3}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {alphabet:4,order:4}}}{53}{subfigure.6.4}
+\contentsline {figure}{\numberline {3-7}{\ignorespaces M-array based pattern\relax }}{54}{figure.caption.56}
+\contentsline {figure}{\numberline {3-8}{\ignorespaces Direct coding method:Rainbow patterns\relax }}{55}{figure.caption.57}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{55}{subfigure.8.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{55}{subfigure.8.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{55}{subfigure.8.3}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{55}{subfigure.8.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{55}{subfigure.8.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{55}{subfigure.8.3}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{55}{subfigure.8.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{55}{subfigure.8.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{55}{subfigure.8.3}
+\contentsline {figure}{\numberline {3-9}{\ignorespaces Vertical phase shifted patterns\relax }}{57}{figure.caption.58}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{57}{subfigure.9.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{57}{subfigure.9.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{57}{subfigure.9.3}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{57}{subfigure.9.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{57}{subfigure.9.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{57}{subfigure.9.3}
+\contentsline {figure}{\numberline {3-10}{\ignorespaces Horizontal phase shifted patterns\relax }}{57}{figure.caption.59}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{57}{subfigure.10.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{57}{subfigure.10.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{57}{subfigure.10.3}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{57}{subfigure.10.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{57}{subfigure.10.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{57}{subfigure.10.3}
+\contentsline {figure}{\numberline {3-11}{\ignorespaces Vertical binary coded patterns\relax }}{58}{figure.caption.60}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{58}{subfigure.11.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{58}{subfigure.11.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{58}{subfigure.11.3}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{58}{subfigure.11.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{58}{subfigure.11.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{58}{subfigure.11.3}
+\contentsline {figure}{\numberline {3-12}{\ignorespaces Horizontal binary coded patterns\relax }}{58}{figure.caption.61}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{58}{subfigure.12.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{58}{subfigure.12.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{58}{subfigure.12.3}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{58}{subfigure.12.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{58}{subfigure.12.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{58}{subfigure.12.3}
+\contentsline {figure}{\numberline {3-13}{\ignorespaces Some captured vertical fringe and binary coded patterns\relax }}{59}{figure.caption.62}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{59}{subfigure.13.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{59}{subfigure.13.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{59}{subfigure.13.3}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{59}{subfigure.13.4}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {}}}{59}{subfigure.13.5}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {}}}{59}{subfigure.13.6}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{59}{subfigure.13.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{59}{subfigure.13.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{59}{subfigure.13.3}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{59}{subfigure.13.4}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {}}}{59}{subfigure.13.5}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {}}}{59}{subfigure.13.6}
+\contentsline {figure}{\numberline {3-14}{\ignorespaces Some captured horizontal fringe and binary coded patterns\relax }}{59}{figure.caption.63}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{59}{subfigure.14.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{59}{subfigure.14.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{59}{subfigure.14.3}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{59}{subfigure.14.4}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {}}}{59}{subfigure.14.5}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {}}}{59}{subfigure.14.6}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{59}{subfigure.14.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{59}{subfigure.14.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{59}{subfigure.14.3}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{59}{subfigure.14.4}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {}}}{59}{subfigure.14.5}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {}}}{59}{subfigure.14.6}
+\contentsline {figure}{\numberline {3-15}{\ignorespaces Computed wrapped phase\relax }}{61}{figure.caption.64}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Vertical wrapped phase}}}{61}{subfigure.15.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Horizontal wrapped phase}}}{61}{subfigure.15.2}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Vertical wrapped phase}}}{61}{subfigure.15.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Horizontal wrapped phase}}}{61}{subfigure.15.2}
+\contentsline {figure}{\numberline {3-16}{\ignorespaces Computed unwrapped phase\relax }}{63}{figure.caption.66}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Vertical unwrapped phase}}}{63}{subfigure.16.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Horizontal unwrapped phase}}}{63}{subfigure.16.2}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Vertical unwrapped phase}}}{63}{subfigure.16.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Horizontal unwrapped phase}}}{63}{subfigure.16.2}
+\contentsline {figure}{\numberline {3-17}{\ignorespaces Stereo correspondence between camera and projector:\textit {green} spot in (b) corresponds to selected point(cursor) in (a)\relax }}{64}{figure.caption.67}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Camera image}}}{64}{subfigure.17.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Projector image}}}{64}{subfigure.17.2}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Camera image}}}{64}{subfigure.17.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Projector image}}}{64}{subfigure.17.2}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4-1}{\ignorespaces Some 3D reconstruction results\relax }}{74}{figure.caption.68}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {2D face image}}}{74}{subfigure.1.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {3D reconstruction of face}}}{74}{subfigure.1.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {2D image of box in front of wall}}}{74}{subfigure.1.3}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {3D reconstruction of box in front of wall}}}{74}{subfigure.1.4}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {2D image of a chair with background}}}{74}{subfigure.1.5}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {3D reconstruction of chair with background}}}{74}{subfigure.1.6}
+\contentsline {subfigure}{\numberline {(g)}{\ignorespaces {A cup}}}{74}{subfigure.1.7}
+\contentsline {subfigure}{\numberline {(h)}{\ignorespaces {3D reconstruction of cup}}}{74}{subfigure.1.8}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {2D face image}}}{74}{subfigure.1.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {3D reconstruction of face}}}{74}{subfigure.1.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {2D image of box in front of wall}}}{74}{subfigure.1.3}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {3D reconstruction of box in front of wall}}}{74}{subfigure.1.4}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {2D image of a chair with background}}}{74}{subfigure.1.5}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {3D reconstruction of chair with background}}}{74}{subfigure.1.6}
+\contentsline {subfigure}{\numberline {(g)}{\ignorespaces {A cup}}}{74}{subfigure.1.7}
+\contentsline {subfigure}{\numberline {(h)}{\ignorespaces {3D reconstruction of cup}}}{74}{subfigure.1.8}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5-1}{\ignorespaces Experiment setup\relax }}{78}{figure.caption.72}
+\contentsline {figure}{\numberline {5-2}{\ignorespaces Orientations and positions used for experiments\relax }}{79}{figure.caption.73}
+\contentsline {figure}{\numberline {5-3}{\ignorespaces Kinect 3D reconstruction process\relax }}{81}{figure.caption.76}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {RGB image}}}{81}{subfigure.3.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {IR image}}}{81}{subfigure.3.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Disparity map}}}{81}{subfigure.3.3}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Point cloud}}}{81}{subfigure.3.4}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {RGB image}}}{81}{subfigure.3.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {IR image}}}{81}{subfigure.3.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Disparity map}}}{81}{subfigure.3.3}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Point cloud}}}{81}{subfigure.3.4}
+\contentsline {figure}{\numberline {5-4}{\ignorespaces Distance versus precision along X,Y,Z axes\relax }}{83}{figure.caption.78}
+\contentsline {figure}{\numberline {5-5}{\ignorespaces Distance versus measurement accuracy with indication of uncertainty(vertical bars)\relax }}{84}{figure.caption.81}
+\contentsline {figure}{\numberline {5-6}{\ignorespaces Points A,B,C,D were used for measuring camera calibration accuracy\relax }}{87}{figure.caption.83}
+\contentsline {figure}{\numberline {5-7}{\ignorespaces Corners A,B,C,D were used for assessing accuracy of projector calibration parameters\relax }}{89}{figure.caption.86}
+\contentsline {figure}{\numberline {5-8}{\ignorespaces Effect of gamma on 3D reconstruction of a plane\relax }}{91}{figure.caption.88}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$\gamma =1.0$}}}{91}{subfigure.8.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$\gamma =2.041$}}}{91}{subfigure.8.2}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$\gamma =1.0$}}}{91}{subfigure.8.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$\gamma =2.041$}}}{91}{subfigure.8.2}
+\contentsline {figure}{\numberline {5-9}{\ignorespaces Effect of increasing number of phase shifted patterns on \textit {waviness} in 3D reconstruction\relax }}{92}{figure.caption.89}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {3 phase}}}{92}{subfigure.9.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {4 phase}}}{92}{subfigure.9.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {5 phase}}}{92}{subfigure.9.3}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {3 phase}}}{92}{subfigure.9.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {4 phase}}}{92}{subfigure.9.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {5 phase}}}{92}{subfigure.9.3}
+\addvspace {10\p@ }

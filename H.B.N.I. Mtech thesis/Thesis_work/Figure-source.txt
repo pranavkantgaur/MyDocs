@@ -1,0 +1,19 @@
+F.1.
+Jason Geng, "Structured-light 3D surface imaging: a tutorial," Adv. Opt. Photon. 3, 128-160 (2011) 
+
+F.2.De Bruijn sequnces 
+    http://feed-back.be/nick/?page_id=310
+
+F.3.@INPROCEEDINGS{Pagès03overviewof,
+    author = {Jordi Pagès and Joaquim Salvi and et al.},
+    title = {Overview of coded light projection techniques for automatic 3D profiling},
+    booktitle = {IN PROC. IEEE INTERNATIONAL CONF. ON ROBOTICS AND AUTOMATION (ICRA},
+    year = {2003},
+    pages = {133--138},
+    publisher = {}
+}
+
+F.4.Tsai, Roger Y. (1987) A Versatile Camera Calibration Technique for High-
+Accuracy 3D Machine Vision Metrology Using Off-the-Shelf TV Cameras
+and Lenses, IEEE Journal of Robotics and Automation, Vol. RA-3, No. 4,
+August 1987, pp. 323-344.

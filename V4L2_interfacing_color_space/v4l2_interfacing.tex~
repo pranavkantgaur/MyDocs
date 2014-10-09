@@ -1,0 +1,302 @@
+\documentclass{article}
+
+\usepackage{listings}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{caption}
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{\colorbox{gray}{\parbox{\textwidth}{#1#2#3}}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white}
+
+\begin{document}
+
+\title{UVC compliant webcamera interfacing using V4L2 API}
+\author{Pranav Kant Gaur}
+\maketitle
+
+\begin{abstract}
+This document describes the preliminary study and work of the author for developing interface for accessing UVC-compliant webcamera. It gives introduction to the V4L2 API structure which is a standard for accessing UVC-compliant video output devices. However the API is not limited to video devices but supports audio, RF devices as well. It describes standard pipeline used by author to initiate, continue and terminate video feed output from webcamera. It then discusses the conversion between color spaces which becomes important when certain devices support different frame rates, resolution for different output formats. It then becomes neccessary to interconvert between formats to utilize the output capabilities of devices as was the case in author's work. It should be pointed out however, that this document is by no means an exhaustive introduction to V4L2 API. For exhaustive treatment please refer\cite{V4L2 specification}
+
+\end{abstract}
+
+
+\section{Objective of work}
+\begin{enumerate}
+\item To develop camera capture interface for capturing images with UVC compatible cameras.
+\item To allow interactive exposure control.
+\end{enumerate}
+
+\section{Motivation}
+This work was motivated by the requirement to interactively control exposure for cheap UVC compatible camera(specifically, webcameras) through indigineously developed 3D scanner application\cite{our IEEE paper}. This control was available for digital cameras(using Gphoto2 library\cite{gphoto2}) but for webcameras such high-level library support is unavailable except using OpenCV. Using OpenCV however allows only setting V4L2 \textit{user controls} but not its \textit{camera controls}. V4L2 API\cite{v4l2_spec} provides customizable interface for accessing and controlling webcameras. Therefore, it was decided to develop a saparate module for capturing video feed from webcam and interactively controlling its exposure.
+
+\section{V4L2 API}
+V4L2 API is a video capture application programming interface for Linux. It abstracts the device driver details from video access applications. V4L2 provides interface for:
+\begin{enumerate}
+\item Opening and closing device
+\item Querying its capabilites
+\item Getting/setting value of any particular control
+\item Exchange data formats
+\item I/O methods used for mapping video data from device to application
+\end{enumerate}
+
+Using this interface application interacts with device driver through set of \textit{ioctl()} commands which driver is supposed to implement and register. For UVC-compliant webcams \textit{uvcvideo} works like V4L2 driver. Following subsections will elaborate on standard stages of video acquisition using V4L2 API.
+
+\subsection{Opening and closing device}
+Since devices in Linux are abstracted as \textit{files}, \textit{device opening} and \textit{device closing} commands are simply file \textit{open} and \textit{close} commands only. Listing \ref{dev_open_close} illustrate this:
+
+\begin{lstlisting}[label=dev_open,caption=Opening a device]
+int fd;
+
+    fd = open("/dev/video0", O_RDWR);
+    if (fd == -1)
+    {
+        perror("Opening video device");
+        return 1;
+    }
+
+    ....
+    Do stuff();
+    ....
+
+    close(fd); 
+   
+\end{lstlisting}
+
+
+\subsection{Querying device information and capabilities}
+V4L2 API defines specific \textit{ioctl()} commands for querying device information and capabilities. Listing \ref{query_cap} illustrates the use of \textbf{VIDIOC\_QUERYCAP} ioctl command to query device controls.
+
+\begin{lstlisting}[label=query_cap,caption=Querying device information]
+
+struct v4l2_capability caps = {};
+    if (-1 == ioctl(fd, VIDIOC_QUERYCAP, &caps))
+    {
+        perror("Querying Capabilities");
+        return 1;
+    }
+\end{lstlisting}
+
+Listing \ref{dev_cap} shows how we can access device capabilities returned by \textbf{VIDIOC\_QUERYCAP} command.
+\begin{lstlisting}[label=dev_cap,caption=Accessing device capability information]
+
+    printf( "Driver Caps:\n"
+            "  Driver: \"%s\"\n"
+            "  Card: \"%s\"\n"
+            "  Bus: \"%s\"\n"
+            "  Version: %d.%d\n"
+            "  Capabilities: %08x\n",
+            caps.driver,
+            caps.card,
+            caps.bus_info,
+            (caps.version>>16)&&0xff,
+            (caps.version>>24)&&0xff,
+            caps.capabilities);
+
+\end{lstlisting}
+   
+\subsection{Getting and setting value of any particular control}
+V4L2 API classifies device controls into classes depending upon their generality. Specifically, \textbf{\textit{user class controls}} and \textbf{\textit{extended controls}}. 
+
+\subsubsection{User class controls}
+These controls are generally availble to the user thorugh GUIs such as \textit{Brightness},\textit{Saturation},\textit{Contrast} etc. In essesnce, this class belongs to the basic controls which are mostly supported by UVC-compliant devices. Current value of thses controls can be acquired using \textbf{VIDIOC\_G\_CTRL} command. For setting user class controls, \textbf{VIDIOC\_S\_CTRL} command is used. Listing \ref{get_set_user_cont} shows an example. Specifically, it shows first accessing the current value of contrast and then setting incrementing it by 1 and then again querying thr current value to check of value was set.
+
+
+
+
+\begin{lstlisting}[label=get_set_user_cont,caption=Getting and setting user class controls]
+
+control.id = V4L2_CID_CONTRAST;
+
+if (0 == ioctl (fd, VIDIOC_G_CTRL, &control)) {
+printf("Contrast level before modification:%d", control.value);	
+}
+
+...........
+some_code();
+...........
+
+control.value += 1; // incrementing contrast value by 1
+
+if (-1 == ioctl (fd, VIDIOC_S_CTRL, &control)
+	    && errno != ERANGE) {
+		perror ("VIDIOC_S_CTRL");
+		exit (EXIT_FAILURE);
+	}
+
+if (0 == ioctl (fd, VIDIOC_G_CTRL, &control)) {
+printf("Contrast level after modification:%d", control.value);	
+}
+\end{lstlisting}
+
+\subsubsection{Extended controls}
+V4L2 API allows for accessing controls which are not assumed to be present in most video devices e.g., Pan,tilt capability etc. Extended controls are also further classified into: \textit{Codec control class}, \textit{Camera control class}, \textit{FM Transmitter control class}, \textit{Flash control class}, \textit{JPEG control class}, \textit{Image source control class}, \textit{Image process control class}, \textit{Digital video control class}, \textit{FM receiver control class}. Since, we are interested only in camera control, therefore only camera control class will be discussed here. V4L2 API provides \textbf{VIDIOC\_G\_EXT\_CTRLS} and \textbf{VIDIOC\_S\_EXT\_CTRLS} for getting and setting multiple extended controls respectively. Listing \ref{ext_controls} illustrates these controls with an example of setting absolute exposure from \textit{Camera contol class}.
+
+\begin{lstlisting}[label=ext_controls,caption=Extended controls]
+
+struct v4l2_queryctrl qctl;
+struct v4l2_ext_controls ctrls= {0};
+struct v4l2_ext_control ctrl_auto_exp[1];
+
+
+qctl.id=V4L2_CID_EXPOSURE_ABSOLUTE;
+
+
+    if(-1==ioctl(fd,VIDIOC_QUERYCTRL,&qctl))
+    {
+        perror("Not able to query exposure");
+        exit(1);
+    }
+
+..........
+some_code();
+..........
+
+// Setting absolute exposure for the video device
+
+ctrl_auto_exp[0].id=V4L2_CID_EXPOSURE_AUTO;
+ctrl_auto_exp[0].value=V4L2_EXPOSURE_MANUAL;
+
+ctrls.ctrl_class=V4L2_CTRL_CLASS_CAMERA;
+ctrls.count=1;
+ctrls.controls=ctrl_auto_exp;
+
+if(-1==ioctl(fd,VIDIOC_S_EXT_CTRLS,&ctrls))
+perror("Failed to set exposure to manual mode");
+
+ctrls.ctrl_class=V4L2_CTRL_CLASS_CAMERA;
+ctrls.count=1;
+ctrls.controls=ctrl_exp;
+
+ctrl_exp[0].id=V4L2_CID_EXPOSURE_ABSOLUTE;
+ctrl_exp[0].value=exposure;
+
+
+if(-1==ioctl(fd,VIDIOC_S_EXT_CTRLS,&ctrls))
+   perror("Failed to set exposure");
+
+\end{lstlisting}
+
+In Listing \ref{ext_controls} only one control has been shown but in general there can be multiple extended controls all of which will be read or written to \textit{atomically}. Their multiplicity is denoted by the member \textit{count} shown in Listing \ref{ext_controls}.
+
+
+\subsection{Data formats}
+Various devices support various data formats to exchange with applications. However, it is always recommended to enquire the data formats that the hardware can support before starting any data exchange. Therefore, V4L2 API provides \textbf{VIDIOC\_ENUM\_FMT} for enumerating the data formats supported by device, to get current data format \textbf{VIDIOC\_G\_FMT} is defined and to set a data format before data exchange \textbf{VIDIOC\_S\_FMT} is defined. Listing \ref{data_fmt_enumerate} shows how we can enumerate data formats supported by the device.
+
+\begin{lstlisting}[label=data_fmt_enumerate,caption=Data format enumeration and negotiation]
+
+struct v4l2_fmtdesc fmtdesc = {0};
+fmtdesc.type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
+char fourcc[5] = {0};
+char c, e;
+printf("  FMT : CE Desc\n--------------------\n");
+while (0 == xioctl(fd, VIDIOC_ENUM_FMT, &fmtdesc))
+{
+   strncpy(fourcc, (char *)&fmtdesc.pixelformat, 4);
+   if (fmtdesc.pixelformat == V4L2_PIX_FMT_SGRBG10)
+    support_grbg10 = 1;
+   c = fmtdesc.flags & 1? 'C' : ' ';
+   e = fmtdesc.flags & 2? 'E' : ' ';
+   printf("  %s: %c%c %s\n", fourcc, c, e, fmtdesc.description);
+   fmtdesc.index++;
+}
+\end{lstlisting}
+
+Listing \ref{data_fmt_negot} shows how we can set a particular data format(in current case we are setting video data format for a video capture device). This code will set the image resolution and pixel format. 
+
+\begin{lstlisting}[label=data_fmt_negot,caption=Data format negotiation]
+
+struct v4l2_format fmt = {0};
+fmt.type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
+fmt.fmt.pix.width = cam_imagewidth;
+fmt.fmt.pix.height = cam_imageheight;
+fmt.fmt.pix.pixelformat = V4L2_PIX_FMT_YUYV ;
+fmt.fmt.pix.field = V4L2_FIELD_NONE;
+
+if (-1 == ioctl(fd, VIDIOC_S_FMT, &fmt))
+ {
+   perror("Failed setting pixel format");
+   return 1;
+ }
+
+strncpy(fourcc, (char *)&fmt.fmt.pix.pixelformat, 4);
+printf( "Selected Camera Mode:\n"
+            "  Width: %d\n"
+            "  Height: %d\n"
+            "  PixFmt: %s\n"
+            "  Field: %d\n",
+            fmt.fmt.pix.width,
+            fmt.fmt.pix.height,
+            fourcc,
+            fmt.fmt.pix.field);
+
+\end{lstlisting}
+
+
+\subsection{Device I/O methods}
+V4L2 API defines multiple methods to read from or write to devices. Drivers must support atleast one of them. These controls are \textit{Read/write}, Streaming I/O based on \textit{Memory mapping}, Streaming I/O based on \textit{User pointers}, Streaming I/O based on \textit{DMA buffer importing}, \textit{Asynchronous I/O}. Listing \ref{i_o} shows an example of negotiating an I/O method with device driver. In this example, memory mapping I/O method is used. Application first requests for buffer using \textbf{VIDIOC\_REQBUFS} and if this request succeeds then queries the information on allocated buffers using \textbf{VIDIOC\_QUERYBUF}.
+
+\begin{lstlisting}[label=i_o,caption=Using memory mapped I/O]
+
+struct v4l2_requestbuffers req = {0};
+req.count = 1;
+req.type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
+req.memory = V4L2_MEMORY_MMAP;
+
+if (-1 == ioctl(fd, VIDIOC_REQBUFS, &req))
+ {
+  perror("Requesting Buffer");
+  return 1;
+ }
+
+struct v4l2_buffer buf = {0};
+buf.type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
+buf.memory = V4L2_MEMORY_MMAP;
+buf.index = 0;
+if(-1 == ioctl(fd, VIDIOC_QUERYBUF, &buf))
+  {
+   perror("Querying Buffer");
+   return 1;
+  }
+
+buffer = mmap (NULL, buf.length, PROT_READ | PROT_WRITE, MAP_SHARED, fd, buf.m.offset);
+printf("Length: %d\nAddress: %p\n", buf.length, buffer);
+printf("Image Length: %d\n", buf.bytesused);
+
+\end{lstlisting}
+
+
+\section{Conversion from YUYV format to RGB}
+Device used for this work supports its maximum resolution in YUYV color space but not in the conventional MJPEG format. This required first setting device data format to YUYV and internally converting the output data to RGB format so as to utilize the maximum image resolution supported by device. \newline
+Here, we will digress a little to first explore the concept of \textit{Color space}. Then we will illustrate the above mentioned color space conversion with the help of a code example.
+
+\subsection{Color models}
+This section is intended to briefly describe existing color models to represent \textit{human perceptible} colors. Color space is an \textit{abstract} mathematical representation of colors in form of tuples. Each component of these tuple represents a specific dimension of color representation. Such \textit{arbitrary} model becomes a \textit{color space} if it also defines a mapping of these tuple values to an \textit{absolute color space}. \newline
+First formal color space formulation was done in 1931 by CIE a.k.a \textit{International commision on illumination}. Mainly there are following color models:
+\begin{enumerate}
+\item CIE XYZ color model
+\item CIE RGB color model
+\item CMYK color model
+\end{enumerate}
+
+\subsubsection{Trichromatic color space}
+Humans percieve colors through three types of \textit{cone} cells which act like \textit{color receptors}. These cells are classified on the basis of range of wavelength to which they are sensitive. These are \textit{Short}, \textit{Medium} and \textit{Long} wavelength receptors. Range of human color perception is defined by the range of frequencies to which these cells are sensitive. Therefore, a 3D color space can be constructed with L,S,M as its three dimensions. It will be able to represent all colors perceptible by human vision system.
+
+\subsubsection{CIE XYZ color space}
+To formally define human color space, XYZ color model was proposed. In this model, \textit{Y} represents luminance whereas other components are responsible for chromaticity. It can also be understood in terms of (luminance+chromaticity) model, by defining x,y coordinate space. (x,y) 2D space defines the \textit{Chromaticity diagram} and \textit{Y} defines the \textit{luminance}. 
+
+\subsubsection{CIE RGB color space}
+RGB color model represents color space as defined as a linear combination of Red, Blue and Green colors refered to as \textit{Primary colors}. XYZ color model can be transformed to RGB model and vice versa. Red, green and blue are prefered over other primary color combinations because they cover the largest part of human perceptible color space. Colors are represented as a \textit{cartesian} cube.
+
+\subsubsection{HSV color representation}
+HSV and HSL are two most common cylindrical coordinate representations of RGB color model. HSV color space saparates luminance and chromaticity. \textit{Hue} represents the color. \textit{Saturation} represents the strength or \textit{purity} of color. \textit{Value} represents the luminance or brightness(hence it is also called \textit{HSB} color model). Colors are represented along cyliderical coordinate system as opposed to RGB model's cartesian representation. In cylinder, central axis represents neutral(or gray) color with bottom being \textit{black} and top as \textit{white}.
+
+\subsubsubsection{HSL color representation}
+Here \textit{Lightness} represents .
+
+\subsubsection{CMYK color space}
+
+
+\section{Conclusions}
+
+
+\end{document}

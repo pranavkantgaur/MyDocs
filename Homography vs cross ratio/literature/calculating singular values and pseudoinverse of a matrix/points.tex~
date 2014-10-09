@@ -1,0 +1,72 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+
+\begin{document}
+
+\title{Comments on `\textit{Calculating sigular values \& Pseudoinverse of a Matrix}'}
+\maketitle
+
+\section{Problem set}
+\begin{enumerate}
+\item Extract core of the algorithm
+\item Implementation plan(it must be clear how to implement the algorithm)
+\item Implement the algorithm
+\item Mathematical expression of behaviour of computation on outer points(i.e., extract \textit{extrapolation} error expression}) 
+\end{enumerate}
+
+\section{Reading...}
+My comments on the content of paper:
+\begin{enumerate}
+\item Check how \textit{numerical} stability of the proposed algorithm is argued?
+\item Any comparisions with existing algorithms to claim it \textit{fairly} fast?
+\item Unitray matrix, $U$ is such that $UU^{*}=U^{*}U=I$ where, $*$ represents complex conjugate transpose(in general).
+\item Target is to compute $\Sigma=U^{*}AV$, where A is the input matrix, $\Sigma$ is diagonal matrix with non-negative diagonal entries(called \textit{singular or principal} values of $A$), U,V are unitary matrices(a more general form of \textit{orthogonal matrices})
+
+\item Two steps:
+ \begin{enumerate}
+   \item Bidiagonalize $A$ to get say $B$
+   \item Diagonalize $B$ to get $\Sigma$, whatever on left side of $\Sigma$ is $U$, whatever on right is $V^{*}$
+\end{enumerate}
+
+
+
+\item SVD of a \textit{non-square} matrix can be used to compute its \textit{pseudoinverse} such that it minimizes spurious oscillations and cancellations(What are spurious oscillations and cancellations??)
+
+\item \textit{Singular} values are \textit{non-negative square roots} of eigenvalues(called \textit{Principal square roots}) of $AA^{*}$ and $A^{*}A$, whichever has least dimension.
+
+\item In least sqaure problem why not the angle between Ax and b vector is minimized, instead of minimizing the ||Ax-b|| norm??
+
+\item Homography estimation problem is also of mentioned \textit{least sqaures} type, why not to solve it using pseudoinverse??
+
+\item Specifically, Compute SVD of $A$ -> compute pseudoinverse of $A$ using SVD -> use $x=A^{-1}b$ to solve for x(in our case it is \textit{homography})??
+
+\item Why $A^{-1}=(A^{*}A)^{-1}A^{*}$ is used for getting least squre solution for the problem with unique minimization solution, whereas $A^{-1}=V\Sigma U^{*}$ used for multi-convex problem(i.e., problem having multiple solutions minimizing ||Ax-b||)??
+
+\item Using SVD rank of $A$ can be determined, how?
+
+\item What is numerical stability?
+
+\item Before section on \texit{A matrix decomposition}, {\~A} has been defined. It will have dimension $(m+n)X(m+n)$, so how could it have $2n$ eigen values? (claimed to have each eigen value = singular value of $A$, with +ve and -ve signs)
+
+\item Author seems to suggest to calculate singular values of $A$ via eigen values of {\~A}. NO!!!
+
+\item $A$ is bidiagonalized using\textit{Householder transformations}, $A=UBV^{*}$, where B is bidiagonal matrix, U,V are unitary matrices.
+
+\item $A$ is a \textit{Hermitian} matrix if $A=A^{H}$ where $H$ denotes conjugate transform. Therefore column elements of A will be \texit{real} numbers whereas other elements can be complex in general.
+
+\item $A$ is Unitary if $A={A^{H}}^{-1}$, it is Hermitian if $A=A^{H}$.
+
+\item Complex analogue of orthogonal matrix is unitary matrix.
+
+\item If $A$ is unitary matrix, then \textit{length}(physical significance??) is preserved
+
+\item Singular values of $A$ and its bidiagonal matrix $J$ are same.
+
+\item CORE Problem: To prove(analytically) extrapolation error in regression fitted model(e.g. Homography, fitted line)
+
+\end{enumerate}
+
+
+
+\end{document}

@@ -1,0 +1,2106 @@
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.11.24)  2 JAN 2013 11:31
+entering extended mode
+ %&-line parsing enabled.
+**main.tex
+
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/main.tex
+LaTeX2e <2009/09/24>
+Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
+yphenation, loaded.
+
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/mitthesi
+s.cls
+Document Class: mitthesis 1999/10/20
+\vithesis=\count79
+(/usr/share/texmf-texlive/tex/latex/base/report.cls
+Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/share/texmf-texlive/tex/latex/base/size12.clo
+File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count80
+\c@chapter=\count81
+\c@section=\count82
+\c@subsection=\count83
+\c@subsubsection=\count84
+\c@paragraph=\count85
+\c@subparagraph=\count86
+\c@figure=\count87
+\c@table=\count88
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texmf-texlive/tex/latex/setspace/setspace.sty
+Package: setspace 2000/12/01 6.7 Contributed and Supported LaTeX2e package
+
+Package: `setspace' 6.7 <2000/12/01>
+)
+Thesis document copyright MIT unless otherwise (manually) specified
+\@titlesupervisor=\box26
+\@abstractsupervisor=\box27
+\c@savepage=\count89
+)
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/lgrind.s
+ty
+Package: lgrind 1997/01/30 v3.4 LGrind environment and supporting stuff
+\lc@unt=\count90
+\ln@xt=\count91
+\LGnuminterval=\count92
+\LGindent=\skip43
+\LGsloppy=\skip44
+\procbox=\box28
+\ls@far=\box29
+\tb@x=\box30
+\TBw@d=\dimen103
+\@ts=\dimen104
+) (/usr/share/texmf-texlive/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-texlive/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/share/texmf-texlive/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-texlive/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/etc/texmf/tex/latex/config/graphics.cfg
+File: graphics.cfg 2009/08/28 v1.8 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+(/usr/share/texmf-texlive/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2010/03/12 v0.04p Graphics/color for pdfTeX
+\Gread@gobject=\count93
+))
+\Gin@req@height=\dimen105
+\Gin@req@width=\dimen106
+)
+(/usr/share/texmf-texlive/tex/latex/base/fontenc.sty
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+(/usr/share/texmf-texlive/tex/latex/base/t1enc.def
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
+))
+(/usr/share/texmf-texlive/tex/latex/base/fixltx2e.sty
+Package: fixltx2e 2006/09/13 v1.1m fixes to LaTeX
+LaTeX Info: Redefining \em on input line 420.
+)
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2000/07/18 v2.13 AMS math features
+\@mathmargin=\skip45
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texmf-texlive/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks15
+\ex@=\dimen107
+))
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen108
+)
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count94
+LaTeX Info: Redefining \frac on input line 211.
+\uproot@=\count95
+\leftroot@=\count96
+LaTeX Info: Redefining \overline on input line 307.
+\classnum@=\count97
+\DOTSCASE@=\count98
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
+\Mathstrutbox@=\box31
+\strutbox@=\box32
+\big@size=\dimen109
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\macc@depth=\count99
+\c@MaxMatrixCols=\count100
+\dotsspace@=\muskip10
+\c@parentequation=\count101
+\dspbrk@lvl=\count102
+\tag@help=\toks16
+\row@=\count103
+\column@=\count104
+\maxfields@=\count105
+\andhelp@=\toks17
+\eqnshift@=\dimen110
+\alignsep@=\dimen111
+\tagshift@=\dimen112
+\tagwidth@=\dimen113
+\totwidth@=\dimen114
+\lineht@=\dimen115
+\@envbody=\toks18
+\multlinegap=\skip46
+\multlinetaggap=\skip47
+\mathdisplay@stack=\toks19
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
+)
+(/usr/share/texmf-texlive/tex/latex/tools/tabularx.sty
+Package: tabularx 1999/01/07 v2.07 `tabularx' package (DPC)
+
+(/usr/share/texmf-texlive/tex/latex/tools/array.sty
+Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen116
+\extrarowheight=\dimen117
+\NC@list=\toks20
+\extratabsurround=\skip48
+\backup@length=\skip49
+)
+\TX@col@width=\dimen118
+\TX@old@table=\dimen119
+\TX@old@col=\dimen120
+\TX@target=\dimen121
+\TX@delta=\dimen122
+\TX@cols=\count106
+\TX@ftn=\toks21
+)
+(/usr/share/texmf-texlive/tex/latex/subfig/subfig.sty
+Package: subfig 2005/06/28 ver: 1.3 subfig package
+
+(/usr/share/texmf-texlive/tex/latex/caption/caption.sty
+Package: caption 2009/10/09 v3.1k Customizing captions (AR)
+
+(/usr/share/texmf-texlive/tex/latex/caption/caption3.sty
+Package: caption3 2009/10/09 v3.1k caption3 kernel (AR)
+\captionmargin=\dimen123
+\captionmargin@=\dimen124
+\captionwidth=\dimen125
+\caption@indent=\dimen126
+\caption@parindent=\dimen127
+\caption@hangindent=\dimen128
+)
+\c@ContinuedFloat=\count107
+)
+\c@KVtest=\count108
+\sf@farskip=\skip50
+\sf@captopadj=\dimen129
+\sf@capskip=\skip51
+\sf@nearskip=\skip52
+\c@subfigure=\count109
+\c@subfigure@save=\count110
+\c@lofdepth=\count111
+\c@subtable=\count112
+\c@subtable@save=\count113
+\c@lotdepth=\count114
+\sf@top=\skip53
+\sf@bottom=\skip54
+)
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/pgfplots
+_1.7.tds/tex/latex/pgfplots/pgfplots.sty
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/pgfplots
+_1.7.tds/tex/generic/pgfplots/pgfplots.revision.tex)
+Package: pgfplots 2012/10/26 v1.7 Data Visualization (1.7-2-ge24fff4)
+
+(/usr/share/texmf/tex/latex/pgf/frontendlayer/tikz.sty
+(/usr/share/texmf/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/share/texmf/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/share/texmf/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks22
+)
+(/usr/share/texmf/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box33
+
+(/usr/share/texmf-texlive/tex/latex/ms/everyshi.sty
+Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
+))
+(/usr/share/texmf/tex/generic/pgf/utilities/pgfrcs.code.tex
+Package: pgfrcs 2010/10/25 v2.10 (rcs-revision 1.24)
+))
+Package: pgf 2008/01/15 v2.10 (rcs-revision 1.12)
+
+(/usr/share/texmf/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/share/texmf/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2010/06/30 v2.10 (rcs-revision 1.37)
+
+(/usr/share/texmf/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks23
+\pgfkeys@temptoks=\toks24
+
+(/usr/share/texmf/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex
+\pgfkeys@tmptoks=\toks25
+))
+\pgf@x=\dimen130
+\pgf@y=\dimen131
+\pgf@xa=\dimen132
+\pgf@ya=\dimen133
+\pgf@xb=\dimen134
+\pgf@yb=\dimen135
+\pgf@xc=\dimen136
+\pgf@yc=\dimen137
+\w@pgf@writea=\write3
+\r@pgf@reada=\read1
+\c@pgf@counta=\count115
+\c@pgf@countb=\count116
+\c@pgf@countc=\count117
+\c@pgf@countd=\count118
+
+(/usr/share/texmf/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
+)
+Package pgfsys Info: Driver file for pgf: pgfsys-pdftex.def on input line 900.
+
+(/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2009/05/22  (rcs-revision 1.26)
+
+(/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2008/05/19  (rcs-revision 1.10)
+)))
+(/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2008/07/18  (rcs-revision 1.7)
+\pgfsyssoftpath@smallbuffer@items=\count119
+\pgfsyssoftpath@bigbuffer@items=\count120
+)
+(/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
+))
+(/usr/share/texmf/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+(/etc/texmf/tex/latex/config/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2010/04/11 v2.10 (rcs-revision 1.7)
+
+(/usr/share/texmf/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathcalc.code.tex
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen138
+\pgfmath@count=\count121
+\pgfmath@box=\box34
+\pgfmath@toks=\toks26
+\pgfmath@stack@operand=\toks27
+\pgfmath@stack@operation=\toks28
+)
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.code.tex
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex)
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex)
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.random.code.tex)
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex)
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.base.code.tex)
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.round.code.tex)
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex)))
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count122
+))
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
+File: pgfcorepoints.code.tex 2010/04/09  (rcs-revision 1.20)
+\pgf@picminx=\dimen139
+\pgf@picmaxx=\dimen140
+\pgf@picminy=\dimen141
+\pgf@picmaxy=\dimen142
+\pgf@pathminx=\dimen143
+\pgf@pathmaxx=\dimen144
+\pgf@pathminy=\dimen145
+\pgf@pathmaxy=\dimen146
+\pgf@xx=\dimen147
+\pgf@xy=\dimen148
+\pgf@yx=\dimen149
+\pgf@yy=\dimen150
+\pgf@zx=\dimen151
+\pgf@zy=\dimen152
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2010/08/03  (rcs-revision 1.24)
+\pgf@path@lastx=\dimen153
+\pgf@path@lasty=\dimen154
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
+File: pgfcorepathusage.code.tex 2008/04/22  (rcs-revision 1.12)
+\pgf@shorten@end@additional=\dimen155
+\pgf@shorten@start@additional=\dimen156
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2010/09/08  (rcs-revision 1.34)
+\pgfpic=\box35
+\pgf@hbox=\box36
+\pgf@layerbox@main=\box37
+\pgf@picture@serial@count=\count123
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2008/04/22  (rcs-revision 1.9)
+\pgflinewidth=\dimen157
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
+File: pgfcoretransformations.code.tex 2009/06/10  (rcs-revision 1.11)
+\pgf@pt@x=\dimen158
+\pgf@pt@y=\dimen159
+\pgf@pt@temp=\dimen160
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
+File: pgfcoreobjects.code.tex 2006/10/11  (rcs-revision 1.2)
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2008/10/09  (rcs-revision 1.8)
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
+File: pgfcorearrows.code.tex 2008/04/23  (rcs-revision 1.11)
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2008/11/23  (rcs-revision 1.13)
+\pgf@max=\dimen161
+\pgf@sys@shading@range@num=\count124
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2010/03/25  (rcs-revision 1.16)
+
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
+File: pgfcoreexternal.code.tex 2010/09/01  (rcs-revision 1.17)
+\pgfexternal@startupbox=\box38
+))
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2010/08/27  (rcs-revision 1.2)
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
+File: pgfcoretransparency.code.tex 2008/01/17  (rcs-revision 1.2)
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
+File: pgfcorepatterns.code.tex 2009/07/02  (rcs-revision 1.3)
+)))
+(/usr/share/texmf/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2010/09/09  (rcs-revision 1.13)
+\pgfnodeparttextbox=\box39
+)
+(/usr/share/texmf/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2010/10/22  (rcs-revision 1.8)
+)
+(/usr/share/texmf/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
+Package: pgfcomp-version-0-65 2007/07/03 v2.10 (rcs-revision 1.7)
+\pgf@nodesepstart=\dimen162
+\pgf@nodesepend=\dimen163
+)
+(/usr/share/texmf/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
+Package: pgfcomp-version-1-18 2007/07/23 v2.10 (rcs-revision 1.1)
+))
+(/usr/share/texmf/tex/latex/pgf/utilities/pgffor.sty
+(/usr/share/texmf/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/share/texmf/tex/generic/pgf/utilities/pgfkeys.code.tex))
+(/usr/share/texmf/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2010/03/23 v2.10 (rcs-revision 1.18)
+\pgffor@iter=\dimen164
+\pgffor@skip=\dimen165
+\pgffor@stack=\toks29
+\pgffor@toks=\toks30
+))
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+Package: tikz 2010/10/13 v2.10 (rcs-revision 1.76)
+
+(/usr/share/texmf/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2010/05/31 v2.10 (rcs-revision 1.15)
+\pgf@plot@mark@count=\count125
+\pgfplotmarksize=\dimen166
+)
+\tikz@lastx=\dimen167
+\tikz@lasty=\dimen168
+\tikz@lastxsaved=\dimen169
+\tikz@lastysaved=\dimen170
+\tikzleveldistance=\dimen171
+\tikzsiblingdistance=\dimen172
+\tikz@figbox=\box40
+\tikz@tempbox=\box41
+\tikztreelevel=\count126
+\tikznumberofchildren=\count127
+\tikznumberofcurrentchild=\count128
+\tikz@fig@count=\count129
+
+(/usr/share/texmf/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2010/08/24  (rcs-revision 1.4)
+\pgfmatrixcurrentrow=\count130
+\pgfmatrixcurrentcolumn=\count131
+\pgf@matrix@numberofcolumns=\count132
+)
+\tikz@expandcount=\count133
+
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopat
+hs.code.tex
+File: tikzlibrarytopaths.code.tex 2008/06/17 v2.10 (rcs-revision 1.2)
+)))
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/pgfplots
+_1.7.tds/tex/generic/pgfplots/pgfplots.code.tex
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/pgfplots
+_1.7.tds/tex/generic/pgfplots/pgfplotscore.code.tex
+\t@pgfplots@toka=\toks31
+\t@pgfplots@tokb=\toks32
+\t@pgfplots@tokc=\toks33
+\pgfplots@tmpa=\dimen173
+\c@pgfplots@coordindex=\count134
+\c@pgfplots@scanlineindex=\count135
+
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/pgfplots
+_1.7.tds/tex/generic/pgfplots/sys/pgfplotssysgeneric.code.tex))
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/pgfplots
+_1.7.tds/tex/generic/pgfplots/libs/pgfplotslibrary.code.tex)
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/pgfplots
+_1.7.tds/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_loader.code.tex
+Package pgfplots: loading complementary code for your PGF version...
+
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/pgfplots
+_1.7.tds/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_misc.code.tex)
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/pgfplots
+_1.7.tds/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_pgfkeys.code.te
+x
+\pgfkeys@pathtoks=\toks34
+\pgfkeys@temptoks=\toks35
+
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/pgfplots
+_1.7.tds/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_pgfkeysfiltered
+.code.tex
+\pgfkeys@tmptoks=\toks36
+))
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/pgfplots
+_1.7.tds/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_pgfmathfloat.co
+de.tex
+\c@pgfmathroundto@lastzeros=\count136
+)
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/pgfplots
+_1.7.tds/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_pgflibraryploth
+andlers.code.tex
+File: pgflibraryplothandlers.code.tex 2012/09/11 v2.10 (rcs-revision 1.17)
+\pgf@plot@mark@count=\count137
+\pgfplotmarksize=\dimen174
+)
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/pgfplots
+_1.7.tds/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_pgflibraryfpu.c
+ode.tex)
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/pgfplots
+_1.7.tds/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_pgfcorescopes.c
+ode.tex
+File: pgfcorescopes.code.tex 2011/10/01  (rcs-revision 1.37)
+\pgfpic=\box42
+\pgf@hbox=\box43
+\pgf@layerbox@main=\box44
+\pgf@picture@serial@count=\count138
+)
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/pgfplots
+_1.7.tds/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_pgfcorelayers.c
+ode.tex
+File: pgfcorelayers.code.tex 2011/10/02  (rcs-revision 1.4)
+))
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/pgfplots
+_1.7.tds/tex/generic/pgfplots/util/pgfplotsutil.code.tex
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/pgfplots
+_1.7.tds/tex/generic/pgfplots/liststructure/pgfplotsliststructure.code.tex)
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/pgfplots
+_1.7.tds/tex/generic/pgfplots/liststructure/pgfplotsliststructureext.code.tex)
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/pgfplots
+_1.7.tds/tex/generic/pgfplots/liststructure/pgfplotsarray.code.tex
+\c@pgfplotsarray@tmp=\count139
+)
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/pgfplots
+_1.7.tds/tex/generic/pgfplots/liststructure/pgfplotsmatrix.code.tex)
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/pgfplots
+_1.7.tds/tex/generic/pgfplots/numtable/pgfplotstableshared.code.tex
+\c@pgfplotstable@counta=\count140
+\t@pgfplotstable@a=\toks37
+)
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/pgfplots
+_1.7.tds/tex/generic/pgfplots/liststructure/pgfplotsdeque.code.tex)
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/pgfplots
+_1.7.tds/tex/generic/pgfplots/util/pgfplotsbinary.code.tex
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/pgfplots
+_1.7.tds/tex/generic/pgfplots/util/pgfplotsbinary.data.code.tex))
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/pgfplots
+_1.7.tds/tex/generic/pgfplots/util/pgfplotsutil.verb.code.tex)
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/pgfplots
+_1.7.tds/tex/generic/pgfplots/libs/pgflibrarypgfplots.surfshading.code.tex
+\c@pgfplotslibrarysurf@no=\count141
+
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/pgfplots
+_1.7.tds/tex/generic/pgfplots/sys/pgflibrarypgfplots.surfshading.pgfsys-pdftex.
+def)))
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/pgfplots
+_1.7.tds/tex/generic/pgfplots/util/pgfplotscolormap.code.tex)
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/pgfplots
+_1.7.tds/tex/generic/pgfplots/pgfplotsstackedplots.code.tex)
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/pgfplots
+_1.7.tds/tex/generic/pgfplots/pgfplotsplothandlers.code.tex
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/pgfplots
+_1.7.tds/tex/generic/pgfplots/pgfplotsmeshplothandler.code.tex))
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/pgfplots
+_1.7.tds/tex/generic/pgfplots/pgfplots.scaling.code.tex)
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/pgfplots
+_1.7.tds/tex/generic/pgfplots/pgfplotscoordprocessing.code.tex)
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/pgfplots
+_1.7.tds/tex/generic/pgfplots/pgfplotsticks.code.tex)
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/pgfplots
+_1.7.tds/tex/generic/pgfplots/pgfplots.paths.code.tex)
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecor
+ations.code.tex
+(/usr/share/texmf/tex/generic/pgf/modules/pgfmoduledecorations.code.tex
+\pgfdecoratedcompleteddistance=\dimen175
+\pgfdecoratedremainingdistance=\dimen176
+\pgfdecoratedinputsegmentcompleteddistance=\dimen177
+\pgfdecoratedinputsegmentremainingdistance=\dimen178
+\pgf@decorate@distancetomove=\dimen179
+\pgf@decorate@repeatstate=\count142
+\pgfdecorationsegmentamplitude=\dimen180
+\pgfdecorationsegmentlength=\dimen181
+)
+\tikz@lib@dec@box=\box45
+)
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecor
+ations.pathmorphing.code.tex
+(/usr/share/texmf/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.p
+athmorphing.code.tex))
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecor
+ations.pathreplacing.code.tex
+(/usr/share/texmf/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.p
+athreplacing.code.tex))
+\pgfplots@numplots=\count143
+\pgfplots@xmin@reg=\dimen182
+\pgfplots@xmax@reg=\dimen183
+\pgfplots@ymin@reg=\dimen184
+\pgfplots@ymax@reg=\dimen185
+\pgfplots@zmin@reg=\dimen186
+\pgfplots@zmax@reg=\dimen187
+)
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryplotm
+arks.code.tex
+File: tikzlibraryplotmarks.code.tex 2008/01/09 v2.10 (rcs-revision 1.1)
+
+(/usr/share/texmf/tex/generic/pgf/libraries/pgflibraryplotmarks.code.tex
+File: pgflibraryplotmarks.code.tex 2010/10/15 v2.10 (rcs-revision 1.12)
+)))
+(/usr/share/texmf-texlive/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2009/10/09 v6.79a Hypertext links for LaTeX
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2009/04/10 v2.0 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in pdf mode detected.
+)
+(/usr/share/texmf-texlive/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2008/11/04 v1.4 Switches for detecting VTeX and its modes (HO)
+Package ifvtex Info: VTeX not detected.
+)
+(/usr/share/texmf-texlive/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2009/01/23 v0.5 Provides ifxetex conditional
+)
+(/usr/share/texmf-texlive/tex/latex/oberdiek/hycolor.sty
+Package: hycolor 2009/10/02 v1.5 Code for color options of hyperref/bookmark (H
+O)
+
+(/usr/share/texmf-texlive/tex/latex/oberdiek/xcolor-patch.sty
+Package: xcolor-patch 2009/10/02 xcolor patch
+))
+\@linkdim=\dimen188
+\Hy@linkcounter=\count144
+\Hy@pagecounter=\count145
+
+(/usr/share/texmf-texlive/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2009/10/09 v6.79a Hyperref: PDFDocEncoding definition (HO)
+)
+(/usr/share/texmf-texlive/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2007/12/12 v1.2 Prefix for e-TeX command names (HO)
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2007/09/09 v1.2 Providing info/warning/message (HO)
+)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)
+(/usr/share/texmf-texlive/tex/latex/latexconfig/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+(/usr/share/texmf-texlive/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2009/08/13 v3.4 Keyval support for LaTeX options (HO)
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2009/07/30 v1.5 Key value parser with default handler suppor
+t (HO)
+))
+Package hyperref Info: Hyper figures OFF on input line 2975.
+Package hyperref Info: Link nesting OFF on input line 2980.
+Package hyperref Info: Hyper index ON on input line 2983.
+Package hyperref Info: Plain pages OFF on input line 2990.
+Package hyperref Info: Backreferencing OFF on input line 2995.
+
+Implicit mode ON; LaTeX internals redefined
+Package hyperref Info: Bookmarks ON on input line 3191.
+(/usr/share/texmf-texlive/tex/latex/ltxmisc/url.sty
+\Urlmuskip=\muskip11
+Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 3428.
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/bitset.sty
+Package: bitset 2007/09/28 v1.0 Data type bit set (HO)
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/intcalc.sty
+Package: intcalc 2007/09/27 v1.1 Expandable integer calculations (HO)
+)
+(/usr/share/texmf-texlive/tex/generic/oberdiek/bigintcalc.sty
+Package: bigintcalc 2007/11/11 v1.1 Expandable big integer calculations (HO)
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2009/09/23 v0.6 LuaTeX support for pdfTeX utility functions
+ (HO)
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2009/04/17 v1.2 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/share/texmf-texlive/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2009/08/05 v1.0 Some LaTeX kernel commands for general use (HO
+)
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+)))
+\Fld@menulength=\count146
+\Field@Width=\dimen189
+\Fld@charsize=\dimen190
+\Field@toks=\toks38
+Package hyperref Info: Hyper figures OFF on input line 4377.
+Package hyperref Info: Link nesting OFF on input line 4382.
+Package hyperref Info: Hyper index ON on input line 4385.
+Package hyperref Info: backreferencing OFF on input line 4392.
+Package hyperref Info: Link coloring OFF on input line 4397.
+Package hyperref Info: Link coloring with OCG OFF on input line 4402.
+Package hyperref Info: PDF/A mode OFF on input line 4407.
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/atbegshi.sty
+Package: atbegshi 2008/07/31 v1.9 At begin shipout hook (HO)
+)
+\Hy@abspage=\count147
+\c@Item=\count148
+)
+*hyperref using default driver hpdftex*
+(/usr/share/texmf-texlive/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2009/10/09 v6.79a Hyperref driver for pdfTeX
+\Fld@listcount=\count149
+)
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/anyfonts
+ize.sty
+Package: anyfontsize 2007/11/22 anyfontsize.sty by pts
+)
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/placeins
+.sty
+Package: placeins 2005/04/18  v 2.2
+)
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.
+code.tex
+File: tikzlibrarycalc.code.tex 2009/09/04 v2.10 (rcs-revision 1.6)
+)
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytrees
+.code.tex
+File: tikzlibrarytrees.code.tex 2008/02/24 v2.10 (rcs-revision 1.2)
+)
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryposit
+ioning.code.tex
+File: tikzlibrarypositioning.code.tex 2008/10/06 v2.10 (rcs-revision 1.7)
+)
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryarrow
+s.code.tex
+File: tikzlibraryarrows.code.tex 2008/01/09 v2.10 (rcs-revision 1.1)
+
+(/usr/share/texmf/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
+File: pgflibraryarrows.code.tex 2008/10/27 v2.10 (rcs-revision 1.9)
+\arrowsize=\dimen191
+))
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarychain
+s.code.tex
+File: tikzlibrarychains.code.tex 2008/02/27 v2.10 (rcs-revision 1.5)
+)
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshape
+s.geometric.code.tex
+File: tikzlibraryshapes.geometric.code.tex 2008/01/09 v2.10 (rcs-revision 1.1)
+
+(/usr/share/texmf/tex/generic/pgf/libraries/shapes/pgflibraryshapes.geometric.c
+ode.tex
+File: pgflibraryshapes.geometric.code.tex 2008/06/26 v2.10 (rcs-revision 1.1)
+))
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshape
+s.code.tex
+File: tikzlibraryshapes.code.tex 2008/01/09 v2.10 (rcs-revision 1.1)
+
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshape
+s.misc.code.tex
+File: tikzlibraryshapes.misc.code.tex 2008/01/09 v2.10 (rcs-revision 1.1)
+
+(/usr/share/texmf/tex/generic/pgf/libraries/shapes/pgflibraryshapes.misc.code.t
+ex
+File: pgflibraryshapes.misc.code.tex 2008/10/07 v2.10 (rcs-revision 1.3)
+))
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshape
+s.symbols.code.tex
+File: tikzlibraryshapes.symbols.code.tex 2008/01/09 v2.10 (rcs-revision 1.1)
+
+(/usr/share/texmf/tex/generic/pgf/libraries/shapes/pgflibraryshapes.symbols.cod
+e.tex
+File: pgflibraryshapes.symbols.code.tex 2009/10/27 v2.10 (rcs-revision 1.3)
+))
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshape
+s.arrows.code.tex
+File: tikzlibraryshapes.arrows.code.tex 2008/01/09 v2.10 (rcs-revision 1.1)
+
+(/usr/share/texmf/tex/generic/pgf/libraries/shapes/pgflibraryshapes.arrows.code
+.tex
+File: pgflibraryshapes.arrows.code.tex 2008/06/26 v2.10 (rcs-revision 1.1)
+))
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshape
+s.callouts.code.tex
+(/usr/share/texmf/tex/generic/pgf/libraries/shapes/pgflibraryshapes.callouts.co
+de.tex))
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshape
+s.multipart.code.tex
+File: tikzlibraryshapes.multipart.code.tex 2008/01/09 v2.10 (rcs-revision 1.1)
+
+(/usr/share/texmf/tex/generic/pgf/libraries/shapes/pgflibraryshapes.multipart.c
+ode.tex
+File: pgflibraryshapes.multipart.code.tex 2010/01/07 v2.10 (rcs-revision 1.2)
+\pgfnodepartlowerbox=\box46
+\pgfnodeparttwobox=\box47
+\pgfnodepartthreebox=\box48
+\pgfnodepartfourbox=\box49
+\pgfnodeparttwentybox=\box50
+\pgfnodepartnineteenbox=\box51
+\pgfnodeparteighteenbox=\box52
+\pgfnodepartseventeenbox=\box53
+\pgfnodepartsixteenbox=\box54
+\pgfnodepartfifteenbox=\box55
+\pgfnodepartfourteenbox=\box56
+\pgfnodepartthirteenbox=\box57
+\pgfnodeparttwelvebox=\box58
+\pgfnodepartelevenbox=\box59
+\pgfnodeparttenbox=\box60
+\pgfnodepartninebox=\box61
+\pgfnodeparteightbox=\box62
+\pgfnodepartsevenbox=\box63
+\pgfnodepartsixbox=\box64
+\pgfnodepartfivebox=\box65
+)))
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarymatri
+x.code.tex
+File: tikzlibrarymatrix.code.tex 2008/06/18 v2.10 (rcs-revision 1.2)
+)
+
+LaTeX Warning: Unused global option(s):
+    [flalign,hidelinks].
+
+
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/main.aux
+
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/title.au
+x)
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/declare.
+aux)
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/ack.aux)
+
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/abstract
+.aux)
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/contents
+.aux)
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/chap1.au
+x)
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/chap2.au
+x)
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/chap3.au
+x)
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/chap4.au
+x)
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/chap5.au
+x)
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/chap6.au
+x)
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/biblio.a
+ux))
+\openout1 = `main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 99.
+LaTeX Font Info:    ... okay on input line 99.
+ (/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count150
+\scratchdimen=\dimen192
+\scratchbox=\box66
+\nofMPsegments=\count151
+\nofMParguments=\count152
+\everyMPshowfont=\toks39
+\MPscratchCnt=\count153
+\MPscratchDim=\dimen193
+\MPnumerator=\count154
+\everyMPtoPDFconversion=\toks40
+)
+Package caption Info: Begin \AtBeginDocument code.
+Package caption3 Info: subfig package 1.2 or 1.3 is loaded.
+LaTeX Info: Redefining \subref on input line 99.
+Package caption Info: hyperref package is loaded.
+Package caption Info: End \AtBeginDocument code.
+ ABD: EveryShipout initializing macros
+Package pgfplots notification 'compat/show suggested version=true': document ha
+s been generated with the most recent feature set (\pgfplotsset{compat=1.7}).
+
+Package hyperref Info: Link coloring OFF on input line 99.
+(/usr/share/texmf-texlive/tex/latex/hyperref/nameref.sty
+Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
+
+(/usr/share/texmf-texlive/tex/latex/oberdiek/refcount.sty
+Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
+)
+\c@section@level=\count155
+)
+LaTeX Info: Redefining \ref on input line 99.
+LaTeX Info: Redefining \pageref on input line 99.
+
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/main.out
+)
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/main.out
+)
+\@outlinefile=\write4
+\openout4 = `main.out'.
+
+\AtBeginShipoutBox=\box67
+\openout2 = `title.aux'.
+
+
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/title.te
+x <../img_source/HBNI.jpg, id=230, 80.55093pt x 77.53969pt>
+File: ../img_source/HBNI.jpg Graphic file (type jpg)
+
+<use ../img_source/HBNI.jpg> [1
+
+
+
+
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <../img_source/HBNI.jpg>]) 
+[2
+
+
+]
+\openout2 = `declare.aux'.
+
+
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/declare.
+tex)
+Underfull \hbox (badness 10000) in paragraph at lines 2--112
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2--112
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2--112
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2--112
+
+ []
+
+
+Overfull \hbox (12.76453pt too wide) in paragraph at lines 2--112
+[][][][][][][][][][][][][][][][][][][][]\T1/cmr/m/n/12 Pranav Kant Gaur 
+ []
+
+
+Overfull \hbox (18.71863pt too wide) in paragraph at lines 2--112
+[][][][][][][][][][][][][][][][][][][][]\T1/cmr/m/n/12 ENGG01201101001 
+ []
+
+[3
+
+
+]
+\openout2 = `ack.aux'.
+
+
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/ack.tex)
+[4
+
+
+
+]
+\openout2 = `abstract.aux'.
+
+
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/abstract
+.tex
+Underfull \hbox (badness 10000) in paragraph at lines 14--15
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--17
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 18--19
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 20--21
+
+ []
+
+[5
+
+
+
+]) [6]
+\openout2 = `contents.aux'.
+
+
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/contents
+.tex
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/main.toc
+[7
+
+
+
+] [8])
+\tf@toc=\write5
+\openout5 = `main.toc'.
+
+ [9]
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/main.lof
+[10
+
+]
+Overfull \hbox (31.33583pt too wide) in paragraph at lines 169--169
+ [][] [][]\T1/cmr/m/n/12 Distance ver-sus mea-sure-ment ac-cu-racy with in-di-c
+a-tion of un-cer-tainty(vertical 
+ []
+
+)
+\tf@lof=\write6
+\openout6 = `main.lof'.
+
+ [11]
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/main.lot
+)
+\tf@lot=\write7
+\openout7 = `main.lot'.
+
+) [12
+
+]
+\openout2 = `chap1.aux'.
+
+
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/chap1.te
+x
+Chapter 1.
+
+Underfull \hbox (badness 10000) in paragraph at lines 10--11
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 13--14
+
+ []
+
+[13
+
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 16--17
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 22--24
+
+ []
+
+[14] [15]
+Underfull \hbox (badness 10000) in paragraph at lines 40--41
+
+ []
+
+[16] <../img_source/phase_hor_1.jpg, id=493, 1027.84pt x 770.88pt>
+File: ../img_source/phase_hor_1.jpg Graphic file (type jpg)
+
+<use ../img_source/phase_hor_1.jpg>
+<../img_source/face_2d.jpg, id=494, 576.1525pt x 449.68pt>
+File: ../img_source/face_2d.jpg Graphic file (type jpg)
+
+<use ../img_source/face_2d.jpg>
+<../img_source/face_3d.jpg, id=495, 1201.48875pt x 925.4575pt>
+File: ../img_source/face_3d.jpg Graphic file (type jpg)
+
+<use ../img_source/face_3d.jpg>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[17]
+Underfull \hbox (badness 10000) in paragraph at lines 64--65
+
+ []
+
+[18 <../img_source/phase_hor_1.jpg> <../img_source/face_2d.jpg> <../img_source/
+face_3d.jpg>]
+Overfull \hbox (78.83939pt too wide) in paragraph at lines 99--100
+ [][] 
+ []
+
+) [19]
+\openout2 = `chap2.aux'.
+
+
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/chap2.te
+x
+Chapter 2.
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--5
+
+ []
+
+[20
+
+
+
+] [21]
+Underfull \hbox (badness 10000) in paragraph at lines 25--26
+
+ []
+
+
+Overfull \hbox (15.46077pt too wide) in paragraph at lines 99--100
+\T1/cmr/bx/n/12 era co-or-di-nate sys-tem.[] \T1/cmr/m/n/12 Points in the world
+-coordinate co-or-di-nates sys-tem (x$[]$,y$[]$,z$[]$)
+ []
+
+[22]
+Underfull \hbox (badness 10000) in paragraph at lines 114--125
+
+ []
+
+
+Overfull \hbox (31.64276pt too wide) in paragraph at lines 127--128
+[]\T1/cmr/m/n/12 Rotation and trans-la-tion pa-ram-e-ters are called \T1/cmr/m/
+it/12 ex-trin-sic pa-ram-e-ters \T1/cmr/m/n/12 of cam-era/projector.
+ []
+
+[23] [24]
+Overfull \hbox (2.79124pt too wide) in paragraph at lines 165--166
+ \T1/cmr/bx/n/12 4.Trans-form-ing real-image co-or-di-nates to computer-frame c
+o-or-di-nates.[] \T1/cmr/m/n/12 Fi-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 179--232
+
+ []
+
+[25] [26]
+Underfull \hbox (badness 10000) in paragraph at lines 256--258
+
+ []
+
+<../img_source/tsai_rac.jpg, id=576, 1149.29375pt x 935.495pt>
+File: ../img_source/tsai_rac.jpg Graphic file (type jpg)
+
+<use ../img_source/tsai_rac.jpg> [27] [28 <../img_source/tsai_rac.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 279--284
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 300--306
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 312--322
+
+ []
+
+[29]
+Underfull \hbox (badness 10000) in paragraph at lines 324--325
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 327--349
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 327--349
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 327--349
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 327--349
+
+ []
+
+[30] [31] [32]
+Underfull \hbox (badness 10000) in paragraph at lines 409--420
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 427--432
+
+ []
+
+[33] <../img_source/system_setup.jpg, id=631, 3661.68pt x 2746.26pt>
+File: ../img_source/system_setup.jpg Graphic file (type jpg)
+
+<use ../img_source/system_setup.jpg> [34 <../img_source/system_setup.jpg>]
+<../img_source/cam_1.jpg, id=638, 237.88875pt x 211.79124pt>
+<use ../img_source/cam_1.jpg>
+<../img_source/cam_2.jpg, id=639, 707.64375pt x 667.49374pt>
+<use ../img_source/cam_2.jpg>
+<../img_source/cam_3.jpg, id=640, 695.59875pt x 525.965pt>
+<use ../img_source/cam_3.jpg>
+<../img_source/cam_4.jpg, id=641, 451.6875pt x 330.23375pt>
+<use ../img_source/cam_4.jpg>
+File: ../img_source/cam_1.jpg Graphic file (type jpg)
+ <use ../img_source/cam_1.jpg>
+File: ../img_source/cam_2.jpg Graphic file (type jpg)
+
+<use ../img_source/cam_2.jpg>
+File: ../img_source/cam_3.jpg Graphic file (type jpg)
+ <use ../img_source/cam_3.jpg>
+File: ../img_source/cam_4.jpg Graphic file (type jpg)
+
+<use ../img_source/cam_4.jpg>
+Underfull \hbox (badness 10000) in alignment at lines 470--470
+[][][]
+ []
+
+[35 <../img_source/cam_1.jpg> <../img_source/cam_2.jpg> <../img_source/cam_3.jp
+g> <../img_source/cam_4.jpg>]
+<../img_source/cam_calib_view.jpg, id=654, 1028.84375pt x 759.83875pt>
+File: ../img_source/cam_calib_view.jpg Graphic file (type jpg)
+
+<use ../img_source/cam_calib_view.jpg>
+<../img_source/cam_calib_view2.jpg, id=656, 1053.9375pt x 788.9475pt>
+File: ../img_source/cam_calib_view2.jpg Graphic file (type jpg)
+
+<use ../img_source/cam_calib_view2.jpg> [36 <../img_source/cam_calib_view.jpg>]
+[37 <../img_source/cam_calib_view2.jpg>]
+Overfull \hbox (3.34592pt too wide) in paragraph at lines 537--538
+[]\T1/cmr/m/n/12 Using camera-to-world ho-mog-ra-phy, cor-re-spond-ing 3D co-or
+-di-nates are com-
+ []
+
+<../img_source/proj_view_1.jpg, id=668, 682.55pt x 520.94624pt>
+<use ../img_source/proj_view_1.jpg>
+<../img_source/proj_view_2.jpg, id=669, 502.87875pt x 407.5225pt>
+<use ../img_source/proj_view_2.jpg>
+<../img_source/proj_view_3.jpg, id=670, 670.505pt x 511.9125pt>
+<use ../img_source/proj_view_3.jpg>
+<../img_source/proj_view_4.jpg, id=671, 536.0025pt x 467.7475pt>
+<use ../img_source/proj_view_4.jpg>
+File: ../img_source/proj_view_1.jpg Graphic file (type jpg)
+ <use ../img_source/proj_view_1.jpg>
+File: ../img_source/proj_view_2.jpg Graphic file (type jpg)
+
+<use ../img_source/proj_view_2.jpg>
+File: ../img_source/proj_view_3.jpg Graphic file (type jpg)
+ <use ../img_source/proj_view_3.jpg>
+File: ../img_source/proj_view_4.jpg Graphic file (type jpg)
+
+<use ../img_source/proj_view_4.jpg>
+Underfull \hbox (badness 10000) in alignment at lines 557--557
+[][][]
+ []
+
+<../img_source/proj_calib_plot_1.jpg, id=675, 1039.885pt x 755.82375pt>
+File: ../img_source/proj_calib_plot_1.jpg Graphic file (type jpg)
+
+<use ../img_source/proj_calib_plot_1.jpg>
+<../img_source/proj_calib_plot_2.jpg, id=677, 1062.97125pt x 767.86874pt>
+File: ../img_source/proj_calib_plot_2.jpg Graphic file (type jpg)
+
+<use ../img_source/proj_calib_plot_2.jpg> [38] [39 <../img_source/proj_view_1.j
+pg> <../img_source/proj_view_2.jpg> <../img_source/proj_view_3.jpg> <../img_sou
+rce/proj_view_4.jpg> <../img_source/proj_calib_plot_1.jpg>] [40 <../img_source/
+proj_calib_plot_2.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 625--626
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 652--671
+
+ []
+
+
+Underfull \hbox (badness 7064) in paragraph at lines 688--688
+[]\T1/cmr/m/n/12 Table 2.5: |Es-ti-mated projector-
+ []
+
+[41] <../img_source/system_extrinsic.jpg, id=724, 3661.68pt x 2746.26pt>
+File: ../img_source/system_extrinsic.jpg Graphic file (type jpg)
+
+<use ../img_source/system_extrinsic.jpg>
+<../img_source/system_plot_edit.jpg, id=725, 1037.8775pt x 768.8725pt>
+File: ../img_source/system_plot_edit.jpg Graphic file (type jpg)
+
+<use ../img_source/system_plot_edit.jpg>
+Overfull \hbox (50.0808pt too wide) in paragraph at lines 702--703
+ [][] 
+ []
+
+
+Overfull \hbox (4.57712pt too wide) in paragraph at lines 710--713
+[]\T1/cmr/m/n/12 Projector cal-i-bra-tion us-ing OpenCV cam-era cal-i-bra-tion 
+al-go-rithm gives non-repeat-
+ []
+
+[42] [43 <../img_source/system_extrinsic.jpg> <../img_source/system_plot_edit.j
+pg>]) [44]
+\openout2 = `chap3.aux'.
+
+
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/chap3.te
+x
+Chapter 3.
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--36
+
+ []
+
+[45
+
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 37--38
+
+ []
+
+[46] <../img_source/struct_light.jpg, id=749, 361.35pt x 311.1625pt>
+File: ../img_source/struct_light.jpg Graphic file (type jpg)
+
+<use ../img_source/struct_light.jpg> [47 <../img_source/struct_light.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 53--56
+
+ []
+
+[48]
+<../img_source/coded_pattern_design.jpg, id=770, 412.54124pt x 173.64874pt>
+File: ../img_source/coded_pattern_design.jpg Graphic file (type jpg)
+
+<use ../img_source/coded_pattern_design.jpg>
+<../img_source/coded_pattern_projection.jpg, id=771, 431.6125pt x 291.0875pt>
+File: ../img_source/coded_pattern_projection.jpg Graphic file (type jpg)
+
+<use ../img_source/coded_pattern_projection.jpg> [49 <../img_source/coded_patte
+rn_design.jpg> <../img_source/coded_pattern_projection.jpg>]
+<../img_source/gray_code_1.jpg, id=780, 158.5925pt x 148.555pt>
+<use ../img_source/gray_code_1.jpg>
+<../img_source/gray_code_2.jpg, id=781, 159.59625pt x 149.55875pt>
+<use ../img_source/gray_code_2.jpg>
+<../img_source/gray_code_3.jpg, id=782, 149.55875pt x 148.555pt>
+<use ../img_source/gray_code_3.jpg>
+File: ../img_source/gray_code_1.jpg Graphic file (type jpg)
+ <use ../img_source/gray_code_1.jpg>
+File: ../img_source/gray_code_2.jpg Graphic file (type jpg)
+
+<use ../img_source/gray_code_2.jpg>
+File: ../img_source/gray_code_3.jpg Graphic file (type jpg)
+ <use ../img_source/gray_code_3.jpg>
+Underfull \hbox (badness 10000) in alignment at lines 97--97
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 102--105
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 107--108
+
+ []
+
+[50 <../img_source/gray_code_1.jpg> <../img_source/gray_code_2.jpg> <../img_sou
+rce/gray_code_3.jpg>]
+<../img_source/gray+phase.jpg, id=793, 494.84875pt x 277.035pt>
+File: ../img_source/gray+phase.jpg Graphic file (type jpg)
+
+<use ../img_source/gray+phase.jpg>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[51] [52 <../img_source/gray+phase.jpg>]
+<../img_source/de_bruijn_1.jpg, id=806, 405.515pt x 300.12125pt>
+<use ../img_source/de_bruijn_1.jpg>
+<../img_source/de_bruijn_2.jpg, id=807, 397.485pt x 297.11pt>
+<use ../img_source/de_bruijn_2.jpg>
+<../img_source/de_bruijn_3.jpg, id=808, 403.5075pt x 300.12125pt>
+<use ../img_source/de_bruijn_3.jpg>
+<../img_source/de_bruijn_4.jpg, id=809, 398.48875pt x 299.1175pt>
+<use ../img_source/de_bruijn_4.jpg> <use ../img_source/de_bruijn_1.jpg>
+<use ../img_source/de_bruijn_2.jpg> <use ../img_source/de_bruijn_3.jpg>
+<use ../img_source/de_bruijn_4.jpg>
+File: ../img_source/de_bruijn_1.jpg Graphic file (type jpg)
+ <use ../img_source/de_bruijn_1.jpg>
+File: ../img_source/de_bruijn_2.jpg Graphic file (type jpg)
+
+<use ../img_source/de_bruijn_2.jpg>
+File: ../img_source/de_bruijn_3.jpg Graphic file (type jpg)
+ <use ../img_source/de_bruijn_3.jpg>
+File: ../img_source/de_bruijn_4.jpg Graphic file (type jpg)
+
+<use ../img_source/de_bruijn_4.jpg>
+Overfull \hbox (51.63539pt too wide) in alignment at lines 137--137
+[][][]
+ []
+
+
+Overfull \hbox (3.33421pt too wide) in paragraph at lines 143--146
+\T1/cmr/m/n/12 M-arrays[34][35] are bi-dimensional ex-ten-sions of de-bruijn se
+-quences. Hence
+ []
+
+<../img_source/m_array.jpg, id=811, 302.12875pt x 288.07625pt>
+File: ../img_source/m_array.jpg Graphic file (type jpg)
+
+<use ../img_source/m_array.jpg> [53 <../img_source/de_bruijn_1.jpg> <../img_sou
+rce/de_bruijn_2.jpg> <../img_source/de_bruijn_3.jpg> <../img_source/de_bruijn_4
+.jpg>] <../img_source/rainbow_1.jpg, id=824, 199.74625pt x 202.7575pt>
+<use ../img_source/rainbow_1.jpg>
+<../img_source/rainbow_2.jpg, id=825, 199.74625pt x 199.74625pt>
+<use ../img_source/rainbow_2.jpg>
+<../img_source/rainbow_3.jpg, id=826, 201.75375pt x 200.75pt>
+<use ../img_source/rainbow_3.jpg> <use ../img_source/rainbow_1.jpg>
+<use ../img_source/rainbow_2.jpg> <use ../img_source/rainbow_3.jpg>
+File: ../img_source/rainbow_1.jpg Graphic file (type jpg)
+
+<use ../img_source/rainbow_1.jpg>
+File: ../img_source/rainbow_2.jpg Graphic file (type jpg)
+ <use ../img_source/rainbow_2.jpg>
+File: ../img_source/rainbow_3.jpg Graphic file (type jpg)
+
+<use ../img_source/rainbow_3.jpg>
+Overfull \hbox (35.18184pt too wide) in alignment at lines 167--167
+[][][]
+ []
+
+[54 <../img_source/m_array.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 178--179
+
+ []
+
+[55 <../img_source/rainbow_1.jpg> <../img_source/rainbow_2.jpg> <../img_source/
+rainbow_3.jpg>]
+Overfull \hbox (11.87912pt too wide) in paragraph at lines 183--183
+[]\T1/cmr/bx/n/17.28 Working of de-vel-oped stereo-correspondence mod-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 187--188
+
+ []
+
+[56]
+Underfull \hbox (badness 10000) in paragraph at lines 203--210
+
+ []
+
+<../img_source/phase_ver_1.jpg, id=851, 1027.84pt x 770.88pt>
+<use ../img_source/phase_ver_1.jpg>
+<../img_source/phase_ver_2.jpg, id=852, 1027.84pt x 770.88pt>
+<use ../img_source/phase_ver_2.jpg>
+<../img_source/phase_ver_3.jpg, id=853, 1027.84pt x 770.88pt>
+<use ../img_source/phase_ver_3.jpg>
+File: ../img_source/phase_ver_1.jpg Graphic file (type jpg)
+ <use ../img_source/phase_ver_1.jpg>
+File: ../img_source/phase_ver_2.jpg Graphic file (type jpg)
+
+<use ../img_source/phase_ver_2.jpg>
+File: ../img_source/phase_ver_3.jpg Graphic file (type jpg)
+ <use ../img_source/phase_ver_3.jpg>
+Underfull \hbox (badness 10000) in alignment at lines 220--220
+[][][]
+ []
+
+<use ../img_source/phase_hor_1.jpg>
+<../img_source/phase_hor_2.jpg, id=854, 1027.84pt x 770.88pt>
+<use ../img_source/phase_hor_2.jpg>
+<../img_source/phase_hor_3.jpg, id=855, 1027.84pt x 770.88pt>
+<use ../img_source/phase_hor_3.jpg>
+File: ../img_source/phase_hor_1.jpg Graphic file (type jpg)
+ <use ../img_source/phase_hor_1.jpg>
+File: ../img_source/phase_hor_2.jpg Graphic file (type jpg)
+
+<use ../img_source/phase_hor_2.jpg>
+File: ../img_source/phase_hor_3.jpg Graphic file (type jpg)
+ <use ../img_source/phase_hor_3.jpg>
+Underfull \hbox (badness 10000) in alignment at lines 234--234
+[][][]
+ []
+
+<../img_source/binary_ver_1.jpg, id=856, 1027.84pt x 770.88pt>
+<use ../img_source/binary_ver_1.jpg>
+<../img_source/binary_ver_2.jpg, id=857, 1027.84pt x 770.88pt>
+<use ../img_source/binary_ver_2.jpg>
+<../img_source/binary_ver_3.jpg, id=858, 1027.84pt x 770.88pt>
+<use ../img_source/binary_ver_3.jpg>
+File: ../img_source/binary_ver_1.jpg Graphic file (type jpg)
+ <use ../img_source/binary_ver_1.jpg>
+File: ../img_source/binary_ver_2.jpg Graphic file (type jpg)
+
+<use ../img_source/binary_ver_2.jpg>
+File: ../img_source/binary_ver_3.jpg Graphic file (type jpg)
+ <use ../img_source/binary_ver_3.jpg>
+Underfull \hbox (badness 10000) in alignment at lines 248--248
+[][][]
+ []
+
+<../img_source/binary_hor_1.jpg, id=859, 1027.84pt x 770.88pt>
+<use ../img_source/binary_hor_1.jpg>
+<../img_source/binary_hor_2.jpg, id=860, 1027.84pt x 770.88pt>
+<use ../img_source/binary_hor_2.jpg>
+<../img_source/binary_hor_3.jpg, id=861, 1027.84pt x 770.88pt>
+<use ../img_source/binary_hor_3.jpg>
+File: ../img_source/binary_hor_1.jpg Graphic file (type jpg)
+ <use ../img_source/binary_hor_1.jpg>
+File: ../img_source/binary_hor_2.jpg Graphic file (type jpg)
+
+<use ../img_source/binary_hor_2.jpg>
+File: ../img_source/binary_hor_3.jpg Graphic file (type jpg)
+ <use ../img_source/binary_hor_3.jpg>
+Underfull \hbox (badness 10000) in alignment at lines 262--262
+[][][]
+ []
+
+[57 <../img_source/phase_ver_1.jpg> <../img_source/phase_ver_2.jpg> <../img_sou
+rce/phase_ver_3.jpg> <../img_source/phase_hor_2.jpg> <../img_source/phase_hor_3
+.jpg>] <../img_source/cap_fringe_1.jpg, id=878, 992.70876pt x 576.1525pt>
+<use ../img_source/cap_fringe_1.jpg>
+<../img_source/cap_fringe_2.jpg, id=879, 977.6525pt x 570.13pt>
+<use ../img_source/cap_fringe_2.jpg>
+<../img_source/cap_fringe_3.jpg, id=880, 972.63374pt x 568.1225pt>
+<use ../img_source/cap_fringe_3.jpg>
+<../img_source/cap_fringe_4.jpg, id=881, 989.6975pt x 563.10374pt>
+<use ../img_source/cap_fringe_4.jpg>
+<../img_source/cap_fringe_5.jpg, id=882, 988.69376pt x 563.10374pt>
+<use ../img_source/cap_fringe_5.jpg>
+<../img_source/cap_fringe_6.jpg, id=883, 918.43124pt x 563.10374pt>
+<use ../img_source/cap_fringe_6.jpg>
+File: ../img_source/cap_fringe_1.jpg Graphic file (type jpg)
+ <use ../img_source/cap_fringe_1.jpg>
+File: ../img_source/cap_fringe_2.jpg Graphic file (type jpg)
+
+<use ../img_source/cap_fringe_2.jpg>
+File: ../img_source/cap_fringe_3.jpg Graphic file (type jpg)
+ <use ../img_source/cap_fringe_3.jpg>
+File: ../img_source/cap_fringe_4.jpg Graphic file (type jpg)
+
+<use ../img_source/cap_fringe_4.jpg>
+File: ../img_source/cap_fringe_5.jpg Graphic file (type jpg)
+ <use ../img_source/cap_fringe_5.jpg>
+File: ../img_source/cap_fringe_6.jpg Graphic file (type jpg)
+
+<use ../img_source/cap_fringe_6.jpg>
+Underfull \hbox (badness 10000) in alignment at lines 282--282
+[][][]
+ []
+
+<../img_source/cap_binary_1.jpg, id=884, 985.6825pt x 560.0925pt>
+<use ../img_source/cap_binary_1.jpg>
+<../img_source/cap_binary_2.jpg, id=885, 982.67125pt x 545.03625pt>
+<use ../img_source/cap_binary_2.jpg>
+<../img_source/cap_binary_3.jpg, id=886, 961.5925pt x 554.07pt>
+<use ../img_source/cap_binary_3.jpg>
+<../img_source/cap_binary_4.jpg, id=887, 967.615pt x 539.01375pt>
+<use ../img_source/cap_binary_4.jpg>
+<../img_source/cap_binary_5.jpg, id=888, 969.6225pt x 521.95pt>
+<use ../img_source/cap_binary_5.jpg>
+<../img_source/cap_binary_6.jpg, id=889, 987.69pt x 483.8075pt>
+<use ../img_source/cap_binary_6.jpg>
+File: ../img_source/cap_binary_1.jpg Graphic file (type jpg)
+ <use ../img_source/cap_binary_1.jpg>
+File: ../img_source/cap_binary_2.jpg Graphic file (type jpg)
+
+<use ../img_source/cap_binary_2.jpg>
+File: ../img_source/cap_binary_3.jpg Graphic file (type jpg)
+ <use ../img_source/cap_binary_3.jpg>
+File: ../img_source/cap_binary_4.jpg Graphic file (type jpg)
+
+<use ../img_source/cap_binary_4.jpg>
+File: ../img_source/cap_binary_5.jpg Graphic file (type jpg)
+ <use ../img_source/cap_binary_5.jpg>
+File: ../img_source/cap_binary_6.jpg Graphic file (type jpg)
+
+<use ../img_source/cap_binary_6.jpg>
+Underfull \hbox (badness 10000) in alignment at lines 297--297
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 303--304
+
+ []
+
+[58 <../img_source/binary_ver_1.jpg> <../img_source/binary_ver_2.jpg> <../img_s
+ource/binary_ver_3.jpg> <../img_source/binary_hor_1.jpg> <../img_source/binary_
+hor_2.jpg> <../img_source/binary_hor_3.jpg>] [59 <../img_source/cap_fringe_1.jp
+g> <../img_source/cap_fringe_2.jpg> <../img_source/cap_fringe_3.jpg> <../img_so
+urce/cap_fringe_4.jpg> <../img_source/cap_fringe_5.jpg> <../img_source/cap_frin
+ge_6.jpg> <../img_source/cap_binary_1.jpg> <../img_source/cap_binary_2.jpg> <..
+/img_source/cap_binary_3.jpg> <../img_source/cap_binary_4.jpg> <../img_source/c
+ap_binary_5.jpg> <../img_source/cap_binary_6.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 310--320
+
+ []
+
+<../img_source/wrapped_ver.jpg, id=917, 725.71124pt x 511.9125pt>
+<use ../img_source/wrapped_ver.jpg>
+<../img_source/wrapped_hor.jpg, id=918, 886.31125pt x 553.06625pt>
+<use ../img_source/wrapped_hor.jpg>
+File: ../img_source/wrapped_ver.jpg Graphic file (type jpg)
+ <use ../img_source/wrapped_ver.jpg>
+File: ../img_source/wrapped_hor.jpg Graphic file (type jpg)
+
+<use ../img_source/wrapped_hor.jpg>
+Underfull \hbox (badness 10000) in alignment at lines 335--335
+[][][]
+ []
+
+[60] [61 <../img_source/wrapped_ver.jpg> <../img_source/wrapped_hor.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 380--381
+
+ []
+
+[62] <../img_source/unwrapped_ver.jpg, id=944, 977.6525pt x 557.08125pt>
+<use ../img_source/unwrapped_ver.jpg>
+<../img_source/unwrapped_hor.jpg, id=945, 959.585pt x 567.11874pt>
+<use ../img_source/unwrapped_hor.jpg>
+File: ../img_source/unwrapped_ver.jpg Graphic file (type jpg)
+ <use ../img_source/unwrapped_ver.jpg>
+File: ../img_source/unwrapped_hor.jpg Graphic file (type jpg)
+
+<use ../img_source/unwrapped_hor.jpg>
+Underfull \hbox (badness 7576) in paragraph at lines 399--399
+[]\T1/cmr/m/n/10 (b) |Hor-i-zon-tal un-wrapped
+ []
+
+
+Underfull \hbox (badness 10000) in alignment at lines 399--399
+[][][]
+ []
+
+[63 <../img_source/unwrapped_ver.jpg> <../img_source/unwrapped_hor.jpg>]
+<../img_source/camera_image.jpg, id=955, 941.5175pt x 869.2475pt>
+<use ../img_source/camera_image.jpg>
+<../img_source/projector_image.jpg, id=956, 1016.79875pt x 703.62875pt>
+<use ../img_source/projector_image.jpg>
+File: ../img_source/camera_image.jpg Graphic file (type jpg)
+ <use ../img_source/camera_image.jpg>
+File: ../img_source/projector_image.jpg Graphic file (type jpg)
+
+<use ../img_source/projector_image.jpg>
+Underfull \hbox (badness 10000) in alignment at lines 439--439
+[][][]
+ []
+
+[64 <../img_source/camera_image.jpg> <../img_source/projector_image.jpg>])
+[65]
+\openout2 = `chap4.aux'.
+
+
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/chap4.te
+x
+Chapter 4.
+
+Overfull \hbox (1.69379pt too wide) in paragraph at lines 5--6
+\T1/cmr/m/n/12 This sec-tion is largely based on [4]. In this work only met-ric
+ re-con-struc-tion(specifically,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--11
+
+ []
+
+[66
+
+
+
+] [67] [68] [69] [70]
+Underfull \hbox (badness 10000) in paragraph at lines 146--147
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 172--200
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 172--200
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 172--200
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 172--200
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 172--200
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 172--200
+
+ []
+
+[71] <use ../img_source/face_2d.jpg> <use ../img_source/face_3d.jpg>
+<../img_source/box_wall_2d.jpg, id=1015, 560.0925pt x 464.73625pt>
+<use ../img_source/box_wall_2d.jpg>
+<../img_source/box_wall_3d.jpg, id=1016, 165.61874pt x 204.765pt>
+<use ../img_source/box_wall_3d.jpg>
+<../img_source/chair_2d.jpg, id=1017, 860.21375pt x 859.21pt>
+<use ../img_source/chair_2d.jpg>
+<../img_source/chair_reconstruction.jpg, id=1018, 765.86125pt x 821.0675pt>
+<use ../img_source/chair_reconstruction.jpg>
+<../img_source/cup_2d.jpg, id=1019, 106.3975pt x 146.5475pt>
+<use ../img_source/cup_2d.jpg>
+<../img_source/cup_3d.jpg, id=1020, 85.31876pt x 193.72375pt>
+<use ../img_source/cup_3d.jpg>
+File: ../img_source/face_2d.jpg Graphic file (type jpg)
+ <use ../img_source/face_2d.jpg>
+File: ../img_source/face_3d.jpg Graphic file (type jpg)
+
+<use ../img_source/face_3d.jpg>
+File: ../img_source/box_wall_2d.jpg Graphic file (type jpg)
+ <use ../img_source/box_wall_2d.jpg>
+File: ../img_source/box_wall_3d.jpg Graphic file (type jpg)
+
+<use ../img_source/box_wall_3d.jpg>
+File: ../img_source/chair_2d.jpg Graphic file (type jpg)
+ <use ../img_source/chair_2d.jpg>
+File: ../img_source/chair_reconstruction.jpg Graphic file (type jpg)
+
+<use ../img_source/chair_reconstruction.jpg>
+Underfull \hbox (badness 1107) in paragraph at lines 222--222
+[]\T1/cmr/m/n/10 (f) |3D re-con-struc-tion of chair with
+ []
+
+File: ../img_source/cup_2d.jpg Graphic file (type jpg)
+<use ../img_source/cup_2d.jpg>
+File: ../img_source/cup_3d.jpg Graphic file (type jpg)
+ <use ../img_source/cup_3d.jpg>
+Underfull \hbox (badness 10000) in alignment at lines 222--222
+[][][]
+ []
+
+
+LaTeX Warning: Float too large for page by 71.13005pt on input line 225.
+
+[72]) [73] [74 <../img_source/box_wall_2d.jpg> <../img_source/box_wall_3d.jpg> 
+<../img_source/chair_2d.jpg> <../img_source/chair_reconstruction.jpg> <../img_s
+ource/cup_2d.jpg> <../img_source/cup_3d.jpg>]
+\openout2 = `chap5.aux'.
+
+
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/chap5.te
+x
+Chapter 5.
+
+Underfull \hbox (badness 10000) in paragraph at lines 2--3
+
+ []
+
+[75
+
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 11--12
+
+ []
+
+[76] [77] <../img_source/setup.jpg, id=1071, 3661.68pt x 2746.26pt>
+File: ../img_source/setup.jpg Graphic file (type jpg)
+
+<use ../img_source/setup.jpg>
+<../img_source/experiment_plot.jpg, id=1072, 1031.855pt x 695.59875pt>
+File: ../img_source/experiment_plot.jpg Graphic file (type jpg)
+
+<use ../img_source/experiment_plot.jpg>
+Overfull \hbox (50.07658pt too wide) in paragraph at lines 72--73
+ [][] 
+ []
+
+[78 <../img_source/setup.jpg>] [79 <../img_source/experiment_plot.jpg>]
+Overfull \hbox (6.31572pt too wide) in paragraph at lines 122--125
+\T1/cmr/m/n/12 Kinect has an IR pro-jec-tor which is ba-si-cally an IR LED with
+ dif-fuser, trans-parency[64],
+ []
+
+[80] <../img_source/kinect_rgb.jpg, id=1087, 546.04pt x 694.595pt>
+<use ../img_source/kinect_rgb.jpg>
+<../img_source/kinect_ir.jpg, id=1088, 925.4575pt x 799.98875pt>
+<use ../img_source/kinect_ir.jpg>
+<../img_source/kinect_disparity.jpg, id=1089, 775.89874pt x 839.135pt>
+<use ../img_source/kinect_disparity.jpg>
+<../img_source/kinect_point_cloud.jpg, id=1090, 793.96625pt x 742.775pt>
+<use ../img_source/kinect_point_cloud.jpg>
+File: ../img_source/kinect_rgb.jpg Graphic file (type jpg)
+ <use ../img_source/kinect_rgb.jpg>
+File: ../img_source/kinect_ir.jpg Graphic file (type jpg)
+
+<use ../img_source/kinect_ir.jpg>
+File: ../img_source/kinect_disparity.jpg Graphic file (type jpg)
+ <use ../img_source/kinect_disparity.jpg>
+File: ../img_source/kinect_point_cloud.jpg Graphic file (type jpg)
+
+<use ../img_source/kinect_point_cloud.jpg>
+Underfull \hbox (badness 10000) in alignment at lines 136--136
+[][][]
+ []
+
+[81 <../img_source/kinect_rgb.jpg> <../img_source/kinect_ir.jpg> <../img_source
+/kinect_disparity.jpg> <../img_source/kinect_point_cloud.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 162--164
+
+ []
+
+
+Overfull \hbox (22.97165pt too wide) in paragraph at lines 192--193
+[][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[82] [83] [84]
+Underfull \hbox (badness 10000) in paragraph at lines 276--281
+
+ []
+
+[85]
+Underfull \hbox (badness 10000) in paragraph at lines 301--311
+
+ []
+
+[86] <../img_source/camera_calib_test.jpg, id=1126, 3661.68pt x 2746.26pt>
+File: ../img_source/camera_calib_test.jpg Graphic file (type jpg)
+
+<use ../img_source/camera_calib_test.jpg> [87 <../img_source/camera_calib_test.
+jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 365--369
+
+ []
+
+<../img_source/proj_calib_test.jpg, id=1132, 3661.68pt x 2746.26pt>
+File: ../img_source/proj_calib_test.jpg Graphic file (type jpg)
+
+<use ../img_source/proj_calib_test.jpg> [88] [89 <../img_source/proj_calib_test
+.jpg>] <../img_source/3_phase_1_test_2.jpg, id=1143, 305.14pt x 280.04625pt>
+<use ../img_source/3_phase_1_test_2.jpg>
+<../img_source/3_phase_2_041_test_2.jpg, id=1144, 331.2375pt x 239.89626pt>
+<use ../img_source/3_phase_2_041_test_2.jpg>
+File: ../img_source/3_phase_1_test_2.jpg Graphic file (type jpg)
+
+<use ../img_source/3_phase_1_test_2.jpg>
+File: ../img_source/3_phase_2_041_test_2.jpg Graphic file (type jpg)
+
+<use ../img_source/3_phase_2_041_test_2.jpg>
+Underfull \hbox (badness 10000) in alignment at lines 440--440
+[][][]
+ []
+
+<../img_source/phase_3_edit.jpg, id=1146, 848.16875pt x 807.015pt>
+<use ../img_source/phase_3_edit.jpg>
+<../img_source/phase_4_edit.jpg, id=1147, 844.15375pt x 763.85374pt>
+<use ../img_source/phase_4_edit.jpg>
+<../img_source/phase_5_edit.jpg, id=1148, 867.24pt x 745.78625pt>
+<use ../img_source/phase_5_edit.jpg>
+File: ../img_source/phase_3_edit.jpg Graphic file (type jpg)
+ <use ../img_source/phase_3_edit.jpg>
+File: ../img_source/phase_4_edit.jpg Graphic file (type jpg)
+
+<use ../img_source/phase_4_edit.jpg>
+File: ../img_source/phase_5_edit.jpg Graphic file (type jpg)
+ <use ../img_source/phase_5_edit.jpg>
+Underfull \hbox (badness 10000) in alignment at lines 454--454
+[][][]
+ []
+
+[90] [91 <../img_source/3_phase_1_test_2.jpg> <../img_source/3_phase_2_041_test
+_2.jpg>] [92 <../img_source/phase_3_edit.jpg> <../img_source/phase_4_edit.jpg> 
+<../img_source/phase_5_edit.jpg>] [93] [94]) [95]
+\openout2 = `chap6.aux'.
+
+
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/chap6.te
+x
+Chapter 6.
+[96
+
+
+
+] [97]
+Overfull \hbox (11.02179pt too wide) in paragraph at lines 35--36
+\T1/cmr/m/n/12 un-ac-cept-ably poor time ef-fi-ciency of the al-go-rithm used f
+or phase-unwrapping
+ []
+
+[98] [99]) [100]
+\openout2 = `biblio.aux'.
+
+
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/biblio.t
+ex
+Underfull \hbox (badness 1460) in paragraph at lines 26--27
+[]\T1/cmr/m/n/12 Saxena,Ashutosh,Sun,Min,Ng,Andrew Y.(2007).3-D Re-con-struc-ti
+on
+ []
+
+
+Underfull \hbox (badness 1466) in paragraph at lines 26--27
+\T1/cmr/m/n/12 from Sparse Views us-ing Monoc-u-lar Vi-sion,ICCV work-shop on
+ []
+
+
+Underfull \hbox (badness 1454) in paragraph at lines 46--47
+[]\T1/cmr/m/n/12 Zhang,Z.(2000).A flex-i-ble new tech-nique for cam-era cal-i-b
+ra-tion.
+ []
+
+[101
+
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 49--50
+[]\T1/cmr/m/n/12 Vo,Minh,Wang,Zhaoyang,Pan,Bing,Pan,Tongyan(2012).Hyper-
+ []
+
+
+Underfull \hbox (badness 1194) in paragraph at lines 49--50
+\T1/cmr/m/n/12 accurate flex-i-ble cal-i-bra-tion tech-nique for fringe-project
+ion-based
+ []
+
+
+Underfull \hbox (badness 1360) in paragraph at lines 52--53
+[]\T1/cmr/m/n/12 Hartley,R.I.(1994),An al-go-rithm for self cal-i-bra-tion from
+ sev-eral
+ []
+
+
+Underfull \hbox (badness 1173) in paragraph at lines 58--59
+\T1/cmr/m/n/12 i-bra-tion.The In-ter-na-tional Jour-nal Of Com-puter Vision,4(2
+):127-
+ []
+
+
+Overfull \hbox (30.05821pt too wide) in paragraph at lines 81--84
+\T1/cmr/m/n/12 http://en.wikipedia.org/wiki/Levenberg%E2%80%93Marquardt_algorit
+hm 
+ []
+
+
+Overfull \hbox (47.36086pt too wide) in paragraph at lines 86--90
+\T1/cmr/m/n/12 http://opencv.willowgarage.com/documentation/camera_calibration_
+and_3d 
+ []
+
+[102]
+Overfull \hbox (46.57352pt too wide) in paragraph at lines 101--105
+\T1/cmr/m/n/12 http://eia.udg.es/ qsalvi/Tutorial_Coded_Light_Projection_Techni
+ques_arc 
+ []
+
+
+Overfull \hbox (28.69865pt too wide) in paragraph at lines 110--111
+[]\T1/cmr/m/n/12 Pagès,Jordi,Salvi,Joaquim,Garcia,Rafael,Matabosch,Carles(2003)
+.Overview
+ []
+
+
+Underfull \hbox (badness 1776) in paragraph at lines 113--116
+[]\T1/cmr/m/n/12 Posdamer,J. L.,Altschuler,M. D.(1982). Sur-face mea-sure-ment 
+by
+ []
+
+
+Underfull \hbox (badness 2875) in paragraph at lines 123--126
+[]\T1/cmr/m/n/12 Caspi,D.,Kiryati,N.,Shamir,J.(1998),Range imag-ing with adap-t
+ive
+ []
+
+[103] [104]
+Underfull \hbox (badness 10000) in paragraph at lines 200--201
+[]\T1/cmr/m/n/12 R.I.,Hartley,Zisserman,A.(2004).Multiple View Ge-om-e-try in
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 200--201
+\T1/cmr/m/n/12 Com-puter Vi-sion,Second edi-tion,Cambridge Uni-ver-sity Press,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 212--213
+[]\T1/cmr/m/n/12 Brett R.,Jones(2010).AUGMENTING COM-PLEX SUR-FACES
+ []
+
+
+Overfull \hbox (56.4975pt too wide) in paragraph at lines 225--229
+\T1/cmr/m/n/12 http://opencv.willowgarage.com/documentation/camera_calibration_
+and_3d_ 
+ []
+
+[105]
+Overfull \hbox (14.13431pt too wide) in paragraph at lines 273--276
+\T1/cmr/m/n/12 http://www.ifixit.com/Teardown/Microsoft+Kinect+Teardown/4066/1.
+ 
+ []
+
+
+Overfull \hbox (42.33142pt too wide) in paragraph at lines 278--282
+\T1/cmr/m/n/12 http://www.ros.org/wiki/openni_launch/Tutorials/IntrinsicCalibra
+tion?actio 
+ []
+
+
+Underfull \hbox (badness 1019) in paragraph at lines 290--291
+[]\T1/cmr/m/n/12 Boehm,J.(2012).NATURAL USER IN-TER-FACE SEN-SORS FOR
+ []
+
+[106]
+Underfull \hbox (badness 10000) in paragraph at lines 293--298
+[]\T1/cmr/m/n/12 Chow,J.C.K.,Ang,K.D.,Lichti,D.D.,and Teskey,W.F.(2012). PER-
+ []
+
+) [107]
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/main.aux
+
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/title.au
+x)
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/declare.
+aux)
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/ack.aux)
+
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/abstract
+.aux)
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/contents
+.aux)
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/chap1.au
+x)
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/chap2.au
+x)
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/chap3.au
+x)
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/chap4.au
+x)
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/chap5.au
+x)
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/chap6.au
+x)
+(/home/pranav/Desktop/Thesis_work/Latex_thesis_work/my_thesis_template/biblio.a
+ux))
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 25572 strings out of 495061
+ 585775 string characters out of 1182620
+ 743985 words of memory out of 3000000
+ 27573 multiletter control sequences out of 15000+50000
+ 24351 words of font info for 51 fonts, out of 3000000 for 9000
+ 28 hyphenation exceptions out of 8191
+ 63i,25n,116p,1665b,2099s stack positions out of 5000i,500n,10000p,200000b,50000s
+ </home/pranav/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1000.600pk> </home/
+pranav/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk> </home/pranav/.te
+xmf-var/fonts/pk/ljfour/jknappen/ec/ecti0800.600pk> </home/pranav/.texmf-var/fo
+nts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </home/pranav/.texmf-var/fonts/pk/ljf
+our/jknappen/ec/ecrm0700.600pk> </home/pranav/.texmf-var/fonts/pk/ljfour/jknapp
+en/ec/ecrm0800.600pk> </home/pranav/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx
+1440.600pk> </home/pranav/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbi1200.600pk
+> </home/pranav/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1728.600pk> </home/p
+ranav/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/pranav/.tex
+mf-var/fonts/pk/ljfour/jknappen/ec/ecti1200.600pk> </home/pranav/.texmf-var/fon
+ts/pk/ljfour/jknappen/ec/ecbx2488.600pk> </home/pranav/.texmf-var/fonts/pk/ljfo
+ur/jknappen/ec/ecxc1728.600pk> </home/pranav/.texmf-var/fonts/pk/ljfour/jknappe
+n/ec/ecbi1728.600pk> </home/pranav/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1
+440.600pk> </home/pranav/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecxc1200.600pk>
+ </home/pranav/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/pr
+anav/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecxc2488.600pk></usr/share/texmf-te
+xlive/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-texlive/fonts
+/type1/public/amsfonts/cmextra/cmex7.pfb></usr/share/texmf-texlive/fonts/type1/
+public/amsfonts/cmextra/cmex8.pfb></usr/share/texmf-texlive/fonts/type1/public/
+amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm
+/cmmi12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi5.pfb>
+</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/
+texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-texliv
+e/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-texlive/fonts/type
+1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/public/ams
+fonts/cm/cmr12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr
+5.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/s
+hare/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-te
+xlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts
+/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-texlive/fonts/type1/publi
+c/amsfonts/cm/cmsy8.pfb>
+Output written on main.pdf (107 pages, 8702937 bytes).
+PDF statistics:
+ 2081 PDF objects out of 2487 (max. 8388607)
+ 501 named destinations out of 1000 (max. 500000)
+ 876 words of extra memory for PDF output out of 10000 (max. 10000000)
+

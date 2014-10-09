@@ -1,0 +1,8 @@
+\beamer@slide {fig:vert_phase_pattern}{5}
+\beamer@slide {fig:horz_phase_pattern}{6}
+\beamer@slide {fig:wrapped_phase}{11}
+\beamer@slide {fig:unwrapped_phase}{12}
+\beamer@slide {fig:estimated_correspondence}{13}
+\beamer@slide {fig:cam_calib_views}{16}
+\beamer@slide {fig:proj_calib_view}{18}
+\beamer@slide {fig:extrinsic_calib_setup}{20}

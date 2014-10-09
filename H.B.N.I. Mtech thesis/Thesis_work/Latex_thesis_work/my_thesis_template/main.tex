@@ -1,0 +1,124 @@
+% -*- Mode:TeX -*-
+
+%% IMPORTANT: The official thesis specifications are available at:
+%%            http://libraries.mit.edu/archives/thesis-specs/
+%%
+%%            Please verify your thesis' formatting and copyright
+%%            assignment before submission.  If you notice any
+%%            discrepancies between these templates and the 
+%%            MIT Libraries' specs, please let us know
+%%            by e-mailing thesis@mit.edu
+
+%% The documentclass options along with the pagestyle can be used to generate
+%% a technical report, a draft copy, or a regular thesis.  You may need to
+%% re-specify the pagestyle after you \include  cover.tex.  For more
+%% information, see the first few lines of mitthesis.cls. 
+  
+%\documentclass[12pt,vi,twoside]{mitthesis}
+%%
+%%  If you want your thesis copyright to you instead of MIT, use the
+%%  ``vi'' option, as above.
+%%
+%\documentclass[12pt,twoside,leftblank]{mitthesis}
+%%
+%% If you want blank pages before new chapters to be labelled ``This
+%% Page Intentionally Left Blank'', use the ``leftblank'' option, as
+%% above. 
+
+\documentclass[12pt,flalign,hidelinks]{mitthesis}
+\usepackage{lgrind}
+\usepackage{graphicx}
+\pagestyle{plain}
+\usepackage[T1]{fontenc}
+\usepackage{fixltx2e}
+\usepackage{amsmath}
+\setcounter{MaxMatrixCols}{20} %sets maximum number of columns allowed in the matrix
+\usepackage{tabularx}
+\usepackage{subfig}
+\usepackage{pgfplots}
+\pgfplotsset{width=7cm,compat=1.7}
+\usepackage{hyperref}
+\usepackage{setspace}
+\usepackage{anyfontsize}
+\usepackage{placeins}
+%\usepackage[latin1]{inputenc}
+%\usepackage{wasysym}
+%\usepackage[abs]{overpic}
+
+%% This bit allows you to either specify only the files which you wish to
+%% process, or `all' to process all files which you \include.
+%% Krishna Sethuraman (1990).
+\newcommand{\thesistitle}{Development and accuracy analysis of Coded phase-shift 3D scanner}
+\newcommand{\name}{Mr. Pranav Kant Gaur}
+\newcommand{\enrollment}{ENGG01201101001}
+\newcommand{\mydegree}{Master of Technology}
+\newcommand{\degreesubject}{Nuclear Engineering(Computer Science)}
+
+\setlength\unitlength{1mm}
+\usetikzlibrary{calc,trees,positioning,arrows,chains,shapes.geometric,%
+    decorations.pathreplacing,decorations.pathmorphing,shapes,%
+    matrix,shapes.symbols}
+
+\tikzset{
+>=stealth',
+  punktchain/.style={
+    rectangle, 
+    rounded corners, 
+    % fill=black!10,
+    draw=black, very thick,
+    text width=10em, 
+    minimum height=3em, 
+    text centered, 
+    on chain},
+  line/.style={draw, thick, <-},
+  element/.style={
+    tape,
+    top color=white,
+    bottom color=blue!50!black!60!,
+    minimum width=8em,
+    draw=blue!40!black!90, very thick,
+    text width=10em, 
+    minimum height=3.5em, 
+    text centered, 
+    on chain},
+  every join/.style={->, thick,shorten >=1pt},
+  decoration={brace},
+  tuborg/.style={decorate},
+  tubnode/.style={midway, right=2pt},
+}
+%\def\Arrow{\raisebox{-.5\height}{\scalebox{4}{$\Rightarrow$}}}
+%\def\Image#1{\raisebox{-.5\height}{\includegraphics[width=3cm,height=3cm]{#1}}}
+%\newcommand*{\vimage}[1]{\vcenter{\hbox{\includegraphics[width=5cm,height=5cm]{#1}}}}
+%\newcommand*{\vpointer}{\vcenter{\hbox{\scalebox{2}{\pointer{}}}}}
+
+%\typein [\files]{Enter file names to process, (chap1,chap2 ...), or `all' to
+%process all files:}
+%\def\all{all}
+%\ifx\files\all \typeout{Including all files.} \else \typeout{Including only \files.} \includeonly{\files} \fi
+
+\begin{document}
+
+%\include{cover}
+% Some departments (e.g. 5) require an additional signature page.  See
+% signature.tex for more information and uncomment the following line if
+% applicable.
+%\include{signature}
+\pagestyle{plain}
+\include{title}
+\newpage
+\thispagestyle{empty}
+\mbox{}
+%\include{certificate}
+\include{declare}
+\include{ack}
+\include{abstract}
+\include{contents}
+\include{chap1}
+\include{chap2}
+\include{chap3}
+\include{chap4}
+\include{chap5}
+\include{chap6}
+\include{biblio}
+\end{document}
+

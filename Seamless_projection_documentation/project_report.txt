@@ -1,0 +1,157 @@
+#1. Description of tried approaches
+#2. Their results
+#3. Pros & Cons of individual approaches.
+#4. GUI reference manual for finally used approach.
+
+
+
+TARGET:
+Generate and project single high resolution image using array of individual low resolution projectors.
+
+Quality requirements:
+
+
+Contributions:
+#1. Extension of geometric aligment method proposed in [M. Brown paper], so as to recover full projection region, using concept of Cross ratio to synthetically generate coordinates for endpoints of original projection region of each projector in camera space.
+
+################################################################################################################ Approach 1:
+Source: R. Raskar paper:-
+Geometric alignment using homography estimation:
+=> Compute Screen to camera homography.
+=> Compute camera to projector homography.
+=> Define bounding boxes in screen space corresponding where projection region of individual projectors should lie.
+=> Transform screen coordinates for the individual bounding boxes to camera space.(using screen to camera homography)
+=> Transform camera space bounding box coordinates to projector space bounding boxes.(using individual camera to projector homography)
+=> Compute a perspective transformation matrix from original rectangle representing projector buffer to projector space bounding box.
+
+
+
+Results:
+
+
+Pros:
+#1. 
+
+
+Cons:
+#1. Assumptions of display surface planarity.
+#2. Mapping from screen to camera to projector affected by inaccuracies of estimated homography. 
+#3. Accurate markings on screen are required for screen to camera homography estimation.
+
+
+
+################################################################################################################## Approach 2:
+Extension of approach 1 to account for inaccuracies in coordinates estimated using homographies.
+
+=> Compute Screen to camera homography.
+=> Compute camera to projector homography.
+=> Define bounding boxes in screen space corresponding where projection region of individual projectors should lie.
+=> Transform screen coordinates for the individual bounding boxes to camera space.(using screen to camera homography)
+=> Iteratively compare position of detected endpoints of projection region of individual projectors with respect to their positions estimated through screen-camera homography:
+   *1 If error in X & Y coordinates of detected endpoint and their estimated positions is greater than a threshold value:
+   => Reduce the coordinates by 1 unit and transform the modified bounding box to projector space.
+   => Project the image over projector bounding box.
+   => Goto *1
+
+   *2 If error is less than threshold value for both X & Y coordinates: 
+   => Fix the X,Y coordinates for this exnpoint for the bounding box of this projector & start same iterative procedure for next enpoint of same projector or new vertex of next projector.
+   
+=> If acheived for all projectors, STOP.
+
+
+
+Results:
+
+
+
+
+Pros:
+#1. Accomodates for errors in homography. Does not require accurate values for screen points.(Robust & flexible)
+#2. With a sufficiently high camera resolution, geometric alignment in case of non-overlapping projection regions is guaranteed.
+#3. If error exists for a estimated endpoint for a bounding box in camera space it exists for all projectors sharing that endpoint in camera space, hence edge to edge geometric alignment is possible.
+
+Cons:
+#1. Time consuming process with no guaranteed convergence.(direction of iteration not monotonic in general)
+#2. Not capable of supporting overlapping projection region configuration.{Geometric alignment cannot always be assured in this case}
+#3. Direction of iteration(convergence or divergence) solely dependant on accuracy of endpoint detection in each iteration for each endpoint.
+
+   
+################################################################################################################### Approach 3:
+Source: M. Browns paper + literature on Cross ratio(a projective invariant)
+
+Geometric alignment:
+--------------------
+=> Compute screen to camera homography.
+=> Project features(in our case checkerboard was projected) on all projectors.
+=> Using detected points(for each projector):
+   => for each row/column fit a straight line.
+   => Compute intersection of corresponding vertical & horizontal straight line to compute the 'new' corresponding detected corner.
+   => Do same procedure for all detected coordinates.
+
+   => Estimate remaining points along each row & column(to completely cover the projection region) using cross ratio constraint.
+      It is assumed here that cross ratio computed in projector is preserved in screen & then in camera. Therefore, if any three  	points(in our case they are uniformly distributed along that horizontal/vertical line) are known in camera space, corresponding 	    4rth unknown point can be estimated using cross ratio equation.
+   => Estimate the 1st row/column using same approach.
+   => Fit lines to the set of points(which inclused ones estimated using cross ratio)
+   => Compute intersections to re-estimate coordinates, this also allows for estimation of new remaining coordinates. Grid of points 	   now contains uniformly sampled points(in our case points are saparated by 32 pixels in projector space)
+
+=> For each projector compute a local bounding box(i.e., the tightest convex hull) that includes all corresponding detected points.
+=> Enforce a collinearity constraint on boundaries of bounding boxes also:
+   All Columns of projectors will have bounding box starting with same X coordinates.
+   All Rows of projectors will have bounding box starting with same Y coordinates. {This is ensure chromium do not render incorrect   	 image}
+
+=> Set identical bounding box size for all projectors as having maximum width & maximum height.
+
+=> Computed global bounding box.
+=> Compute normalized local bounding box for each projector(normalized with respect to global bounding box space)
+=> Compute scale factor along X & Y dimensions.(this maps individual local bounding boxes from camera space to chromium tiles)
+=> Compute texture & vertex map in local bounding box.(same in hold for chromium tile since it is normalized to local bounding box{which is same as chromium tile})
+
+Output:
+1. Chromium tile configuration
+2. (vertex,texture) mapping for each projector
+
+Blending:
+---------
+Currently, Distance transform(corrected by gamma) based only.
+
+=> Read detected & synthetic coordinates mapped to chromium space.
+=> Mark the region for each projector in chromium space.
+=> Fill the region for each projector as occupied.
+=> For each pixel in chromium space:
+   => If it has only one projector as owner, mark it as 255 in corresponding alpha map.
+   => If multiple projectors have this pixel in their regions:
+      => For each projector assingn alpha value as: 
+         => Compute the minimum perpendicular distance of pixel from all edges of quads of this projector.
+   	 => Assign weight as d1/(sum(di)), where i is index of overlapping projectors. 
+         => Compute & assign alpha value for this pixel in alpha maps of overlapping projectors accordingly.
+
+
+Results:
+
+
+Pros:
+#1. Geometric Registration & blending within ~7mins.
+#2. High accuracy geometric registration(~1mm registration error) achieved.
+#3. Same approach can be extended for non-linear surfaces as well provided (cross ratio method should be removed) feature detection can be done(ex. using structured light approach).
+
+
+Cons:
+#1. High accuracy screen to camera homography required.
+#2. Cross ratio holds iff screen is planer, projector & camera can be modelled as purely projective devices.
+
+
+GUI Manual:
+-----------
+
+
+
+
+
+
+
+
+
+
+
+
+

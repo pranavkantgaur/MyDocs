@@ -1,0 +1,23 @@
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {2.1}{\ignorespaces Estimated Camera intrinsic and distortion model parameters\relax }}{37}{table.caption.34}
+\contentsline {table}{\numberline {2.2}{\ignorespaces Estimated Projector intrinsic model parameters\relax }}{39}{table.caption.38}
+\contentsline {table}{\numberline {2.3}{\ignorespaces Estimated camera extrinsic parameters\relax }}{42}{table.caption.43}
+\contentsline {table}{\numberline {2.4}{\ignorespaces Estimated projector extrinsic parameters\relax }}{42}{table.caption.43}
+\contentsline {table}{\numberline {2.5}{\ignorespaces Estimated projector-camera relative parameters\relax }}{42}{table.caption.43}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {5.1}{\ignorespaces CPSS:Precision along X,Y,Z axes\relax }}{77}{table.caption.71}
+\contentsline {table}{\numberline {5.2}{\ignorespaces CPSS:Dependence of measurement accuracy on distance\relax }}{80}{table.caption.74}
+\contentsline {table}{\numberline {5.3}{\ignorespaces CPSS:Dependence of measurement uncertainty on distance\relax }}{80}{table.caption.75}
+\contentsline {table}{\numberline {5.4}{\ignorespaces Kinect:Precision along X,Y,Z axes\relax }}{82}{table.caption.77}
+\contentsline {table}{\numberline {5.5}{\ignorespaces Kinect:Dependence of measurement accuracy on distance\relax }}{82}{table.caption.79}
+\contentsline {table}{\numberline {5.6}{\ignorespaces Kinect:Dependence of measurement uncertainty on distance\relax }}{84}{table.caption.80}
+\contentsline {table}{\numberline {5.7}{\ignorespaces Percentage average absolute deviation of camera calibration parameters\relax }}{86}{table.caption.82}
+\contentsline {table}{\numberline {5.8}{\ignorespaces Camera calibration:Radial error of projection\relax }}{87}{table.caption.84}
+\contentsline {table}{\numberline {5.9}{\ignorespaces Percentage average absolute deviation of projector calibration parameters\relax }}{88}{table.caption.85}
+\contentsline {table}{\numberline {5.10}{\ignorespaces Projector calibration:Radial error of projection\relax }}{89}{table.caption.87}
+\contentsline {table}{\numberline {5.11}{\ignorespaces Stereo-correspondence error for various gamma values for 3 phase-shifted method\relax }}{93}{table.caption.90}
+\contentsline {table}{\numberline {5.12}{\ignorespaces Stereo correspondence error for 3,4,5 phase shifted patterns\relax }}{93}{table.caption.91}
+\addvspace {10\p@ }

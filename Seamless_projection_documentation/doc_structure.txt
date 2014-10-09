@@ -1,0 +1,141 @@
+##############################Documentation of Multiprojector Geometric alignment software ###############################################
+
+
+#1. Problem statement:
+    Given perspectively distorted projections of a MXN grid of projectors on a planar surface, find mapping between between original projector buffer image and warped image. Warped image is such that when projected in combination with that of other projectors result in a geometrically continous & rectangular display with intensity seamlessness at the junction between adjacent projectors. This problem is referred in literature as 'Multiprojector geometric alignment & image blending'.
+
+
+#2. System setup:
+    System is composed of:
+    1). Projector array(NEC projectors)
+    2). Camera(Canon Powershot G7)
+    3). Projection screen(Acrylic glass screen)
+    It is a rear projection system. Grid of projectors project image onto a common screen. Final target is to provide a geometrically and radiometrically seamless high resolution display on screen. Informally, the displayed scene should appear as if projected through a single high field of view projector.
+
+
+   
+#3. Solutions proposed in literature:
+    In our work, we have considered approaches which utilize camera as a feedback device to compute warping information. Solution proposed by Raskar[1] is based on concept of Homography. It establishes planar projective mapping between screen and camera folllwed by that between camera projector. Utilizing combination of these homographies it computes relation between screen & projector. Since it is assumed that position of final projection on screen is known, corresponding projector space coordinates are also computed. This gives the warping information. Brown[2]'s approach relaxes that assumption and instead allows for a casual positioning of projectors. It aims to create geometrically seamless and rectangular image in camera space which guarantees geometrical seamlessness on screen. But it does not guarantee rectangular output on screen. 
+ 
+Cons. with these approaches:
+---------------------------
+#. Raskar's:
+   1. Assumes accurate positioning of features on screen
+   2. Assumption of planarity of screen. But in practice screens may not be perfectly planar.
+   3. Pre-positioning of projection region results in relatively stringent physical constraints on placement of projectors.
+
+#. Brown's:
+   1. Usable projection region is limited by size of features used for geometric registration.{ADD PIC. HERE to illustrate problem}
+   2. Rectangular output in camera only is ensured. {ADD PIC.}
+   However, Brown's approach has advantage of being much more flexible in terms of projector placement, hence this was choosen as our base approach on top of which we have removed the limitation No.1 & 2 mentioned here.
+
+
+#4. Solution proposed in this work:
+    We have proposed using projective invariant called 'Cross-ratio' to recover the projection region lost due to non-zero feature size. In addition, we have used screen-to-camera homography to ensure rectangular output on the screen. However, this also introduces assumptions in basic Brown's approach. Cross-ratio being planer projective invariant demands that screen must be planar. Further, accurate computation of screen to camera homography requires accurate positioning of screen points.
+
+# Cross-ratio invariance:
+  Cross ratio is a planer projective invariant. It states that: Given 4 collinear points A,B,C,D, then their ratio: (AC/AD)/(BC/BD) will be preserved under perspective projection. Therefore, assuming planer perspective projection of features from projector to screen and from screen-to-camera, we can recover coordinates of a point(say A'') in camera space given coordinates of other three(i.e., B'',C'',D'' are known). It follows from cross ratio invariance that:
+
+EQUATION FOR COMPUTING POINT 'A' FROM CROSS RATIO:
+
+
+# Description of proposed approach:
+  --------------------------------
+  * Geometric alignment:
+    --------------------
+
+       ** Feature detection:
+          -----------------
+          -----------------
+  	  #1. Projector projects checkerboard features.
+	  #2. Camera captures features.
+	  #3. Since collinearity is invariant under projective transformation, features collinear in projector image must also be 		      collinear in camera space. To account for this detected locations of features in camera image is regularized by 		      expilicitly enforcing collinearity constriant. Specifically, each feature is computed as intersection of vertical and 		      horizontal fitted lines.
+
+  	  #4. Once the features are regularized, lost projection region at the bounary are recovered using Cross-ratio constraint.
+	  #5. Regularized positions of newly computed coordinates are computed by again fitting line on collinear points.
+
+	  **  Warping map computation:
+	     ------------------------
+	     ------------------------
+	  #6. Local bounding boxes are computed for each projection region in camera space. These boxes are the convex hulls 		      enclosing all features of a projector recovered in steps 1-5.
+
+	  #7. A global bounding box is computed which is convex hull enclosing all local bounding boxes.
+
+	  #8. This global bounding box acts like a global coordinate system containing all local bounding boxes and hence all the 		      detected features. A scale for both box width and height is computed which corresponds to the maximum width and height 		      among that of all local bounding boxes.
+ 
+ 	  #9. These factors map position of individual local bounding boxes to positions of tiles in chromium configuration.
+
+	 #10. To compute texture coordinates corresponding to all features of a projector, normalized coordinates of all features are 	            computed with respect to its local bounding box origin.
+	
+	 #11. These steps give:
+      	      1. Chromium tile configuration.
+	      2. Vertex-texture mapping for each projector.
+
+
+  * Edge blending:
+    -------------
+    #1. Transform detected coordinates to global frame in chromium cordinates system.
+    #2. Compute polygons bounding the detected corners for each projector.
+    #3. Scan entire chromium space & for each pixel, check how many projector share it.
+    #4. For every sharing projector, assign that pixel the id of that projector.
+    #5. Compute alpha weight of each projector based on distance transform value at that pixel for each projector.  
+
+
+
+
+#5. Practical implementation: 
+    #5.1. Software architecture
+	  ---------------------
+          Software is composed of geometric alignment module, edge blending module:
+          {ADD A FIGURE showing interaction among modules}
+          
+          Computed warping map and chromium tile information is sent over network to Master machine{using ssh}. 
+          This machine will send corresponding warp map to each slave machine driving projectors.
+
+    #5.2. Hardware configuration:
+          ----------------------
+ 	  1. PC:
+  	  2. Cluster:
+ 	  3. Network(PC-cluster):
+          4. Network(Cluster-projector)
+          5. Screen: Acryllic glass gain 1.6 from ScreenTech		
+	  6. Camera: Canon PowerShot G7
+	  7. Projector(s): NEC ????
+
+
+    #5.3. Hardware setup:
+	  --------------
+          Projectors are connected through slave machines{workstations}. Single slave drives 3 projectors{a row in our case}
+          So, there are 3 slave workstations for 3X3 grid of projectors. Each slave runs chromium service to recieve & accordingly  	      texture map images to be projected by individual projectors under its control. Warping map, chromium tile configuration and blend map are generated on remote machine connected to the cluster{master+slave arrangement} through ethernet.
+ 
+         
+
+
+
+    #5.4. Softwares dependecies:
+          ---------------------          
+	OpenCV version 2.4 is used for camera image processing specifically, corner detection, image undistortion, camera calibration. GPhoto2(VERSION???) library is used for interfacing digital camera. Chromium(VERSION???) is used for controlling the developed distributed display. Control panel(VERSION??) was used for logging into slave machines.
+
+
+   
+
+#6. Results:
+     ***Figure??*** shows the projection region without cross ratio and with cross ratio constraint.
+
+Geometric alignment accuracy:
+Average misalignment on screen was found to be about: ~???mm across all inter-projector boundaries.
+    
+
+#7. Conclusions:
+    We proposed and demostrated 'Cross rato' projection region recovery in Multiprojector geometric alignment problem. Brown's method puts constraint and limitation in which atleast outer features of neighbouring projector must overlap in order to get geometrically continuous image on the screen. This actually limits their claimed merit of casual alignment of projector. Further, there was no provision for using projection region beyond outermost features. Cross ratio approach allows for recovery of artificial feature points at the endpoints of a projection region due to which full projection region can be utilised and there is no constraint on projector positioning.
+
+
+#8. Future directions:
+    Although inter-projector color seamlessness was attempted in this work through Edgeblending, perception of seamlessness is highly view-dependant. Further work is required to attain inter and intra view independant color seamlessness in such systems. Solution to this problem will complete the main target of achieving seamless high resolution display where we cannot count number of projectors used behind the screen. Work in this direction has been initiated with success for single view color seamlessness in [Majumdar & Sajadi papers????????]. However, view independant color seamlessness still remains an open challenge.
+
+#9. Acknowledgements:
+    Author would like to thank Computer Graphics & Visualization section, Computer Division, BARC, Mumbai for valuable time, suggestions and infrastructure for this work.
+
+#10. References:
+
+

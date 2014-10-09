@@ -1,0 +1,53 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\begin{document}
+
+\title{Integration of \textit{Poisson Surface Reconstruction} algorithm to AnuVi} 
+\author{Pranav Kant Gaur}
+\maketitle
+
+\begin{abstract}
+This report is intended to give introduction to \textit{Poisson surface reconstruction} algorithm{CITE??} and its integration into indigenously developed 3D visualization tool \textit{AnuVi}. Specifically, it describes the AnuVi filter developed to support Poisson surface reconstruction and a shell script which demostrates an example VTK visualization pipeline for using this filter.
+\end{abstract}
+
+
+\section{Introduction}
+3D object reconstruction pipeline includes 3D sampling of real world objects, technically called 3D scanning and fitting closest matching surface onto dataset to give reconstrction \textit{realistic} appearance. This surface fitting is called \textit{Surface meshing}. In literature, there are two major types of approaches reported: 
+\begin{enumerate}
+\item Combinatorial: In this class of approaches, connectivity among all possible pairs of acquired 3D data points is computed based on a criteria. For example in Delaunay tetrahedralization, connectivity among points is such that it satisfies \textit{empty circle} property. \textit{Power Crust} algorithm???????????????????
+
+\item Implicit methods: In this approach, dataset is assumed to possess a unique \textit{Characaterstic} function, and task of the reconstruction algorithm is to compute this function followed by extraction of an points with an isovalue which collectively represent the desired surface. Poisson surface reconstruction algorithm is one such example.
+\end{enumerate} 
+
+\section{Motivation}
+AnuVi was developed for 3D dataset visualization and modelling. It already provides 3D Delauney tetrahedralization but support for implicit function based surface reconstruction approach was still missing. To evaluate these class of algorithms with Delaunay tetrahdralization algorithm, Poisson surface reconstruction algorithm was chosen to be integrated to AnuVi. 
+
+
+\section{The Poisson surface reconstruction algorithm}
+3D point set acquired from 3D scanners is a sampling of the scanned real world object. Poisson surface reconstruction approach associates a \textit{characterstic function} with such objects which indirectly embedds boundary(or surface) of these objects. It can be expressed as:
+\begin{equation}
+\lambda=\begin{cases} 1 & \text{inside model boundary}\\
+                      0 & \text{elsewhere}
+         \end{cases}
+\end{equation}
+
+Major insight in this algorithm is that there is an integral relationship between \textit{oriented} points sampled from surface of a model and the indicator(or \textit{characterstic}) function of the model. With \textit{model} here we refer the test object for 3D reconstruction. Specifically, the \textit{gradient} of characterstic function at any point is equal to the corresponding \textit{inward} surface normal. Therefore, the problem of computing the characterstic function is to invert the gradient operator. Mathematically, the problem is to find out a scaler field $\lambda$ such that $\Arrowvert\nabla\lambda-\overrightarrow{V}\Arrowvert$ is minimised. \newline
+Therefore, applying \textit{divergence} operator transforms this problem to a standard Poisson problem. It is to compute the scaler field $\lambda$ related to point set normal field $\overrightarrow{V}$ as:
+\begin{equation}
+\Delta\lambda=\nabla\cdot\overrightarrow{V}
+\end{equation}
+Major advantage of formulating this problem as a Poisson problem is that it considers whole surface(and hence complete dataset) at once instead of fitting surface to piecewise decompositions. This results in smooth approximation to surface data and relatively higher robustness to data-noise. The resultant surface is assumed to be completely representable as a linear combination of functions which are hence called \textit{Basis} functions.This approach allows its \textit{basis functions} to be \textit{locally supported} which adds to its immunity against effects of noise in data. It therefore results in a \textit{well conditioned} sparse linear system.\newline
+Yet another advantage of this approach is that gradient of characterstic function is constrained at all spatial points(since, it will be zero for all pointsaway from sample points). Therefore, resulting surface does not degrade arbitrarily in the region where there was no input sample point.
+
+
+
+\section{The AnuVi framework}
+\section{Development}
+ \subsection{Module description}
+ \subsection{Script description}
+\section{Results}
+\section{Conclusion}
+\section{Bibliography}
+
+\end{document}

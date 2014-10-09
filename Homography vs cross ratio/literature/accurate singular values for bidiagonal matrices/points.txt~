@@ -1,0 +1,7 @@
+#1. Page 2 'relative accuracy' & 'realtive precision' have been used interchangeably.
+
+#2. Claim: Accuracy of computed singular value(of A) will be same as that of individual matrix elements of A.
+
+#3. High relative accuracy for the singular elements of bidiagonal matrix is 'guaranteed'.
+
+#4. Porposed algorithm is variation over standard QR iteration.

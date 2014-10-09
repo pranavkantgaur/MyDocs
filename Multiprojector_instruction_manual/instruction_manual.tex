@@ -1,0 +1,31 @@
+\documentclass{article}
+
+
+\begin{document}
+
+\title{Multi-projector tiled display: Instruction Manual}
+\author{Pranav Kant Gaur, pranav@barc.gov.in}
+\maketitle
+
+\section{Introduction}
+This document describes the instructions for correctly running the Multi-projector geometric alignment and edge blending modules. Please note that this document is only a HOWTO and hence does not detail any explaination regarding why any particular step has been performed. Running multiprojector display calibration has 6 steps:
+\begin{enumerate}
+\item Startup the rendering cluster.
+\item Position the camera in front of projection screen for computing camera-to-screen homography.
+\item Run camera-screen homography estimation routine.
+\item Run geometric alignment module.
+\item Run edge-blending module.
+\item Applying newly calculated calibration settings.
+\end{enumerate}
+
+
+\section{Addendum}
+Screencast \textbf{running\_calibration.ogv} shows the calibration process, whereas screencast \textbf{applying\_settings.ogv} shows how to apply the newly calculated settings. In addition to the screencasts of the calibration process:
+\begin{itemize}
+\item Press key \textbf{\lq y\rq}(case-sensitive) to capture image on \textbf{Camera\_view} window.
+\item While running \textbf{./feature\_projection.sh}, press key \textbf{\lq n\rq}(case-sensitive)(on its program window) to project checkerboard on the next projector.
+\item Press \textbf{\lq ESC\rq} key to stop execution of \textbf{./feature\_projection.sh}(on its program window).
+\end{itemize}
+
+
+\end{document}

@@ -1,0 +1,18 @@
+'Conventional' SVD algorithm:
+=> Compute bidiagonal form of 'A'
+   Studying...
+    =>Seems like we have to first study the convergence analysis of SVD(iterative in nature, where convergence depends on error in data)
+convergence analysis=> error analysis{first show that it converges}
+
+
+=> Compute SVD of bidiagonal matrix(or, the bidiagonal SVD)
+
+
+
+
+
+////////////////////////////////////////////////////////// Questions
+1. Are bidiagonal matrix and original matrix equivalent(with respect to which operation??)?
+   No, but A is represented as UBdV where U,V are orthonormal matrices and Bd is the bidiagonal matrix
+
+

@@ -1,0 +1,61 @@
+\chapter{Conclusions and future works}
+In this chapter, conclusions from the work performed, original contributions of this work and possible future directions emerging from this work will be discussed. Section 6-1 describes the conclusions and propose future directions from the work done on system calibration and stereo-correspondence. Section 6-2 describes the original contributions of this work.
+
+\section{Conclusions and proposed future works}
+\begin{enumerate}
+\item \textbf{System calibration} \newline
+Development and accuracy evaluation of system calibration module offered following insights: 
+\begin{enumerate}
+\item As mentioned in table 5.7 repeatability of camera calibration parameters using OpenCV method was within $\sim1\%$
+except distortion coefficients. While this may be sufficiently reliable for some applications but for domains like dental transplantations, CFD, inspection of fabricated job where very high accuracy and repeatability of metrology device is expected this range of repeatability may not be sufficient. Recently [11] have proposed an algorithm which they claim to provide appreciably higher accuracy than commonly used OpenCV method. Hence our future work includes experimenting with this algorithm to evaluate its accuracy to assess its applicability in the domains mentioned above. 
+
+\item Furthermore, higher values of \% deviation for $k_1$ and $k_2$ possibly suggest instability of the calibration algorithm in estimating $k_1$ and $k_2$. In this work high quality lenses were used, hence it may be due to \textit{overfitting} leading to estimating coefficients for radial distortion even though lens may not have significant distortion.   
+
+\item For projector calibration table-5.9 clearly showed that OpenCV based calibration method cannot be reliably used due to unacceptably high values of \% deviations for estimated parameters. Instead a study should be done to determine the reason why this algorithm do not reliably works for projector although it works for camera calibration. This question is significant because projector is modeled as \textit{inverse camera}.
+
+\item To make the developed system more flexible and mobile, there is need to account for world coordinate system internally or by precalibrating system for physical units like as done in kinect. This will remove the constraint on the system to position world coordinate system within measurement volume which can be inconvenient and cumbersome at times.  
+
+\item During calibration, subpixel corner detection algorithm was used. It needs multiple initial parameters decision of which considerably changes the position of the detected corner and hence the estimated calibration parameters. But in our knowledge, there has been no thorough study of optimal parameters for certain level of desired accuracy of subpixel corner coordinates or a study relating optimal choice of parameters with structure of image.
+\end{enumerate}
+
+
+  
+
+\item \textbf{Stereo-correspondence} \newline
+Work on stereo-correspondence provided practical insight into coded phase-shift technique:
+\begin{enumerate}
+\item In practice it was observed that coded phase shift technique is ineffective in highly specular or reflective environments. Furthermore it is not suitable to be used outdoors. It is primarily because the currently used illumination model for phase shift technique does not take such factors into account.
+
+\item Pattern acquisition time is the main hurdle in allowing one to do real-time 3D scanning using this technique. Therefore, there is need to reduce number of projected pattern. This will be part of our future work.
+
+\item It was observed that non-sinusoidal nature of captured patterns depends upon camera gamma, environmental lighting, camera resolution, perspective of camera with respect to region in the scene where pattern is projected etc., in addition to projector gamma. Hence there is a need of a study to account for all these factors besides projector gamma.
+
+\item Further a problem of locating edge of projected binary coded patterns in camera image was encountered. Strip edge region is ambiguous for decoding binary codewords since it typically has grey intensity hence it cannot be classified as black or white only. In this work, pixels corresponding to such regions were discarded and were considered as invalid. This has raised the need for an algorithm which can atleast approximately determine the position of strip edge.  
+
+\item It was initially attempted to develop system solely based on phase-shift method without any supporting technique like binary coded patterns but unacceptably poor time efficiency of the algorithm used for phase-unwrapping was observed hence it was decided to changed it to combination of binary coded and phase shift methods. It reduces computational complexity of phase-unwrapping but increases pattern acquisition time. To reduce this time and problems of strip edge detection with binary coded patterns, it is proposed to develop a time efficient phase unwrapping algorithm which will allow us to solve stereo-correspondence using only phase-shift approach. This will considerably reduce the required number of patterns. 
+
+\item During experiments with stereo-calibration module it was observed that the proposed \textit{stereo-correspondence error} criterion gives different error estimates under different lighting conditions. Hence it has been proposed to study the effect of various radiometric conditions on the behavior of this criterion. And it is further speculated that contradictory results obtained in table 5.12 require accommodation of radiometric conditions into account. 
+\end{enumerate}
+
+
+
+\vspace{1cm}
+\item \textbf{3D reconstruction and triangulation}\newline
+It is possible to improve the time efficiency of system by replacing ray-ray triangulation which requires projection of both horizontal and vertical patterns as described in chapter-3 to ray-plane triangulation which calculates 3D coordinates of a point using intersection of an optical ray from camera and corresponding plane from projector or vice versa. Ray-plane triangulation will require projection of only vertical or horizontal patterns thereby reducing the required number of patterns by half. \newline
+Furthermore, for our application of dental imaging, CFD and inspection of fabricated jobs it is required to have complete 3 dimensional view of the object. For this purpose it is proposed to extend the developed system such that it allows user to take complete 360 degree view of the object.   
+
+\end{enumerate}
+
+
+\section{Contributions of this work}
+This work is focused on development and accuracy analysis of a 3D scanner, where in both development and accuracy evaluation some novelties are observed:
+\begin{enumerate}
+\item Developed system is first \textit{in-house} 3D measurement system based on Coded phase-shift technique which is currently among the most accurate 3D metrology approaches based on active vision.
+
+\item The measurement accuracy and precision of developed system  was experimentally studied and compared with Microsoft Kinect, this work can be of immediate use to researchers and practitioners planning to use kinect for accuracy and reliability critical tasks. 
+
+\item An approach to assess \textit{measurement accuracy} was proposed and experimentally demonstrated.  
+
+\item A \textit{Stereo-correspondence error} criteria has been proposed and experimentally demonstarted which will allow us to evaluate accuracy of stereo-correspondence.   
+\end{enumerate}
+

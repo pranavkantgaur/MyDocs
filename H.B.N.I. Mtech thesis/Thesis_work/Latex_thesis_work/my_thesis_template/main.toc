@@ -1,0 +1,85 @@
+\contentsline {chapter}{\numberline {1}Introduction}{13}{chapter.1}
+\contentsline {section}{\numberline {1.1}Motivations for development and accuracy analysis of 3D scanner}{14}{section.1.1}
+\contentsline {section}{\numberline {1.2}Scope of this work}{15}{section.1.2}
+\contentsline {section}{\numberline {1.3}Structure of thesis}{16}{section.1.3}
+\contentsline {section}{\numberline {1.4}Principle of operation and graphical layout of the developed system}{17}{section.1.4}
+\contentsline {chapter}{\numberline {2}System calibration}{20}{chapter.2}
+\contentsline {section}{\numberline {2.1}Camera model}{21}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Graphical abstraction}{21}{subsection.2.1.1}
+\contentsline {paragraph}{World-coordinate system.}{21}{section*.9}
+\contentsline {paragraph}{Camera-coordinate system.}{21}{section*.10}
+\contentsline {paragraph}{Image-coordinate system.}{22}{section*.11}
+\contentsline {paragraph}{Computer-frame coordinate system.}{22}{section*.12}
+\contentsline {subsection}{\numberline {2.1.2}Mathematical abstraction}{22}{subsection.2.1.2}
+\contentsline {paragraph}{1.Rigid body transformations from object world-coordinate system to camera coordinate system.}{23}{section*.14}
+\contentsline {paragraph}{2.Perspective transformation from camera-coordinates to real-image coordinates.}{24}{section*.15}
+\contentsline {paragraph}{3.Radial and tangential lens distortion.}{24}{section*.16}
+\contentsline {paragraph}{4.Transforming real-image coordinates to computer-frame coordinates.}{25}{section*.17}
+\contentsline {section}{\numberline {2.2}Current approaches:A review}{27}{section.2.2}
+\contentsline {paragraph}{a) Photogrammetric calibration.}{27}{section*.19}
+\contentsline {paragraph}{b) Self-calibration.}{27}{section*.20}
+\contentsline {paragraph}{R.Y.Tsai's algorithm.}{28}{section*.21}
+\contentsline {paragraph}{Z.Zhang's algorithm.}{29}{section*.23}
+\contentsline {paragraph}{J.Heikkila et al.'s algorithm.}{30}{section*.24}
+\contentsline {section}{\numberline {2.3}Approach followed in this work}{31}{section.2.3}
+\contentsline {paragraph}{Algorithm for extrinsic calibration of camera and projector.}{32}{section*.25}
+\contentsline {paragraph}{A note on Relative calibration of projector and camera.}{32}{section*.26}
+\contentsline {section}{\numberline {2.4}Working of developed system calibration module}{33}{section.2.4}
+\contentsline {paragraph}{System setup.}{34}{section*.27}
+\contentsline {subsection}{\numberline {2.4.1}Camera calibration}{34}{subsection.2.4.1}
+\contentsline {paragraph}{Procedure:}{35}{section*.29}
+\contentsline {paragraph}{Results and visualization.}{36}{section*.31}
+\contentsline {subsection}{\numberline {2.4.2}Projector calibration}{37}{subsection.2.4.2}
+\contentsline {paragraph}{Procedure:}{38}{section*.35}
+\contentsline {paragraph}{Results and visualization.}{38}{section*.37}
+\contentsline {subsection}{\numberline {2.4.3}Camera-projector relative extrinsic calibration}{40}{subsection.2.4.3}
+\contentsline {paragraph}{Procedure:}{41}{section*.41}
+\contentsline {paragraph}{Results and visualization.}{41}{section*.42}
+\contentsline {section}{\numberline {2.5}Discussion}{44}{section.2.5}
+\contentsline {section}{\numberline {2.6}Summary}{44}{section.2.6}
+\contentsline {chapter}{\numberline {3}Stereo correspondence}{45}{chapter.3}
+\contentsline {section}{\numberline {3.1}Overview of correspondence problem}{45}{section.3.1}
+\contentsline {section}{\numberline {3.2}State-of-art approaches}{45}{section.3.2}
+\contentsline {paragraph}{Time multiplexing.}{47}{section*.47}
+\contentsline {paragraph}{Spatial encoding.}{47}{section*.48}
+\contentsline {paragraph}{Direct encoding.}{48}{section*.49}
+\contentsline {paragraph}{Hybrid encoding.}{48}{section*.50}
+\contentsline {section}{\numberline {3.3}Approach followed in this work}{55}{section.3.3}
+\contentsline {section}{\numberline {3.4}Working of developed stereo-correspondence modules}{56}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Pattern generation}{56}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Pattern projection and capture}{58}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.3}Phase wrapping}{60}{subsection.3.4.3}
+\contentsline {paragraph}{Extension to four and five phase shifted fringe patterns.}{60}{section*.65}
+\contentsline {subsection}{\numberline {3.4.4}Pixel decoding and phase unwrapping}{62}{subsection.3.4.4}
+\contentsline {subsection}{\numberline {3.4.5}Correspondence computation using absolute phase}{63}{subsection.3.4.5}
+\contentsline {section}{\numberline {3.5}Discussion}{64}{section.3.5}
+\contentsline {section}{\numberline {3.6}Summary}{65}{section.3.6}
+\contentsline {chapter}{\numberline {4}Triangulation}{66}{chapter.4}
+\contentsline {section}{\numberline {4.1}Current techniques for triangulation}{66}{section.4.1}
+\contentsline {section}{\numberline {4.2}Approach followed in this work}{69}{section.4.2}
+\contentsline {section}{\numberline {4.3}Working of developed triangulation module}{70}{section.4.3}
+\contentsline {section}{\numberline {4.4}Procedure}{72}{section.4.4}
+\contentsline {section}{\numberline {4.5}Visualization of Point clouds}{72}{section.4.5}
+\contentsline {section}{\numberline {4.6}Discussion}{73}{section.4.6}
+\contentsline {section}{\numberline {4.7}Summary}{73}{section.4.7}
+\contentsline {chapter}{\numberline {5}Accuracy evaluation and analysis}{75}{chapter.5}
+\contentsline {section}{\numberline {5.1}Evaluation of accuracy and precision of developed system}{76}{section.5.1}
+\contentsline {paragraph}{Precision.}{76}{section*.69}
+\contentsline {paragraph}{Measurement accuracy.}{76}{section*.70}
+\contentsline {subsection}{\numberline {5.1.1}Precision}{77}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Measurement accuracy}{77}{subsection.5.1.2}
+\contentsline {section}{\numberline {5.2}Comparative evaluation with \textit {Microsoft Kinect}}{79}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Kinect:Principle of operation}{80}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Experiments}{82}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}Observations and conclusions}{83}{subsection.5.2.3}
+\contentsline {section}{\numberline {5.3}System calibration}{85}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Experiments and results}{85}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Limitations of the used testing method}{90}{subsection.5.3.2}
+\contentsline {section}{\numberline {5.4}Stereo correspondence}{90}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Experiments and results}{91}{subsection.5.4.1}
+\contentsline {subsection}{\numberline {5.4.2}Limitations of the used testing method}{94}{subsection.5.4.2}
+\contentsline {section}{\numberline {5.5}Triangulation}{94}{section.5.5}
+\contentsline {section}{\numberline {5.6}Summary}{95}{section.5.6}
+\contentsline {chapter}{\numberline {6}Conclusions and future works}{96}{chapter.6}
+\contentsline {section}{\numberline {6.1}Conclusions and proposed future works}{96}{section.6.1}
+\contentsline {section}{\numberline {6.2}Contributions of this work}{99}{section.6.2}

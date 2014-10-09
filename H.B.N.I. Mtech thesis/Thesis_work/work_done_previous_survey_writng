@@ -1,0 +1,305 @@
+Here we choose to discuss two
+Reference:Taxonomy of 2 frame dense stereo algorithms(R. Szeleski)
+Passive methods for stereo correspondence:
+Passive methods:-
+Types of approaches:
+1.Correlation based
+2.Feature based
+
+Typical steps:
+1.Matching cost computation
+2.Cost aggregation
+3.Disparity computation
+4.Disparity refinement
+
+Local & global stereo matching algorithms
+Local algorithms:1->2->3(winner takes all)
+Global algorithms:1->2->3(global/sub-global reasoning)
+
+Typically perform preprocessing to reduce photometric distortions.
+
+
+Local algorithms:
+1.Naive:
+  =>Stereo rectify the images.
+
+   1=>
+Matching criteria:Pixel based absolute difference between pixel intensities(sort of correlation-  algo) in same row in other image.
+ =>Disparity computation:Winner takes all(i.e.,no reasoning but select based on matching criteria directly)
+
+Approaches to improve:
+Local:
+=>Reduce matching ambiguity by increasing signal-to-noise ratio.
+==>Use correlation window(array of pixels)also called support-window to aggregate matching cost within it.
+
+Global:
+==>Search for disparity match that will minimize a energy-cost function over whole(or subset of stereo-pair) energy cost function.
+
+Assumptions:
+Smoothness of neighborhood(assumed neighbors are actually geometrical neighbors) but it is violated for some scenes!!
+
+Correlation criteria used:
+1.Pixel based absolute difference
+2.Squared differences
+3.M-estimators:
+   Robust matching measures
+
+2=>Cost aggregation:
+If area in area-based correlation matching is larger than the local surface-variation then this approach can be misleading.
+
+Multibaseline stereo methods have also been employed to improve precision of stereo systems without increasing matching computation time. 
+
+Disparity is defined as 3D projective transformation since disparity is regarded as inverse depth.
+
+If base-line is small then depth resolution decreases,if base-line is large then accuracy but stereo-searching will be computationally intensive. 
+
+
+Representation of input/output:
+1.Uni-valued disparity function
+2.Multivalued 
+3.Voxel-based
+4.Layer-based
+Approaches also use full 3D models:
+5.Triangulated meshes
+6.Deformable objects
+7.Level-set methods
+
+Why choose uni-valued disparity function?
+
+Cost aggregation(support/evidence aggregation) step is performed to reduce potential ambiguities/candidates if selected as per matching constraint.(which may depend upon local neighborhood or a global parameter),support region can be 2D at a fixed disparity allowing only front-parallel configuration or 3D allowing for slanted region also. Window(region size) can be fixed or variable(adaptive window size).
+
+Problem with winner takes all strategy:
+Uniqueness constraint is enforced only for reference image whereas single pixel can be winner for many reference pixels so there may not be one-to-one mapping(IS IT REQUIRED?????)
+Cooperative algorithms attempt to alleviate this problem by employing symmetric uniqueness constraints.(examples of symmetric uniqueness constraints?????)   
+
+A concept of virtual camera is used for winner-takes-all in some algorithms.
+
+
+Matching cost criteria is the most important consideration in a stereo-algorithm.
+
+Plane sweep stereo:
+
+
+Occlusion is an issue in generating high-quality stereo map
+Introduction to disparity-space:
+Virtual camera defines generalized disparity space. Stereo features are mapped using disparity-space representation.
+Marr-Poggio-grimson algorithm for stereo vision:
+
+==>TAXONOMY:
+Local approaches:with implicit smoothness assumption
+Global approaches:with explicit smoothness assumption these approaches define a objective function that is minimized to get the disparity value at each pixel.
+A global cost function is defined and disparity value is search to minimize the global matching cost criteria.
+So main difference between these(global) algorithms is the minimization criteria used:
+1.Simulated annealing
+2.Probabilistic diffusion
+3.Graph cuts,etc
+
+3rd class is iterative algorithms:
+Do not specify global function explicitly but their behavior mimics closely of iterative optimization algorithms.
+1.Hierarchical(coarse-to-fine) algorithms are such iterative algorithms:Results from coarser level are used to constrain a more local search at finer levels.
+
+Step-1:
+Matching cost computation:
+=>intensity square difference
+=>absolute intensity difference
+=> Robust measures(reduce the effect of outliers/mismatches during aggregation):
+==>Truncated quadrics
+==>Contaminated gaussians
+=>normalized cross correlation
+=>Binary matching costs
+=>based on binary features such as edges.(not used in dense stereo-imaging)
+=>Method insensitive to camera gain/bias:
+==>gradient based measure
+==>non-parametric measures:Rank & consensus transform
+Some approaches account for camera gain/bias using a preprocessing step.
+=>Phase & filter bank responses
+=>Matching cost insensitive to image sampling:
+Pixel in reference image is compared against a linearly interpolated function of other image,hence image sampling considerations are not relevant.(although  deciding,since interpolation will be based on sample values in the image,I THINK)
+
+Multi baseline algorithms linked with DISPARITY SPACE IMAGE(TO BE DONE)
+
+STEP-2:
+Cost aggregation:
+Decision support step:
+Used by local & window based matching cost criteria to decide between multiple candidates(region considered is called Support region)
+Support region can be a plane with constant disparity(2D) allowing only planer neighborhood or 3D support region in Disparity space image(allowing for curved neighborhood also in the scene)
+
+2D support regions used:
+1.Square window(or gaussian convolution)
+2.Multiple windows anchored a different points(or shift-able windows)
+3.windows with adaptive sizes
+4.Window based on connected components of constant disparity
+
+3D support regions used:(NOTE:3D IN DISPARITY SPACE)
+1.Limited disparity difference
+2.Limited  disparity gradient
+3.Pradzny's coherence principle
+
+Step-3:
+Disparity computation & optimization:
+Local methods:
+Step-1,& 2 are important disparity computation is then select the disparity from the winning pixel(winner takes all)
+Limitation:Uniqueness constraint only enforced on reference pixels but not on target image pixels aince single pixel in the target image can be winner multiple times.
+
+Global methods:
+Perform optimization for computing the disparity which minimizes an objective function(typically an 'energy minimization' function),a disparity function is estimated.
+
+QUESTION:Why 'energy' term used??
+Global energy functional to be minimized typically includes:
+E_data+E_smooth*lambda
+where E_data:how well 'd(x,y)' fits the input image pair.
+E_smooth:represents the smoothness assumption
+Global energy for complete stereo-pair set or subset of stereo pairs is minimized.
+
+Question:How energy is assigned to smoothness criteria & quality of disperity data??????
+QUESTION:Why smoothness criteria is also considered for defining global function,is it not containing the overall shape of object that can be reconstructed?
+
+Regularization based:
+rho is quadratic function which makes d smooth everywhere,discontinuities in the scene aren't preserved,discontinuity preserving energy functions are also propsed based on  Markov random fields,& additional line processes.
+Regularization is introduced to add information in order to solve ill-conditioned problem conditioned problem or to prevent over-fitting,e.g.,by adding restrictions/penalty for complexity,restriction on smoothness/bound limiting,least-square approach is a simple form of regularization
+Here smoothness term may be limited to a form to make the problem computationally intractable.
+Nature of 'rho' function decides the smoothness of depth map at discontinuities.
+
+Once global energy function is defined,then any minimization algorithm can used to find global/approximate minima.
+Approaches:
+1.Simulated annealing
+2.mean-field annealing
+3.highest confidence first
+4.Max-flow graph-cut methods
+5.Dynamic programming method:
+Optimization step for 2D functional is NP-Hard.Using dynamic programming,initially sparse,edge based stereo reconstruction was performed(WHY??),recent work has lead to dense scanline(what??) optimization methods.
+
+Pros:DP:
+1.Can find global minimum for independant scanlines in polynomial time.
+
+Cons:DP:
+1.Selection of right cost for occluded pixels.
+2.Difficulty of enforcing inter-scanline consistency.
+3.It requires enforcement of monotonicity/ordering of pixels across the views,which may not hold for narrow objects.(HOW??)
+6.Cooperative algorithms:
+Models the human binocular vision function for disparity computation. These algorithms perform local but non-linear operations,which results overall behavior similar to global function minimization algorithms(HOW??)
+
+Step-4:
+Disparity refinement:
+For applications requiring sub-pixel/fraction disparity information,e.g.,view synthesis:
+Iterative gradient descent and fitting curve to the matching cost at discrete disparity levels for getting interpolated depth estimates at sub-pixel level. It apparently increases the resolution of stereo reconstruction.
+
+
+
+
+Active Methods:
+Reference:Recent progresses in coded structured light technique:a survey
+For 3D reconstruction of texture-less surfaces,conventional passive stereo-method do not work because lack of texture introduces ambiguity in resolving for correspondence(CAN'T THERE BE CLUES IN GEOMETRY AS CAPTURED BY CAMERA IF NOT IN INTENSITY??). Hence,some explicit pattern is projected to distinguish between multiple similar regions on object surface.
+Primitive proposals for patterns included projection of dots sequentially,slit projection,grid projection,dot matrix projection but in case of multiple identical elements in the pattern again ambiguity in correspondence was observed,so the patterns were coded,that each element in the pattern is given a unique identity.
+ 
+Class 1:Temporal dependance based:
+Static:Assumed static scene(Projection of patterns over a period of time)
+Dynamic:Allows for dynamic scene(typically single frame projection approaches)
+
+Class 2:Nature of light projected:
+Binary:Only two hues used typically comes in static pattern class.
+
+Grey: Intermediate between static & dynamic but more robust than colored patterns. 
+Colored:Preferred for dynamic scenes but are susceptible to scene noise.
+
+
+Class 3:Dependance on depth discontinuities in the object surface:
+Periodical:Code Id's are repeated after a spatial interval,susceptible to depth discontinuities as it may create ambiguity if discontinuity is more than a cycle.
+
+Aperiodic/absolute:Unique ID's for all pattern elements.
+My Speculations:Resolution may be limited,equation for aperiodic signal will be complex for computation of unique id at each pixel,periodicity provides pixel-level unique id at cost of increased sensitivity towards depth discontinuities(HAVE A TRY AT APERIODIC SIGNAL CODING??).
+
+
+ATTEMPT GRAY CODE TECHNIQUE(more robust to error,why??)Currently using binary coded pattern,decoding errors at boundary detected.
+
+
+Reference:Pattern codification strategies:(J. Salvi)
+Classification is based on:
+1.Time multiplexing 
+A set of temporally varying(temporally-coded) patterns are projected onto object surface,which are captured & decoded to obtain correspondence. Relatively more accurate & high-resolution details can be extracted as compared to spatial methods since a code for a pixel(or group of pixels) is computed from multiple frames hence less number of intensity levels per-pattern can be used giving more robustness towards noise.
+
+Subcategories:
+1.Binary-level codes(N=2)
+Only 2 levels of intensity in a pattern are used to be interpreted as 0 or 1,number of codewords to be projected are decided based on resolution required,projections of code-words bit by bit allows to recover code-word for each pixel(or group of pixels) which is unique id for that pixel(or pixel group)
+Since group of pixels will be sharing the same codeword,before triangulation there is need to find-out strip centers or edge between two successive strips.(WHY????)
+Gray coded patterns were introduced to reduce the decoding errors caused by noise by ensuring a Hamming distance of 1 between successive codewords.
+Attempts were made to correct decoding errors by introducing Hamming error correcting codes along with binary coded patterns by Minou et al.,but to accommodate for error correcting codes the resolution of range map reduced.
+Trobina et al. demonstrated that crucial step for accuracy of gray coded sensors is accurate detection of position of strips.It was suggested to acquire both full-illumination & no-illumination scene images and compute mean of intensities at every pixel location to determine the threshold,although intensity variation at the boundary between black & white stripe shows non-linear intensity profile(as written in paper).Methods to detect edges with subpixel-accuracy were also proposed.
+Basically,locating accuarate position of strips is main concern here.
+Approach-1:Find zero-crossing of second-derivative in the image orthogonally to the stripes. Problem is in finding the optimal gradient filter(kernel) size.(NOT CLEAR APPLYING ORTHOGONALLY)
+Approach-2:Projecting both positive & negative patterns and by combining their projections find intersection which will be the edge of strip patterns.
+
+Valkenburg & McIvor[] attempted to improve the accuracy of strip location by dividing the captured strip patterns into 17X17 regions each region was fitted with a 2D 3rd order polynomial using least squares method this polynomial was used for approximating all strips in that region,they observed slight   improvement by fitting a sinusoidal function within the region of interest. 
+
+Most binary coded methods assume uniform reflectance property for surfaces scanned,as low reflectance property reduces signal to noise ration and very high reflectance saturates the pixel,in both cases it causes loss of correspondence information in these regions. D.Skocaj & A.Leonardis[2000] attributed this problem to be because of limitation on intensity that can be captured by camera sensor,and proposed a technique to project multiple patterns with illumination intensity from low to high and acquire range maps,then by combining the range maps across all illumination patterns they computed a final range map,which had recovery of almost complete surface. Reflectance values for each pixel is estimated. Using this reflectance map projected intensities can be recovered for each pixel. It was observed that by increasing the number of illumination patterns accuracy of radiance map can be improved and hence that of recovered projected intensity.Sub-pixel localization of strip edges(localization of white-to-black transition) is important concern and has been one main area of research in coded patterns.Roccini et al.[] proposed projection of blue-red instead of black-white patterns with green strip representing the edge of strips,edge detection involved detection of green strip with sub-pixel accuracy.(HOW DOES IT SOLVE THE PROBLEM?)
+
+//FACTS:
+Working volume depends on:Depth of field of camera & projector,
+Accuracy on:angle between camera & projector(decrease reduces precision but also reduces number of points in shadow,increasing the angle increase the precision of results but reduces the number of nun-shadow points) 
+
+QUESTION:What is the relation between 3D point cloud data points & object surface points????
+
+
+Question: can't we estimate the reflectance before doing scanning and generate a pattern based on this(i.e.,low intensity projection at highly reflecting region & high intensity projection at low reflecting region)???
+
+
+2.N-nary level codes(number of quantization levels are 'N')
+BASED ON N-nary CODES:
+To avoid large number of patterns to be projected,number of quantization levels(or 'coding basis') can be raised from 2 at the cost of reduction in robustness against noise but reducing acquisition time.
+
+
+TO DO:
+So the problem of incorrect coding is attributed to saturation of camera pixels at the boundary which can be controlled using exposure of projector and camera.
+
+QUESTION:Can changing the order of projection of bit-planes reduce possible photonic turbulence and hence noise???
+
+
+
+3.Gray patterns+Phase shifted pattern:
+Binary & gray codes lack in spatial resolution though being robust against noise. To increase the spatial resolution phase-shift interferometry can be used. But using combination of both gray code &  phase shift    
+technique allows higher spatial resolution as compared to gray code technique and independence from neighborhood properties which essentially removes smoothness constraints from the target surface allowing larger class of surfaces that can be scanned successfully than phase-shift technique alone. However number of patterns increase considerably as compared to use of single technique alone. 
+
+Problems were pointed out by Guhring[2001] in phase shift technique such as it sensitivity to non-uniform reflectance of surfaces,issue of integration of pixel intensity within a  neighborhood leading to phase inaccuracies ,so author proposed use of multi-stripe patterns which are arranged similar to sinusoidal fringes(i.e., periodic) but have only binary levels,so again to avoid ambiguity in phase,gray-code technique was employed in conjunction.
+
+TO DO:Structured light illumination model.Effect of projector & camera contrast,saturation limit,focal length,relative position & orientation,improvement for non-uniform/specular surfaces,outdoor environment,real-time,Generation of NURB surfaces,how reconstruction error is measured correctly??What is the effect of changing the phase-shift on accuracy of fringe pattern method accuracy??Using multiple cameras for increasing consistency of correspondence between camera & projector?? 
+
+
+3.Hybrid methods:
+These methods include combination of both temporal multiplexing,spatial dependance. Kosuke Sato[] designed a binary coded pattern whose rows have sharp impulse on its auto-correlation function.
+
+
+
+
+2.Spatial neighborhood
+
+3.Direct coding
+
+Accurate detection of strip edge can be computed through second derivative 
+
+Active+Passive approach:
+Use of added projector along with passive cameras to assist in stereo correspondence in texture-less surfaces. 
+
+
+Reference:State-of-art in structured light technique:J.Salvi(2010)
+Classification:
+1.Discrete:
+Pattern has digital profile.
+Sub-classification:
+1.Spatial multiplexing
+Code word is extracted from information available in neighborhood. Color/intensity is varied to assign code words in a single projected pattern:De-bruijn sequences,non-formal coding,M-arrays come under this class.
+
+De-bruijn code technique:
+K-ary Debruijn sequences of order n are pseudo-random sequences,which encompass all possible combinations of n-characters occurring only once. These sequences can be constructed by following a Hamiltonian path in a debruijn graph. These sequences were used to uniquely assign code-word for a group of pixels,since it has been used for single shot reconstruction techniques,where only single pattern is used to 'uniquely'  identify a pixel/group of pixels. Code is extracted by detecting the colors in a window of pixels.
+
+Method proposed by Boyer & Kak[]  places sub-patterns inside a pattern,a window of sub-pattern is uniquely recovered by recovering the code in the debruijn sequence which denotes that region.
+Monk et al.[] proposed multi-slit pattern technique which projects slits having color range of 6 colors separated by black slits,colors were arranged such that a sub-sequence of 3 colors appeared only once.A minimum matching cost algorithm was used for determining the strip ID given the possibility of partial/complete occlusion of slits.Pages et al.[] proposed a hybrid technique including both strip & multi-slit techniques,where strip pattern was included in hue,and multi-slit patterns was included in intensity/luminance .It had the effect of dark and bright strips. 
+
+Doubt:Difference between strip & multi-slit patterns?? 
+2.Temporal multiplexing
+3.Hybrid(combination of 1 & 2)
+4.Viewpoint coded structured light:
+
+2.Continuous:
+
+Reference:J.Geng(Structured-light tutorial)
+///////////////////////////////////////////////////////////////////////////////////////////////

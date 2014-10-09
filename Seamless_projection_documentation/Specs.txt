@@ -1,0 +1,7 @@
+#1. PC
+#2. Cluster
+#3. Projector
+#4. Gphoto2 version
+#5. Screen
+#6. Chromium version
+#7. Control Panel version 

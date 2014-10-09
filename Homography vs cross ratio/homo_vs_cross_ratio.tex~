@@ -1,0 +1,57 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+
+\begin{document}
+
+\title{Analytical evaluation of extrapolation error for \textit{Homography} and \textit{Cross ratio}}
+
+\author{Pranav Kant Gaur}
+
+\maketitle
+
+\begin{abstract}
+This document describes \textit{Normalized DLT} algorithm and derivation of error expression. Further, it also shows the \textit{extrapolation} error for cross ratio approach. 
+\end{abstract}
+
+\section{Problem statement}
+Given \textit{projective} mapping between points in two 2D coordinate systems(say $S_w$ and $S_i$). Points have error associated with them that is $x_{we}^i=x_{wo}^i+\delta e_w^x$ (similarly, for all coordinates on $S_w$ and $S_i$). Derive error expression for Homography mapping.
+
+\section{Normalized Direct linear transformation(DLT)}
+Direct linear transformation algorithm is used to define transformation between 2 projective planes. This transformation is represented in form of 3X3 matrix called \textit{Homography} or \textit{Collineation}. Input data is in the form of pairs of real world points,$(x_w,y_w)$ and corresponding image space projections,$(x_i,y_i)$. Scale of data in real world coordinate system can be different than that in image coordinate system. Therefore, to avoid possible \textit{numerical instability}, input data is normalized.
+
+\subsection{Benefits of data normalization}
+\begin{enumerate}
+\item Reduces condition number of involved matries, thereby increasing numerical stability. It consequentrly results in increased accuracy of solution.
+\item Normalization enhances rate of convergence of iterative algorithms.
+\end{enumerate}
+
+\subsection{Algorithm}
+Normalized DLT algorithm only introduces data normalization, which is a kind of \textit{preconditioning} of the input.
+\begin{enumerate}
+\item Normalize data set by translating and scaling the data(both real world and image space coordinates)
+\item Compute homography, $H_n$ using DLT algorithm
+\item Denormalize $H_n$ to get actual homography, H
+\end{enumerate}
+
+\subsection{DLT algorithm}
+\begin{enumerate}
+\item Represent relation between object and image points{$(x_w,y_w)$ and $(x_i,y_i)$ respectively} in form:
+\begin{equation}
+Ah=0
+\end{equation}
+where,\newline
+A is $2nX9$ matrix and h is $9X1$ matrix and $n$ is the number of (object point,image point pairs).
+\item Compute Singular value decomposition(SVD) of A, such that $A=U\sum V*$
+\item The right singular vector,$v_i$ corresponding to \textit{smallest} singular value,$\sigma$ represents desired $h$
+\item Convert h(9X1 form) to H(3X3 form) to recover homography 
+
+\end{enumerate}
+
+
+\section{Homography estimation algorithm: Error propogation study}
+Since, acquired image points have error(or \textit{noise}) this error will propogate to final solution. In this section, we will derive formal expression for propogated error for a chosen homography computation algorithm. Here, we will focus on error analysis of SVD computation algorithm since it forms the major computation part of homography computation in DLT algorithm.
+
+
+
+\end{document}

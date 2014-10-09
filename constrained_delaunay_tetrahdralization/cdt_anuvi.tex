@@ -1,0 +1,45 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+
+\begin{document}
+
+\title{Constrained delaunay tetrahedralization}
+\author{Pranav Kant Gaur}
+
+\maketitle
+
+\begin{abstract}
+This document describes work of the author to develop and integrate module for \textit{\textbf{Constrained Delaunay tetrahedralization}} into an \textit{inhouse} developed data visualization framework \textbf{AnuVi}.
+\end{abstract}
+
+\section{Problem definition}
+The problem can be decomposed into:
+\begin{enumerate}
+\item Understanding Constrained Delauney tetrahedralization problem
+\item Studying other solutions
+\item Selecting and implementing the solution most suited to the \textbf{\textit{real}} problem at hand
+\end{enumerate}
+
+\section{Analysing subparts of the problem}
+In this section, individual components of the problem will be analysed in detail.
+\subsection{Constrained Delaunay tetrahedralization}
+Input: 
+\begin{enumerate}
+\item Set of points, $P\in R^{3}$ over \textit{euclidean} space
+\item Set of segments, $S=\lbrace{(p_{1},p_{2})| p_{1},p_{2}\in P\rbrace}$ called \textit{constraint segments} 
+\end{enumerate}
+Problem:\newline
+Compute connectivity over points in $P$ called \textit{volume mesh} say $M$, such that any tetrahedron $T$ in $M$ satisfies \textit{empty sphere} criterion and $M$ must \textit{preserve} constraint segments.
+
+\subsubsection{Empty sphere criterion}
+It simply states that for any tetrahedron $T$ in CDT, there must not be any vertex lying \textit{inside} the circumsphere of T. If there are more than 4 vertices sharing a circumsphere then CDT for those set of points and constraint segments will not be \textit{unique}.
+
+
+\subsection{Studying proposed solution(s)}
+In this work, author will implement and analyze CDT method described in paper `\textit{Meshing Piecewise Linear Complexes by Constrained Delaunay Tetrahedralizations}' by Hang Si and Klaus G{\"a}rtner.
+
+
+\subsubsection{Algorithm}
+Given \textit{piecewise linear complex(PLC)}, X_0, which encapslates the vertices & constraining segments.
+\end{document}

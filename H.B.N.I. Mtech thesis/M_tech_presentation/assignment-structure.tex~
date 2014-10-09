@@ -1,0 +1,81 @@
+% Author: Rasmus Pank Roulund
+\documentclass{minimal}
+\usepackage{tikz}
+\usepackage{verbatim}
+
+\begin{comment}
+:Title: Assignment structure
+
+The structure of an assignment illustrated using a flow chart. Labels are in Danish.
+
+\end{comment}
+\usetikzlibrary{calc,trees,positioning,arrows,chains,shapes.geometric,%
+    decorations.pathreplacing,decorations.pathmorphing,shapes,%
+    matrix,shapes.symbols}
+
+\tikzset{
+>=stealth',
+  punktchain/.style={
+    rectangle, 
+    rounded corners, 
+    % fill=black!10,
+    draw=black, very thick,
+    text width=10em, 
+    minimum height=3em, 
+    text centered, 
+    on chain},
+  line/.style={draw, thick, <-},
+  element/.style={
+    tape,
+    top color=white,
+    bottom color=blue!50!black!60!,
+    minimum width=2em,
+    draw=blue!40!black!90, very thick,
+    text width=10em, 
+    minimum height=3.5em, 
+    text centered, 
+    on chain},
+  every join/.style={->, thick,shorten >=1pt},
+  decoration={brace},
+  tuborg/.style={decorate},
+  tubnode/.style={midway, right=5pt},
+}
+\begin{document}
+\begin{figure}
+\begin{tikzpicture}
+  [node distance=2.0cm,
+  start chain=going below,]
+     \node[punktchain, join] (intro) {Pattern generation};
+     \node[punktchain, join] (probf)      {Pattern projection \& capture};
+     \node[punktchain, join] (investeringer)      {Phase wrapping};
+     \node[punktchain, join] (perfekt) {Phase unwrapping};
+     \node[punktchain,join] (emperi) {Absolute phase computation};
+\node[punktchain,join](triangulate){\textbf{\textit{Triangulation}}};
+\begin{scope}[start branch=x,every join/.style={->,thick,shorten <=1pt},]
+\node[punktchain,on chain=going left,join=by {<-},node distance=-12.0cm](calib) {\textbf{\textit{System calibration}}};
+\end{scope}
+
+\draw[tuborg, decoration={brace}] let 
+  \p1=(intro.north), \p2=(emperi.south) in 
+   ($(2, \y1)$) -- ($(2,\y2)$) node[tubnode] {\textbf{\textit{Stereo correspondence}}};
+
+\node at (-1.5,-1.5) {\textit{Generated patterns}};
+
+\node at (-1.5,-4.5){\textit{Captured patterns}};
+
+\node at (-1.3,-7.5){\textit{Wrapped phase}};
+
+\node at (-1.5,-10.5){\textit{Unwrapped phase}};
+
+\node at (-2.7,-13.7){\textit{Camera-projector correspondence}};
+
+\node[above] at (4.3,-15.5){\textit{camera,projector}}; 
+\node[below] at (4.3,-15.5){\textit{calibration parameters}};
+\end{tikzpicture}
+\caption{System architecture}
+\end{figure}
+\end{document}
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 

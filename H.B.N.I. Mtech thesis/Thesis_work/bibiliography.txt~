@@ -1,0 +1,179 @@
+1.Microsoft Photosynth:
+  photosynth.net
+
+2.Projective geometry tutorial
+  http://www.cse.iitd.ernet.in/~suban/vision/tutorial/node1.html
+
+3.@ARTICLE{Faugeras95stratificationof,
+    author = {Olivier Faugeras},
+    title = {Stratification of 3-D vision: projective, affine, and metric     representations},
+    journal = {Journal of the Optical Society of America A},
+    year = {1995},
+    volume = {12},
+    pages = {46548--4}
+}
+
+4.Triangulation
+  Richard I. Hartley, Peter Sturm
+  Computer Vision and Image Understanding, Volume 68, Issue 2, November 1997,   Pages 146–157
+  
+5.@MISC{Saxena_3-dreconstruction,
+    author = {Ashutosh Saxena and Min Sun and Andrew Y. Ng},
+    title = {3-D Reconstruction from Sparse Views using Monocular Vision},
+    year = {}
+}
+
+6.Coded Structured Light for 3D-photography:an Overview
+  Asla Medeiros e Sa,Esdras Soares de Medeiros Filho,Paulo Cezar Carvalho,Luiz   Velho
+
+7.Tutorial on Coded Light Projection techniques
+  J.Salvi,J Pages
+  http://eia.udg.es/~qsalvi/Tutorial_Coded_Light_Projection_Techniques_archivos/v3_document.html
+
+8.@ARTICLE{Salvi04patterncodification,
+    author = {Joaquim Salvi and Jordi Pagès and Joan Batlle},
+    title = {Pattern Codification Strategies in Structured Light Systems},
+    journal = {PATTERN RECOGNITION},
+    year = {2004},
+    volume = {37},
+    pages = {827--849}
+}
+
+9.J. L. Posdamer and M. D. Altschuler, “Surface measurement by
+space-encoded projected beam systems,” Comput. Graph. Image Processing
+18(1), 1–17 (1982).
+
+10.S. Inokuchi, K. Sato, and F. Matsuda, “Range-imaging for 3-D object recognition,”
+in International Conference on Pattern Recognition (International
+Association for Pattern Recognition, 1984), pp. 806–808.
+
+11.D. Caspi, N. Kiryati, and J. Shamir, “Range imaging with adaptive color
+structured light,” IEEE Trans. Pattern Anal. Mach. Intell. 20(5), 470–480
+(May 1998).
+
+12.@ARTICLE{Horn97towardoptimal,
+    author = {Eli Horn and Nahum Kiryati},
+    title = {Toward Optimal Structured Light Patterns},
+    journal = {Image and Vision Computing},
+    year = {1997},
+    volume = {17},
+    pages = {87--97}
+}
+
+13.Two-Dimensional Phase Unwrapping: Theory, Algorithms, and Software(BOOK)
+   Dennis C.Ghiglia,Mark D.Pritt
+
+14.F. J. MacWilliams and N. J. A. Sloane, “Pseudorandom sequences and
+arrays,” Proc. IEEE 64(12), 1715–1729 (1976).
+
+15.J. Le Moigne and A. M. Waxman, “Multi-resolution grid patterns for
+building range maps,” in Vision ’85, Applied Machine Vision Conference
+(ASME) (Society of Manufacturing Engineers, 1985), pp. 22–39.
+
+16.A. Osman Ulusoy, F. Calakli, and G. Taubin, “One-shot scanning using De
+Bruijn spaced grids,” in 2009 IEEE 12th International Conference on Computer
+Vision Workshops (ICCV Workshops) (IEEE, 2009), pp. 1786–1792.
+  
+
+17.B. Carrihill and R. Hummel. Experiments with the intensity ratio depth sensor. In Computer Vision, Graphics and Image
+Processing, volume 32, pages 337--358. Academic Press, 1985
+
+18.G. Chazan and N. Kiryati. Pyramidal intensity­ratio depth sensor. Technical report 121, Center for Communication and Informa­tion Technologies, Department of Electrical Engineering, Technion, Haifa, Israel, October 1995. 
+
+19.D.C.D. Hung. 3d scene modelling by sinusoid encoded illumination. Image and Vision Computing, 11:251--256, 1993. 
+  
+20.J. Tajima and M. Iwakawa. 3­D data acquisition by rainbow range finder. In International Conference on Pattern Recognition, pages 309--313, 1990
+
+21.T. Sato. Multispectral pattern projection range finder. In Proceedings of the Conference on Three­Dimensional Image Captuer and Applications II, volume 3640, pages 28--37, San Jose, California, January 1999. SPIE. 
+
+22.@MISC{Pagès03overviewof,
+    author = {Jordi Pagès and Joaquim Salvi and Rafael Garcia and Carles Matabosch},
+    title = {Overview of coded light projection techniques for automatic 3D profiling},
+    year = {2003}
+}
+
+23.Stripe boundary codes
+for real-time structured-light range scanning of moving
+objects. In The 8th IEEE International Conference on
+Computer Vision, pages II: 359–366, 2001.
+
+24.Recent progresses on real-time 3D shape measurement using digital fringe projection techniques
+Song Zhang
+Optics and Lasers in Engineering, Volume 48, Issue 2, February 2010, Pages 149–158
+
+25.Fringe projection technique:Whither we are?
+  SS Gorthi, P Rastogi - Optics and Lasers in Engineering, 2009
+
+26.'open-light'-Google code
+   http://code.google.com/p/open-light/
+
+27.'Strutured-light'-Goole code
+   http://code.google.com/p/structured-light/
+
+28.Dennis C. Ghiglia and Louis A. Romero, "Minimum Lp-norm two-dimensional phase unwrapping," J. Opt. Soc. Am. A 13, 1999-2013 (1996) 
+
+29.Tsai, Roger Y. (1987) “A Versatile Camera Calibration Technique for High-
+Accuracy 3D Machine Vision Metrology Using Off-the-Shelf TV Cameras
+and Lenses,’’ IEEE Journal of Robotics and Automation, Vol. RA–3, No. 4,
+August 1987, pp. 323–344.
+
+30. “High-resolution, Real-time 3-D Shape Measurement,” Ph.D. dissertation, Stony Brook University, Stony Brook, NY, 2005.
+
+31.Z. Zhang. A flexible new technique for camera calibration. IEEE Transactions on Pattern Analysis and Machine Intelligence, 22(11):1330-1334, 2000
+
+32.R.I.Hartley,An algorithm for self calibration from several viewes.In Proceedings of IEEE Conference on Computer Vision and Pattern Recognition,pages 908-912,IEEE Computer Society Press
+
+33.Q.-T Luong and O. Faugeras.Self-calibration of a moving camera from point correspondences and fundamental matrices.The International Journal of Computer Vsion,22(3):261-289,1997
+
+34.B Caprile and V.Torre.Using Vanishing Points for Camera Calibration.The International Journal Of Computer Vision,4(2):127-140,Mar.1990 
+
+35.R.Hartley.Self-calibration from multiple views with a rotating camera.In Proceedings of 3rd ECCV,volume 800-801 of 'Lecture notes in Computer Science' pages 471-478,Stockholm,Sweden,May 1994.Springer-Verlag
+
+
+36.Camera Calibration Toolbox For Matlab
+   www.vision.caltech.edu/bouguetj/calib_doc/ 
+
+37.A Four-step Camera Calibration Procedure with Implicit Image Correction -    Heikkila and Silven, CVPR97
+
+38.Minh Vo, Zhaoyang Wang, Bing Pan, and Tongyan Pan, "Hyper-accurate flexible calibration technique for fringe-projection-based three-dimensional imaging," Opt. Express 20, 16926-16941 (2012) 
+
+39.Appendix:Projective geometry for machine vision
+   J Mundy, A Zisserman - Geometric invariances in computer vision,MIT Press    ,1992
+
+
+40.@Book{Hartley2004,
+    author = "Hartley, R.~I. and Zisserman, A.",
+    title = "Multiple View Geometry in Computer Vision",
+    edition = "Second",
+    year = "2004",
+    publisher = "Cambridge University Press, ISBN: 0521540518"
+}
+
+41.Triangulation
+   http://en.wikipedia.org/wiki/Triangulation 
+
+42.OpenCV documentation on Camera calibration
+   http://docs.opencv.org/modules/calib3d/doc/calib3d.html
+
+43. Learning OpenCV
+Computer Vision with the OpenCV Library
+By Gary Bradski, Adrian Kaehler
+Publisher: O'Reilly Media
+Released: September 2008
+
+44.Link to doumentation of cvFindExtrinsicCameraParams2
+   http://opencv.willowgarage.com/documentation/c/calib3d_camera_calibration_and_3d_reconstruction.html#findextrinsiccameraparams2
+
+45.R. Hartley, R. Gupta, and T. Chang, Stereo from uncalibrated cameras,
+in Proceedings, IEEE Conference on Computer Vision and Pattern Recognition, 1992, pp. 761–764.
+
+46.Mean Absolute article
+   en.wikipedia.org/wiki/Mean_absolute_error
+
+47.Advantages of the mean absolute error (MAE) over the root mean square error (RMSE) in assessing average model performance
+Cort J. Willmott, Kenji Matsuura
+
+Climate Research Vol.30:79-82(2005)
+
+48.Augmenting Complex Surface With Projector-Camera Systems
+   Brett R. Jones,M.S.Thesis,University of Illinois at Urbana-Champaign,2010

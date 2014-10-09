@@ -1,0 +1,11 @@
+#1. Screen .Done
+#2. Projector grid . Done
+#3. Cluster .Done
+#4. Camera + screen+ cluster .Done
+#5. With cross ratio: city example
+#6. Without cross ratio: city example
+#7. Measurement accuracy: Zoomed Anuvi Grid misalignment{show region with maximum misalignment}
+#8. System architecture: show flow of information
+#9. With perspective distortion
+#10. Using schomo without perspective distortion
+

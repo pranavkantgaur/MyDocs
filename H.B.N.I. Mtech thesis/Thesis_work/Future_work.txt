@@ -1,0 +1,7 @@
+1.Synchronization of camera & projector.
+2.Improve region growing to allow for larger region scan without seg fault.
+3.Remove mis-alignment between phase-shift pattern & binary coded pattern
+4.Implement gray coded pattern to see if decoding error reduces.
+5.Correct the exposure control of webcam.
+6.Provision for phase-unwrapping algorithm.
+7.Analyse & compare previous 2 implemented triangulation methods.

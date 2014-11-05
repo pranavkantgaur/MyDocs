@@ -26,9 +26,8 @@
 \item Overview of approach
 \item Algorithm 
 \item Novelity
-\item System configuration
 \item Results
-\item Further work
+\item Issues
 \end{enumerate}
 \end{frame}
 %//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -36,9 +35,10 @@
 %//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 \begin{frame}
 \frametitle{Problem statement}
-Given an arbitrarily arranged grid of projectors projecting at arbitrary positions onto the screen, find the region in each projector image buffer where if the original image is mapped onto will result in a seamless rectangular projection region on the screen.\newline
-In short, 
-ADD UNALIGNED=> ALIGNED ??????????????????????
+%Given an arbitrarily arranged grid of projectors projecting at arbitrary positions onto the screen, find the region in each projector image buffer where if the original image is mapped onto will result in a seamless rectangular projection region on the screen.\newline
+%In short, 
+%ADD UNALIGNED=> ALIGNED ??????????????????????
+Given an arbitrarily arranged grid of projectors projecting at arbitrary positions onto the screen, how to manipulate each projector image so that projected content is \textit{seamless} across the adjacent projectors. 
 \end{frame}
 %//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -132,7 +132,7 @@ EQUATION OF CROSS RATIO???????????????????????????
 \end{frame}
 
 \begin{frame}
-\frametitle{System configuration}
+\frametitle{Results}
 \begin{enumerate}
 \item Software
 \begin{enumerate}
@@ -152,7 +152,7 @@ Each slave controls rendering on a row of projectors. It recieves rendering info
 \end{frame}
 
 \begin{frame}
-\frametitle{Results}
+\frametitle{Results(contd.)}
 \begin{enumerate}
 \item Alignment procedure completes in 3-4 minutes as opposed to 30 mins. consumed in manual alignment approach
 \item Proposed \textit{Cross ratio} based approach resulted in recovery of full projection region
@@ -164,7 +164,7 @@ SHOW FIGURE??????????????????
 
 
 \begin{frame}
-\frametitle{Further work}
+\frametitle{Issues}
 View independent color seamless is still an \textit{open} problem
 EMBEDD A VIDEO WITH VOICE SHOWING THE PROBLEM IN THE DISPLAY
 \movie[]{Color seamlessness problem}{capture.avi}

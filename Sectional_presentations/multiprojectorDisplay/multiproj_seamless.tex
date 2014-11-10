@@ -3,6 +3,8 @@
 \usetheme{Madrid}
 \usepackage{graphicx}
 \usepackage{multimedia}
+\usepackage{tabularx}
+\usepackage{subfig}
 
 \title{Multiprojector seamless tiled display}
 \author{Pranav Kant Gaur}
@@ -20,10 +22,12 @@
 \begin{frame}
 \frametitle{Agenda}
 \begin{enumerate}
-\item Problem statement
+\item The Problem 
 \item Motivation
+\item Existing solutions
+\item Why not a commercial system?
+\item Solution overview
 \item System setup
-\item Overview of approach
 \item Algorithm 
 \item Novelity
 \item Results
@@ -34,11 +38,18 @@
 
 %//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 \begin{frame}
-\frametitle{Problem statement}
+\frametitle{The Problem}
 %Given an arbitrarily arranged grid of projectors projecting at arbitrary positions onto the screen, find the region in each projector image buffer where if the original image is mapped onto will result in a seamless rectangular projection region on the screen.\newline
 %In short, 
 %ADD UNALIGNED=> ALIGNED ??????????????????????
-Given an arbitrarily arranged grid of projectors projecting at arbitrary positions onto the screen, how to manipulate each projector image so that projected content is \textit{seamless} across the adjacent projectors. \textb{ADD FIGURE!!!!}
+%Given an arbitrarily arranged grid of projectors projecting at arbitrary positions onto the screen, how to manipulate each projector image so that projected content is \textit{seamless} across the adjacent projectors. \textb{ADD FIGURE!!!!}
+We want to create a large image on the projection screen by combining images projected by multiple projectors \textbf{ADD FIGURE!!!!}
+
+\begin{figure}
+\includegraphics[width=4.5cm,height=3cm]{figures/system_setup.jpg}
+\caption{Multiprojector tiled display}
+\end{figure}
+
 \end{frame}
 %//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -52,7 +63,41 @@ An image with spatial resolution higher than that \textit{perceivable} by human 
 Seams of monitors used in our earlier Tiled display system were \textit{distracting}. Projectors do not pose such limitation.
 \end{enumerate}
 \end{frame}
+
 %//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+\begin{frame}{Existing solutions}
+\begin{enumerate}
+\item Manual 
+\item Automatic
+\end{enumerate}
+\end{frame}
+
+%//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+\begin{frame}{Why not a commercial system?}
+\end{frame}
+
+%//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+\begin{frame}
+\frametitle{Solution overview}
+\begin{enumerate}
+\item Geometric alignment
+\begin{enumerate}
+\item For each projector, determine distortion introduced by it  in the projected image on screen.
+\item Apply inverse of this distortion to the projector image to recover geometrically continuos projection across neigboring projectors.
+\end{enumerate}
+\item Edge blending
+\begin{enumerate}
+\item Determine overlapping region between neighbouring projectors
+\item Attenuate intensity of pixels in that region for all overlapping projectors so that their overlap does not create \textit{bright} junction between them
+\end{enumerate}
+\end{enumerate}
+\end{frame}
+
+%//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 %//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 \begin{frame}
@@ -64,43 +109,31 @@ Developed system has:
 \item 1 digital camera
 \item Workstations arranged in Master-slave configuration
 \end{enumerate}
+
 \begin{figure}
-\includegraphics[]{}
-\caption{System setup}
+\centering
+\begin{tabularx}{\linewidth}{@{}cXX@{}}
+\begin{tabular}{c c}
+\hspace{0.5cm}\subfloat[System setup]{\includegraphics[width=4.5cm,height=3cm]{figures/setup.jpg}} & 
+\subfloat[Projector-array behind the projection screen]{\includegraphics[width=4.5cm,height=3cm]{figures/projs.jpg}} \\
+\end{tabular}
+\end{tabularx}
 \end{figure}
+
 \end{frame}
+
 %//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-\begin{frame}
-\frametitle{Overview of approach}
-\begin{enumerate}
-\item Geometric alignment
-\begin{enumerate}
-\item Compute the share of each projector in the global image
-\item Map texture of that region to projector based on a mapping which ensures geometric continuity
-\end{enumerate}
-\item Edge blending
-\begin{enumerate}
-\item Determine overlapping region between neighbouring projectors
-\item Attenuate intensity of pixels in that region for all overlapping projectors so that their overlap does not create \textit{bright} junction between them
-\end{enumerate}
-\end{enumerate}
-\end{frame}
-
-
-
-
 \begin{frame}
 \frametitle{Algorithm}
 \framesubtitle{Compute screen to camera relation}
 \end{frame}
-
+%//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 \begin{frame}
 \frametitle{Algorithm(contd.)}
 \framesubtitle{Project and detect features for each projector}
 Features are mapped to screen for subsequent computation.
 \end{frame}
-
+%//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 \begin{frame}
 \frametitle{Algorithm(contd.)}
 \framesubtitle{Compute \textit{local} bounding boxes}

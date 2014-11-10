@@ -1,10 +1,11 @@
 \documentclass{beamer}
 
-\usetheme{Madrid}
+\usetheme{Warsaw}
 \usepackage{graphicx}
 \usepackage{multimedia}
 \usepackage{tabularx}
 \usepackage{subfig}
+\usepackage{amsmath}
 
 \title{Multiprojector seamless tiled display}
 \author{Pranav Kant Gaur}
@@ -29,7 +30,7 @@
 \item Solution overview
 \item System setup
 \item Algorithm 
-\item Novelity
+\item Contributions
 \item Results
 \item Issues
 \end{enumerate}
@@ -80,7 +81,7 @@ Seams of monitors used in our earlier Tiled display system were \textit{distract
 
 %//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-\begin{frame}
+\begin{frame}[label=concept]
 \frametitle{Solution overview}
 \begin{enumerate}
 \item Geometric alignment
@@ -123,49 +124,99 @@ Developed system has:
 \end{frame}
 
 %//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 \begin{frame}
 \frametitle{Algorithm}
 \framesubtitle{Compute screen to camera relation}
-\end{frame}
-%//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-\begin{frame}
-\frametitle{Algorithm(contd.)}
-\framesubtitle{Project and detect features for each projector}
-Features are mapped to screen for subsequent computation.
-\end{frame}
-%//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-\begin{frame}
-\frametitle{Algorithm(contd.)}
-\framesubtitle{Compute \textit{local} bounding boxes}
-\end{frame}
-
-\begin{frame}
-\frametitle{Algorithm(contd.)}
-\framesubtitle{Compute biggest \textit{local} bounding box}
-\end{frame}
-
-
-\begin{frame}
-\frametitle{Algorithm(contd.)}
-\framesubtitle{Compute \textit{global} bounding box}
-\end{frame}
-
-\begin{frame}
-\frametitle{Algorithm(contd.)}
 \begin{enumerate}
-\item Compute normalized coordinate for detected features
-\item Compute mapping between normalized \textit{projected} feature points and normalized \textit{detected} feature points
-\item Compute position of local bounding boxes in the global bounding box
-\item Compute alpha map
+\item We want \hyperlink{concept}{\textit{Geometrically aligned}} and \hyperlink{concept}{\textit{seamless}} content on projection screen.
+\item Camera is just a \textit{feedback device}.
+\item All later calculations are performed in screen-coordinate system.
 \end{enumerate}
+
+\begin{figure}
+\includegraphics[width=6cm, height = 4cm]{figures/debug_image_features.jpg}
+\caption{View from camera}
+\end{figure}
 \end{frame}
 
+%//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 \begin{frame}
-\frametitle{Novelity}
-Cross-ratio based full projection region recovery
-ADD FIGURE WITH CROSS RATIO WITOUT CROSS RATIO???????????
-EQUATION OF CROSS RATIO???????????????????????????
+\frametitle{Algorithm(contd.): Remove projector distortion}
+\framesubtitle{Project and detect features for each projector}
+Detected features are mapped to screen cooridnate system.
+
+\begin{figure}
+\includegraphics[width=6cm, height=4cm]{figures/detected_corners.jpg}
+\caption{Low exposure image of detected features for central projectors}
+\end{figure}
+
 \end{frame}
+
+%//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+\begin{frame}
+\frametitle{Algorithm(contd.): Remove projector distortion}
+\framesubtitle{Compute \textit{local} bounding boxes}
+Normalized pair of $(coordinate_{\textit{original image}}, coordinate_{\textit{detected}})$ for each checkerboard corner gives the \textit{\hyperlink{concept}{distortion}} information.
+\begin{figure}
+\includegraphics[width=6cm,height=4cm]{figures/all_bboxes.jpg}
+\caption{Boxes bounding the projection region of each projector}
+\end{figure}
+
+\end{frame}
+
+%//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+\begin{frame}
+\frametitle{Algorithm(contd.): Geometric continuity}
+\framesubtitle{Compute \textit{global} bounding box}
+\begin{enumerate}
+\item Addressing all local bounding boxes wrt. a common coordinate system. 
+\item Global bounding box represents the original image to projected on the screen.
+\item Helps in computing share of each projector in the original image.
+\end{enumerate}
+
+\begin{figure}
+\includegraphics[width=6cm,height=4cm]{figures/mod_all_bboxes.jpg}
+\end{figure}
+\end{frame}
+
+%//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+\begin{frame}
+\frametitle{Algorithm(contd.): Seamlessness}
+\framesubtitle{Compute alpha map}
+\begin{enumerate}
+\item Compute \hyperlink{concept}{region of overlap} between adjacent projectors.
+\item Attenute image intensity of each overlapping projector.
+\end{enumerate}
+
+\begin{figure}
+\centering
+\begin{tabularx}{\linewidth}{@{}cXX@{}}
+\begin{tabular}{c c}
+\hspace{0.5cm}\subfloat[Projection region]{\includegraphics[width=4.5cm,height=3cm]{figures/setup.jpg}} &
+\subfloat[Corresponding attenuation map]{\includegraphics[width=4.5cm,height=3cm]{figures/projs.jpg}} \\
+\end{tabular}
+\end{tabularx}
+\end{figure}
+
+\end{frame}
+
+%//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+\begin{frame}
+\frametitle{Contributions}
+\begin{enumerate}
+\item Line fitting detected corners.
+\item Using \hyperlink{crossrat}{Cross-ratio invariant} to recover full projection region.
+\end{enumerate}
+
+\end{frame}
+
+%//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 \begin{frame}
 \frametitle{Results}
@@ -187,6 +238,8 @@ Each slave controls rendering on a row of projectors. It recieves rendering info
 \end{enumerate}
 \end{frame}
 
+%//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 \begin{frame}
 \frametitle{Results(contd.)}
 \begin{enumerate}
@@ -198,6 +251,7 @@ SHOW FIGURE??????????????????
 \end{enumerate}
 \end{frame}
 
+%//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 \begin{frame}
 \frametitle{Issues}
@@ -206,6 +260,14 @@ EMBEDD A VIDEO WITH VOICE SHOWING THE PROBLEM IN THE DISPLAY
 \movie[]{Color seamlessness problem}{capture.avi}
 \end{frame}
 
+%//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+\begin{frame}
+Thank you!!
+\end{frame}
+\appendix
+\begin{frame}[label=crossrat]
+Write formulae here!!!
+\end{frame}
 
 \end{document}

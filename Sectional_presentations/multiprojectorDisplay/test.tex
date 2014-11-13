@@ -1,0 +1,55 @@
+\documentclass{beamer}
+\usetheme{Warsaw}
+\title{The Title}
+\author{The Author}
+\date{\today}
+\begin{document}
+\section{One}
+
+\begin{frame}{Intro}
+  \dots
+\end{frame}
+
+\pdfpageattr{
+  /PresSteps <<
+    /Next <<
+      /NA <<
+        /S/GoTo/D (aftersupplemental)
+      >>
+    >>
+  >>
+}
+\begin{frame}[label=beforesupplemental]{The story begins}
+I suspect someone might ask about supplemental material
+\hyperlink{supplemental}{\beamerbutton{here}}.
+\end{frame}
+\pdfpageattr{}
+
+%%%%%%%%%%%%%%% begin of hidden slides %%%%%%%%%%%%%
+\begin{frame}[label=supplemental]{Extra information}
+Something you don't really need to know.
+\end{frame}
+
+\begin{frame}{More extras}
+Even more additional stuff.
+\end{frame}
+%%%%%%%%%%%%%%% end of hidden slides %%%%%%%%%%%%%
+
+\pdfpageattr{
+  /PresSteps <<
+    /Prev <<
+      /PA <<
+        /S/GoTo/D (beforesupplemental)
+      >>
+    >>
+  >>
+}
+\begin{frame}[label=aftersupplemental]{Regular information}
+Slides continue after supplemental material
+\end{frame}
+\pdfpageattr{}
+
+\begin{frame}{The End}
+\dots
+\end{frame}
+\end{document}

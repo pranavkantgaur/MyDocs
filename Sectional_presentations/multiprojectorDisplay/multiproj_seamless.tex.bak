@@ -1,0 +1,360 @@
+\documentclass{beamer}
+
+\usetheme{Berkeley}
+\usepackage{graphicx}
+\usepackage{multimedia}
+\usepackage{tabularx}
+\usepackage{subfig}
+\usepackage{amsmath}
+\usepackage{comment}
+
+\title{Achieving Seamlessness in Multi-Projector based Tiled Display using Camera Feedback}
+\author{Pranav Kant Gaur}
+\institute{Graphics and Visualization section}
+
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+
+
+
+
+%//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+\begin{frame}
+\frametitle{Agenda}
+\begin{enumerate}
+\item The Problem 
+\item Motivation
+\item Why not a commercial system?
+\item Solution overview
+\item System setup
+\item Algorithm 
+\item Contributions
+\item Results
+\item Issues
+\end{enumerate}
+\end{frame}
+%//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+%//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+\begin{frame}
+\frametitle{The Problem}
+%Given an arbitrarily arranged grid of projectors projecting at arbitrary positions onto the screen, find the region in each projector image buffer where if the original image is mapped onto will result in a seamless rectangular projection region on the screen.\newline
+%In short, 
+%ADD UNALIGNED=> ALIGNED ??????????????????????
+%Given an arbitrarily arranged grid of projectors projecting at arbitrary positions onto the screen, how to manipulate each projector image so that projected content is \textit{seamless} across the adjacent projectors. \textb{ADD FIGURE!!!!}
+We want to create a large image on the projection screen by combining images projected by multiple projectors.
+
+\begin{figure}
+\includegraphics[width=6.0cm,height=4cm]{figures/system_setup.jpg}
+\caption{Multiprojector tiled display}
+\end{figure}
+
+\end{frame}
+%//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+%//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+\begin{frame}
+\frametitle{Motivation}
+\begin{enumerate}
+\item Why \textit{Tiled}?\newline
+An image with spatial resolution higher than that \textit{perceivable} by human eye cannot be visualized without reducing its resolution. We can achieve this by spatially \textit{streching} the content.
+\item Why \textit{Multiprojector}?\newline
+Seams of monitors used in our earlier Tiled display system were \textit{distracting}. Projectors do not pose such limitation.
+\end{enumerate}
+\end{frame}
+
+%//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+%\begin{frame}{Existing solutions}
+%\begin{enumerate}
+%\item Manual 
+%\begin{enumerate}
+%\item Keystone correction
+%\item Interactive image manipulation
+%\end{enumerate}
+%\item Automatic
+%\begin{enumerate}
+%\item Homography 
+%\item Structured light 
+%\item Brown's approach
+%\item Raskar's approach
+%\end{enumerate}
+%\end{enumerate}
+%\end{frame}
+
+%//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+\begin{frame}{Why not a commercial system?}
+
+\underline{Our requirements}:
+\begin{enumerate}
+\item Configurable
+\item Portable
+\item Control over trouble-shooting
+\end{enumerate}
+
+\underline{Limitations of current commercial systems}:
+\begin{enumerate}
+\item Software packages:
+\begin{enumerate}
+\item Limited support for cameras used for calibration.
+\item Limited support for Graphics cards. 
+\item Not open source, some vendors provide API's only.
+\end{enumerate}
+\item Hardware + Software products:
+\begin{enumerate}
+\item Saparate image processing box for generating seamless image.
+\item Factory configured, support for configurability is very limited.
+\item Do not work with Linux.
+\end{enumerate}
+\end{enumerate}
+
+\end{frame}
+
+%//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+\begin{frame}[label=concept]
+\frametitle{Solution overview}
+\begin{enumerate}
+\item Geometric alignment
+\begin{enumerate}
+\item For each projector, determine distortion introduced by it in the projected image on screen.
+\item Apply inverse of this distortion to the projector image to recover geometrically continuos projection across neigboring projectors.
+\end{enumerate}
+\item Edge blending
+\begin{enumerate}
+\item Determine overlapping region between neighbouring projectors
+\item Attenuate intensity of pixels in that region for all overlapping projectors so that their overlap does not create \textit{bright} junction between them
+\end{enumerate}
+\end{enumerate}
+\end{frame}
+
+%//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+\begin{frame}
+\frametitle{System setup}
+Developed system has:
+\begin{enumerate}
+\item 3X3 grid of projectors
+\item Rear projection screen
+\item 1 digital camera
+\item Workstations arranged in Master-slave configuration
+\end{enumerate}
+
+\begin{figure}
+\centering
+\begin{tabularx}{\linewidth}{@{}cXX@{}}
+\begin{tabular}{c c}
+\hspace{0.5cm}\subfloat[System setup]{\includegraphics[width=4.5cm,height=3cm]{figures/setup.jpg}} & 
+\subfloat[Projector-array behind the projection screen]{\includegraphics[width=4.5cm,height=3cm]{figures/projs.jpg}} \\
+\end{tabular}
+\end{tabularx}
+\end{figure}
+
+\end{frame}
+
+%//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+\begin{frame}
+\frametitle{Algorithm}
+\framesubtitle{Compute screen to camera relation}
+\begin{enumerate}
+\item We want \hyperlink{concept}{\textit{Geometrically aligned}} and \hyperlink{concept}{\textit{seamless}} content on projection screen.
+\item Camera is just a \textit{feedback device}.
+\item All later calculations are performed in screen-coordinate system.
+\end{enumerate}
+
+\begin{figure}
+\includegraphics[width=6cm, height = 4cm]{figures/debug_image_features.jpg}
+\caption{View from camera}
+\end{figure}
+\end{frame}
+
+%//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+\begin{frame}
+\frametitle{Algorithm(contd.): Remove projector distortion}
+\framesubtitle{Project and detect features for each projector}
+Detected features are mapped to screen cooridnate system.
+
+\begin{figure}
+\includegraphics[width=6cm, height=4cm]{figures/detected_corners.jpg}
+\caption{Low exposure image of detected features for the central projector}
+\end{figure}
+
+\end{frame}
+
+%//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+\begin{frame}
+\frametitle{Algorithm(contd.): Remove projector distortion}
+\framesubtitle{Compute \textit{local} bounding boxes}
+Normalized pair of $(coordinate_{\textit{original image}}, coordinate_{\textit{detected}})$ for each checkerboard corner gives the \textit{\hyperlink{concept}{distortion}} information.
+\begin{figure}
+\includegraphics[width=6cm,height=4cm]{figures/all_bboxes.jpg}
+\caption{Boxes bounding the projection region of each projector}
+\end{figure}
+
+\end{frame}
+
+%//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+\begin{frame}
+\frametitle{Algorithm(contd.): Geometric continuity}
+\framesubtitle{Compute \textit{global} bounding box}
+\begin{enumerate}
+\item Addressing all local bounding boxes wrt. a common coordinate system. 
+\item Global bounding box represents the original image to projected on the screen.
+\item Helps in computing share of each projector in the original image.
+\end{enumerate}
+
+\begin{figure}
+\includegraphics[width=6cm,height=4cm]{figures/mod_all_bboxes.jpg}
+\end{figure}
+\end{frame}
+
+%//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+\begin{frame}
+\frametitle{Algorithm(contd.): Seamlessness}
+\framesubtitle{Compute alpha map}
+\begin{enumerate}
+\item Compute \hyperlink{concept}{region of overlap} between adjacent projectors.
+\item Attenute image intensity of each overlapping projector.
+\end{enumerate}
+
+\begin{figure}
+\centering
+\begin{tabularx}{\linewidth}{@{}cXX@{}}
+\begin{tabular}{c c}
+\hspace{0.5cm}\subfloat[Projection region]{\includegraphics[width=4.5cm,height=3cm]{figures/projection_region_4.jpg}} &
+\subfloat[Corresponding attenuation map]{\includegraphics[width=4.5cm,height=3cm]{figures/alpha_map_4.jpg}} \\
+\end{tabular}
+\end{tabularx}
+\end{figure}
+
+\end{frame}
+
+%//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+\begin{frame}
+
+\frametitle{Contributions}
+\underline{Corrected detected corners using line fitting}:
+\begin{enumerate}
+\item Utilized the fact that collinearity under perspective projection is perserved.
+\item Fitted line on detected corners and corrected the detected coordinates using uintersection of fitted lines.
+\item It resulted in more uniform texture mapping.
+\end{enumerate}
+\begin{figure}
+\centering
+\begin{tabularx}{\linewidth}{@{}cXX@{}}
+\begin{tabular}{c c}
+\hspace{0.5cm}\subfloat[Without line fitting]{\includegraphics[width=4.5cm,height=1.0cm]{figures/test1.jpg}} & 
+\subfloat[With line fitting]{\includegraphics[width=4.5cm,height=1.0cm]{figures/test2.jpg}} \\
+\end{tabular}
+\end{tabularx}
+\end{figure}
+
+\end{frame}
+
+%//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+\begin{frame}{Contributions(contd.)}
+
+\underline{Used \hyperlink{crossrat}{Cross-ratio invariant} to recover full projection region}:
+
+\begin{enumerate}
+\item It is a perspective projection invariant.
+\item Relates 4 collinear points:
+$CR_p=\frac{|AC|_c*|BD|_c}{|BC|_c*|AD|_c}$
+\end{enumerate}
+
+\begin{figure}
+\centering
+\begin{tabularx}{\linewidth}{@{}cXX@{}}
+\begin{tabular}{c c}
+\subfloat[Applying cross ratio invariant]{\includegraphics[width=5.0cm,height=4.0cm]{figures/cross_rat_img.jpg}} &
+\subfloat[green: without cross ratio, blue: with cross ratio invariant]{\includegraphics[width=5.0cm,height=4.0cm]{figures/crossratio_vs_noncrossratio.jpg}} \\
+\end{tabular}
+\end{tabularx}
+\end{figure}
+
+
+\end{frame}
+
+%//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+\begin{frame}
+\frametitle{Results\textsuperscript{\hyperlink{sysconfg}{*}}}
+\begin{enumerate}
+\item Alignment procedure completes in 3-4 minutes as opposed to 30 mins. consumed in manual alignment approach.
+\item Average mialignment between the grid lines projected at junction between neighbouring projectors was around $\sim1.0mm$ on a grid size of $\sim14mm$.
+\end{enumerate}
+
+\begin{figure}
+\centering
+\begin{tabularx}{\linewidth}{@{}cXX@{}}
+\begin{tabular}{c c}
+\subfloat[Without cross ratio: seams more visible]{\includegraphics[width=5.0cm,height=4.0cm]{figures/without_cross_rat1.jpg}} &
+\subfloat[With cross ratio: seams more imperceptible]{\includegraphics[width=5.0cm,height=4.0cm]{figures/with_cross_rat1.jpg}} \\
+\end{tabular}
+\end{tabularx}
+\end{figure}
+
+\end{frame}
+
+%//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+\begin{frame}
+\frametitle{Issues}
+\begin{enumerate}
+\item Blending function which can provide \textit{completely} imperceptible seams in the overlapping regions is unknown. 
+\item View dependant bright spot formation is still an \textit{open} problem.
+\end{enumerate}
+
+\begin{figure}
+\includegraphics[width=6.0cm,height=4.0cm]{figures/with_cross_rat1.jpg}
+\caption{Open issues}
+\end{figure}
+\end{frame}
+
+%//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+\begin{frame}
+Thank you!!
+\end{frame}
+
+%//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+\appendix
+
+%//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+\begin{frame}[label=sysconfg]
+\begin{enumerate}
+\item \underline{Software}:
+\begin{enumerate}
+\item Written in C
+\item Dependent on OpenCV(v2.4.1) and libgphoto2(v2.5.2)
+\item Works on Ubuntu(12.04 LTS) and Scientific Linux(6.1)
+\end{enumerate}      
+\item \underline{Hardware}:
+\begin{enumerate}
+\item 3X3 grid of NEC 200X DLP projectors
+\item 2.4mX1.8m acyilic glass based rear projection screen(from ScreenTech,Germany)
+\item Canon Powershot G7 digital camera
+\item 4 Workstations(1 master+ 3 slave) each with Intel® Xeon® Six Core Processor X5670, NVIDIA Quadro FX 4600 Graphics card and 48 GB ECC RAM.
+\end{enumerate}
+\end{enumerate}
+\end{frame}
+
+%//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+\end{document}

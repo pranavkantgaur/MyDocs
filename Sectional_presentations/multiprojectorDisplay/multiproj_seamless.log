@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.11.24)  5 NOV 2014 17:11
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.11.24)  13 NOV 2014 19:28
 entering extended mode
  %&-line parsing enabled.
 **multiproj_seamless.tex
@@ -657,23 +657,180 @@ Package: beamerouterthemeinfolines 2010/07/10  (rcs-revision 445340293dde)
 Package: multimedia 2004/04/10 ver 0.01
 \mm@movie=\count150
 )
-(./multiproj_seamless.aux)
+(/usr/share/texmf-texlive/tex/latex/tools/tabularx.sty
+Package: tabularx 1999/01/07 v2.07 `tabularx' package (DPC)
+
+(/usr/share/texmf-texlive/tex/latex/tools/array.sty
+Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen178
+\extrarowheight=\dimen179
+\NC@list=\toks41
+\extratabsurround=\skip57
+\backup@length=\skip58
+)
+\TX@col@width=\dimen180
+\TX@old@table=\dimen181
+\TX@old@col=\dimen182
+\TX@target=\dimen183
+\TX@delta=\dimen184
+\TX@cols=\count151
+\TX@ftn=\toks42
+)
+(/usr/share/texmf-texlive/tex/latex/subfig/subfig.sty
+Package: subfig 2005/06/28 ver: 1.3 subfig package
+
+(/usr/share/texmf-texlive/tex/latex/caption/caption.sty
+Package: caption 2009/10/09 v3.1k Customizing captions (AR)
+
+(/usr/share/texmf-texlive/tex/latex/caption/caption3.sty
+Package: caption3 2009/10/09 v3.1k caption3 kernel (AR)
+\captionmargin=\dimen185
+\captionmargin@=\dimen186
+\captionwidth=\dimen187
+\caption@indent=\dimen188
+\caption@parindent=\dimen189
+\caption@hangindent=\dimen190
+)
+\c@ContinuedFloat=\count152
+Package caption Info: beamer document class.
+Package caption Info: hyperref package is loaded.
+
+
+Package caption Warning: Hyperref support is turned off
+(caption)                because hyperref has stopped early.
+See the caption package documentation for explanation.
+
+)
+\c@KVtest=\count153
+\sf@farskip=\skip59
+\sf@captopadj=\dimen191
+\sf@capskip=\skip60
+\sf@nearskip=\skip61
+\c@subfigure=\count154
+\c@subfigure@save=\count155
+\c@depth=\count156
+\c@subtable=\count157
+\c@subtable@save=\count158
+\sf@top=\skip62
+\sf@bottom=\skip63
+) (/usr/share/texmf-texlive/tex/latex/comment/comment.sty
+\CommentStream=\write5
+
+Excluding comment 'comment')
+(/usr/share/texmf/tex/latex/pgf/frontendlayer/tikz.sty
+(/usr/share/texmf/tex/latex/pgf/basiclayer/pgf.sty
+Package: pgf 2008/01/15 v2.10 (rcs-revision 1.12)
+
+(/usr/share/texmf/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2010/09/09  (rcs-revision 1.13)
+\pgfnodeparttextbox=\box53
+)
+(/usr/share/texmf/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2010/10/22  (rcs-revision 1.8)
+)
+(/usr/share/texmf/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
+Package: pgfcomp-version-0-65 2007/07/03 v2.10 (rcs-revision 1.7)
+\pgf@nodesepstart=\dimen192
+\pgf@nodesepend=\dimen193
+)
+(/usr/share/texmf/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
+Package: pgfcomp-version-1-18 2007/07/23 v2.10 (rcs-revision 1.1)
+))
+(/usr/share/texmf/tex/latex/pgf/utilities/pgffor.sty
+(/usr/share/texmf/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/share/texmf/tex/generic/pgf/utilities/pgfkeys.code.tex))
+(/usr/share/texmf/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2010/03/23 v2.10 (rcs-revision 1.18)
+\pgffor@iter=\dimen194
+\pgffor@skip=\dimen195
+\pgffor@stack=\toks43
+\pgffor@toks=\toks44
+))
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+Package: tikz 2010/10/13 v2.10 (rcs-revision 1.76)
+
+(/usr/share/texmf/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2010/05/31 v2.10 (rcs-revision 1.15)
+\pgf@plot@mark@count=\count159
+\pgfplotmarksize=\dimen196
+)
+\tikz@lastx=\dimen197
+\tikz@lasty=\dimen198
+\tikz@lastxsaved=\dimen199
+\tikz@lastysaved=\dimen200
+\tikzleveldistance=\dimen201
+\tikzsiblingdistance=\dimen202
+\tikz@figbox=\box54
+\tikz@tempbox=\box55
+\tikztreelevel=\count160
+\tikznumberofchildren=\count161
+\tikznumberofcurrentchild=\count162
+\tikz@fig@count=\count163
+
+(/usr/share/texmf/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2010/08/24  (rcs-revision 1.4)
+\pgfmatrixcurrentrow=\count164
+\pgfmatrixcurrentcolumn=\count165
+\pgf@matrix@numberofcolumns=\count166
+)
+\tikz@expandcount=\count167
+
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopat
+hs.code.tex
+File: tikzlibrarytopaths.code.tex 2008/06/17 v2.10 (rcs-revision 1.2)
+))) (./tikz-qtree.sty (./pgftree.sty (./pgfsubpic.sty
+(./pgfsubpic.tex
+\pgf@subpicminx=\dimen203
+\pgf@subpicminy=\dimen204
+\pgf@subpicmaxx=\dimen205
+\pgf@subpicmaxy=\dimen206
+)) (./pgftree.tex
+\levelsep=\dimen207
+\subtreesep=\dimen208
+\smuggle@levelsep=\dimen209
+\smuggle@subtreesep=\dimen210
+\this@levelsep=\dimen211
+\this@subtreesep=\dimen212
+\pgftree@childx=\dimen213
+\pgftree@savechildx=\dimen214
+\pgftree@childy=\dimen215
+\pgftree@savechildy=\dimen216
+\pgftree@childi=\count168
+\pgftree@savechildi=\count169
+\pgftree@level=\count170
+\pgftree@depth=\dimen217
+\pgf@subpic@hbox@children=\box56
+\pgf@subpic@minx@children=\dimen218
+\pgf@subpic@miny@children=\dimen219
+\pgf@subpic@maxx@children=\dimen220
+\pgf@subpic@maxy@children=\dimen221
+\pgftree@lastchildx=\dimen222
+\pgftree@lastchildy=\dimen223
+)) (./tikz-qtree.tex
+\@result=\toks45
+\child@list=\toks46
+\root@node=\toks47
+))
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarymatri
+x.code.tex
+File: tikzlibrarymatrix.code.tex 2008/06/18 v2.10 (rcs-revision 1.2)
+) (./multiproj_seamless.aux)
 \openout1 = `multiproj_seamless.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
 
 *geometry auto-detecting driver*
 *geometry detected driver: pdftex*
@@ -718,18 +875,18 @@ driver: pdftex
 -----------------------
 (/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count151
-\scratchdimen=\dimen178
-\scratchbox=\box53
-\nofMPsegments=\count152
-\nofMParguments=\count153
-\everyMPshowfont=\toks41
-\MPscratchCnt=\count154
-\MPscratchDim=\dimen179
-\MPnumerator=\count155
-\everyMPtoPDFconversion=\toks42
+\scratchcounter=\count171
+\scratchdimen=\dimen224
+\scratchbox=\box57
+\nofMPsegments=\count172
+\nofMParguments=\count173
+\everyMPshowfont=\toks48
+\MPscratchCnt=\count174
+\MPscratchDim=\dimen225
+\MPnumerator=\count175
+\everyMPtoPDFconversion=\toks49
 ) ABD: EveryShipout initializing macros
-Package hyperref Info: Link coloring OFF on input line 13.
+Package hyperref Info: Link coloring OFF on input line 30.
 
 (/usr/share/texmf-texlive/tex/latex/hyperref/nameref.sty
 Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
@@ -737,58 +894,58 @@ Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
 (/usr/share/texmf-texlive/tex/latex/oberdiek/refcount.sty
 Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 )
-\c@section@level=\count156
+\c@section@level=\count176
 )
-LaTeX Info: Redefining \ref on input line 13.
-LaTeX Info: Redefining \pageref on input line 13.
+LaTeX Info: Redefining \ref on input line 30.
+LaTeX Info: Redefining \pageref on input line 30.
 
 (./multiproj_seamless.out) (./multiproj_seamless.out)
-\@outlinefile=\write5
-\openout5 = `multiproj_seamless.out'.
+\@outlinefile=\write6
+\openout6 = `multiproj_seamless.out'.
 
-\AtBeginShipoutBox=\box54
+\AtBeginShipoutBox=\box58
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 13.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 30.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 13.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 30.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 13.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 13.
+(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 30.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 30.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 13.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 30.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 13.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 13.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 30.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 30.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 13.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 30.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 13.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 13.
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 30.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 30.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 13.
+(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 30.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 13.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 13.
+(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 30.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 30.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 13.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 30.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 13.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 30.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 13.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 30.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 13.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 30.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmr/bx/n on input line 13.
+(Font)                  OT1/cmss/bx/n --> OT1/cmr/bx/n on input line 30.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/bx/n on input line 13.
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/bx/n on input line 30.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 13.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 30.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 13.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 30.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/bx/n on input line 13.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/bx/n on input line 30.
 
 (/usr/share/texmf/tex/latex/beamer/base/translator/dicts/translator-basic-dicti
 onary/translator-basic-dictionary-English.dict
@@ -813,18 +970,33 @@ Dictionary: translator-numbers-dictionary, Language: English
 (/usr/share/texmf/tex/latex/beamer/base/translator/dicts/translator-theorem-dic
 tionary/translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
-) (./multiproj_seamless.nav)
-Overfull \hbox (26.16553pt too wide) in paragraph at lines 13--13
+)
+Package caption Info: Begin \AtBeginDocument code.
+Package caption3 Info: subfig package 1.2 or 1.3 is loaded.
+LaTeX Info: Redefining \subref on input line 30.
+Package caption Info: End \AtBeginDocument code.
+ (./multiproj_seamless.nav)
+Overfull \hbox (26.16553pt too wide) in paragraph at lines 30--30
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
 
+Overfull \hbox (109.96239pt too wide) in paragraph at lines 30--30
+ [][][][]  
+ []
+
+
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
-(Font)              size <5> substituted on input line 17.
+(Font)              size <5> substituted on input line 34.
 
 
 Overfull \hbox (26.16553pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
+ []
+
+
+Overfull \hbox (109.96239pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [1
@@ -834,46 +1006,104 @@ Overfull \hbox (26.16553pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
+
+Overfull \hbox (109.96239pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
 [2
 
-]
+] <figures/system_setup.jpg, id=87, 3661.68pt x 2746.26pt>
+File: figures/system_setup.jpg Graphic file (type jpg)
+
+<use figures/system_setup.jpg>
 Overfull \hbox (26.16553pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
+ []
+
+
+Overfull \hbox (109.96239pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [3
 
-]
+ <./figures/system_setup.jpg>]
 Overfull \hbox (26.16553pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
+ []
+
+
+Overfull \hbox (109.96239pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [4
 
-]
+] <figures/distortion_prob.jpg, id=145, 896.34875pt x 201.75375pt>
+File: figures/distortion_prob.jpg Graphic file (type jpg)
+
+<use figures/distortion_prob.jpg>
+<figures/continuity_prob.jpg, id=146, 1066.98625pt x 283.0575pt>
+File: figures/continuity_prob.jpg Graphic file (type jpg)
+
+<use figures/continuity_prob.jpg>
 Overfull \hbox (26.16553pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
+ []
+
+
+Overfull \hbox (109.96239pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [5
 
-]
+ <./figures/distortion_prob.jpg> <./figures/continuity_prob.jpg>]
+LaTeX Font Info:    Try loading font information for U+msa on input line 142.
+
+(/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2009/06/22 v3.00 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 142.
+
+(/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2009/06/22 v3.00 AMS symbols B
+)
 Overfull \hbox (26.16553pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
+ []
+
+
+Overfull \hbox (109.96239pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [6
 
-]
+] <figures/commercial.jpg, id=205, 604.2575pt x 676.5275pt>
+File: figures/commercial.jpg Graphic file (type jpg)
+
+<use figures/commercial.jpg>
 Overfull \hbox (26.16553pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
+
+Overfull \hbox (109.96239pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
 [7
 
-]
+ <./figures/commercial.jpg>]
 Overfull \hbox (26.16553pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
+ []
+
+
+Overfull \hbox (109.96239pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [8
@@ -883,66 +1113,295 @@ Overfull \hbox (26.16553pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
+
+Overfull \hbox (109.96239pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
 [9
 
-]
+] <figures/setup.jpg, id=293, 1606.0pt x 1204.5pt> <use figures/setup.jpg>
+<figures/projs.jpg, id=294, 3661.68pt x 2746.26pt> <use figures/projs.jpg>
+File: figures/setup.jpg Graphic file (type jpg)
+
+<use figures/setup.jpg>
+File: figures/projs.jpg Graphic file (type jpg)
+ <use figures/projs.jpg>
+Underfull \hbox (badness 10000) in alignment at lines 243--243
+[][][]
+ []
+
+
 Overfull \hbox (26.16553pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
+ []
+
+
+Overfull \hbox (109.96239pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [10
 
-]
+ <./figures/setup.jpg> <./figures/projs.jpg>]
 Overfull \hbox (26.16553pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
+ []
+
+
+Overfull \hbox (109.96239pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [11
 
-]
+] <figures/debug_image_features.jpg, id=354, 3661.68pt x 2746.26pt>
+File: figures/debug_image_features.jpg Graphic file (type jpg)
+
+<use figures/debug_image_features.jpg>
 Overfull \hbox (26.16553pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
+ []
+
+
+Overfull \hbox (109.96239pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [12
 
-]
+ <./figures/debug_image_features.jpg>]
+<figures/detected_corners.jpg, id=383, 3101.65836pt x 2326.24376pt>
+File: figures/detected_corners.jpg Graphic file (type jpg)
+
+<use figures/detected_corners.jpg>
 Overfull \hbox (26.16553pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
+ []
+
+
+Overfull \hbox (109.96239pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [13
 
-]
+ <./figures/detected_corners.jpg>]
+<figures/all_bboxes.jpg, id=414, 3661.68pt x 2746.26pt>
+File: figures/all_bboxes.jpg Graphic file (type jpg)
+
+<use figures/all_bboxes.jpg>
 Overfull \hbox (26.16553pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
+ []
+
+
+Overfull \hbox (109.96239pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [14
 
-]
+ <./figures/all_bboxes.jpg>]
+<figures/mod_all_bboxes.jpg, id=446, 3661.68pt x 2746.26pt>
+File: figures/mod_all_bboxes.jpg Graphic file (type jpg)
+
+<use figures/mod_all_bboxes.jpg>
 Overfull \hbox (26.16553pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
+ []
+
+
+Overfull \hbox (109.96239pt too wide) has occurred while \output is active
+ [][][][]  
  []
 
 [15
 
+ <./figures/mod_all_bboxes.jpg>] <use figures/all_bboxes.jpg>
+<figures/alpha_map_6.jpg, id=476, 1027.84pt x 770.88pt>
+<use figures/alpha_map_6.jpg>
+File: figures/all_bboxes.jpg Graphic file (type jpg)
+ <use figures/all_bboxes.jpg>
+File: figures/alpha_map_6.jpg Graphic file (type jpg)
+
+<use figures/alpha_map_6.jpg>
+Underfull \hbox (badness 10000) in alignment at lines 340--340
+[][][]
+ []
+
+
+Overfull \hbox (26.16553pt too wide) has occurred while \output is active
+ [][]  \OT1/cmss/m/n/6 ([])  
+ []
+
+
+Overfull \hbox (109.96239pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[16
+
+ <./figures/alpha_map_6.jpg>]
+<figures/test1.jpg, id=505, 625.33624pt x 91.34125pt> <use figures/test1.jpg>
+<figures/test2.jpg, id=506, 634.37pt x 73.27374pt> <use figures/test2.jpg>
+File: figures/test1.jpg Graphic file (type jpg)
+
+<use figures/test1.jpg>
+File: figures/test2.jpg Graphic file (type jpg)
+ <use figures/test2.jpg>
+Underfull \hbox (badness 10000) in alignment at lines 364--364
+[][][]
+ []
+
+
+Overfull \hbox (26.16553pt too wide) has occurred while \output is active
+ [][]  \OT1/cmss/m/n/6 ([])  
+ []
+
+
+Overfull \hbox (109.96239pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[17
+
+ <./figures/test1.jpg> <./figures/test2.jpg>]
+<figures/cross_rat_img.jpg, id=536, 1510.64375pt x 1133.23375pt>
+<use figures/cross_rat_img.jpg>
+<figures/crossratio_vs_noncrossratio.jpg, id=537, 3661.68pt x 2746.26pt>
+<use figures/crossratio_vs_noncrossratio.jpg>
+File: figures/cross_rat_img.jpg Graphic file (type jpg)
+ <use figures/cross_rat_img.jpg>
+File: figures/crossratio_vs_noncrossratio.jpg Graphic file (type jpg)
+
+<use figures/crossratio_vs_noncrossratio.jpg>
+Underfull \hbox (badness 10000) in alignment at lines 389--389
+[][][]
+ []
+
+
+Overfull \hbox (26.16553pt too wide) has occurred while \output is active
+ [][]  \OT1/cmss/m/n/6 ([])  
+ []
+
+
+Overfull \hbox (109.96239pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[18
+
+ <./figures/cross_rat_img.jpg> <./figures/crossratio_vs_noncrossratio.jpg>]
+<figures/grid.jpg, id=568, 3661.68pt x 2746.26pt>
+File: figures/grid.jpg Graphic file (type jpg)
+ <use figures/grid.jpg>
+Overfull \hbox (26.16553pt too wide) has occurred while \output is active
+ [][]  \OT1/cmss/m/n/6 ([])  
+ []
+
+
+Overfull \hbox (109.96239pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[19
+
+ <./figures/grid.jpg>]
+<figures/without_cross_rat1.jpg, id=601, 401.5pt x 301.125pt>
+<use figures/without_cross_rat1.jpg>
+<figures/with_cross_rat1.jpg, id=602, 401.5pt x 301.125pt>
+<use figures/with_cross_rat1.jpg>
+File: figures/without_cross_rat1.jpg Graphic file (type jpg)
+ <use figures/without_cross_rat1.jpg>
+File: figures/with_cross_rat1.jpg Graphic file (type jpg)
+
+<use figures/with_cross_rat1.jpg>
+Underfull \hbox (badness 10000) in alignment at lines 421--421
+[][][]
+ []
+
+
+Overfull \hbox (26.16553pt too wide) has occurred while \output is active
+ [][]  \OT1/cmss/m/n/6 ([])  
+ []
+
+
+Overfull \hbox (109.96239pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[20
+
+ <./figures/without_cross_rat1.jpg> <./figures/with_cross_rat1.jpg>]
+File: figures/with_cross_rat1.jpg Graphic file (type jpg)
+
+<use figures/with_cross_rat1.jpg>
+Overfull \hbox (26.16553pt too wide) has occurred while \output is active
+ [][]  \OT1/cmss/m/n/6 ([])  
+ []
+
+
+Overfull \hbox (109.96239pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[21
+
 ]
 Overfull \hbox (26.16553pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
  []
 
-[16
+
+Overfull \hbox (109.96239pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[22
 
 ]
-\tf@nav=\write6
-\openout6 = `multiproj_seamless.nav'.
+Overfull \hbox (26.16553pt too wide) has occurred while \output is active
+ [][]  \OT1/cmss/m/n/6 ([])  
+ []
 
-\tf@toc=\write7
-\openout7 = `multiproj_seamless.toc'.
 
-\tf@snm=\write8
-\openout8 = `multiproj_seamless.snm'.
+Overfull \hbox (109.96239pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[23
+
+]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\translate ' on input line 453.
+
+Missing character: There is no Â in font cmss10!
+Missing character: There is no ® in font cmss10!
+Missing character: There is no Â in font cmss10!
+Missing character: There is no ® in font cmss10!
+
+Overfull \hbox (26.16553pt too wide) has occurred while \output is active
+ [][]  \OT1/cmss/m/n/6 ([])  
+ []
+
+
+Overfull \hbox (109.96239pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[24
+
+]
+\tf@nav=\write7
+\openout7 = `multiproj_seamless.nav'.
+
+\tf@toc=\write8
+\openout8 = `multiproj_seamless.toc'.
+
+\tf@snm=\write9
+\openout9 = `multiproj_seamless.snm'.
 
  (./multiproj_seamless.aux)
 
@@ -951,22 +1410,29 @@ LaTeX Font Warning: Size substitutions with differences
 
  ) 
 Here is how much of TeX's memory you used:
- 14746 strings out of 495061
- 277213 string characters out of 1182620
- 346462 words of memory out of 3000000
- 17518 multiletter control sequences out of 15000+50000
- 7132 words of font info for 25 fonts, out of 3000000 for 9000
+ 18798 strings out of 495061
+ 357638 string characters out of 1182620
+ 429890 words of memory out of 3000000
+ 21429 multiletter control sequences out of 15000+50000
+ 15187 words of font info for 56 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 49i,16n,55p,407b,673s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/sha
-re/texmf-texlive/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texmf-te
-xlive/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texmf-texlive/fonts/
-type1/public/amsfonts/cm/cmss9.pfb></usr/share/texmf-texlive/fonts/type1/public
-/amsfonts/cm/cmssi10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/
-cm/cmssi9.pfb>
-Output written on multiproj_seamless.pdf (16 pages, 168500 bytes).
+ 49i,21n,57p,407b,793s stack positions out of 5000i,500n,10000p,200000b,50000s
+pdfTeX warning (dest): name{crossrat} has been referenced but does not exist,
+ replaced by a fixed one
+
+</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share
+/texmf-texlive/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texmf-texl
+ive/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texmf-texlive/fonts/t
+ype1/public/amsfonts/cm/cmss8.pfb></usr/share/texmf-texlive/fonts/type1/public/
+amsfonts/cm/cmss9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/
+cmssbx10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmssi10.p
+fb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/sh
+are/texmf-texlive/fonts/type1/public/amsfonts/cm/cmssi9.pfb></usr/share/texmf-t
+exlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/font
+s/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on multiproj_seamless.pdf (24 pages, 13879219 bytes).
 PDF statistics:
- 474 PDF objects out of 1000 (max. 8388607)
- 33 named destinations out of 1000 (max. 500000)
- 61 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 792 PDF objects out of 1000 (max. 8388607)
+ 55 named destinations out of 1000 (max. 500000)
+ 165 words of extra memory for PDF output out of 10000 (max. 10000000)
 

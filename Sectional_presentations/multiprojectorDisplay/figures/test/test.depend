@@ -1,0 +1,4 @@
+# depslib dependency file v1.0
+1415942401 source:/media/JobWork/Documents/Sectional_presentations/multiprojectorDisplay/figures/test/test.cpp
+	<opencv/highgui.h>
+

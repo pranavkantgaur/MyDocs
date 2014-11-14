@@ -191,35 +191,74 @@ Seams of monitors used in our earlier Tiled display system were \textit{distract
 %\end{itemize}
 %\end{frame}
 
+
+
 %////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////i/
+
+
+%\begin{frame}[label=concept]
+%\frametitle{Followed approach}
+%\begin{enumerate}
+%\item Geometric alignment
+%\begin{enumerate}
+%\item For each projector, determine distortion introduced by it in the projected image on screen.
+%\item Apply inverse of this distortion to the projector image to recover geometrically continuous projection across neighboring projectors.
+%\end{enumerate}
+%\item Edge blending
+%\begin{enumerate}
+%\item Determine overlapping region between neighbouring projectors
+%\item Attenuate intensity of pixels in that region for all overlapping projectors so that their overlap does not create \textit{bright} junction between them
+%\end{enumerate}
+%\end{enumerate}
+%\end{frame}
+
+%//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 \begin{frame}
 \frametitle{Approaches tried}
 \begin{tikzpicture}
-\Tree[.Approaches [.Fixed-projection-region [.Iterative  Overlap Hard-edge ] [.Automatic Hard-edge Overlap ] ] [.Arbitrary-projection-region [.Automatic Overlap ] ] ]         
+\Tree[.Approaches [.Fixed-projection-region [.Interactive  Overlap Hard-edge ] [.Automatic Hard-edge Overlap ] ] [.Arbitrary-projection-region [.Automatic Overlap ] ] ]         
 \end{tikzpicture}
-\end{frame}
 
-
-%////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////i/
-
-
-\begin{frame}[label=concept]
-\frametitle{Followed approach}
-\begin{enumerate}
-\item Geometric alignment
-\begin{enumerate}
-\item For each projector, determine distortion introduced by it in the projected image on screen.
-\item Apply inverse of this distortion to the projector image to recover geometrically continuous projection across neighboring projectors.
-\end{enumerate}
-\item Edge blending
-\begin{enumerate}
-\item Determine overlapping region between neighbouring projectors
-\item Attenuate intensity of pixels in that region for all overlapping projectors so that their overlap does not create \textit{bright} junction between them
-\end{enumerate}
-\end{enumerate}
+\begin{figure}
+\includegraphics[width=6cm, height=4cm]{figures/hard_overlap.jpg}
+\end{figure}
 \end{frame}
 
 %//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+\begin{frame}{Followed approach}
+\begin{itemize}
+\item Removing perspective distortion
+\begin{figure}
+\includegraphics[width=7cm, height=5cm]{figures/distort_sol.jpg}
+\end{figure}
+\end{itemize}
+\end{frame}
+
+%//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+\begin{frame}{Followed approach(contd.)}
+\begin{itemize}
+\item Ensuring geometric continuity
+\begin{figure}
+\includegraphics[width=8cm,height=6cm]{figures/continuity_better.jpg}
+\end{figure}
+\end{itemize}
+\end{frame}
+
+
+%//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+\begin{frame}{Followed approach(contd.)}
+\begin{itemize}
+\item Handling image intensity at the overlap region
+\begin{figure}
+\includegraphics[width=9cm,height=3cm]{figures/blending.jpg}
+\end{figure}
+\end{itemize}
+\end{frame}
 \begin{frame}
 \frametitle{System setup}
 Developed system has:
@@ -245,7 +284,8 @@ Developed system has:
 %//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 \begin{frame}{Algorithm}
 \begin{itemize}
-\item Improved the algorithm described in "PAPER NAME".
+\item Based on paper `A practical and flexible tiled
+display system' by M.S. Brown and W.B. Seales.
 \item \underline{Algorithm overview}:
 \begin{enumerate}
 \item Relation between Camera and screen coordinate system is determined.
@@ -282,8 +322,13 @@ Developed system has:
 Detected features are mapped to screen coordinate system.
 
 \begin{figure}
-\includegraphics[width=6cm, height=4cm]{figures/detected_corners.jpg}
-\caption{Low exposure image of detected features for the central projector}
+\centering
+\begin{tabularx}{\linewidth}{@{}cXX@{}}
+\begin{tabular}{c c}
+\hspace{0.5cm}\subfloat[Projected features]{\includegraphics[width=4.5cm,height=3cm]{figures/checkerboard.jpg}} &
+\subfloat[Low exposure image of detected features for the central projector]{\includegraphics[width=6cm, height=4cm]{figures/detected_corners.jpg}} \\
+\end{tabular}
+\end{tabularx}
 \end{figure}
 
 \end{frame}
@@ -313,7 +358,7 @@ Normalized pair of $(coordinate_{\textit{original image}}, coordinate_{\textit{d
 \end{itemize}
 
 \begin{figure}
-\includegraphics[width=6cm,height=4cm]{figures/mod_all_bboxes.jpg}
+\includegraphics[width=6cm,height=4cm]{figures/test.jpg}
 \end{figure}
 \end{frame}
 
@@ -416,7 +461,7 @@ $CR_p=\frac{|AC|_c*|BD|_c}{|BC|_c*|AD|_c}$
 \end{tabularx}
 \end{figure}
 
-\item Resolution of the display is $\sim7$ Megapixels.
+\item Resolution of the display is $\sim6.2$ Megapixels. 
 \end{itemize}
 \end{frame}
 
@@ -438,13 +483,27 @@ $CR_p=\frac{|AC|_c*|BD|_c}{|BC|_c*|AD|_c}$
 %//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 \begin{frame}{Some snapshots}
-\textbf{ADD FIGURES HERE!!!}
+
+\begin{figure}
+\centering
+\begin{tabularx}{\linewidth}{@{}cXX@{}}
+\begin{tabular}{c c}
+\subfloat[]{\includegraphics[width=5cm,height=3cm]{figures/1.JPG}} &
+\subfloat[]{\includegraphics[width=5cm,height=3cm]{figures/2.JPG}} \\
+\subfloat[]{\includegraphics[width=5cm,height=3cm]{figures/3.JPG}} & 
+\subfloat[]{\includegraphics[width=5cm,height=3cm]{figures/4.JPG}} \\ 
+\end{tabular}
+\end{tabularx}
+\end{figure}
+
 \end{frame}
 
-%//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-\begin{frame}
-Thank you!!
+
+\begin{frame}{Thank you!!}
+\begin{figure}
+\includegraphics[width=\textwidth,height=\textheight]{figures/ThankYou.jpg}
+\end{figure}
 \end{frame}
 
 %//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.11.24)  13 NOV 2014 19:28
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.11.24)  14 NOV 2014 14:29
 entering extended mode
  %&-line parsing enabled.
 **multiproj_seamless.tex
@@ -1097,6 +1097,14 @@ Overfull \hbox (109.96239pt too wide) has occurred while \output is active
 [7
 
  <./figures/commercial.jpg>]
+<figures/hard_overlap.jpg, id=235, 1118.1775pt x 731.73375pt>
+File: figures/hard_overlap.jpg Graphic file (type jpg)
+
+<use figures/hard_overlap.jpg>
+Overfull \vbox (4.77028pt too high) detected at line 226
+ []
+
+
 Overfull \hbox (26.16553pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
  []
@@ -1108,7 +1116,11 @@ Overfull \hbox (109.96239pt too wide) has occurred while \output is active
 
 [8
 
-]
+ <./figures/hard_overlap.jpg>]
+<figures/distort_sol.jpg, id=264, 1126.2075pt x 751.80875pt>
+File: figures/distort_sol.jpg Graphic file (type jpg)
+
+<use figures/distort_sol.jpg>
 Overfull \hbox (26.16553pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
  []
@@ -1120,14 +1132,46 @@ Overfull \hbox (109.96239pt too wide) has occurred while \output is active
 
 [9
 
-] <figures/setup.jpg, id=293, 1606.0pt x 1204.5pt> <use figures/setup.jpg>
-<figures/projs.jpg, id=294, 3661.68pt x 2746.26pt> <use figures/projs.jpg>
-File: figures/setup.jpg Graphic file (type jpg)
+ <./figures/distort_sol.jpg>]
+<figures/continuity_better.jpg, id=293, 1117.17375pt x 846.16125pt>
+File: figures/continuity_better.jpg Graphic file (type jpg)
 
-<use figures/setup.jpg>
+<use figures/continuity_better.jpg>
+Overfull \hbox (26.16553pt too wide) has occurred while \output is active
+ [][]  \OT1/cmss/m/n/6 ([])  
+ []
+
+
+Overfull \hbox (109.96239pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[10
+
+ <./figures/continuity_better.jpg>]
+<figures/blending.jpg, id=322, 1038.88126pt x 252.945pt>
+File: figures/blending.jpg Graphic file (type jpg)
+
+<use figures/blending.jpg>
+Overfull \hbox (26.16553pt too wide) has occurred while \output is active
+ [][]  \OT1/cmss/m/n/6 ([])  
+ []
+
+
+Overfull \hbox (109.96239pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[11
+
+ <./figures/blending.jpg>] <figures/setup.jpg, id=351, 1606.0pt x 1204.5pt>
+<use figures/setup.jpg> <figures/projs.jpg, id=352, 3661.68pt x 2746.26pt>
+<use figures/projs.jpg>
+File: figures/setup.jpg Graphic file (type jpg)
+ <use figures/setup.jpg>
 File: figures/projs.jpg Graphic file (type jpg)
  <use figures/projs.jpg>
-Underfull \hbox (badness 10000) in alignment at lines 243--243
+Underfull \hbox (badness 10000) in alignment at lines 282--282
 [][][]
  []
 
@@ -1141,7 +1185,7 @@ Overfull \hbox (109.96239pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-[10
+[12
 
  <./figures/setup.jpg> <./figures/projs.jpg>]
 Overfull \hbox (26.16553pt too wide) has occurred while \output is active
@@ -1153,9 +1197,9 @@ Overfull \hbox (109.96239pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-[11
+[13
 
-] <figures/debug_image_features.jpg, id=354, 3661.68pt x 2746.26pt>
+] <figures/debug_image_features.jpg, id=413, 3661.68pt x 2746.26pt>
 File: figures/debug_image_features.jpg Graphic file (type jpg)
 
 <use figures/debug_image_features.jpg>
@@ -1168,13 +1212,24 @@ Overfull \hbox (109.96239pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-[12
+[14
 
  <./figures/debug_image_features.jpg>]
-<figures/detected_corners.jpg, id=383, 3101.65836pt x 2326.24376pt>
+<figures/checkerboard.jpg, id=443, 1027.84pt x 770.88pt>
+<use figures/checkerboard.jpg>
+<figures/detected_corners.jpg, id=444, 3101.65836pt x 2326.24376pt>
+<use figures/detected_corners.jpg> <use figures/checkerboard.jpg>
+<use figures/detected_corners.jpg>
+File: figures/checkerboard.jpg Graphic file (type jpg)
+ <use figures/checkerboard.jpg>
 File: figures/detected_corners.jpg Graphic file (type jpg)
 
 <use figures/detected_corners.jpg>
+Overfull \hbox (0.66597pt too wide) in alignment at lines 334--334
+[][][]
+ []
+
+
 Overfull \hbox (26.16553pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
  []
@@ -1184,10 +1239,10 @@ Overfull \hbox (109.96239pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-[13
+[15
 
- <./figures/detected_corners.jpg>]
-<figures/all_bboxes.jpg, id=414, 3661.68pt x 2746.26pt>
+ <./figures/checkerboard.jpg> <./figures/detected_corners.jpg>]
+<figures/all_bboxes.jpg, id=474, 3661.68pt x 2746.26pt>
 File: figures/all_bboxes.jpg Graphic file (type jpg)
 
 <use figures/all_bboxes.jpg>
@@ -1200,61 +1255,12 @@ Overfull \hbox (109.96239pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-[14
-
- <./figures/all_bboxes.jpg>]
-<figures/mod_all_bboxes.jpg, id=446, 3661.68pt x 2746.26pt>
-File: figures/mod_all_bboxes.jpg Graphic file (type jpg)
-
-<use figures/mod_all_bboxes.jpg>
-Overfull \hbox (26.16553pt too wide) has occurred while \output is active
- [][]  \OT1/cmss/m/n/6 ([])  
- []
-
-
-Overfull \hbox (109.96239pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[15
-
- <./figures/mod_all_bboxes.jpg>] <use figures/all_bboxes.jpg>
-<figures/alpha_map_6.jpg, id=476, 1027.84pt x 770.88pt>
-<use figures/alpha_map_6.jpg>
-File: figures/all_bboxes.jpg Graphic file (type jpg)
- <use figures/all_bboxes.jpg>
-File: figures/alpha_map_6.jpg Graphic file (type jpg)
-
-<use figures/alpha_map_6.jpg>
-Underfull \hbox (badness 10000) in alignment at lines 340--340
-[][][]
- []
-
-
-Overfull \hbox (26.16553pt too wide) has occurred while \output is active
- [][]  \OT1/cmss/m/n/6 ([])  
- []
-
-
-Overfull \hbox (109.96239pt too wide) has occurred while \output is active
- [][][][]  
- []
-
 [16
 
- <./figures/alpha_map_6.jpg>]
-<figures/test1.jpg, id=505, 625.33624pt x 91.34125pt> <use figures/test1.jpg>
-<figures/test2.jpg, id=506, 634.37pt x 73.27374pt> <use figures/test2.jpg>
-File: figures/test1.jpg Graphic file (type jpg)
-
-<use figures/test1.jpg>
-File: figures/test2.jpg Graphic file (type jpg)
- <use figures/test2.jpg>
-Underfull \hbox (badness 10000) in alignment at lines 364--364
-[][][]
- []
-
-
+ <./figures/all_bboxes.jpg>]
+<figures/test.jpg, id=506, 3661.68pt x 2746.26pt>
+File: figures/test.jpg Graphic file (type jpg)
+ <use figures/test.jpg>
 Overfull \hbox (26.16553pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
  []
@@ -1266,17 +1272,15 @@ Overfull \hbox (109.96239pt too wide) has occurred while \output is active
 
 [17
 
- <./figures/test1.jpg> <./figures/test2.jpg>]
-<figures/cross_rat_img.jpg, id=536, 1510.64375pt x 1133.23375pt>
-<use figures/cross_rat_img.jpg>
-<figures/crossratio_vs_noncrossratio.jpg, id=537, 3661.68pt x 2746.26pt>
-<use figures/crossratio_vs_noncrossratio.jpg>
-File: figures/cross_rat_img.jpg Graphic file (type jpg)
- <use figures/cross_rat_img.jpg>
-File: figures/crossratio_vs_noncrossratio.jpg Graphic file (type jpg)
+ <./figures/test.jpg>] <use figures/all_bboxes.jpg>
+<figures/alpha_map_6.jpg, id=536, 1027.84pt x 770.88pt>
+<use figures/alpha_map_6.jpg>
+File: figures/all_bboxes.jpg Graphic file (type jpg)
+ <use figures/all_bboxes.jpg>
+File: figures/alpha_map_6.jpg Graphic file (type jpg)
 
-<use figures/crossratio_vs_noncrossratio.jpg>
-Underfull \hbox (badness 10000) in alignment at lines 389--389
+<use figures/alpha_map_6.jpg>
+Underfull \hbox (badness 10000) in alignment at lines 385--385
 [][][]
  []
 
@@ -1292,10 +1296,19 @@ Overfull \hbox (109.96239pt too wide) has occurred while \output is active
 
 [18
 
- <./figures/cross_rat_img.jpg> <./figures/crossratio_vs_noncrossratio.jpg>]
-<figures/grid.jpg, id=568, 3661.68pt x 2746.26pt>
-File: figures/grid.jpg Graphic file (type jpg)
- <use figures/grid.jpg>
+ <./figures/alpha_map_6.jpg>]
+<figures/test1.jpg, id=565, 625.33624pt x 91.34125pt> <use figures/test1.jpg>
+<figures/test2.jpg, id=566, 634.37pt x 73.27374pt> <use figures/test2.jpg>
+File: figures/test1.jpg Graphic file (type jpg)
+
+<use figures/test1.jpg>
+File: figures/test2.jpg Graphic file (type jpg)
+ <use figures/test2.jpg>
+Underfull \hbox (badness 10000) in alignment at lines 409--409
+[][][]
+ []
+
+
 Overfull \hbox (26.16553pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
  []
@@ -1307,17 +1320,17 @@ Overfull \hbox (109.96239pt too wide) has occurred while \output is active
 
 [19
 
- <./figures/grid.jpg>]
-<figures/without_cross_rat1.jpg, id=601, 401.5pt x 301.125pt>
-<use figures/without_cross_rat1.jpg>
-<figures/with_cross_rat1.jpg, id=602, 401.5pt x 301.125pt>
-<use figures/with_cross_rat1.jpg>
-File: figures/without_cross_rat1.jpg Graphic file (type jpg)
- <use figures/without_cross_rat1.jpg>
-File: figures/with_cross_rat1.jpg Graphic file (type jpg)
+ <./figures/test1.jpg> <./figures/test2.jpg>]
+<figures/cross_rat_img.jpg, id=597, 1510.64375pt x 1133.23375pt>
+<use figures/cross_rat_img.jpg>
+<figures/crossratio_vs_noncrossratio.jpg, id=598, 3661.68pt x 2746.26pt>
+<use figures/crossratio_vs_noncrossratio.jpg>
+File: figures/cross_rat_img.jpg Graphic file (type jpg)
+ <use figures/cross_rat_img.jpg>
+File: figures/crossratio_vs_noncrossratio.jpg Graphic file (type jpg)
 
-<use figures/with_cross_rat1.jpg>
-Underfull \hbox (badness 10000) in alignment at lines 421--421
+<use figures/crossratio_vs_noncrossratio.jpg>
+Underfull \hbox (badness 10000) in alignment at lines 434--434
 [][][]
  []
 
@@ -1333,6 +1346,47 @@ Overfull \hbox (109.96239pt too wide) has occurred while \output is active
 
 [20
 
+ <./figures/cross_rat_img.jpg> <./figures/crossratio_vs_noncrossratio.jpg>]
+<figures/grid.jpg, id=629, 3661.68pt x 2746.26pt>
+File: figures/grid.jpg Graphic file (type jpg)
+ <use figures/grid.jpg>
+Overfull \hbox (26.16553pt too wide) has occurred while \output is active
+ [][]  \OT1/cmss/m/n/6 ([])  
+ []
+
+
+Overfull \hbox (109.96239pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[21
+
+ <./figures/grid.jpg>]
+<figures/without_cross_rat1.jpg, id=661, 401.5pt x 301.125pt>
+<use figures/without_cross_rat1.jpg>
+<figures/with_cross_rat1.jpg, id=662, 401.5pt x 301.125pt>
+<use figures/with_cross_rat1.jpg>
+File: figures/without_cross_rat1.jpg Graphic file (type jpg)
+ <use figures/without_cross_rat1.jpg>
+File: figures/with_cross_rat1.jpg Graphic file (type jpg)
+
+<use figures/with_cross_rat1.jpg>
+Underfull \hbox (badness 10000) in alignment at lines 466--466
+[][][]
+ []
+
+
+Overfull \hbox (26.16553pt too wide) has occurred while \output is active
+ [][]  \OT1/cmss/m/n/6 ([])  
+ []
+
+
+Overfull \hbox (109.96239pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[22
+
  <./figures/without_cross_rat1.jpg> <./figures/with_cross_rat1.jpg>]
 File: figures/with_cross_rat1.jpg Graphic file (type jpg)
 
@@ -1346,41 +1400,30 @@ Overfull \hbox (109.96239pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-[21
-
-]
-Overfull \hbox (26.16553pt too wide) has occurred while \output is active
- [][]  \OT1/cmss/m/n/6 ([])  
- []
-
-
-Overfull \hbox (109.96239pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[22
-
-]
-Overfull \hbox (26.16553pt too wide) has occurred while \output is active
- [][]  \OT1/cmss/m/n/6 ([])  
- []
-
-
-Overfull \hbox (109.96239pt too wide) has occurred while \output is active
- [][][][]  
- []
-
 [23
 
-]
+] <figures/1.JPG, id=719, 3661.68pt x 2746.26pt> <use figures/1.JPG>
+<figures/2.JPG, id=720, 3661.68pt x 2746.26pt> <use figures/2.JPG>
+<figures/3.JPG, id=721, 3661.68pt x 2746.26pt> <use figures/3.JPG>
+<figures/4.JPG, id=722, 3661.68pt x 2746.26pt> <use figures/4.JPG>
+File: figures/1.JPG Graphic file (type jpg)
 
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\translate ' on input line 453.
+<use figures/1.JPG>
+File: figures/2.JPG Graphic file (type jpg)
+ <use figures/2.JPG>
+File: figures/3.JPG Graphic file (type jpg)
+ <use figures/3.JPG>
+File: figures/4.JPG Graphic file (type jpg)
 
-Missing character: There is no Â in font cmss10!
-Missing character: There is no ® in font cmss10!
-Missing character: There is no Â in font cmss10!
-Missing character: There is no ® in font cmss10!
+<use figures/4.JPG>
+Underfull \hbox (badness 10000) in alignment at lines 499--499
+[][][]
+ []
+
+
+Overfull \vbox (3.56451pt too high) detected at line 499
+ []
+
 
 Overfull \hbox (26.16553pt too wide) has occurred while \output is active
  [][]  \OT1/cmss/m/n/6 ([])  
@@ -1392,6 +1435,47 @@ Overfull \hbox (109.96239pt too wide) has occurred while \output is active
  []
 
 [24
+
+ <./figures/1.JPG> <./figures/2.JPG> <./figures/3.JPG> <./figures/4.JPG>]
+<figures/ThankYou.jpg, id=750, 3661.68pt x 2746.26pt>
+File: figures/ThankYou.jpg Graphic file (type jpg)
+
+<use figures/ThankYou.jpg>
+Overfull \vbox (43.40778pt too high) detected at line 507
+ []
+
+
+Overfull \hbox (26.16553pt too wide) has occurred while \output is active
+ [][]  \OT1/cmss/m/n/6 ([])  
+ []
+
+
+Overfull \hbox (109.96239pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[25
+
+ <./figures/ThankYou.jpg>]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\translate ' on input line 512.
+
+Missing character: There is no Â in font cmss10!
+Missing character: There is no ® in font cmss10!
+Missing character: There is no Â in font cmss10!
+Missing character: There is no ® in font cmss10!
+
+Overfull \hbox (26.16553pt too wide) has occurred while \output is active
+ [][]  \OT1/cmss/m/n/6 ([])  
+ []
+
+
+Overfull \hbox (109.96239pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[26
 
 ]
 \tf@nav=\write7
@@ -1410,29 +1494,31 @@ LaTeX Font Warning: Size substitutions with differences
 
  ) 
 Here is how much of TeX's memory you used:
- 18798 strings out of 495061
- 357638 string characters out of 1182620
- 429890 words of memory out of 3000000
- 21429 multiletter control sequences out of 15000+50000
- 15187 words of font info for 56 fonts, out of 3000000 for 9000
+ 18837 strings out of 495061
+ 358291 string characters out of 1182620
+ 430890 words of memory out of 3000000
+ 21456 multiletter control sequences out of 15000+50000
+ 14893 words of font info for 55 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  49i,21n,57p,407b,793s stack positions out of 5000i,500n,10000p,200000b,50000s
 pdfTeX warning (dest): name{crossrat} has been referenced but does not exist,
  replaced by a fixed one
+
+pdfTeX warning (dest): name{concept} has been referenced but does not exist, re
+placed by a fixed one
 
 </usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share
 /texmf-texlive/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texmf-texl
 ive/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texmf-texlive/fonts/t
 ype1/public/amsfonts/cm/cmss8.pfb></usr/share/texmf-texlive/fonts/type1/public/
 amsfonts/cm/cmss9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/
-cmssbx10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmssi10.p
-fb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/sh
-are/texmf-texlive/fonts/type1/public/amsfonts/cm/cmssi9.pfb></usr/share/texmf-t
-exlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/font
-s/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on multiproj_seamless.pdf (24 pages, 13879219 bytes).
+cmssi10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmssi8.pfb
+></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmssi9.pfb></usr/shar
+e/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-tex
+live/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on multiproj_seamless.pdf (26 pages, 32583463 bytes).
 PDF statistics:
- 792 PDF objects out of 1000 (max. 8388607)
- 55 named destinations out of 1000 (max. 500000)
- 165 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 854 PDF objects out of 1000 (max. 8388607)
+ 58 named destinations out of 1000 (max. 500000)
+ 215 words of extra memory for PDF output out of 10000 (max. 10000000)
 

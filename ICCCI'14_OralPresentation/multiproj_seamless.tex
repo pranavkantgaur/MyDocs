@@ -1,31 +1,18 @@
-\documentclass{beamer}
+\documentclass[40pt]{beamer}
 
 \usetheme{Madrid}
 \usepackage{graphicx}
-\usepackage{multimedia}
 \usepackage{tabularx}
 \usepackage{subfig}
 \usepackage{amsmath}
-\usepackage{comment}
-\usepackage{tikz}
-\usepackage{tikz-qtree}
-\usetikzlibrary{matrix}
 \usepackage{fixltx2e}
 \usepackage{hyperref}
 
-\tikzset{edge from parent/.style=
-{draw, edge from parent path={(\tikzparentnode.south)
--- +(0,-8pt)
--| (\tikzchildnode)}},
-blank/.style={draw=none}}
 
 
-
-
-
-\title{Achieving Seamlessness in Multi-Projector based Tiled Display using Camera Feedback}
+\title[Seamless Multiprojector display]{Achieving Seamlessness in Multi-Projector based Tiled Display using Camera Feedback}
 \author{Pranav Kant Gaur}
-\institute{Graphics and Visualization section, \newline Computer Division,\newline Bhabha Atomic Research Centre, Mumbai}
+\institute[BARC, Mumbai]{Graphics and Visualization section, \newline Computer Division,\newline Bhabha Atomic Research Centre, Mumbai}
 
 \titlegraphic{\includegraphics[width=2cm,height=2cm]{figures/barc_logo.jpg}}
 
@@ -37,24 +24,30 @@ blank/.style={draw=none}}
 \titlepage
 \end{frame}
 
-%//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-\begin{frame}
-\frametitle{Outline}
-\begin{enumerate}
-\item Objective 
-\item Motivation
-\item Challenges
-\item Followed approach
-\item System setup
-\item Algorithm 
-\item Contributions
-\item Results
-\item Conclusion
-\end{enumerate}
+\begin{frame}{Outline}
+\tableofcontents
 \end{frame}
+
+
+%//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+%\begin{frame}
+%\frametitle{Outline}
+%\begin{enumerate}
+%\item Objective 
+%\item Motivation
+%\item Challenges
+%\item Followed approach
+%\item System setup
+%\item Algorithm 
+%\item Contributions
+%\item Results
+%\item Conclusion
+%\end{enumerate}
+%\end{frame}
 %//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 %//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+\section{Objective}
 \begin{frame}
 \frametitle{Objective}
 Create a large image on the projection screen using combination of multiple projectors.
@@ -68,6 +61,7 @@ Create a large image on the projection screen using combination of multiple proj
 %//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 %//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+\section{Motivation}
 \begin{frame}
 \frametitle{Motivation}
 \begin{itemize}
@@ -85,7 +79,7 @@ Create a large image on the projection screen using combination of multiple proj
 \end{frame}
 
 %//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+\section{Challenges}
 \begin{frame}{Challenges}
 \begin{enumerate}
 \item Perspective distortion removal:
@@ -101,7 +95,7 @@ Create a large image on the projection screen using combination of multiple proj
 \end{frame}
 
 %//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+\section{Followed approach}
 \begin{frame}{Followed approach}
 \begin{itemize}
 \item Removing perspective distortion:
@@ -133,6 +127,10 @@ Create a large image on the projection screen using combination of multiple proj
 \end{figure}
 \end{itemize}
 \end{frame}
+
+%//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+\section{System setup}
 \begin{frame}
 \frametitle{System setup}
 Developed system has:
@@ -156,6 +154,7 @@ Developed system has:
 \end{frame}
 
 %//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+\section{Algorithm}
 \begin{frame}{Algorithm}
 \begin{itemize}
 \item Based on paper `A practical and flexible tiled
@@ -265,9 +264,8 @@ display system' by M.S. Brown and W.B. Seales.
 \end{frame}
 
 %//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+\section{Contributions}
 \begin{frame}
-
 \frametitle{Contributions}
 \underline{Corrected detected corners using line fitting}:
 \begin{itemize}
@@ -314,7 +312,7 @@ $CR_p=\frac{|AC|_c*|BD|_c}{|BC|_c*|AD|_c}$
 \end{frame}
 
 %//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+\section{Results}
 \begin{frame}
 \frametitle{Results\textsuperscript{\hyperlink{sysconfg}{*}}}
 \begin{itemize}
@@ -345,6 +343,7 @@ $CR_p=\frac{|AC|_c*|BD|_c}{|BC|_c*|AD|_c}$
 \end{frame}
 
 %//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+\section{Conclusion}
 \begin{frame}{Conclusion}
 
 \begin{itemize}
@@ -395,17 +394,20 @@ y_t=B_c^y+t*(D_c^y-B_c^y)
 \end{equation}
 
 \begin{equation}
-[t_1,t_2]=\frac{-b\pm\sqrt{b^{2}-4ac}}{2a} 
+[t_1,t_2]=\frac{-b\pm\sqrt{b^{2}-4*a*c}}{2*a} 
 \end{equation}
 where,\newline
 Let,\newline
 $delta={CR_p*(\frac{|BC|_c}{|BD|_c})}^2$\newline
-Then,\newline
-$a=(1-delta)*|BD|_c^2$
-\begin{eqnarray*}
-b=2*{(D_c^x-B_c^x)*(B_c^x-C_c^x)+(D_c^y-B_c^y)*(B_c^y-C_c^y)}\\+2*|BD|_c^{2}*delta
-\end{eqnarray*}
-$c=|BC|_c^2-delta*|BD|_c^2$
+Then,
+\begin{align*}
+&a=(1-delta)*|BD|_c^2 \\
+&b=2*{(D_c^x-B_c^x)*(B_c^x-C_c^x)+(D_c^y-B_c^y)*(B_c^y-C_c^y)}\\& \hspace{6cm}+2*|BD|_c^{2}*delta \\
+&c=|BC|_c^2-delta*|BD|_c^2
+\end{align*}
+
+
+
 
 \end{frame}
 

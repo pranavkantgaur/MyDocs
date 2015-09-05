@@ -1,11 +1,74 @@
-\documentclass[beamer]
-\usetheme[madrid]
+\documentclass{beamer}
+\usetheme{Madrid}
 
-\title{CDTGenerator: A tool for generating constrained Delaunay tetrahedralization for 3D domain}
+\title[CDT]{Constrained Delaunay Tetrahedralization(CDT) for applications in Nuclear reactor component modelling}
 \author{Pranav Kant Gaur}
-\insitute{Computer division, Bhabha Atomic Research Centre}
+\institute[BARC, Mumbai]{Computer Division, \newline Bhabha Atomic Research Centre, Mumbai, India}
+\titlegraphic{\includegraphics[width=2cm, height=2cm]{figures/barc_logo.jpg}}
+\date{}
 
-\begin{frame}
-\titlepage
-\end{frame}	
-
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{frame}
+		\titlepage
+	\end{frame}	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{frame}
+	\frametitle{Motivation}
+		\begin{enumerate}
+			\item Nuclear reactor component modelling	
+		\end{enumerate}
+	\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{frame}
+		\frametitle{Constrained Delaunay Tetrahedralization}
+			\begin{enumerate}
+				\item Definition		
+				\item Why?
+					\begin{enumerate}
+						\item Refer Schewchuck: What are good finite elements?		
+					\end{enumerate}		
+			\end{enumerate}		
+	\end{frame}	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{frame}
+		\frametitle{Theoretical underpinnings}
+			\begin{enumerate}
+				\item	Schewchuck's CDT existence theorem[REFERENCE??]
+				\item	Hang Si's Theorem[REFERENCE??]
+			\end{enumerate}		
+	\end{frame}	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{frame}
+		\frametitle{Algorithm} 
+			\begin{enumerate}
+				\item Compute initial Delaunay Tetrahedralization	
+				\item Recover constraint segments
+				\item Remove local degeneracies
+				\item Recover constraint facets
+			\end{enumerate}		
+	\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{frame}
+		\frametitle{Implementation}
+			\begin{enumerate}
+				\item CDTGenerator class{UML diagram class????}
+				\item Unit tests using Google test
+				\item Doxygen inline code documentation
+				\item Continous integration testing on Travis CI	
+				\item Github repository[REFERENCE LINK???]	
+			\end{enumerate}
+	\end{frame}	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{frame}
+		\frametitle{Results} 	
+	\end{frame}	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{frame}
+		\frametitle{TODOs}	
+	\end{frame}	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{frame}
+		Thank you all!!{LARGE FONT??????}
+	\end{frame}	
+\end{document}

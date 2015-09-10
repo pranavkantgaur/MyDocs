@@ -3,7 +3,7 @@
 
 \title[CDT]{Constrained Delaunay Tetrahedralization(CDT) for applications in Nuclear reactor component modelling}
 \author{Pranav Kant Gaur}
-\institute[BARC, Mumbai]{Computer Division, \newline Bhabha Atomic Research Centre, Mumbai, India}
+\institute[BARC, India]{Computer Division, \newline Bhabha Atomic Research Centre, Mumbai, India}
 \titlegraphic{\includegraphics[width=2cm, height=2cm]{figures/barc_logo.jpg}}
 \date{}
 
@@ -22,36 +22,46 @@
 				\end{enumerate}		
 			\item Resulting mesh should have elements suitable for CFD calculations:
 				\begin{enumerate}
-					\item Reference from good elements for finite element method.	
+					\item Constrained Delaunay Tetrahedralization is optimal domain discretization approach for Finite element applications[REFERENCE??]
+						\begin{enumerate}
+							\item Maximizes minimum dihedral angle(\textit{Delaunay property})
+							\item [PROPERTIES SPECIFIC TO CDT??]	
+						\end{enumerate}		
 				\end{enumerate}		
 		\end{enumerate}		
 	\end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\begin{frame}
 		\frametitle{Constrained Delaunay Tetrahedralization}
-			\begin{enumerate}
-				\item Definition		
-				\item Why?
-					\begin{enumerate}
-						\item Refer Schewchuck: What are good finite elements?		
-					\end{enumerate}		
-			\end{enumerate}		
+		\begin{enumerate}
+			\item A simplical complex is \textit{constrained Delaunay} if there exist a circumsphere which encloses no other \textit{visible} point inside it.[FIGURE???]
+			\item Constrained Delaunay Tetrahedralization is a simplical complex of constrained Delunay cells.
+		\end{enumerate}
 	\end{frame}	
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\begin{frame}
 		\frametitle{Theoretical underpinnings}
 			\begin{enumerate}
 				\item	Schewchuck's CDT existence theorem[REFERENCE??]
+					\begin{enumerate}
+						\item If X is edge protected then CDT of X exists.[ELABORATE??]	
+					\end{enumerate}		
 				\item	Hang Si's Theorem[REFERENCE??]
+					\begin{enumerate}
+						\item If X has no local degeneracy and DT of X contains all segments of X, then CDT of X exists.[ELABORATE???] 
+					\end{enumerate}		
 			\end{enumerate}		
 	\end{frame}	
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\begin{frame}
 		\frametitle{Algorithm} 
 			\begin{enumerate}
-				\item Compute initial Delaunay Tetrahedralization	
-				\item Recover constraint segments
-				\item Remove local degeneracies
+				\item Transform X into an edge protected \textit{topologically equivalent} X':	
+				\begin{enumerate}
+					\item Compute initial Delaunay Tetrahedralization	
+					\item Recover constraint segments
+					\item Remove local degeneracies
+				\end{enumerate}
 				\item Recover constraint facets
 			\end{enumerate}		
 	\end{frame}

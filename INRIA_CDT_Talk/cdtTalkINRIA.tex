@@ -1,6 +1,10 @@
 \documentclass{beamer}
 \usetheme{Madrid}
 
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{subfig}
+
 \title[CDT]{Constrained Delaunay Tetrahedralization(CDT) for applications in Nuclear reactor component modelling}
 \author{Pranav Kant Gaur}
 \institute[BARC, India]{Computer Division, \newline Bhabha Atomic Research Centre, Mumbai, India}
@@ -19,7 +23,16 @@
 				\item CFD analysis for Nuclear reactor component modelling:
 					\begin{enumerate}
 						\item Designing reactor core:
-				
+							\begin{figure}
+								\begin{tabularx}{\linewidth}{@{}cXX@{}}
+									\begin{tabular}{c c c}
+										\hspace{-2cm}\subfloat[]{\includegraphics[width=4cm, height=3cm]{figures/fuelView1.jpg}} &
+										\subfloat[]{\includegraphics[width=4cm, height=3cm]{figures/fuelView2.jpg}} &
+										\subfloat[]{\includegraphics[width=4cm, height=3cm]{figures/fuelView3.jpg}} \\
+									\end{tabular}
+								\end{tabularx}	
+								\caption{Fuel bundle}
+							\end{figure}	
 					\end{enumerate}		
 			\end{enumerate}
 	\end{frame}

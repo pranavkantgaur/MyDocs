@@ -56,12 +56,16 @@
 	\begin{frame}	
 		\frametitle{Motivation(contd.)}	
 			\begin{enumerate}
-				\item Resulting mesh should have elements suitable for CFD calculations:
+				\item Resulting mesh should have elements suitable for finite element calculations:
 					\begin{enumerate}
-						\item Constrained Delaunay Tetrahedralization is optimal domain discretization approach for Finite element applications[REFERENCE??]
+						\item Constrained Delaunay Tetrahedralization is optimal domain discretization approach for Finite element applications[REFERENCE-Finite element paper]
 							\begin{enumerate}
-								\item Maximizes minimum dihedral angle(\textit{Delaunay property})
-								\item [PROPERTIES SPECIFIC TO CDT??]	
+								\item Preserves input domain in output mesh.
+								\item Shares characterstics with Delunay triangulation:	
+									\begin{enumerate}
+										\item Maximizes minimum dihedral angle(\textit{Delaunay property})[REFERENCE??]
+										\item Other properties???[REFERENCE???]
+									\end{enumerate}
 							\end{enumerate}		
 					\end{enumerate}		
 			\end{enumerate}		

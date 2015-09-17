@@ -4,6 +4,9 @@
 \usepackage{graphicx}
 \usepackage{tabularx}
 \usepackage{subfig}
+%\usepackage{biblatex}
+%\usepackage{cite}
+\usepackage{natbib}
 
 \title[CDT]{Constrained Delaunay Tetrahedralization(CDT) for applications in Nuclear reactor component modelling}
 \author{Pranav Kant Gaur}
@@ -19,9 +22,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\begin{frame}
 		\frametitle{Motivation}
-			\begin{enumerate}
+			\begin{itemize}
 				\item CFD analysis for Nuclear reactor component modelling:
-					\begin{enumerate}
+					\begin{itemize}
 						\item Designing reactor core:
 							\begin{figure}
 								\begin{tabularx}{\linewidth}{@{}cXX@{}}
@@ -33,92 +36,90 @@
 								\end{tabularx}	
 								\caption{Fuel bundle}
 							\end{figure}	
-					\end{enumerate}		
-			\end{enumerate}
+					\end{itemize}		
+			\end{itemize}
 	\end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\begin{frame}
 		\frametitle{Motivation(contd.)}
-			\begin{enumerate}
+			\begin{itemize}
 				\item Anupravaha
-					\begin{enumerate}
+					\begin{itemize}
 						\item General purpose CFD solver over hybrid unstructured grid.
-						\item Collaboration between: [Details??]
+						\item Collaboration project between BARC and other academic institutions.
 						\item Integrated mesh generation and CFD solver:
-							\begin{enumerate}
-								\item Currently, no open source software  with iterative feedback based hybrid mesh generation.
+							\begin{itemize}
+								\item Currently, no open source software  with iterative feedback based hybrid mesh generation capability.
 								\item Need to have tighter control over configurability of mesh generation and solver tools.	
-							\end{enumerate}	
-					\end{enumerate}		
-			\end{enumerate}		
+							\end{itemize}	
+					\end{itemize}		
+			\end{itemize}		
 	\end{frame}	
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\begin{frame}	
 		\frametitle{Motivation(contd.)}	
-			\begin{enumerate}
+			\begin{itemize}
 				\item Resulting mesh should have elements suitable for finite element calculations:
-					\begin{enumerate}
-						\item Constrained Delaunay Tetrahedralization is optimal domain discretization approach for Finite element applications[REFERENCE-Finite element paper]
-							\begin{enumerate}
+					\begin{itemize}
+						\item Constrained Delaunay Tetrahedralization is optimal domain discretization approach for Finite element applications \cite{schewFiniteElements}.
+							\begin{itemize}
 								\item Preserves input domain in output mesh.
-								\item Shares characterstics with Delunay triangulation:	
-									\begin{enumerate}
-										\item Maximizes minimum dihedral angle(\textit{Delaunay property})[REFERENCE??]
-										\item Other properties???[REFERENCE???]
-									\end{enumerate}
-							\end{enumerate}		
-					\end{enumerate}		
-			\end{enumerate}		
+								\item Shares characterstics with Delaunay triangulation \cite{schewCDTExistence}	
+								\item Maximizes minimum dihedral angle(\textit{Delaunay property}) \cite{schewFiniteElements}.
+							\end{itemize}
+					\end{itemize}		
+			\end{itemize}		
 	\end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\begin{frame}
 		\frametitle{Constrained Delaunay Tetrahedralization}
-		\begin{enumerate}
-			\item A simplical complex is \textit{constrained Delaunay} if there exist a circumsphere which encloses no other \textit{visible} point inside it.[FIGURE???]
-			\item Constrained Delaunay Tetrahedralization is a simplical complex of constrained Delunay cells.
-		\end{enumerate}
+			\begin{itemize}
+				\item A simplical complex is \textit{constrained Delaunay} if there exist a circumsphere which encloses no other \textit{visible} point inside it.[FIGURE???]
+				\item Constrained Delaunay Tetrahedralization is a simplical complex of constrained Delunay cells.
+			\end{itemize}
+			\begin{}
 	\end{frame}	
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\begin{frame}
 		\frametitle{Theoretical underpinnings}
-			\begin{enumerate}
+			\begin{itemize}
 				\item	Schewchuck's CDT existence theorem[REFERENCE??]
-					\begin{enumerate}
+					\begin{itemize}
 						\item If X is edge protected then CDT of X exists.[ELABORATE??]	
-					\end{enumerate}		
+					\end{itemize}		
 				\item	Hang Si's Theorem[REFERENCE??]
-					\begin{enumerate}
+					\begin{itemize}
 						\item If X has no local degeneracy and DT of X contains all segments of X, then CDT of X exists.[ELABORATE???] 
-					\end{enumerate}		
-			\end{enumerate}		
+					\end{itemize}		
+			\end{itemize}		
 	\end{frame}	
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\begin{frame}
 		\frametitle{Algorithm} 
-			\begin{enumerate}
+			\begin{itemize}
 				\item Transform X into an edge protected \textit{topologically equivalent} X':	
-				\begin{enumerate}
+				\begin{itemize}
 					\item Compute initial Delaunay Tetrahedralization	
 					\item Recover constraint segments
 					\item Remove local degeneracies
-				\end{enumerate}
+				\end{itemize}
 				\item Recover constraint facets
-			\end{enumerate}		
+			\end{itemize}		
 	\end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\begin{frame}
 		\frametitle{Implementation}
-			\begin{enumerate}
+			\begin{itemize}
 				\item CDTGenerator class{UML diagram class????}:
-					\begin{enumerate}
+					\begin{itemize}
 						\item Data members{Populate???}
 						\item Member functions:{Populate???}	
-					\end{enumerate}		
+					\end{itemize}		
 				\item Unit tests using Google test
 				\item Doxygen inline code documentation
 				\item Continous integration testing on Travis CI	
 				\item Github repository[REFERENCE LINK???]	
-			\end{enumerate}
+			\end{itemize}
 	\end{frame}	
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\begin{frame}
@@ -126,10 +127,9 @@
 	\end{frame}	
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\begin{frame}
-		\frametitle{TODOs}	
-	\end{frame}	
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\begin{frame}
 		Thank you all!!{LARGE FONT??????}
 	\end{frame}	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibliography{INRIAbib}
+\bibliographystyle{plain}
 \end{document}

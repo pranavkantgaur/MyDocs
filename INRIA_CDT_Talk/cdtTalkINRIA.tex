@@ -4,9 +4,8 @@
 \usepackage{graphicx}
 \usepackage{tabularx}
 \usepackage{subfig}
-%\usepackage{biblatex}
-%\usepackage{cite}
 \usepackage{natbib}
+\usepackage{tikz}
 
 \title[CDT]{Constrained Delaunay Tetrahedralization(CDT) for applications in Nuclear reactor component modelling}
 \author{Pranav Kant Gaur}
@@ -74,10 +73,17 @@
 	\begin{frame}
 		\frametitle{Constrained Delaunay Tetrahedralization}
 			\begin{itemize}
-				\item A simplical complex is \textit{constrained Delaunay} if there exist a circumsphere which encloses no other \textit{visible} point inside it.[FIGURE???]
+				\item A simplical complex is \textit{constrained Delaunay} if there exist a circumsphere which encloses no other \textit{visible} point inside it.
+					\begin{tikzpicture}
+						\draw (1, 0) -- (0, 1); %label these points
+						\draw (0, 1) -- (0, -1);
+						\draw (1, 0) -- (0, -1);
+						\draw (0, 0) circle (1cm);
+						\draw (-1, 0);
+						\draw (-0.3, 1.5) -- (-0.1, -1.5);
+					\end{tikzpicture}	
 				\item Constrained Delaunay Tetrahedralization is a simplical complex of constrained Delunay cells.
 			\end{itemize}
-			\begin{}
 	\end{frame}	
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\begin{frame}

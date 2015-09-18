@@ -79,8 +79,19 @@
 						\draw (0, 1) -- (0, -1);
 						\draw (1, 0) -- (0, -1);
 						\draw (0, 0) circle (1cm);
-						\draw (-1, 0);
+						\filldraw (1, 0) circle[radius=0.5pt];
+						\filldraw (0, 1) circle[radius=0.5pt];
+						\filldraw (0, -1) circle[radius=0.5pt];
+						\filldraw (-1, 0) circle[radius=0.5pt];
 						\draw (-0.3, 1.5) -- (-0.1, -1.5);
+						\filldraw (-0.3, 1.5) circle[radius=0.5pt];
+						\filldraw (-0.1, -1.5) circle[radius=0.5pt];
+						\node [fill, draw, circle, minimum width=3pt, inner sep=0pt, pin={[outer sep=2pt]135:P}] at (1, 0) {};
+						\node [] at (0, 1) {};					
+						\node [] at (-0.3, 1.5) {};					
+						\node [] at (-0.1, -1.5) {};
+						\node [] at (-1, 0) {};					
+						\node [] at (0, -1) {};					
 					\end{tikzpicture}	
 				\item Constrained Delaunay Tetrahedralization is a simplical complex of constrained Delunay cells.
 			\end{itemize}

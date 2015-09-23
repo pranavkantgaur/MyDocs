@@ -87,7 +87,7 @@
 						\filldraw (-0.3, 1.5) circle[radius=0.5pt];
 						\filldraw (-0.1, -1.5) circle[radius=0.5pt];
 						\node [fill, draw, circle, minimum width=3pt, inner sep=0pt, pin={[outer sep=2pt]135:P}] at (1, 0) {};
-						\node [] at (0, 1) {};					
+						\node [pin={X}] at (0, 1) {};					
 						\node [] at (-0.3, 1.5) {};					
 						\node [] at (-0.1, -1.5) {};
 						\node [] at (-1, 0) {};					
@@ -138,10 +138,35 @@
 				\item Github repository[REFERENCE LINK???]	
 			\end{itemize}
 	\end{frame}	
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\begin{frame}
 		\frametitle{Results} 	
+		\textbf{Plateform}: Core i3, 4GB RAM, 3.2 GHZ CPU running Ubuntu 14.04 X86\_64.	
+			\begin{itemize}
+				\item Cube model:
+					\begin{itemize}
+						\item Passes unit tests, executes.
+						\item Figure:
+							%\begin{figure}
+							%	\tabularx{c c}
+							%\end{figure}	
+					\end{itemize}
+				\item Sphere model:
+					\begin{itemize}
+						\item Does not terminate in call to remove exterior tetrahedrons from output mesh.
+						\item Takes more than 10 minutes in facet recovery step(\textit{unacceptable}).
+					\end{itemize}		
+			\end{itemize}		
 	\end{frame}	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{frame}
+		\frametitle{TODOs}
+			\begin{itemize}
+				\item Devise efficient algorithm for checking if a 3-cell is inside Linear cell complex.
+				\item Extend the code for adaptive mesh generation with feedback loop from CFD solver. 
+				\item Generalize the solution to support Hybrid meshing. 		
+			\end{itemize}
+		\end{frame}	
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\begin{frame}
 		Thank you all!!{LARGE FONT??????}

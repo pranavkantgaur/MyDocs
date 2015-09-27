@@ -161,13 +161,40 @@
 			\begin{itemize}
 				\item	Hang Si's Theorem \cite{hangSiMeshingPLCByCDT}
 					\begin{itemize}
-						\item If X has no local degeneracy and DT of X contains all segments of X, then CDT of X exists.[ELABORATE???] 
+						\item If X has no local degeneracy and DT of X contains all segments of X, then CDT of X exists.						
+							\begin{figure}
+								\begin{tikzpicture}
+									\draw (1, 0) -- (0, 1); %label these points
+									\draw (0, 1) -- (-1, 0);
+									\draw (1, 0) -- (-1, 0);
+									\draw [densely dotted] (1, 0) -- (0.7, 0.7); % dotted
+									\draw [densely dotted] (0, 1) -- (0.7, 0.7);
+									\draw [densely dotted] (-1, 0) -- (0.7, 0.7);
+									\draw  (1, 0) -- (-0.7, -0.7); % dotted
+									\draw  (0, 1) -- (-0.7, -0.7);
+									\draw  (-1, 0) -- (-0.7, -0.7);
+									\draw (0, 0) circle (1cm);
+									\filldraw (1, 0) circle[radius=0.5pt];
+									\filldraw (0, 1) circle[radius=0.5pt];
+									\filldraw (-1, 0) circle[radius=0.5pt];
+									\filldraw (0.7, 0.7) circle[radius=0.5pt];
+									\filldraw (-0.7, -0.7) circle[radius=0.5pt];
+									\node [red, right] at (1, 0) {A};
+									\node [red, above] at (0, 1) {B};		
+									\node [red, left] at (-1, 0) {C};
+									\node [red, above] at (0.7, 0.7) {D};
+									\node [blue, left] at (-0.7, -0.7) {E};
+									%\node [blue, right] at () {F};
+								\end{tikzpicture}
+								\caption{\textbf{Local degeneracy}: $ABCD$ and $ABCE$ are neighbouring Delaunay tetrahedrons}
+							\end{figure}	
+						\item Does not require constraints to be strongly Delaunay \textit{globally}.
 					\end{itemize}		
 			\end{itemize}		
 	\end{frame}	
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\begin{frame}
-		\frametitle{Algorithm} 
+		\frametitle{Hang Si's algorithm} 
 			\begin{itemize}
 				\item Transform X into an edge protected \textit{topologically equivalent} X':	
 				\begin{itemize}

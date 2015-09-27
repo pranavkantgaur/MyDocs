@@ -6,6 +6,8 @@
 \usepackage{subfig}
 \usepackage{natbib}
 \usepackage{tikz}
+\usepackage{caption}
+\captionsetup[figure]{justification=justified, singlelinecheck=false}
 
 \title[CDT]{Constrained Delaunay Tetrahedralization(CDT) for applications in Nuclear reactor component modelling}
 \author{Pranav Kant Gaur}
@@ -94,7 +96,7 @@
 						\node [red, right] at (-1, 0) {E};					
 						\node [red, right] at (0, -1) {F};					
 					\end{tikzpicture}	
-				\item Constrained Delaunay Tetrahedralization is a simplical complex of constrained Delunay cells.
+				\item Constrained Delaunay Tetrahedralization is a simplical complex of constrained Delaunay cells.
 			\end{itemize}
 	\end{frame}	
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -135,7 +137,7 @@
 											\node [red, left] at (-1, 0) {C};
 											\node [red, below] at (0.70, -0.71) {D};
 											\end{tikzpicture}} &
-										\subfloat[Strongly Delaunay]{\begin{tikzpicture}
+											\subfloat[Strongly Delaunay]{\begin{tikzpicture}
 											\draw (1, 0) -- (0, 1); %label these points
 											\draw (0, 1) -- (-1, 0);
 											\draw (1, 0) -- (-1, 0);
@@ -199,16 +201,16 @@
 				\item Transform X into a \textit{topologically equivalent} X' which satisfies preconditions for Si's theorem:	
 				\begin{enumerate}
 					\item Compute initial Delaunay Tetrahedralization	
-					\item Recover constraint segments
+					\item Recover constraint segments:
 						\begin{itemize}
 							\item Split constraint segments such that resulting subsegments are \textit{Delaunay}.	
 						\end{itemize}	
-					\item Remove local degeneracies
+					\item Remove local degeneracies:
 						\begin{itemize}
 							\item Use symbolic perturbation scheme.
 						\end{itemize}		
 				\end{enumerate}
-				\item Recover constraint facets
+				\item Recover constraint facets:
 					\begin{itemize}
 						\item Cavity retetrahedralization.	
 					\end{itemize}		
@@ -221,8 +223,8 @@
 				\begin{itemize}
 					\item Data members:
 						\begin{itemize}
-							\item plc : input piecewise linear complex
-							\item DT : intermidiate Delaunay triangulation
+							\item plc : input piece-wise linear complex
+							\item DT : intermediate Delaunay triangulation
 							\item cdtMesh : output mesh	
 						\end{itemize}
 					\item Member functions: 
@@ -234,7 +236,7 @@
 									\item recoverConstraintSegments()
 									\item removeLocalDegeneracies()
 									\item recoverConstraintFacets()
-									\item removeExteriorTeterahedrons()	
+									\item removeExteriorTetrahedrons()	
 								\end{enumerate}
 						\end{itemize}
 				\end{itemize}
@@ -251,7 +253,7 @@
 							\end{itemize}	
 					\end{itemize}		
 				\item Doxygen inline code documentation
-				\item Continous integration testing on Travis CI	
+				\item Continuous integration testing on Travis CI	
 				\item Github repository: https://github.com/pranavkantgaur/CDTGenerator
 			\end{itemize}
 	\end{frame}	
@@ -263,13 +265,13 @@
 					\begin{itemize}
 						\item Generating random ray for performing inside-outside test.	
 					\end{itemize}
-				\item Combinatorial Maps and Linear Cell complex packgage:
+				\item Combinatorial Maps and Linear Cell complex package:
 					\begin{itemize}
-						\item Representating Piecewise linear complex and output mesh.	
+						\item Representing Piece-wise linear complex and output mesh.	
 					\end{itemize}
 				\item 3D Triangulations package:
 					\begin{itemize}
-						\item Representing intermidiate Delaunay triangulations.	
+						\item Representing intermediate Delaunay triangulations.	
 					\end{itemize}		
 				\item 2D and 3D Linear Geometry Kernel:
 					\begin{itemize}
@@ -280,7 +282,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\begin{frame}
 		\frametitle{Results} 	
-		\textbf{Plateform}: Core i3, 4GB RAM, 3.2 GHZ CPU running Ubuntu 14.04 X86\_64.	
+		\textbf{Platform}: Core i3, 4GB RAM, 3.2 GHZ CPU running Ubuntu 14.04 X86\_64.	
 			\begin{itemize}
 				\item Cube model:
 					\begin{itemize}

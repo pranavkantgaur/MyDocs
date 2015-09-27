@@ -217,16 +217,42 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\begin{frame}
 		\frametitle{Implementation}
+			\textbf{CDTGenerator class}:
+				\begin{itemize}
+					\item Data members:
+						\begin{itemize}
+							\item plc : input piecewise linear complex
+							\item DT : intermidiate Delaunay triangulation
+							\item cdtMesh : output mesh	
+						\end{itemize}
+					\item Member functions: 
+						\begin{itemize}
+							\item generate() : \textit{public interface}
+								\begin{enumerate}
+									\item readInputPLC()
+									\item computeDelaunayTetrahedralization()
+									\item recoverConstraintSegments()
+									\item removeLocalDegeneracies()
+									\item recoverConstraintFacets()
+									\item removeExteriorTeterahedrons()	
+								\end{enumerate}
+						\end{itemize}
+				\end{itemize}
+	\end{frame}	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{frame}
+		\frametitle{Implementation(contd.)}
 			\begin{itemize}
-				\item CDTGenerator class{UML diagram class????}:
+				\item Unit tests using Google test:
 					\begin{itemize}
-						\item Data members{Populate???}
-						\item Member functions:{Populate???}	
+						\item Constraint segment recovery and Constraint facet recovery:
+							\begin{itemize}
+								\item Checks if all constraint segments and constraint facets are recovered.
+							\end{itemize}	
 					\end{itemize}		
-				\item Unit tests using Google test
 				\item Doxygen inline code documentation
 				\item Continous integration testing on Travis CI	
-				\item Github repository[REFERENCE LINK???]	
+				\item Github repository: https://github.com/pranavkantgaur/CDTGenerator
 			\end{itemize}
 	\end{frame}	
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -259,10 +285,14 @@
 				\item Cube model:
 					\begin{itemize}
 						\item Passes unit tests, executes.
-						\item Figure:
-							%\begin{figure}
-							%	\tabularx{c c}
-							%\end{figure}	
+							\begin{figure}
+								\begin{tabularx}{\linewidth}{@{}cXX@{}}
+									\begin{tabular}{c c}
+										\hspace{-1.5cm}\subfloat[Input: Cube surface mesh]{\includegraphics[width=6cm, height=3cm]{figures/cubeInput.jpg}} &
+										\subfloat[Output: Cube tetrahedral mesh]{\includegraphics[width=6cm, height=3cm]{figures/cubeOutput.jpg}} \\
+									\end{tabular}
+								\end{tabularx}	
+							\end{figure}	
 					\end{itemize}
 				\item Sphere model:
 					\begin{itemize}
@@ -282,7 +312,7 @@
 		\end{frame}	
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\begin{frame}
-		Thank you all!!{LARGE FONT??????}
+		\hspace{3cm}\Huge \textbf{Thank you!!}
 	\end{frame}	
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \bibliography{INRIAbib}

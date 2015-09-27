@@ -73,7 +73,7 @@
 	\begin{frame}
 		\frametitle{Constrained Delaunay Tetrahedralization}
 			\begin{itemize}
-				\item Simplical complex: DEFINE???	
+				\item Simplical complex: A topological space formed by gluing together points, line segments, triangles and their $n$-dimensional counterparts.	
 				\item A simplical complex is \textit{constrained Delaunay} if there exist a circumsphere which encloses no other \textit{visible} point inside it.
 					\begin{tikzpicture}
 						\draw (1, 0) -- (0, 1); %label these points
@@ -103,9 +103,54 @@
 			\begin{itemize}
 				\item	Schewchuck's CDT existence theorem \cite{schewCDTExistence}:
 					\begin{itemize}
-						\item  A PLC $X$ has a $d$-dimensional CDT if each $k$-dimensional constraining facet in $X$ with $k \leq d -2$ is a union of strongly Delunay $k$-simplices.								
+						\item  A PLC $X$ has a $d$-dimensional CDT if each $k$-dimensional constraining facet in $X$ with $k \leq d -2$ is a union of strongly Delaunay $k$-simplices.								
 							\begin{figure}
-								FIGURE DEMONSRATING STRONGLY DELAUNAY SIMPLEX.
+								\begin{tabularx}{\linewidth}{@{}cXX@{}}
+									\begin{tabular}{c c c}
+										\subfloat[$D$ is inside: Not strongly Delaunay]{\begin{tikzpicture}
+											\draw (1, 0) -- (0, 1); %label these points
+											\draw (0, 1) -- (-1, 0);
+											\draw (1, 0) -- (-1, 0);
+											\draw (0, 0) circle (1cm);
+											\filldraw (1, 0) circle[radius=0.5pt];
+											\filldraw (0, 1) circle[radius=0.5pt];
+											\filldraw (-1, 0) circle[radius=0.5pt];
+											\filldraw (0.3, -0.7) circle[radius=0.5pt];
+											\node [red, right] at (1, 0) {A};
+											\node [red, above] at (0, 1) {B};		
+											\node [red, left] at (-1, 0) {C};
+											\node [red, right] at (0.3, -0.7) {D};
+											\end{tikzpicture}} &
+										\subfloat[$D$ is on boundary: Not strongly Delaunay]{\begin{tikzpicture}
+											\draw (1, 0) -- (0, 1); %label these points
+											\draw (0, 1) -- (-1, 0);
+											\draw (1, 0) -- (-1, 0);
+											\draw (0, 0) circle (1cm);
+											\filldraw (1, 0) circle[radius=0.5pt];
+											\filldraw (0, 1) circle[radius=0.5pt];
+											\filldraw (-1, 0) circle[radius=0.5pt];
+											\filldraw (0.70, -0.71) circle[radius=0.5pt];
+											\node [red, right] at (1, 0) {A};
+											\node [red, above] at (0, 1) {B};		
+											\node [red, left] at (-1, 0) {C};
+											\node [red, below] at (0.70, -0.71) {D};
+											\end{tikzpicture}} &
+										\subfloat[Strongly Delaunay]{\begin{tikzpicture}
+											\draw (1, 0) -- (0, 1); %label these points
+											\draw (0, 1) -- (-1, 0);
+											\draw (1, 0) -- (-1, 0);
+											\draw (0, 0) circle (1cm);
+											\filldraw (1, 0) circle[radius=0.5pt];
+											\filldraw (0, 1) circle[radius=0.5pt];
+											\filldraw (-1, 0) circle[radius=0.5pt];
+											\filldraw (1.2, -0.7) circle[radius=0.5pt];
+											\node [red, right] at (1, 0) {A};
+											\node [red, above] at (0, 1) {B};		
+											\node [red, left] at (-1, 0) {C};
+											\node [red, below] at (1.2, -0.7) {D};
+											\end{tikzpicture}} \\ 	
+									\end{tabular}	
+								\end{tabularx}
 							\end{figure}	
 					\end{itemize}	
 			\end{itemize}

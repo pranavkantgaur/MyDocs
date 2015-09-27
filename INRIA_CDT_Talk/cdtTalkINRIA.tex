@@ -195,15 +195,24 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\begin{frame}
 		\frametitle{Hang Si's algorithm} 
-			\begin{itemize}
-				\item Transform X into an edge protected \textit{topologically equivalent} X':	
-				\begin{itemize}
+			\begin{enumerate}
+				\item Transform X into a \textit{topologically equivalent} X' which satisfies preconditions for Si's theorem:	
+				\begin{enumerate}
 					\item Compute initial Delaunay Tetrahedralization	
 					\item Recover constraint segments
+						\begin{itemize}
+							\item Split constraint segments such that resulting subsegments are \textit{Delaunay}.	
+						\end{itemize}	
 					\item Remove local degeneracies
-				\end{itemize}
+						\begin{itemize}
+							\item Use symbolic perturbation scheme.
+						\end{itemize}		
+				\end{enumerate}
 				\item Recover constraint facets
-			\end{itemize}		
+					\begin{itemize}
+						\item Cavity retetrahedralization.	
+					\end{itemize}		
+			\end{enumerate}		
 	\end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\begin{frame}

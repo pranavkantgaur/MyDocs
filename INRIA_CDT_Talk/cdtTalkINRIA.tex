@@ -47,7 +47,7 @@
 				\item Anupravaha
 					\begin{itemize}
 						\item General purpose CFD solver over hybrid unstructured grid.
-						\item Collaboration project between BARC and other academic institutions.
+						\item Collaborative project between BARC and other academic institutions.
 						\item Integrated mesh generation and CFD solver:
 							\begin{itemize}
 								\item Currently, no open source software  with iterative feedback based hybrid mesh generation capability.
@@ -66,7 +66,7 @@
 							\begin{itemize}
 								\item Preserves input domain in output mesh.
 								\item Shares characterstics with Delaunay triangulation \cite{schewCDTExistence}	
-								\item Maximizes minimum dihedral angle(\textit{Delaunay property}) \cite{schewFiniteElements}.
+								%\item Maximizes minimum dihedral angle(\textit{Delaunay property}) \cite{schewFiniteElements}.
 							\end{itemize}
 					\end{itemize}		
 			\end{itemize}		
@@ -102,6 +102,22 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\begin{frame}
 		\frametitle{Theoretical underpinnings}
+		\begin{itemize}
+			\item Piecewise linear complex(PLC):
+				\begin{itemize}
+					\item Representation of input constraints.
+					\item Polyhedra are a special case.
+					\item Can contain holes, isolated vertices.
+						\begin{figure}
+							\subfloat[A PLC]{\includegraphics[width=6cm, height=3cm]{figures/plc.jpg}}
+						\end{figure}
+				\end{itemize}
+			\item Given input PLC, compute its CDT.
+		\end{itemize}		
+	\end{frame}	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{frame}
+		\frametitle{Theoretical underpinnings(contd.)}
 			\begin{itemize}
 				\item	Schewchuck's CDT existence theorem \cite{schewCDTExistence}:
 					\begin{itemize}

@@ -13,6 +13,7 @@
 %\usepackage{caption}
 %\captionsetup[figure]{justification=justified, singlelinecheck=false}
 
+
 \title[CDT]{CDT: Algorithms and termination proofs}
 \author{Pranav Kant Gaur}
 \institute[BARC, India]{Computer Division, \newline Bhabha Atomic Research Centre, Mumbai, India}
@@ -28,12 +29,23 @@
 %%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%
+\begin{frame}{Segment types}
+\begin{enumerate}
+    \item Type 1:
+    \item Type 2:
+    \item Type 3:
+\end{enumerate}
+\end{frame}
+%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%
 \begin{frame}
 \frametitle{Segment recovery algorithm}
 \begin{algorithm}[H]
-\caption{Segment recovery}\label{euclid}
+\caption{Segment recovery}
 \begin{algorithmic}[1]
-\Procedure{DelaunizeSegments}{$inputPLC$}
+\Procedure{DelaunizeSegments}{$inputPLC, DelaunayTriangulation$}
 	\State \textbf{Input}:$D_0, X_0$
 	\State \textbf{Output}:$D_1, X_1$
 	\State \textbf{Initialize}:
@@ -41,7 +53,7 @@
 	\Repeat
 	\State Form a queue \textit{Q} of missing segments in $D_1$;
 	\While {$Q \ne \phi$}
-	\State remove a segment $e_{i}e_{j}$ from $Q$;
+	\State remove a segment $e_{i}e_{j}$ from \textit{Q};
 	\State split $e_{i}e_{j}$ using rule 1, 2 or 3;
 	\State update $D_1$, $X_1$;
 	\EndWhile
@@ -54,12 +66,54 @@
 
 
 %%%%%%%%%%%%%%%%%%
-\begin{frame}
+\begin{frame}[allowframebreaks]
 \frametitle{Segment splitting rules}
 \begin{enumerate}
-	\item Rule 1:
-	\item Rule 2:	
-	\item Rule 3:	
+	\item	If segment $e_{i}e_{j}$ is of \textit{type-1}, $v = e_{i}e_{j}\cap S$, where $S(c, r)$ is the sphere defined by:
+		\begin{algorithm}[H]
+		\caption{Rule 1}
+		\begin{algorithmic}[1]
+		\Procedure{SegmentRecoveryRule1}{}
+			\If{$|e_{i}p| < \frac{1}{2}|e_{i}e_{j}|$}
+				\State $c \gets e_i, r \gets |e_{i}p|$
+			\ElsIf{$|e_{j}p| < \frac{1}{2}|e_{i}e_{j}|$}
+				\State $c \gets e_j, r \gets |e_{j}p|$
+			
+			\Else
+				\State $c \gets $e_i$, r \gets \frac{1}{2}|e_{i}e_{j}|$
+			\EndIf	
+		\EndProcedure
+		\end{algorithmic}
+		\end{algorithm}  
+	\framebreak
+	\item  If $e_{i}e_j$ is \textit{type-2}, let $e_k = O(e_i)$, then $v = e_{k}e_j \cap S$, where $S(c, r)$ is the sphere defined by the \textit{reference point} $p$ of $v$ with : 
+	\begin{algorithm}[H]
+	\caption{Rule 2}
+	\begin{algorithmic}[1]
+	    \Procedure{SegmentRecoveryRule2}{}
+	        \If{$|ve_j| < |vp|$}
+	            \State $c \gets e_{k}, r \gets |e_{k}p|$
+	        \Else
+	            \State Do not insert $v$, Goto Rule-3
+	        \EndIf     
+	    \EndProcedure
+	\end{algorithmic}
+	\end{algorithm}
+    \framebreak
+	\item If $e_{i}e_j$ is \textit{type-2}, let $e_k = O(e_i)$, and $v$ is the rejected vertex by rule 2 then, $v = e_{k}e_j \cap S$, where $S(c, r)$ is the sphere defined by the reference point $p$ of $v$:
+	\begin{algorithm}[H]
+	\caption{Rule 3}
+	\begin{algorithmic}[1]
+	    \Procedure{SegmentRecoveryRule3}{}
+	        \State $c \gets e_k$
+	        \If{$|pv^{`}| < \frac{1}{2}|e_{i}v^{`}|$}
+	            \State $r \gets |e_{k}e_{i}| + |e_{i}v^{`}| - |pv^{`}|$
+	        \Else
+	            \State $r \gets |e_{k}e_i| + \frac{1}{2}|e_{i}v^{`}|$
+	        \EndIf
+	    \EndProcedure
+	\end{algorithmic}
+	\end{algorithm}
 \end{enumerate}
 \end{frame}
 %%%%%%%%%%%%%%%%%%
@@ -67,18 +121,120 @@
 %%%%%%%%%%%%%%%%%%
 \begin{frame}
 \frametitle{Segment recovery: Termination proof}
+\begin{itemize}
+    \item If $e_{i}e_{j}$ is \textit{type-1}, \newline
+    $|e_{i}e_{j}| \geq min\{lfs(e_i), lfs(e_j)\}$
+    \item If $e_{i}e_{j}$ is \textit{type-2} and $e_{k} = O(e_i)$, \newline
+    $|e_{i}e_{j}| \geq \frac{1}{C}lfs(e_k)$, when $e_{i} = e_{k}$, \newline
+    $|e_{i}e_{j}| \geq $lfs(e_k)$sin(\theta)$, when $e_{i} \ne e_{k}$ \newline
+    $C$ : 2 times number of segments incident on $e_k$, \newline
+    $\theta$ : smallest angle between these segments
+\end{itemize}
 \end{frame}
 %%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%
-\begin{frame}
-	\frametitle{Facet recovery algorithm}	
+\begin{frame}{Facet recovery algorithm}
+%\fontsize{2pt}{1.2}\selectfont
+\begin{algorithm}[H]
+\caption{Facet recovery}
+\begin{algorithmic}[1]
+\small  {
+\Procedure{Recover facets}{$inputPLC, DelaunayTriangulation$}
+	\State \textbf{Input}:$D_0, X_0$
+	\State \textbf{Output}:$M$
+	\State \textbf{Initialize}:
+	\State $M_i$ \gets $D_0$
+	\Repeat
+	\State Form a queue \textit{Q} of missing facets in $M_i$;
+	\While {$Q \ne \phi$}
+	\State remove a facet $f$ from \textit{Q};
+	\State form a missing region $\omega$ containing $f$;
+	\State form cavities $C_1, C_2$ by formCavity procedure;
+	\For{each $i \gets 1, 2$}
+	    \State \Call{RetetrahedralizeCavity}{$C_i$}
+	\EndFor
+	\EndWhile
+	\Until{no facet of $X_1$ is missing from $M$}
+\EndProcedure
+}
+\end{algorithmic}
+\end{algorithm}
 \end{frame}
 %%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%
+\begin{frame}{Cavity verification algorithm}
+\begin{algorithm}[H]
+\caption{Cavity verification/expansion}
+\begin{algorithmic}[1]
+    \tiny{
+    \Procedure{FormCavity}{$cdtMesh, inputPLC, cavity_i$}
+    \State \textbf{Input}: 
+    \State \textbf{Output}:
+    \State \textbf{Initialization}: $V = Vertices(C)$
+    \State Verify $C$, expand if necessary,
+    \Repeat
+    \State form a queue $Q$ of all \textit{non-strongly Delaunay} faces of $C$ in $V$
+    \For{each face $\sigma \in Q$, $\sigma$ still in $C$}
+        \State let $t$ be a neighbor tet holding $\sigma$;
+        \State remove $\sigma$ from $C$;
+        \For{each face $\delta t$ of t, $\delta t \ne \sigma$}
+            \If{$\del t$ is a face of $C$}
+                \State remove $\delta t$ from $C$;
+            \Else
+                \State add $\delta t$ into $C$; 
+            \EndIf
+        \EndFor
+        \State Update $C$, $V$;
+    \EndFor
+    \Until{$Q \ne 0$}
+    \EndProcedure
+    }
+\end{algorithmic}
+\end{algorithm}
+\end{frame}
+%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%
+\begin{frame}{Cavity retetrahedralization algorithm}
+\begin{algorithm}[H]
+\caption{Refill cavity}
+\begin{algorithmic}[1]
+    \Procedure{RetetrahedralizeCavity}{$cdtMesh, inputPLC, cavity$}
+    \State \textbf{Input}:
+    \State \textbf{Output}:
+    \State \textbf{Initialization}:
+    \State construct Delaunay tetrahedralization $D_c$ of vertices of $C$;
+    \State identify faces of $C$ is $D_c$, mark each face of $D_c$ to be \textit{inside} or \textit{outside} wrt. $C$;
+    \State remove \textit{outside} tets from $D_c$, fill remaining tets into $C$;
+    \EndProcedure
+\end{algorithmic}
+\end{algorithm}
+\end{frame}
+%%%%%%%%%%%%%%%%%%
+
 
 %%%%%%%%%%%%%%%%%%
 \begin{frame}
 \frametitle{Facet recovery: Termination proof}
+    \begin{itemize}
+        \item Facet verification guarantees cavity reterahedralization will work since it ensures all involved facets are \textit{strongly Delaunay}.
+        \item Issue in facet verification: \newline
+        \begin{itemize}
+            \item Cavity expansion terminates?
+            \begin{itemize}
+                \item Set $\psi$ of facets in $M_{i}$ which do not intersect any constraint facet \textit{stop} the expansion.
+            \end{itemize}
+            \item Missing facets due to expansion are recovered later?
+            \begin{itemize}
+                \item Removal of a constraint facet during expansion will result in cavity $C'$ which is \textit{completely} inside $C$
+                \item $Volume(C') > 0$
+            \end{itemize}
+        \end{itemize}
+    \end{itemize}
 \end{frame}
 %%%%%%%%%%%%%%%%%%
 

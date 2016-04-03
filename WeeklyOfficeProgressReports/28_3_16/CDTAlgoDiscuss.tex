@@ -29,11 +29,20 @@
 %%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%
-\begin{frame}{Segment types}
+\begin{frame}{Concepts}
 \begin{enumerate}
-    \item Type 1:
-    \item Type 2:
-    \item Type 3:
+    \item Segment types
+    \begin{enumerate}
+        \item Type 1:\newline
+            If none of the endpoints of segment $AB$ have a pair of incident segments with angle less than 90 between them.
+        \item Type 2:\newline
+            If one of the endpoints of segment $AB$ has a pair of incident segments with angle less than 90 between them.
+    \end{enumerate}
+    \item Reference point:\newline
+    A point which forms largest circumsphere with endpoints of a segment $AB$ amongst the set of points which lie inside diameter sphere $AB$? 
+    \item Local feature size of a vertex $v$:\newline
+    The radius of the smallest ball centered at v that intersects
+two segments or vertices in PLC that do not intersect each other.
 \end{enumerate}
 \end{frame}
 %%%%%%%%%%%%%%%%%%
@@ -46,10 +55,9 @@
 \caption{Segment recovery}
 \begin{algorithmic}[1]
 \Procedure{DelaunizeSegments}{$inputPLC, DelaunayTriangulation$}
-	\State \textbf{Input}:$D_0, X_0$
-	\State \textbf{Output}:$D_1, X_1$
-	\State \textbf{Initialize}:
-	\State $D_1$ \gets $D_0$, $X_1$ \gets $X_0$
+	\State \textbf{Input}: $D_0, X_0$
+	\State \textbf{Output}: $D_1, X_1$
+	\State \textbf{Initialize}: $D_1$ \gets $D_0$, $X_1$ \gets $X_0$
 	\Repeat
 	\State Form a queue \textit{Q} of missing segments in $D_1$;
 	\While {$Q \ne \phi$}
@@ -69,7 +77,7 @@
 \begin{frame}[allowframebreaks]
 \frametitle{Segment splitting rules}
 \begin{enumerate}
-	\item	If segment $e_{i}e_{j}$ is of \textit{type-1}, $v = e_{i}e_{j}\cap S$, where $S(c, r)$ is the sphere defined by:
+	\item	If segment $e_{i}e_{j}$ is of \textit{type-1}, $v = e_{i}e_{j}\cap S$, where $S(c, r)$ is the sphere, $p$ is reference point for $e_{i}e_{j}$,is defined by:
 		\begin{algorithm}[H]
 		\caption{Rule 1}
 		\begin{algorithmic}[1]
@@ -91,8 +99,9 @@
 	\caption{Rule 2}
 	\begin{algorithmic}[1]
 	    \Procedure{SegmentRecoveryRule2}{}
+	        \State $c \gets e_{k}, r \gets |e_{k}p|$
 	        \If{$|ve_j| < |vp|$}
-	            \State $c \gets e_{k}, r \gets |e_{k}p|$
+	            \State continue
 	        \Else
 	            \State Do not insert $v$, Goto Rule-3
 	        \EndIf     
@@ -100,7 +109,7 @@
 	\end{algorithmic}
 	\end{algorithm}
     \framebreak
-	\item If $e_{i}e_j$ is \textit{type-2}, let $e_k = O(e_i)$, and $v$ is the rejected vertex by rule 2 then, $v = e_{k}e_j \cap S$, where $S(c, r)$ is the sphere defined by the reference point $p$ of $v$:
+	\item If $e_{i}e_j$ is \textit{type-2}, let $e_k = O(e_i)$, and $v'$ is the rejected vertex by rule 2 then, $v = e_{k}e_j \cap S$, where $S(c, r)$ is the sphere defined by the reference point $p$ of $v$:
 	\begin{algorithm}[H]
 	\caption{Rule 3}
 	\begin{algorithmic}[1]
@@ -123,7 +132,8 @@
 \frametitle{Segment recovery: Termination proof}
 \begin{itemize}
     \item If $e_{i}e_{j}$ is \textit{type-1}, \newline
-    $|e_{i}e_{j}| \geq min\{lfs(e_i), lfs(e_j)\}$
+    $|e_{i}e_{j}| \geq min\{lfs(e_i), lfs(e_j)\}$, \newline
+    $lfs$ : local feature size
     \item If $e_{i}e_{j}$ is \textit{type-2} and $e_{k} = O(e_i)$, \newline
     $|e_{i}e_{j}| \geq \frac{1}{C}lfs(e_k)$, when $e_{i} = e_{k}$, \newline
     $|e_{i}e_{j}| \geq $lfs(e_k)$sin(\theta)$, when $e_{i} \ne e_{k}$ \newline
@@ -141,10 +151,9 @@
 \begin{algorithmic}[1]
 \small  {
 \Procedure{Recover facets}{$inputPLC, DelaunayTriangulation$}
-	\State \textbf{Input}:$D_0, X_0$
-	\State \textbf{Output}:$M$
-	\State \textbf{Initialize}:
-	\State $M_i$ \gets $D_0$
+	\State \textbf{Input}: $D_0, X_0$
+	\State \textbf{Output}: $M$
+	\State \textbf{Initialize}: $M_i$ \gets $D_0$
 	\Repeat
 	\State Form a queue \textit{Q} of missing facets in $M_i$;
 	\While {$Q \ne \phi$}
@@ -172,9 +181,9 @@
 \begin{algorithmic}[1]
     \tiny{
     \Procedure{FormCavity}{$cdtMesh, inputPLC, cavity_i$}
-    \State \textbf{Input}: 
-    \State \textbf{Output}:
-    \State \textbf{Initialization}: $V = Vertices(C)$
+    \State \textbf{Input}: $C_{i}, X, M_{k}$ 
+    \State \textbf{Output}: $C_{i}^{`}$ (expanded cavity)
+    \State \textbf{Initialization}: \State $V \gets Vertices(C)$
     \State Verify $C$, expand if necessary,
     \Repeat
     \State form a queue $Q$ of all \textit{non-strongly Delaunay} faces of $C$ in $V$
@@ -204,9 +213,9 @@
 \caption{Refill cavity}
 \begin{algorithmic}[1]
     \Procedure{RetetrahedralizeCavity}{$cdtMesh, inputPLC, cavity$}
-    \State \textbf{Input}:
-    \State \textbf{Output}:
-    \State \textbf{Initialization}:
+    \State \textbf{Input}: $X, M_{i}, C_{n}$
+    \State \textbf{Output}: $M$
+    \State \textbf{Initialization}: \State $M \gets M_{i}$
     \State construct Delaunay tetrahedralization $D_c$ of vertices of $C$;
     \State identify faces of $C$ is $D_c$, mark each face of $D_c$ to be \textit{inside} or \textit{outside} wrt. $C$;
     \State remove \textit{outside} tets from $D_c$, fill remaining tets into $C$;
